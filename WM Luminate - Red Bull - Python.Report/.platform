@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "WM Luminate - Red Bull - Python"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c634176c-bba0-4a0d-a85a-2610945075c7"
+  }
+}

@@ -1,0 +1,425 @@
+/// The UPC Dimension provides the UPC attribution designated by business users via Walmart tools.
+/// 
+/// This is maintained by Red Bull Walmart Category Team.
+/// 
+/// SOURCE: WM_UPC_DIMENSION_VIEW
+table 'WM Master - UPC'
+	lineageTag: a8a27240-65ea-4e40-948a-4c5bdf6fec81
+
+	/// Universal Product Code Number
+	column UPC_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: 4444db8e-f0cc-4f08-acdf-42cbe1a79ca7
+		summarizeBy: none
+		sourceColumn: UPC_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// UPC Number - Text Format
+	column UPC_TXT
+		dataType: string
+		lineageTag: ecd38af2-0c67-45e2-8845-bef54a6f6bea
+		summarizeBy: none
+		sourceColumn: UPC_TXT
+		sortByColumn: UPC_NBR
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Ounce per Pack
+	column OZ_PER_PACK
+		dataType: string
+		lineageTag: 3735b281-06c9-42dc-b0be-243eba003748
+		summarizeBy: none
+		sourceColumn: OZ_PER_PACK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// WM UPC Short Description
+	column UPC_SHORT_DESC
+		dataType: string
+		lineageTag: 122719c8-442d-49a6-8d46-4eedf2de2f5a
+		summarizeBy: none
+		sourceColumn: UPC_SHORT_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPC_LONG_DESC
+		dataType: string
+		lineageTag: cb06db99-c8ce-407e-8a36-6dabf8ab94ea
+		summarizeBy: none
+		sourceColumn: UPC_LONG_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// WM UPC (Number - Description)
+	column 'WM UPC'
+		dataType: string
+		lineageTag: 751e70b4-c9a1-48e8-9602-e0fb2997b8ff
+		summarizeBy: none
+		sourceColumn: WM UPC
+		sortByColumn: UPC_NBR
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// WM UPC Description
+	column 'WM UPC Desc'
+		dataType: string
+		lineageTag: a2b5581f-d107-4778-bb17-6b07ec4d13d3
+		summarizeBy: none
+		sourceColumn: WM UPC Desc
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Brand
+	column CA_BRAND
+		dataType: string
+		lineageTag: d8211ec0-f4a4-4662-b70e-f9fc6e660d5c
+		summarizeBy: none
+		sourceColumn: CA_BRAND
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Caffeine per Can
+	column CA_CAFFEINE_MG_PER_CAN
+		dataType: string
+		lineageTag: 2267ff1b-c5e9-4812-a004-030f7489cc5f
+		summarizeBy: none
+		sourceColumn: CA_CAFFEINE_MG_PER_CAN
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Energy Category
+	column CA_ENERGY_CATEGORY
+		dataType: string
+		lineageTag: 538f14ba-ea07-43f2-a948-e6b219ec8410
+		summarizeBy: none
+		sourceColumn: CA_ENERGY_CATEGORY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Energy Sub Category
+	column CA_ENERGY_SUB_CATEGORY
+		dataType: string
+		lineageTag: adfc23d2-a55a-4580-aa19-852002b7f344
+		summarizeBy: none
+		sourceColumn: CA_ENERGY_SUB_CATEGORY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Flavor Group
+	column CA_FLAVOR_GROUP
+		dataType: string
+		lineageTag: 81fb25d4-9b9d-46bb-931c-e3289217cf8c
+		summarizeBy: none
+		sourceColumn: CA_FLAVOR_GROUP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// OZ per Can
+	column CA_OZ_PER_CAN
+		dataType: string
+		lineageTag: 134def92-48e1-4a17-9cbc-568536348d86
+		summarizeBy: none
+		sourceColumn: CA_OZ_PER_CAN
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Pack Size
+	column CA_PACK_SIZE
+		dataType: string
+		lineageTag: 60f03698-b5eb-4828-ab8c-75fdb1e92a91
+		summarizeBy: none
+		sourceColumn: CA_PACK_SIZE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Pack Type
+	column CA_PACK_TYPE
+		dataType: string
+		lineageTag: 32e93ea3-a9a6-4d5e-a341-33b136a8925f
+		summarizeBy: none
+		sourceColumn: CA_PACK_TYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Description
+	column CA_PRODUCT_DESCRIPTION
+		dataType: string
+		lineageTag: d85510cf-3a4d-4ec5-859d-472bcbfbd4b9
+		summarizeBy: none
+		sourceColumn: CA_PRODUCT_DESCRIPTION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sugar Content
+	column CA_REG_VS_REDUCED_SUGAR_CAL
+		dataType: string
+		lineageTag: 7eee2205-1ef3-4067-9e17-8b271f72fe1e
+		summarizeBy: none
+		sourceColumn: CA_REG_VS_REDUCED_SUGAR_CAL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sub Brand
+	column CA_SUB_BRAND
+		dataType: string
+		lineageTag: f6a51127-6d4d-4407-8e1d-63396c09fa2d
+		summarizeBy: none
+		sourceColumn: CA_SUB_BRAND
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Supplier
+	column CA_SUPPLIER
+		dataType: string
+		lineageTag: 1ff9e4ea-d384-4592-8032-60671e4e9fea
+		summarizeBy: none
+		sourceColumn: CA_SUPPLIER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Total Ounce
+	column CA_TOTAL_OZ
+		dataType: string
+		lineageTag: d5d748dc-1803-4e6f-8363-af1baa350f2c
+		summarizeBy: none
+		sourceColumn: CA_TOTAL_OZ
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CA_MOD_SKU
+		dataType: string
+		lineageTag: 6445a000-731c-4ba6-a161-e1f239f2deb6
+		summarizeBy: none
+		sourceColumn: CA_MOD_SKU
+
+		annotation SummarizationSetBy = Automatic
+
+	column CA_ONLINE_ONLY
+		dataType: string
+		lineageTag: d6b4bed3-f7ad-4451-92b3-616a8652bc64
+		summarizeBy: none
+		sourceColumn: CA_ONLINE_ONLY
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_UPC_NBR
+		dataType: double
+		lineageTag: 5af63d38-021b-405d-ab6e-4dad202e5d10
+		summarizeBy: sum
+		sourceColumn: WM_UPC_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MATERIAL
+		dataType: string
+		lineageTag: 6c99a298-969c-4eaf-8ad0-bc7c71b5ef6e
+		summarizeBy: none
+		sourceColumn: MATERIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column H1_PRODUCT_BRAND
+		dataType: string
+		lineageTag: 90bbb560-fe7d-4f4f-952a-1902ff0d258a
+		summarizeBy: none
+		sourceColumn: H1_PRODUCT_BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column H1_PRODUCT_BRAND_MEDIUM_TEXT
+		dataType: string
+		lineageTag: d9ab38ea-d522-4281-9125-d10feb69b84d
+		summarizeBy: none
+		sourceColumn: H1_PRODUCT_BRAND_MEDIUM_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column H2_PRODUCT_CATEGORY
+		dataType: string
+		lineageTag: 7ef2d2a8-d167-4c9b-905c-d3a7e05d72c2
+		summarizeBy: none
+		sourceColumn: H2_PRODUCT_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column H2_PRODUCT_CATEGORY_MEDIUM_TEXT
+		dataType: string
+		lineageTag: 070be906-59fb-4a8b-b5b2-1f015e920004
+		summarizeBy: none
+		sourceColumn: H2_PRODUCT_CATEGORY_MEDIUM_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column H3_PRODUCT_SUBBRAND
+		dataType: string
+		lineageTag: bf3a35b1-adc7-4fde-9712-286025965552
+		summarizeBy: none
+		sourceColumn: H3_PRODUCT_SUBBRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column H3_PRODUCT_SUBBRAND_MEDIUM_TEXT
+		dataType: string
+		lineageTag: b9c64171-eb78-49e8-b3f7-7fe553795b75
+		summarizeBy: none
+		sourceColumn: H3_PRODUCT_SUBBRAND_MEDIUM_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column H4_PRODUCT_VARIANT
+		dataType: string
+		lineageTag: cc018dcc-3f93-45eb-8d3f-508ea0401579
+		summarizeBy: none
+		sourceColumn: H4_PRODUCT_VARIANT
+
+		annotation SummarizationSetBy = Automatic
+
+	column H4_PRODUCT_VARIANT_MEDIUM_TEXT
+		dataType: string
+		lineageTag: 586a3a76-92ce-4d5c-818b-a342afccca12
+		summarizeBy: none
+		sourceColumn: H4_PRODUCT_VARIANT_MEDIUM_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column H5_PRODUCT_FILLING_SIZE
+		dataType: string
+		lineageTag: 238486e4-d8b1-467e-bfb8-340e6c2cd0a3
+		summarizeBy: none
+		sourceColumn: H5_PRODUCT_FILLING_SIZE
+
+		annotation SummarizationSetBy = Automatic
+
+	column H5_PRODUCT_FILLING_SIZE_MEDIUM_TEXT
+		dataType: string
+		lineageTag: b7145bdd-2dbb-4883-88c4-eafc94d93b9a
+		summarizeBy: none
+		sourceColumn: H5_PRODUCT_FILLING_SIZE_MEDIUM_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column H6_PRODUCT_PACKAGING_MATERIAL
+		dataType: string
+		lineageTag: 1937ed6a-b793-49a1-954f-7364e15ddf44
+		summarizeBy: none
+		sourceColumn: H6_PRODUCT_PACKAGING_MATERIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column H6_PRODUCT_PACKAGING_MATERIAL_MEDIUM_TEXT
+		dataType: string
+		lineageTag: 92e257c1-c80f-48bd-8884-0e21ce25d1a0
+		summarizeBy: none
+		sourceColumn: H6_PRODUCT_PACKAGING_MATERIAL_MEDIUM_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column H7_PRODUCT_PACKAGING_UNIT
+		dataType: string
+		lineageTag: 026b8641-7881-45ef-8555-aca55a9d6e13
+		summarizeBy: none
+		sourceColumn: H7_PRODUCT_PACKAGING_UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column H7_PRODUCT_PACKAGING_UNIT_MEDIUM_TEXT
+		dataType: string
+		lineageTag: 7319c8f0-443f-44d6-8448-cb818943c32d
+		summarizeBy: none
+		sourceColumn: H7_PRODUCT_PACKAGING_UNIT_MEDIUM_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column VARIANT_TYPE
+		dataType: string
+		lineageTag: 2b82d461-54d5-4823-a0d4-8d01a1879d47
+		summarizeBy: none
+		sourceColumn: VARIANT_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column VARIANT_TYPE_MEDIUM_TEXT
+		dataType: string
+		lineageTag: 0f851b9f-f01f-482d-a031-20d48a606b43
+		summarizeBy: none
+		sourceColumn: VARIANT_TYPE_MEDIUM_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WM Master - UPC' = m
+		mode: import
+		queryGroup: 'Reporting - Master Data'
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    WM_UPC_DIMENSIONS_VIEW = GOLD_Schema{[Name="WM_UPC_DIMENSION_VIEW",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(WM_UPC_DIMENSIONS_VIEW,{{"UPC_NBR", Int64.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "UPC_NBR", "UPC_NBR - Copy"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"UPC_NBR - Copy", "UPC_TXT"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns",{{"UPC_TXT", type text}}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Changed Type1", "OZ_PER_PACK", each Text.Combine({[CA_OZ_PER_CAN], [CA_PACK_SIZE]}, " "), type text),
+				    #"Inserted Merged Column 2" = Table.AddColumn(#"Inserted Merged Column", "WM UPC", each Text.Combine(
+				                {[UPC_TXT], if Text.Trim([UPC_SHORT_DESC]) is null then if Text.Trim([UPC_LONG_DESC]) is null then [CA_PRODUCT_DESCRIPTION] else [UPC_LONG_DESC] else [UPC_SHORT_DESC]},
+				                " - "
+				            )),
+				    #"Added Custom" = Table.AddColumn(#"Inserted Merged Column 2", "UPC_DESC", each if Text.Trim([UPC_SHORT_DESC]) is null then if Text.Trim([UPC_LONG_DESC]) is null then [CA_PRODUCT_DESCRIPTION] else [UPC_LONG_DESC] else [UPC_SHORT_DESC]),
+				    #"Renamed Columns2" = Table.RenameColumns(#"Added Custom",{{"UPC_DESC", "WM UPC Desc"}})
+				in
+				    #"Renamed Columns2"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

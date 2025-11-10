@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "755d8203a2bc343fb129",
+  "position": {
+    "x": 10.199203187250996,
+    "y": 289.402390438247,
+    "z": 1,
+    "height": 280.47808764940237,
+    "width": 332.74900398406373,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "FTPR Denominator - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.FTPR Denominator - Hourly",
+              "nativeQueryRef": "FTPR Denominator - Hourly"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                  }
+                },
+                "Property": "FTPR Denominator - Hourly"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,38 @@
+/// Walmart Category Sales model.
+/// UPC Sales (Shopper Behavior) view provides information about store and eComm sales at UPC and store level.
+/// The UPC Store Sales endpoint will contain Store & Ecomm sales, aggregated weekly. Ecomm sales are reported under the store number “-999”.
+/// The sales number under the UPC Store Sales endpoint may not match with the sales number under our Store Sales endpoint.
+/// This model is refreshed weekly on Mondays, resulting in a 9 to 15-day delay.
+/// 
+/// SOURCE: WM_UPC_SALES_VIEW
+table 'WM Master - Tender Group'
+	lineageTag: 1d7f2ffa-92ec-4e6c-a5a8-162bb1c05226
+
+	column WM_TNDR_GROUP
+		dataType: string
+		lineageTag: 4dc5ed0c-09e0-414b-90f6-d4d264ca9dc7
+		summarizeBy: none
+		sourceColumn: WM_TNDR_GROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WM Master - Tender Group' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    WM_SALES_TENDER_TYPE = GOLD_Schema{[Name="WM_SALES_TENDER_TYPE_VIEW",Kind="View"]}[Data],
+				    #"Sorted Rows" = Table.Sort(WM_SALES_TENDER_TYPE,{{"TNDR_TYPE_CD", Order.Ascending}}),
+				    TNDR_GROUP1 = #"Sorted Rows"[TNDR_GROUP],
+				    #"Removed Duplicates" = List.Distinct(TNDR_GROUP1)
+				in
+				    #"Removed Duplicates"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = List
+

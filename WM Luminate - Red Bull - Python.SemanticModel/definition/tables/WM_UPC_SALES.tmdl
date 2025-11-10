@@ -1,0 +1,218 @@
+/// Walmart Category Sales model.
+/// UPC Sales (Shopper Behavior) view provides information about store and eComm sales at UPC and store level.
+/// The UPC Store Sales endpoint will contain Store & Ecomm sales, aggregated weekly. Ecomm sales are reported under the store number “-999”.
+/// The sales number under the UPC Store Sales endpoint may not match with the sales number under our Store Sales endpoint.
+/// This model is refreshed weekly on Mondays, resulting in a 9 to 15-day delay.
+/// 
+/// SOURCE: WM_UPC_SALES_VIEW
+table WM_UPC_SALES
+	isHidden
+	lineageTag: f32ce528-3aca-45a1-b116-b589a3e03db3
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: double
+		isHidden
+		lineageTag: 2875cca9-a26f-46de-b9af-b5dd2031de14
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Omni UPC Number
+	column OMNI_UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 963b5daf-7d7c-4fa3-abb6-13c8d24181b2
+		summarizeBy: none
+		sourceColumn: OMNI_UPC_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Walmart Year Week Number.
+	/// A number representing the full Walmart year and week.
+	column WM_YR_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d202c9e7-362d-4d98-acb4-61f36d0a600e
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Service Channel: The channel through which the order is fulfilled.
+	column SB_CHNL_NM
+		dataType: string
+		isHidden
+		lineageTag: a9c14f5f-1eb1-4f50-a33f-420f525177c1
+		summarizeBy: none
+		sourceColumn: SB_CHNL_NM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Operational Company Code
+	column OP_CMPNY_CD
+		dataType: string
+		isHidden
+		lineageTag: 6920a056-0f61-4492-9184-49fa539f511d
+		summarizeBy: none
+		sourceColumn: OP_CMPNY_CD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Geographic Region Code
+	column GEO_REGION_CD
+		dataType: string
+		isHidden
+		lineageTag: d0f22062-5631-4d1b-9a80-49ad2a1f25f2
+		summarizeBy: none
+		sourceColumn: GEO_REGION_CD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// This Year Basket Transactions Count. The number of transactions that contained the selected product or product group.
+	column TY_BASKET_CNT
+		dataType: double
+		isHidden
+		lineageTag: 35f901bc-f2ec-4524-8c30-1a095b9eb4e9
+		summarizeBy: sum
+		sourceColumn: TY_BASKET_CNT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Last Year Basket Transactions Count
+	column LY_BASKET_CNT
+		dataType: double
+		isHidden
+		lineageTag: b6cc7e0f-7121-49fc-99a9-8392176fe290
+		summarizeBy: sum
+		sourceColumn: LY_BASKET_CNT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year (TY) Sales Amount
+	column TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: d9e1bacf-c800-41df-acc6-0fcba7310384
+		summarizeBy: sum
+		sourceColumn: TY_SALES_AMT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Last Year Sales Amount
+	column LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 5fe35997-2bc7-4e68-beba-1fae961032c3
+		summarizeBy: sum
+		sourceColumn: LY_SALES_AMT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year (TY) Sales Units
+	column TY_SALES_UNIT_QTY
+		dataType: double
+		isHidden
+		lineageTag: 8f59ef29-0560-4990-abb4-226d2816c2c8
+		summarizeBy: sum
+		sourceColumn: TY_SALES_UNIT_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Last Year Sales Units
+	column LY_SALES_UNIT_QTY
+		dataType: double
+		isHidden
+		lineageTag: 724839eb-afa2-4c58-a015-9eb2b3fffeab
+		summarizeBy: sum
+		sourceColumn: LY_SALES_UNIT_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column TRAIT_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7813a068-aa2e-42f5-970a-2efc389d63b8
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Combination of Store and Week IDs
+	column STORE_WEEK_ID
+		dataType: string
+		lineageTag: 67fc8c9f-5fec-4eb9-89c4-fb642ebc603e
+		summarizeBy: none
+		sourceColumn: STORE_WEEK_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WM_UPC_SALES = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    WM_UPC_SALES = GOLD_Schema{[Name="WM_UPC_SALES_VIEW",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(WM_UPC_SALES,{{"WM_YR_WK_NBR", Int64.Type}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","Buy in Store","1",Replacer.ReplaceText,{"SB_CHNL_NM"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","Pickup","3",Replacer.ReplaceText,{"SB_CHNL_NM"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","Delivery","2",Replacer.ReplaceText,{"SB_CHNL_NM"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","Ship from Store","4",Replacer.ReplaceText,{"SB_CHNL_NM"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","Site to Home","5",Replacer.ReplaceText,{"SB_CHNL_NM"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value4",{{"OMNI_UPC_NBR", Int64.Type}, {"TRAIT_NBR", Int64.Type}})
+				in
+				    #"Changed Type1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

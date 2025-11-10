@@ -1,0 +1,55 @@
+table WM_STORES_S2H
+	isHidden
+	lineageTag: 85fba7eb-9e03-45f9-affd-8f3beb055141
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 72fc8d81-cb33-44bd-ae33-caccce805846
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column STORE_NM
+		dataType: string
+		isHidden
+		lineageTag: 5b383885-7378-4855-a3a1-e9d3b3fcbf95
+		summarizeBy: none
+		sourceColumn: STORE_NM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column BANNER_DESC
+		dataType: string
+		isHidden
+		lineageTag: 107fb0a3-2282-4a62-b645-265d9dffdd77
+		summarizeBy: none
+		sourceColumn: BANNER_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WM_STORES_S2H = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W0rW0tFTSUQrOyCxQCMlX8MjPTUXnxsYCAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [STORE_STORE_NBR = _t, STORE_STORE_NM = _t, STORE_BANNER_DESC = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"STORE_STORE_NBR", Int64.Type}, {"STORE_STORE_NM", type text}, {"STORE_BANNER_DESC", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"STORE_STORE_NBR", "STORE_NBR"}, {"STORE_STORE_NM", "STORE_NM"}, {"STORE_BANNER_DESC", "BANNER_DESC"}})
+				in
+				    #"Renamed Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

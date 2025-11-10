@@ -1,0 +1,322 @@
+perspective 'Red Bull Weekly'
+
+	perspectiveTable 'WM Master - Store'
+
+		perspectiveColumn STORE_NBR
+
+		perspectiveColumn STORE_NM
+
+		perspectiveColumn BANNER_CD
+
+		perspectiveColumn BANNER_DESC
+
+		perspectiveColumn BASE_DIV_NBR
+
+		perspectiveColumn CITY_NM
+
+		perspectiveColumn CNTY_NM
+
+		perspectiveColumn FIN_CLOSE_DT
+
+		perspectiveColumn FIN_OPEN_DT
+
+		perspectiveColumn LAT_DGR
+
+		perspectiveColumn LONG_DGR
+
+		perspectiveColumn MARKET_NBR
+
+		perspectiveColumn MARKET_NM
+
+		perspectiveColumn OPEN_24_HR_IND
+
+		perspectiveColumn OPEN_STATUS_CD
+
+		perspectiveColumn OPEN_STATUS_DESC
+
+		perspectiveColumn OPEN_SUN_IND
+
+		perspectiveColumn OP_CLOSE_DT
+
+		perspectiveColumn REGION_NBR
+
+		perspectiveColumn REGION_NM
+
+		perspectiveColumn RELO_FLIP_DT
+
+		perspectiveColumn SEG_NBR
+
+		perspectiveColumn SEG_NM
+
+		perspectiveColumn STATE_PROV_CD
+
+		perspectiveColumn STORE_MGR_NM
+
+		perspectiveColumn STORE_TYPE_CD
+
+		perspectiveColumn STORE_TYPE_DESC
+
+		perspectiveColumn ST_PROV_NM
+
+		perspectiveColumn SUBDIVISION_NBR
+
+		perspectiveColumn SUBDIVISION_NM
+
+		perspectiveColumn STORE_NBR_TXT
+
+		perspectiveColumn STORE_REGION_NBR_TXT
+
+		perspectiveColumn MARKET_NBR_TXT
+
+		perspectiveColumn STORE_NBR_NAME
+
+		perspectiveColumn RB_BU
+
+		perspectiveColumn RB_BU_DESC
+
+		perspectiveColumn RB_REGION
+
+		perspectiveColumn RB_REGION_DESC
+
+		perspectiveColumn 'RB BU'
+
+		perspectiveColumn DP
+
+		perspectiveColumn DP_DESC
+
+	perspectiveTable 'WM Master - Service Channel'
+
+		perspectiveColumn KEY
+
+		perspectiveColumn ID
+
+		perspectiveColumn 'Service Channel'
+
+	perspectiveTable 'WM Master - Mod Trait'
+
+		perspectiveColumn MODLR_CATG_NBR
+
+		perspectiveColumn TRAIT_NBR
+
+		perspectiveColumn TRAIT_DESC
+
+		perspectiveColumn TRAIT_GROUP_DESC
+
+		perspectiveColumn TRAIT_CATEGORY_DESC
+
+		perspectiveColumn TRAIT_TXT
+
+		perspectiveColumn MODLR_CATG_DESC
+
+		perspectiveColumn MODLR_PLAN_TITLE_DESC
+
+		perspectiveColumn MODLR_WDTH_QTY
+
+		perspectiveColumn Trait
+
+		perspectiveColumn 'Mod Category'
+
+		perspectiveColumn MODLR_FOOTAGE
+
+		perspectiveColumn 'Strike Zone - Red Bull'
+
+		perspectiveColumn 'Strike Zone - Monster'
+
+		perspectiveColumn 'Strike Zone - AO'
+
+	perspectiveTable 'WM Master - Calendar Week'
+
+		perspectiveColumn WM_YR_WK_NBR
+
+		perspectiveColumn WM_WK_NBR
+
+		perspectiveColumn WM_FULL_YR_NBR
+
+		perspectiveColumn WM_YR_WK_TXT
+
+		perspectiveColumn WM_START_DATE
+
+		perspectiveColumn WM_END_DATE
+
+		perspectiveColumn FYTD_FLAG
+
+		perspectiveColumn LW_FLAG
+
+		perspectiveColumn L13W_FLAG
+
+		perspectiveColumn L4W_FLAG
+
+		perspectiveColumn L52W_FLAG
+
+	perspectiveTable 'WM Master - UPC'
+
+		perspectiveColumn UPC_NBR
+
+		perspectiveColumn UPC_TXT
+
+		perspectiveColumn OZ_PER_PACK
+
+		perspectiveColumn UPC_SHORT_DESC
+
+		perspectiveColumn UPC_LONG_DESC
+
+		perspectiveColumn 'WM UPC'
+
+		perspectiveColumn 'WM UPC Desc'
+
+		perspectiveColumn CA_BRAND
+
+		perspectiveColumn CA_CAFFEINE_MG_PER_CAN
+
+		perspectiveColumn CA_ENERGY_CATEGORY
+
+		perspectiveColumn CA_ENERGY_SUB_CATEGORY
+
+		perspectiveColumn CA_FLAVOR_GROUP
+
+		perspectiveColumn CA_OZ_PER_CAN
+
+		perspectiveColumn CA_PACK_SIZE
+
+		perspectiveColumn CA_PACK_TYPE
+
+		perspectiveColumn CA_PRODUCT_DESCRIPTION
+
+		perspectiveColumn CA_REG_VS_REDUCED_SUGAR_CAL
+
+		perspectiveColumn CA_SUB_BRAND
+
+		perspectiveColumn CA_SUPPLIER
+
+		perspectiveColumn CA_TOTAL_OZ
+
+	perspectiveTable '01. Metrics - Store Sales Weekly'
+
+		perspectiveMeasure 'TY $ Sales - Weekly'
+
+		perspectiveMeasure 'LY $ Sales - Weekly'
+
+		perspectiveMeasure '% Chg $ Sales YoY - Weekly'
+
+		perspectiveMeasure 'TY Unit Sales - Weekly'
+
+		perspectiveMeasure 'LY Unit Sales - Weekly'
+
+		perspectiveMeasure '% Chg Unit Sales - Weekly'
+
+		perspectiveMeasure 'TY Price - Weekly'
+
+		perspectiveMeasure 'LY Price - Weekly'
+
+		perspectiveMeasure '% Chg Price YoY - Weekly'
+
+		perspectiveMeasure 'Week Count - Weekly'
+
+		perspectiveMeasure 'Store Count - Weekly'
+
+		perspectiveMeasure 'Total Stores-Week - Weekly'
+
+		perspectiveMeasure 'TY Avg Wkly $ Sales - Weekly'
+
+		perspectiveMeasure 'LY Avg Wkly $ Sales - Weekly'
+
+		perspectiveMeasure 'TY Avg Wkly Unit Sales - Weekly'
+
+		perspectiveMeasure 'LY Avg Wkly Unit Sales - Weekly'
+
+		perspectiveMeasure 'TY $/S/W - Weekly'
+
+		perspectiveMeasure 'LY $/S/W - Weekly'
+
+		perspectiveMeasure 'TY U/S/W - Weekly'
+
+		perspectiveMeasure 'LY U/S/W - Weekly'
+
+		perspectiveMeasure '# Diff $ Sales YoY - Weekly'
+
+		perspectiveMeasure '# Diff Unit Sales YoY - Weekly'
+
+		perspectiveMeasure '# Diff $/S/W YoY - Weekly'
+
+		perspectiveMeasure '# Diff U/S/W YoY - Weekly'
+
+		perspectiveMeasure '# Diff Avg Wkly $ Sales YoY - Weekly'
+
+		perspectiveMeasure '# Diff Avg Wkly Unit Sales YoY - Weekly'
+
+		perspectiveMeasure '% Chg Avg Wkly $ Sales YoY - Weekly'
+
+		perspectiveMeasure '% Chg Avg Wkly Unit Sales YoY - Weekly'
+
+		perspectiveMeasure '$ Share - Weekly'
+
+		perspectiveMeasure 'Unit Share - Weekly'
+
+		perspectiveMeasure 'TY C/S/W - Weekly'
+
+		perspectiveMeasure 'LY C/S/W - Weekly'
+
+		perspectiveMeasure 'Weekend TY $ Sales - Weekly'
+
+		perspectiveMeasure 'Weekend TY Unit Sales - Weekly'
+
+		perspectiveMeasure 'Weekend TY $/S/W - Weekly'
+
+		perspectiveMeasure 'Weekend TY U/S/W - Weekly'
+
+		perspectiveMeasure 'Weekend TY Avg Wkly Unit Sales - Weekly'
+
+	perspectiveTable '02. Metrics - Store Fulfillment Weekly'
+
+		perspectiveMeasure 'TY Nil Pick Denominator - Weekly'
+
+		perspectiveMeasure 'TY FTPR Numerator - Weekly'
+
+		perspectiveMeasure 'TY FTPR Denominator - Weekly'
+
+		perspectiveMeasure 'LY Nil Pick Qty - Weekly'
+
+		perspectiveMeasure 'LY Nil Pick Denominator - Weekly'
+
+		perspectiveMeasure 'LY Nil Pick Rate - Weekly'
+
+		perspectiveMeasure 'LY FTPR Numerator - Weekly'
+
+		perspectiveMeasure 'LY FTPR Denominator - Weekly'
+
+		perspectiveMeasure 'LY FTPR - Weekly'
+
+		perspectiveMeasure 'TY Nil Pick Rate - Weekly'
+
+		perspectiveMeasure 'TY FTPR - Weekly'
+
+		perspectiveMeasure 'TY Nil Pick Qty - Weekly'
+
+		perspectiveMeasure 'TY Nil Pick Numerator - Weekly'
+
+		perspectiveMeasure 'TY PreSub Numerator - Weekly'
+
+		perspectiveMeasure 'TY PreSub Denominator - Weekly'
+
+		perspectiveMeasure 'TY PreSub Rate - Weekly'
+
+		perspectiveMeasure 'TY PostSub Numerator - Weekly'
+
+		perspectiveMeasure 'TY PostSub Denominator - Weekly'
+
+		perspectiveMeasure 'TY PostSub Rate - Weekly'
+
+		perspectiveMeasure 'Total Capacity - Weekly'
+
+		perspectiveMeasure 'DOS - Weekly'
+
+		perspectiveMeasure 'TY In Stock Rate - Weekly'
+
+		perspectiveMeasure 'TY Total PODs - Weekly'
+
+		perspectiveMeasure 'Main Placement Capacity - Weekly'
+
+		perspectiveMeasure 'Mod Rack Capacity - Weekly'
+
+		perspectiveMeasure 'Weekend DOS - Weekly'
+

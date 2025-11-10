@@ -1,0 +1,140 @@
+/// Walmart Category Sales model.
+/// UPC Sales (Shopper Behavior) view provides information about store and eComm sales at UPC and store level.
+/// The UPC Store Sales endpoint will contain Store & Ecomm sales, aggregated weekly. Ecomm sales are reported under the store number “-999”.
+/// The sales number under the UPC Store Sales endpoint may not match with the sales number under our Store Sales endpoint.
+/// This model is refreshed weekly on Mondays, resulting in a 9 to 15-day delay.
+/// 
+/// SOURCE: WM_UPC_SALES_VIEW
+table WM_HOURLY_STORE_INVENTORY
+	isHidden
+	lineageTag: 04c357aa-18cb-453e-ad9b-e73ef298f09b
+
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8602a46f-04cc-4384-80e8-80549427ecb5
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUS_DT
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 652bb204-bb5d-4cc4-b915-bd739f20ccdf
+		summarizeBy: none
+		sourceColumn: BUS_DT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HOUR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3b3f48e5-48c3-459e-8f72-3119d927dc95
+		summarizeBy: none
+		sourceColumn: HOUR
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column REPL_GROUP_NBR
+		dataType: double
+		isHidden
+		lineageTag: 5cab4c12-9184-4601-92d7-3701047fd462
+		summarizeBy: sum
+		sourceColumn: REPL_GROUP_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GTIN
+		dataType: string
+		isHidden
+		lineageTag: 3caff3fe-bc97-4b1e-808d-9f5c8c32ab85
+		summarizeBy: none
+		sourceColumn: GTIN
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOCATION_AREA
+		dataType: string
+		isHidden
+		lineageTag: 40b22952-7c01-44ce-880d-0fa8ea3249c0
+		summarizeBy: none
+		sourceColumn: LOCATION_AREA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTITY
+		dataType: double
+		isHidden
+		lineageTag: 3667d00b-5de3-4970-9d56-7c96528f9e48
+		summarizeBy: sum
+		sourceColumn: QUANTITY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UPC_NBR
+		dataType: string
+		isHidden
+		lineageTag: ca46b4ca-ac4e-4395-a5af-b789e0898384
+		summarizeBy: none
+		sourceColumn: UPC_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_YR_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9f4786d4-5983-45ae-9038-8ceb061755d8
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WM_HOURLY_STORE_INVENTORY = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    WM_HOURLY_STORE_INVENTORY = GOLD_Schema{[Name="WM_HOURLY_STORE_INVENTORY_VIEW",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(WM_HOURLY_STORE_INVENTORY,{{"WM_YR_WK_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

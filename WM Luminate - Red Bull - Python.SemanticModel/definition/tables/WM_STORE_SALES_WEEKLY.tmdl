@@ -1,0 +1,253 @@
+/// Provides information about all store sales at Store, UPC and Channel, aggregated by Walmart Week.
+/// 
+/// Source: WM_STORE_SALES_WEEK_VIEW
+table WM_STORE_SALES_WEEKLY
+	isHidden
+	lineageTag: fd6cb434-c4dd-4062-ac6a-2d42f02a7c22
+
+	/// Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bd1ed37d-9b82-491a-9f40-9f03b0da6814
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Service Channel: The channel through which the order is fulfilled.
+	column SVC_CHNL_NM
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 472ee5fb-97b4-4e95-a9fb-f3fd4eb971e8
+		summarizeBy: none
+		sourceColumn: SVC_CHNL_NM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Walmart Week Number
+	column CAL_WM_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 46887066-527d-4d33-a07f-32ffa11df3c2
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Walmart Year Week Number.
+	/// A number representing the full Walmart year and week.
+	column WM_YR_WK_NBR
+		dataType: double
+		isHidden
+		lineageTag: 654e4d99-ddca-43f5-a311-50eb42dff984
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Universal Product Code Number
+	column WM_UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5afb51c0-858d-4ddc-b624-afcde0a4b54f
+		summarizeBy: none
+		sourceColumn: WM_UPC_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// This Year (TY) Sales Amount
+	column TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 105be16e-ee31-4ca2-916d-26cca7fde595
+		summarizeBy: sum
+		sourceColumn: TY_SALES_AMT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Last Year (LY) Sales Amount
+	column LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: ebe7f3c6-6ad6-435d-b6d9-f3529db62bfa
+		summarizeBy: sum
+		sourceColumn: LY_SALES_AMT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year Weekend Sales Amount.
+	/// Weekends only sales: Friday - Sunday.
+	column WEEKEND_TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 49a7424e-ad06-4f30-80c1-116902d25d0f
+		summarizeBy: sum
+		sourceColumn: WEEKEND_TY_SALES_AMT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Last Year Weekend Sales Amount.
+	/// Weekends Only Sales: Friday - Sunday.
+	column WEEKEND_LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 9489363f-4fb0-4025-9208-c958d1917408
+		summarizeBy: sum
+		sourceColumn: WEEKEND_LY_SALES_AMT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year (TY) Sales Units
+	column TY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 0754d831-a62c-4424-b809-7b7616b973d2
+		summarizeBy: sum
+		sourceColumn: TY_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Last Year (LY) Sales Units
+	column LY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 52861c11-93f4-4639-8191-c6ea2dbfb30a
+		summarizeBy: sum
+		sourceColumn: LY_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year Weekend Sales Units.
+	/// Weekends Only Sales: Friday - Sunday.
+	column WEEKEND_TY_QTY
+		dataType: double
+		isHidden
+		lineageTag: d028ae5d-6481-4126-a05d-369de39bd858
+		summarizeBy: sum
+		sourceColumn: WEEKEND_TY_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Last Year Weekend Sales Units.
+	/// Weekends Only Sales: Friday - Sunday.
+	column WEEKEND_LY_QTY
+		dataType: double
+		isHidden
+		lineageTag: d4220c4c-5968-4636-a6b0-ad63992040f7
+		summarizeBy: sum
+		sourceColumn: WEEKEND_LY_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column TRAIT_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5517a325-b52b-470a-beec-735429619f73
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Combination of Store and Week ID
+	column STORE_WEEK_ID
+		dataType: string
+		isHidden
+		lineageTag: bed66674-262b-4c5a-993d-ccb6dd8a0108
+		summarizeBy: none
+		sourceColumn: STORE_WEEK_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// In Modular Flag indicating the UPC is included in the store planogram for the week
+	column IN_MODULAR
+		dataType: string
+		isHidden
+		lineageTag: 2a3c8847-c438-40c6-befd-27d4f8ff7408
+		summarizeBy: none
+		sourceColumn: IN_MODULAR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WM_STORE_SALES_WEEKLY = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    WM_SALES_V_TRIMMED_View = GOLD_Schema{[Name="WM_STORE_SALES_WEEK_L104W_VIEW",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(WM_SALES_V_TRIMMED_View,{{"WM_UPC_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}, {"CAL_WM_WK_NBR", Int64.Type}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","BIS","1",Replacer.ReplaceText,{"SVC_CHNL_NM"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","DELIVERY","2",Replacer.ReplaceText,{"SVC_CHNL_NM"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","PICKUP","3",Replacer.ReplaceText,{"SVC_CHNL_NM"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","SFS","4",Replacer.ReplaceText,{"SVC_CHNL_NM"}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","S2H","5",Replacer.ReplaceText,{"SVC_CHNL_NM"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value4",{{"SVC_CHNL_NM", Int64.Type}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type1", each [WM_YR_WK_NBR] >= 202326),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Filtered Rows",{{"TRAIT_NBR", Int64.Type}})
+				in
+				    #"Changed Type2"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+
