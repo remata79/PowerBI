@@ -2,18 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "755d8203a2bc343fb129",
   "position": {
-    "x": 10.199203187250996,
-    "y": 289.402390438247,
+    "x": 307.25099601593621,
+    "y": 374.82071713147405,
     "z": 1,
     "height": 280.47808764940237,
     "width": 332.74900398406373,
     "tabOrder": 1
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
