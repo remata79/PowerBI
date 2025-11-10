@@ -70,6 +70,34 @@
               },
               "queryRef": "08.  Metrics - Hourly Store Fulfillment.PostSub Rate - Hourly",
               "nativeQueryRef": "PostSub Rate - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "FTPR Denominator - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.FTPR Denominator - Hourly",
+              "nativeQueryRef": "FTPR Denominator - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "FTPR - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.FTPR - Hourly",
+              "nativeQueryRef": "FTPR - Hourly"
             }
           ]
         }
