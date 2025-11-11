@@ -98,6 +98,34 @@
               },
               "queryRef": "08.  Metrics - Hourly Store Fulfillment.FTPR - Hourly",
               "nativeQueryRef": "FTPR - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "FTPR Numerator - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.FTPR Numerator - Hourly",
+              "nativeQueryRef": "FTPR Numerator - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "Nil Pick Denominator - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.Nil Pick Denominator - Hourly",
+              "nativeQueryRef": "Nil Pick Denominator - Hourly"
             }
           ]
         }
