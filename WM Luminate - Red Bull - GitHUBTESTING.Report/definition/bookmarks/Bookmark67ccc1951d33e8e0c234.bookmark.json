@@ -1,0 +1,188 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Stores Map",
+  "name": "Bookmark67ccc1951d33e8e0c234",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "702bb5b4c44bb6250aa4"
+    ],
+    "suppressActiveSection": true,
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSection6b66120671b442c19be5",
+    "sections": {
+      "ReportSection6b66120671b442c19be5": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "Filter1b8813b603687072cedd",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "w",
+                    "Entity": "WM_STORE_SALES",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Not": {
+                        "Expression": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "w"
+                                    }
+                                  },
+                                  "Property": "ITEM_RB_PACK_TYPE"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'NOT APPLICABLE'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WM_STORE_SALES"
+                    }
+                  },
+                  "Property": "ITEM_RB_PACK_TYPE"
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "Filter9abd5cf5425a34cd5c3c",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "w",
+                    "Entity": "WM_STORE_SALES",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Not": {
+                        "Expression": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "w"
+                                    }
+                                  },
+                                  "Property": "STORE_BANNER_DESC"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Amigo'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WM_STORE_SALES"
+                    }
+                  },
+                  "Property": "STORE_BANNER_DESC"
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "Filterbb37907e69113b6621fb",
+              "type": "Advanced",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Metric 1"
+                    }
+                  },
+                  "Property": "ID"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {}
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

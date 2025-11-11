@@ -1,0 +1,286 @@
+/// This view displays all Modular (Store Planogram) assignments for each store by week, including both Main Placements and Mod Racks. It also lists the UPCs included in the Main Placement planograms.
+/// 
+/// Source: WM_STORE_MODULAR_UPC_WEEK_VIEW
+table WM_STORE_MODULAR_UPC_WEEK
+	isHidden
+	lineageTag: fc2ccab4-ddf2-4ddd-8ead-41b506c28da5
+
+	/// Modular Planogram ID
+	column MODLR_PLAN_ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0c8d53fa-5e85-450a-94a1-40254b96101b
+		summarizeBy: count
+		sourceColumn: MODLR_PLAN_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column TRAIT_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1f007e85-1545-4a5c-baeb-cbb1da88cf3c
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Universal Product Code Number
+	column UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c0246950-d53d-40a1-8a25-a11c412d4f27
+		summarizeBy: none
+		sourceColumn: UPC_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Total Capacity Quantity.
+	/// This is the sum of the total capacity of a product on a specific MODULAR PLANOGRAM.
+	column TOT_CPCTY_QTY
+		dataType: double
+		isHidden
+		lineageTag: e7f0c825-76f7-4ea1-9a85-a4f7d0a8f290
+		summarizeBy: sum
+		sourceColumn: TOT_CPCTY_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total Depth Facing Quantity.
+	/// The sum of the depth_facings_nbr of a product on this modular plan.
+	column TOT_DEPTH_FACING_QTY
+		dataType: double
+		isHidden
+		lineageTag: 893fbe61-934f-4e47-90f7-89559bc57d0f
+		summarizeBy: sum
+		sourceColumn: TOT_DEPTH_FACING_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total Horizontal Facing Quantity
+	/// This is the sum of the horiz_facings_nbr of a product on this modular plan.
+	column TOT_HRZNL_FACING_QTY
+		dataType: double
+		isHidden
+		lineageTag: 89d8d89a-e6b6-47bb-8bcf-c9da0561a4fc
+		summarizeBy: sum
+		sourceColumn: TOT_HRZNL_FACING_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total Vertical Facing Quantity.
+	/// The sum of the vert_facings_nbr of a product on this modular plan.
+	column TOT_VERTICAL_FACING_QTY
+		dataType: double
+		isHidden
+		lineageTag: 4639d768-f44a-49e9-8c10-fcafeb388f6f
+		summarizeBy: sum
+		sourceColumn: TOT_VERTICAL_FACING_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3a5bf9db-6a0c-470b-9ba6-32a7d41ef805
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Modular Plan Status Code
+	column SM_STATUS
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: aac9babd-01a3-4cf4-88c2-b7ba20b49a86
+		summarizeBy: sum
+		sourceColumn: SM_STATUS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Effective Date
+	column SM_EFF_DT
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: f8b7d357-0558-4cc2-ba1a-bce43aee208c
+		summarizeBy: none
+		sourceColumn: SM_EFF_DT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Modular Trait Status Code
+	column MT_STATUS
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a1828442-df53-40af-9ab2-b19ba76d4e8d
+		summarizeBy: sum
+		sourceColumn: MT_STATUS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Modular Category Number
+	column MODLR_CATG_NBR
+		dataType: double
+		isHidden
+		lineageTag: 55087316-6ec8-4aba-b66b-6e34895c4e75
+		summarizeBy: sum
+		sourceColumn: MODLR_CATG_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Store Modular Unassigned Date
+	column UNASSIGNED_DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: d682b6e7-b8c6-46c5-ae67-503a9efd5121
+		summarizeBy: none
+		sourceColumn: UNASSIGNED_DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Walmart Year Week Number.
+	/// A number representing the full Walmart year and week.
+	column WM_YR_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f7f7af3d-6ce8-4a97-b4b8-f0c00b783898
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Walmart Full Year Number
+	column WM_FULL_YR_NBR
+		dataType: double
+		isHidden
+		lineageTag: 89227f22-5c51-44b5-ac45-42316c88dcd0
+		summarizeBy: sum
+		sourceColumn: WM_FULL_YR_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Walmart Week Number
+	column WM_WK_NBR
+		dataType: double
+		isHidden
+		lineageTag: 290be30e-d29c-46d9-a077-d34b5d52ed42
+		summarizeBy: sum
+		sourceColumn: WM_WK_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Modular Planogram Description
+	column MODLR_PLAN_TITLE_DESC
+		dataType: string
+		lineageTag: 7d5b3542-0bae-4b8d-b0b3-27b3297e94a8
+		summarizeBy: none
+		sourceColumn: MODLR_PLAN_TITLE_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Modular Category Description
+	column MODLR_CATG_DESC
+		dataType: string
+		lineageTag: 45bb001f-459c-4ae0-97ee-c327f8c7f353
+		summarizeBy: none
+		sourceColumn: MODLR_CATG_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCONTINUE_DT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 286b028a-dd89-4fd0-b01b-9b07f52da7b4
+		summarizeBy: none
+		sourceColumn: DISCONTINUE_DT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MOD_REF_CATEGORY
+		dataType: string
+		lineageTag: f3f6060e-2fac-44c6-a132-e811f7467b6b
+		summarizeBy: none
+		sourceColumn: MOD_REF_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WM_STORE_MODULAR_UPC_WEEK = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    WM_STORE_MODULAR_UPC_WEEK_VIEW = GOLD_Schema{[Name="WM_STORE_MODULAR_UPC_WEEK_VIEW",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(WM_STORE_MODULAR_UPC_WEEK_VIEW,{{"STORE_NBR", Int64.Type}, {"MODLR_PLAN_ID", Int64.Type}, {"SM_STATUS", Int64.Type}, {"MT_STATUS", Int64.Type}, {"TRAIT_NBR", Int64.Type}, {"UPC_NBR", Int64.Type}, {"WM_YR_WK_NBR", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

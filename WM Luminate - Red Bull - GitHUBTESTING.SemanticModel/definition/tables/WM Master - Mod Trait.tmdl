@@ -1,0 +1,250 @@
+/// The Traits view provides nformation about six-digit trait numbers and how they relates to attributes of the store or items. Traits can be created to represent an attribute of the store or items.
+/// 
+/// SOURCE: WM_TRAIT_VIEW
+table 'WM Master - Mod Trait'
+	lineageTag: 74b4afb2-08eb-4699-8790-3384685662c0
+
+	/// Modular Category Number
+	column MODLR_CATG_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: aff9f084-3a5a-4ebb-b58d-2a3a49dff3f5
+		summarizeBy: sum
+		sourceColumn: MODLR_CATG_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store.
+	column TRAIT_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: f5eee487-ab83-464b-9aa1-49705d29b57e
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Trait Description
+	column TRAIT_DESC
+		dataType: string
+		lineageTag: 50dac513-7ff7-4d37-adb3-30739ca4e9a9
+		summarizeBy: none
+		sourceColumn: TRAIT_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Trait Group Description
+	column TRAIT_GROUP_DESC
+		dataType: string
+		lineageTag: eba23f9c-3d95-4cdb-a8b5-3c23e7ad17fc
+		summarizeBy: none
+		sourceColumn: TRAIT_GROUP_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Modular Category Description
+	column TRAIT_CATEGORY_DESC
+		dataType: string
+		lineageTag: 5d76d4c0-9460-4738-b579-cd04ca3c253f
+		summarizeBy: none
+		sourceColumn: TRAIT_CATEGORY_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Trait Number - Text format.
+	column TRAIT_TXT
+		dataType: string
+		lineageTag: 8b2dceb2-db2a-407d-8eba-4af1531be10f
+		summarizeBy: none
+		sourceColumn: TRAIT_TXT
+		sortByColumn: TRAIT_NBR
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Modular Category Description
+	column MODLR_CATG_DESC
+		dataType: string
+		lineageTag: c2b03731-683e-4c5f-a940-9dd9c29ff915
+		summarizeBy: none
+		sourceColumn: MODLR_CATG_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Modular Plan Title Description
+	column MODLR_PLAN_TITLE_DESC
+		dataType: string
+		lineageTag: 5b3fe790-efdb-4242-9de1-b60d2f4081a1
+		summarizeBy: none
+		sourceColumn: MODLR_PLAN_TITLE_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Modular Width Quantity: The number of inches for the width of the base of the sections for this planogram.
+	column MODLR_WDTH_QTY
+		dataType: double
+		lineageTag: 80bbf33b-c35c-4631-b3f6-fbd70347b62d
+		summarizeBy: sum
+		sourceColumn: MODLR_WDTH_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column Trait
+		dataType: string
+		lineageTag: 7fb0a6b9-744d-447e-b2f4-fa7e5ec91c80
+		summarizeBy: none
+		sourceColumn: Trait
+		sortByColumn: TRAIT_NBR
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Modular Category
+	column 'Mod Category'
+		dataType: string
+		lineageTag: e2d6672e-bffa-461c-86f7-3d9d5d6d0764
+		summarizeBy: none
+		sourceColumn: Mod Category
+		sortByColumn: MODLR_CATG_NBR
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Modular Footage
+	column MODLR_FOOTAGE
+		dataType: string
+		lineageTag: 1a0ebc4f-55eb-4eb8-95e4-ba6cbc64664c
+		summarizeBy: none
+		sourceColumn: MODLR_FOOTAGE
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Red Bull Strike Zone Trait
+	column 'Strike Zone - Red Bull'
+		dataType: int64
+		lineageTag: a77113b3-826c-4deb-a332-ac75ed34c841
+		summarizeBy: none
+		sourceColumn: Strike Zone - Red Bull
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Monster Strike Zone Trait
+	column 'Strike Zone - Monster'
+		dataType: int64
+		lineageTag: 0ed1df42-8368-487c-ad30-4764359c360f
+		summarizeBy: none
+		sourceColumn: Strike Zone - Monster
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// All Others Strike Zone Trait
+	column 'Strike Zone - AO'
+		dataType: int64
+		lineageTag: da4188e0-f06a-4c46-a574-caf1fb363c2a
+		summarizeBy: none
+		sourceColumn: Strike Zone - AO
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LOCATION
+		dataType: string
+		lineageTag: a36a6fb9-921b-4578-8d2c-9fa2483d5767
+		summarizeBy: none
+		sourceColumn: LOCATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE
+		dataType: string
+		lineageTag: 94bacade-c69d-4d9f-bb55-2505c7568334
+		summarizeBy: none
+		sourceColumn: TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLD_V_WARM
+		dataType: string
+		lineageTag: aae0cb63-b8bf-4ef0-9411-4f9a28cde3de
+		summarizeBy: none
+		sourceColumn: COLD_V_WARM
+
+		annotation SummarizationSetBy = Automatic
+
+	column RED_BULL_CATEGORY
+		dataType: string
+		lineageTag: 40d6521e-2750-4429-ab8f-3ed9558c9670
+		summarizeBy: none
+		sourceColumn: RED_BULL_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MOD_REF_CATEGORY
+		dataType: string
+		lineageTag: 92983b9b-7847-4fa5-9ab6-c43af39b6e04
+		summarizeBy: none
+		sourceColumn: MOD_REF_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WM Master - Mod Trait' = m
+		mode: import
+		queryGroup: 'Reporting - Master Data'
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    MODULAR_TRAIT_UPC_VIEW_View = GOLD_Schema{[Name="WM_TRAIT_VIEW",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(MODULAR_TRAIT_UPC_VIEW_View,{{"TRAIT_NBR", Int64.Type}, {"MODLR_CATG_NBR", Int64.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "TRAIT_NBR", "TRAIT_NBR - Copy"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"TRAIT_NBR - Copy", "TRAIT_TXT"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns",{{"TRAIT_TXT", type text}}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Changed Type1", "Trait", each Text.Combine({Text.From([TRAIT_NBR], "en-US"), [MODLR_PLAN_TITLE_DESC]}, " - "), type text),
+				    #"Inserted Merged Column1" = Table.AddColumn(#"Inserted Merged Column", "Mod Category", each Text.Combine({Text.From([MODLR_CATG_NBR], "en-US"), [MODLR_CATG_DESC]}, " - "), type text),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Inserted Merged Column1",{{"SZ_RED_BULL", Int64.Type}, {"SZ_MONSTER", Int64.Type}, {"SZ_ALL_OTHERS", Int64.Type}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type2",{{"SZ_ALL_OTHERS", "Strike Zone - AO"}, {"SZ_MONSTER", "Strike Zone - Monster"}, {"SZ_RED_BULL", "Strike Zone - Red Bull"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

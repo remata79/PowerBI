@@ -1,0 +1,126 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "4c1109a1ebf9b72f5e8a",
+  "position": {
+    "x": 680.796812749004,
+    "y": 167.01195219123505,
+    "z": 2,
+    "height": 280.47808764940237,
+    "width": 279.203187250996,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "areaChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "PostSub Denominator - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.PostSub Denominator - Hourly",
+              "nativeQueryRef": "PostSub Denominator - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "PostSub Rate - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.PostSub Rate - Hourly",
+              "nativeQueryRef": "PostSub Rate - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "FTPR Denominator - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.FTPR Denominator - Hourly",
+              "nativeQueryRef": "FTPR Denominator - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "FTPR - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.FTPR - Hourly",
+              "nativeQueryRef": "FTPR - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "FTPR Numerator - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.FTPR Numerator - Hourly",
+              "nativeQueryRef": "FTPR Numerator - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "Nil Pick Denominator - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.Nil Pick Denominator - Hourly",
+              "nativeQueryRef": "Nil Pick Denominator - Hourly"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                  }
+                },
+                "Property": "PostSub Denominator - Hourly"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

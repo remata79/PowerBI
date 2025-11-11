@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "c15a83bc932ac2ae99aa",
+  "position": {
+    "x": 49.846153846153847,
+    "y": 126.15384615384616,
+    "z": 3001,
+    "height": 593.84615384615381,
+    "width": 1130.4615384615386,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WM Master - Tender Group"
+                    }
+                  },
+                  "Property": "WM_TNDR_GROUP"
+                }
+              },
+              "queryRef": "WM Master - Tender Group.WM_TNDR_GROUP",
+              "nativeQueryRef": "WM_TNDR_GROUP",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WM Master - Tender Type"
+                    }
+                  },
+                  "Property": "TNDR_TYPE_DESC"
+                }
+              },
+              "queryRef": "WM Master - Tender Type.TNDR_TYPE_DESC",
+              "nativeQueryRef": "TNDR_TYPE_DESC",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "11. Metrics - Sales Tender Weekly"
+                    }
+                  },
+                  "Property": "$ Sales by Tender"
+                }
+              },
+              "queryRef": "11. Metrics - Sales Tender Weekly.$ Sales by Tender",
+              "nativeQueryRef": "$ Sales by Tender"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "11. Metrics - Sales Tender Weekly"
+                    }
+                  },
+                  "Property": "Units by Tender"
+                }
+              },
+              "queryRef": "11. Metrics - Sales Tender Weekly.Units by Tender",
+              "nativeQueryRef": "Units by Tender"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "11. Metrics - Sales Tender Weekly"
+                    }
+                  },
+                  "Property": "Visits by Tender"
+                }
+              },
+              "queryRef": "11. Metrics - Sales Tender Weekly.Visits by Tender",
+              "nativeQueryRef": "Visits by Tender"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "WM Master - Tender Group.WM_TNDR_GROUP"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "WM Master - Tender Type.TNDR_TYPE_DESC"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "drillFilterOtherVisuals": true
+  }
+}
