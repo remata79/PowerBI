@@ -41,6 +41,34 @@
               },
               "queryRef": "WM Master - Calendar Week.L13W_FLAG",
               "nativeQueryRef": "L13W_FLAG"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WM Master - Calendar Week"
+                    }
+                  },
+                  "Property": "L4W_FLAG"
+                }
+              },
+              "queryRef": "WM Master - Calendar Week.L4W_FLAG",
+              "nativeQueryRef": "L4W_FLAG"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WM Master - Calendar Week"
+                    }
+                  },
+                  "Property": "L52W_FLAG"
+                }
+              },
+              "queryRef": "WM Master - Calendar Week.L52W_FLAG",
+              "nativeQueryRef": "L52W_FLAG"
             }
           ]
         }
