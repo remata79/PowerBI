@@ -28,6 +28,20 @@
               },
               "queryRef": "08.  Metrics - Hourly Store Fulfillment.FTPR Denominator - Hourly",
               "nativeQueryRef": "FTPR Denominator - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "PreSub Rate - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.PreSub Rate - Hourly",
+              "nativeQueryRef": "PreSub Rate - Hourly"
             }
           ]
         }
