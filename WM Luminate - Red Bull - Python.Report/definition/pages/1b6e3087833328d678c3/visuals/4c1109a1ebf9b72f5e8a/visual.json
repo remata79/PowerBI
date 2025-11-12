@@ -126,6 +126,20 @@
               },
               "queryRef": "08.  Metrics - Hourly Store Fulfillment.Nil Pick Denominator - Hourly",
               "nativeQueryRef": "Nil Pick Denominator - Hourly"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "08.  Metrics - Hourly Store Fulfillment"
+                    }
+                  },
+                  "Property": "PreSub Rate - Hourly"
+                }
+              },
+              "queryRef": "08.  Metrics - Hourly Store Fulfillment.PreSub Rate - Hourly",
+              "nativeQueryRef": "PreSub Rate - Hourly"
             }
           ]
         }
