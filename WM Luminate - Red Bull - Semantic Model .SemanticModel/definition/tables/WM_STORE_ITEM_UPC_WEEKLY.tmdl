@@ -1,0 +1,176 @@
+/// The Store Item UPC Measures view provides information about Inventory at the store level; several types of metrics across in-stock inventory; and markup, markdown, and margins on an item, store, and day grain.
+/// This model is aggregated at Year Week, Store and UPC level.
+/// 
+/// Source: WM_STORE_ITEM_UPC_WEEK_VIEW
+table WM_STORE_ITEM_UPC_WEEKLY
+	isHidden
+	lineageTag: 5336c442-5a00-40e7-a36f-a804ea012dd6
+
+	/// Universal Product Code Number
+	column WM_UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a9bd4fe9-a8c6-4947-b3c6-9d368f64ebfd
+		summarizeBy: none
+		sourceColumn: WM_UPC_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fa2427b0-d2f5-411d-88a1-aa24332a1628
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Walmart Year Week Number.
+	/// A number representing the full Walmart year and week.
+	column WM_YR_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 75b87a8d-61d8-49c4-963f-a05032640b10
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Average on hand Qty for this week
+	column TY_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 6d930a0e-3d9d-46ab-8a27-6d8e7df2d292
+		summarizeBy: sum
+		sourceColumn: TY_ON_HAND_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// On Hand Qty on the Start of the Week.
+	column TY_START_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 62bb1f17-8086-463c-9941-fadd792734f8
+		summarizeBy: sum
+		sourceColumn: TY_START_ON_HAND_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// On Hand Qty on the end of the Week.
+	column TY_END_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 6a605f0c-b3cf-449c-8a22-571caa5d929f
+		summarizeBy: sum
+		sourceColumn: TY_END_ON_HAND_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Net Receipt Quantity - This Year.
+	/// 
+	column TY_NET_RCPT_QTY
+		dataType: double
+		isHidden
+		lineageTag: 8207b784-81b6-44ea-b0e7-67c2d1992ad3
+		summarizeBy: sum
+		sourceColumn: TY_NET_RCPT_QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Number of days UPC was Out of Stock in that Store/Week.
+	column OUT_OF_STOCK
+		dataType: double
+		isHidden
+		lineageTag: 727f2604-6e4d-4932-a0ca-94be015e19a9
+		summarizeBy: sum
+		sourceColumn: OUT_OF_STOCK
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Walmart Week Number
+	column CAL_WM_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 314f2764-010e-4f49-bc18-eb370f240da0
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// In Modular Flag indicating the UPC is included in the store planogram for the week
+	column IN_MODULAR
+		dataType: string
+		isHidden
+		lineageTag: c51da4d1-a78b-4536-b699-ed25a4369a09
+		summarizeBy: none
+		sourceColumn: IN_MODULAR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column TRAIT_NBR
+		dataType: double
+		isHidden
+		lineageTag: cb292d51-4f1b-473b-bd06-dd96de5074d6
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition WM_STORE_ITEM_UPC_WEEKLY = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    WM_SALES_V_TRIMMED_View = GOLD_Schema{[Name="WM_STORE_ITEM_UPC_WEEK_104W_VIEW",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(WM_SALES_V_TRIMMED_View,{{"STORE_NBR", Int64.Type}, {"WM_UPC_NBR", Int64.Type}, {"WM_YR_WK_NBR", Int64.Type}, {"CAL_WM_WK_NBR", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

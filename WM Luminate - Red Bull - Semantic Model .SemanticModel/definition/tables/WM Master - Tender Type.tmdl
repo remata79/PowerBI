@@ -1,0 +1,54 @@
+/// Walmart Category Sales model. 
+/// UPC Sales (Shopper Behavior) view provides information about store and eComm sales at UPC and store level.
+/// The UPC Store Sales endpoint will contain Store & Ecomm sales, aggregated weekly. Ecomm sales are reported under the store number “-999”. 
+/// The sales number under the UPC Store Sales endpoint may not match with the sales number under our Store Sales endpoint.
+/// This model is refreshed weekly on Mondays, resulting in a 9 to 15-day delay.
+/// 
+/// SOURCE: WM_UPC_SALES_VIEW
+table 'WM Master - Tender Type'
+	lineageTag: a5db2a76-4307-4d4d-89b9-6fbaac52a86c
+
+	column TNDR_TYPE_CD
+		dataType: double
+		lineageTag: d8aba099-6002-44eb-be91-322ef872998e
+		summarizeBy: none
+		sourceColumn: TNDR_TYPE_CD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TNDR_TYPE_DESC
+		dataType: string
+		lineageTag: 7952b770-7349-4743-bc5f-f9e39c1c622b
+		summarizeBy: none
+		sourceColumn: TNDR_TYPE_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column TNDR_GROUP
+		dataType: string
+		lineageTag: c685d51f-8bf2-4d69-9b57-c86baba0fc8d
+		summarizeBy: none
+		sourceColumn: TNDR_GROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WM Master - Tender Type' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    WM_SALES_TENDER_TYPE = GOLD_Schema{[Name="WM_SALES_TENDER_TYPE_VIEW",Kind="View"]}[Data],
+				    #"Sorted Rows" = Table.Sort(WM_SALES_TENDER_TYPE,{{"TNDR_TYPE_CD", Order.Ascending}})
+				in
+				    #"Sorted Rows"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

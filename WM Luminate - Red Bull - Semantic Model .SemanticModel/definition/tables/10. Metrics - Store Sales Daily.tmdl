@@ -1,0 +1,47 @@
+table '10. Metrics - Store Sales Daily'
+	lineageTag: 1228043e-e018-46bb-8b9f-1a2859a82b60
+
+	/// This Year Weekly Sales Amount.
+	measure ' $ Sales - Daily' = SUM(WM_STORE_SALES_DAILY[SALES_AMT])
+		formatString: $#,##0
+		displayFolder: This Year Metrics
+		lineageTag: 61db348f-14f1-436a-b6aa-faed0c12eb79
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year Sales Units.
+	measure 'Unit Sales - Daily' = SUM(WM_STORE_SALES_DAILY[QTY])
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: 8ab97762-c794-49ef-83de-01037964d974
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	/// This Year Sales Units.
+	measure 'Units Delivered - Daily' = SUM(WM_STORE_ITEM_DAILY[TY_NET_RCPT_QTY])
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: d49e4f2d-3ab2-4460-b9fc-882c1637c6ca
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	partition '10. Metrics - Store Sales Daily' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

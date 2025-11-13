@@ -1,0 +1,138 @@
+table '08.  Metrics - Hourly Store Fulfillment'
+	lineageTag: 38d1cccb-36bd-4516-8f25-5b6e972d1ba4
+
+	measure 'Nil Pick Denominator - Hourly' = CALCULATE(SUM(WM_STORE_FULFILMENT_HOURLY[NIL_PICK_DNMNTR]), ALL('WM Master - Calendar Week Pre Relay'))
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: f5473814-a5ff-4a5e-8c5c-a63acee25bca
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year First Time Pick Rate Numerator
+	measure 'FTPR Numerator - Hourly' = CALCULATE(SUM(WM_STORE_FULFILMENT_HOURLY[FTPR_NMRTR]), ALL('WM Master - Calendar Week Pre Relay'))
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 6817549f-c4b6-4329-923f-90d839ed010c
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year First Time Pick Rate Denominator
+	measure 'FTPR Denominator - Hourly' = CALCULATE(SUM(WM_STORE_FULFILMENT_HOURLY[FTPR_DNMNTR]), ALL('WM Master - Calendar Week Pre Relay'))
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 01826b4a-eb5f-491f-be77-52041e8c65c6
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
+	measure 'Nil Pick Rate - Hourly' = DIVIDE([Nil Pick Numerator - Hourly], [Nil Pick Denominator - Hourly], BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: This Year Metrics
+		lineageTag: 6b658ac9-b2d9-4793-8ab0-8491800fa91a
+
+		changedProperty = IsHidden
+
+	/// This Year First Time Pick Rate:
+	/// The percentage of items that were picked in the first pick-walk for store fulfilled orders.
+	measure 'FTPR - Hourly' = DIVIDE([FTPR Numerator - Hourly], [FTPR Denominator - Hourly], BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: This Year Metrics
+		lineageTag: b16bb4fb-378c-41eb-bcc1-e9d26eb8f7b5
+
+		changedProperty = IsHidden
+
+	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
+	measure 'Nil Pick Qty - Hourly' = ```
+			CALCULATE(SUM(WM_STORE_FULFILMENT_HOURLY[NIL_PICK_NMRTR]), ALL('WM Master - Calendar Week Pre Relay'))
+			
+			```
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: 75b430b3-e7c8-4ae6-a865-4657fba5b960
+
+		changedProperty = IsHidden
+
+	measure 'Nil Pick Numerator - Hourly' = CALCULATE(SUM(WM_STORE_FULFILMENT_HOURLY[NIL_PICK_NMRTR]), ALL('WM Master - Calendar Week Pre Relay'))
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 1333c74c-2dd3-4d01-82b0-499b6cf877f0
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PreSub Numerator - Hourly' = CALCULATE(SUM(WM_STORE_FULFILMENT_HOURLY[PRESUB_RATE_NMRTR]), ALL('WM Master - Calendar Week Pre Relay'))
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 7254ac68-6ae6-4a13-a6a9-aead6e76e58a
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PreSub Denominator - Hourly' = CALCULATE(SUM(WM_STORE_FULFILMENT_HOURLY[PRESUB_RATE_DNMNTR]), ALL('WM Master - Calendar Week Pre Relay'))
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: bc066579-3a62-4df4-b818-1d685a5268ba
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PreSub Rate - Hourly' = DIVIDE([PreSub Numerator - Hourly], [PreSub Denominator - Hourly], BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: This Year Metrics
+		lineageTag: b1ec2957-35f2-4027-a16f-8597688e0357
+
+		changedProperty = IsHidden
+
+	measure 'PostSub Numerator - Hourly' = CALCULATE(SUM(WM_STORE_FULFILMENT_HOURLY[POSTSUB_RATE_NMRTR]), ALL('WM Master - Calendar Week Pre Relay'))
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 288b7473-8f07-45e6-9643-425648e833e9
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PostSub Denominator - Hourly' = CALCULATE(SUM(WM_STORE_FULFILMENT_HOURLY[POSTSUB_RATE_DNMNTR]), ALL('WM Master - Calendar Week Pre Relay'))
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 0227ca7a-b70e-491e-8ad3-4eda0bf766a6
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PostSub Rate - Hourly' = DIVIDE([PostSub Numerator - Hourly], [PostSub Denominator - Hourly], BLANK())
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: This Year Metrics
+		lineageTag: ccd6b184-b173-4b35-b653-8d1a5195dbc2
+
+		changedProperty = IsHidden
+
+	measure 'Missed First Time Hourly' = [FTPR Denominator - Hourly] - [FTPR Numerator - Hourly]
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: 89bde2c5-1b16-410e-80a8-c76e52d26419
+
+	partition '08.  Metrics - Hourly Store Fulfillment' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

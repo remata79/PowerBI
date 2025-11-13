@@ -1,0 +1,261 @@
+relationship 832e1077-2e10-0d6e-87f7-f07fcd8a556c
+	fromColumn: WM_STORE_SALES_TIMEFRAMES.SVC_CHNL_NM
+	toColumn: 'WM Master - Service Channel'.KEY
+
+relationship d95bbdd5-3802-142e-3e0c-226ca8b93a4f
+	fromColumn: WM_STORE_SALES_WEEKLY.SVC_CHNL_NM
+	toColumn: 'WM Master - Service Channel'.KEY
+
+relationship AutoDetected_64890c16-2901-44da-b610-ff879aa15765
+	fromColumn: WM_STORE_FULFILLMENT_TIMEFRAMES.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_075fb42e-c3ea-40da-bf77-cb2619820cb7
+	fromColumn: WM_STORE_ITEM_UPC_TIMEFRAMES.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_5b2661b6-375d-4baa-a653-fd666fc733ee
+	fromColumn: WM_STORE_SALES_TIMEFRAMES.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_c404d969-d74e-48ae-b271-494120ccc8b9
+	fromColumn: WM_STORE_SALES_WEEKLY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_e30d54d7-4b28-4453-9880-1f8cc98ffc9e
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: WM_STORES_S2H.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_c062c3e2-3c5a-4a53-b5b5-33745a1dc021
+	fromColumn: WM_UPC_SALES.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship 8541cc57-b046-acb9-0b7e-22dca4c4083b
+	fromColumn: WM_UPC_SALES.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship 92766d02-0ef1-0299-8ac3-e4ec8302f318
+	fromColumn: WM_UPC_SALES.OMNI_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship df607324-9d56-fc5c-1ed7-ef1a9fcf0e0e
+	fromColumn: WM_STORE_SALES_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship 1369d61b-45e4-59a1-34a2-9581d4a823bf
+	fromColumn: WM_STORE_SALES_WEEKLY.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship bdc8e91b-214c-986b-1415-fd272730893f
+	fromColumn: WM_STORE_SALES_TIMEFRAMES.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 68af7dd2-3bd5-a928-e58b-0ab79ec31030
+	fromColumn: WM_STORE_FULFILLMENT_TIMEFRAMES.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 331c7f4e-df3a-8452-dd2a-5e4e8629714c
+	fromColumn: WM_STORE_ITEM_UPC_TIMEFRAMES.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship AutoDetected_e850f04d-7868-47c1-9842-c1597d66c3cc
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_344c9264-ed49-4270-818f-ad73f5e944dd
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship 2db0d215-7394-7a0c-2f40-ff4bd3ecff28
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 2772d728-a790-4c9a-138e-96fdd57e9037
+	isActive: false
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship AutoDetected_b18f203a-55e7-40a9-ba56-79c21a24abc4
+	fromColumn: WM_STORE_ITEM_UPC_LATEST.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_7d26101b-65a2-4695-9dd2-e5047ceb265f
+	fromColumn: WM_STORE_ITEM_UPC_LATEST.UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship AutoDetected_e6dd759e-7b4d-4415-bc53-e8aa11626b3f
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_93dcc125-ca51-4ace-9466-00e5b9b4ce84
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship AutoDetected_7d251cc9-bc4e-4984-a899-1c69b49cdee8
+	isActive: false
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship 5febb449-a634-c7c5-3cab-8e224bff1b3a
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 61ca1c41-225e-afd7-5d92-f54125302730
+	isActive: false
+	fromColumn: WM_UPC_SALES.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship feef9b1c-7009-6432-69ec-6d7bc074891d
+	fromColumn: WM_UPC_SALES.SB_CHNL_NM
+	toColumn: 'WM Master - Service Channel'.KEY
+
+relationship AutoDetected_179def86-4d1e-40a7-9e70-018816d14859
+	fromColumn: WM_STORE_MODULAR_UPC_WEEK.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship AutoDetected_06b9755d-8185-4d3b-b1b0-36f4d3a02c46
+	fromColumn: WM_STORE_MODULAR_UPC_WEEK.UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship AutoDetected_6efb1d9c-29cf-4cab-9a29-9fa66075813f
+	fromColumn: WM_STORE_MODULAR_UPC_WEEK.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship 9f814183-f9c1-fff0-e290-7d6a4d5ae455
+	fromColumn: WM_STORE_MODULAR_UPC_WEEK.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship 4a996829-0a17-e376-1b28-17ccf5bff73c
+	isActive: false
+	fromColumn: WM_STORE_MODULAR_UPC_WEEK.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship AutoDetected_a6625407-3a2e-46bb-91cb-2a48fca32ee5
+	fromColumn: WM_UPC_SALES.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship AutoDetected_48f2010e-7073-4f83-aad4-66cfaa51fbf3
+	fromColumn: WM_STORE_SALES_WEEKLY.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship c05993a4-7d7e-2f72-97bd-8b6eee3f379d
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship adb4b165-2cce-56a0-28c8-29fe660d09f3
+	isActive: false
+	fromColumn: WM_STORE_SALES_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship 0e768fe0-62cf-74ea-ab2d-11ac67335bdd
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship 2e9ab000-0e37-d18a-73ce-40f3634c0da9
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'WM Master - Store'.TRAIT_AS_IS
+	toColumn: 'WM Master - Store Trait (As Is)'.TRAIT_NBR
+
+relationship 76935263-d9e3-85bd-d8fd-4f1ad284d6b7
+	fromColumn: WM_STORE_SALES_WEEKLY.IN_MODULAR
+	toColumn: 'WM Master - In Modular'.IN_Modular
+
+relationship 1b401c2a-03b3-1c63-eedf-86e4f4c5ddb9
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.IN_MODULAR
+	toColumn: 'WM Master - In Modular'.IN_Modular
+
+relationship 6bc73161-e2ff-fbb4-992c-8d9db0c0df72
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.IN_MODULAR
+	toColumn: 'WM Master - In Modular'.IN_Modular
+
+relationship AutoDetected_b3a9b1ab-2027-4c43-b428-086adf82a18f
+	fromColumn: WM_STORE_FULFILMENT_HOURLY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_1f6ca4b8-a0e3-4622-b730-fa6fa923eac7
+	fromColumn: WM_STORE_FULFILMENT_HOURLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship AutoDetected_0c8d7d50-65f4-4711-b490-c1aa11793ac0
+	isActive: false
+	fromColumn: WM_STORE_FULFILMENT_HOURLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship AutoDetected_50dcba71-3737-4960-b6e0-4e321c1d3c15
+	fromColumn: WM_HOURLY_STORE_INVENTORY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_8449af7d-1b38-4249-868a-c2d5bb250bde
+	fromColumn: WM_HOURLY_STORE_INVENTORY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship AutoDetected_bbcc9abf-2165-4935-adf4-53a74a4c173a
+	fromColumn: WM_HOURLY_STORE_INVENTORY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship aa714abc-35b5-7172-ea2e-ec22445d7304
+	fromColumn: WM_HOURLY_STORE_INVENTORY.UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 4ab5fbdf-0afe-7b13-c578-94277b82f136
+	fromColumn: WM_STORE_FULFILMENT_HOURLY.BUS_DT
+	toColumn: 'WM Master - Calendar Date (L13W)'.CAL_DT
+
+relationship 550a5e67-4848-1f6e-f3df-0669efaafd00
+	fromColumn: WM_STORE_FULFILMENT_HOURLY.RPT_HR_NBR
+	toColumn: 'WM Master - Hour'.Hour
+
+relationship 32436171-5b7c-d32b-b6df-2aab1140d942
+	fromColumn: WM_HOURLY_STORE_INVENTORY.BUS_DT
+	toColumn: 'WM Master - Calendar Date (L13W)'.CAL_DT
+
+relationship 74203f04-3dcc-af41-12e9-f32b61634c01
+	fromColumn: WM_HOURLY_STORE_INVENTORY.HOUR
+	toColumn: 'WM Master - Hour'.Hour
+
+relationship 0f7dd1f8-cdea-e156-7b72-9177647cdf6e
+	fromColumn: WM_STORE_FULFILMENT_HOURLY.UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship AutoDetected_eed2953b-e972-49a5-b49b-adb887104689
+	fromColumn: WM_STORE_ITEM_DAILY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship AutoDetected_99bf15e8-88b4-4555-8a69-3148c6c700c4
+	fromColumn: WM_STORE_SALES_DAILY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship 3ae15d11-f9a6-7e14-f06c-64d8da37ae55
+	fromColumn: WM_STORE_ITEM_DAILY.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 10583842-49da-dc9f-9b80-86f4f0c95182
+	fromColumn: WM_STORE_ITEM_DAILY.BUS_DT
+	toColumn: 'WM Master - Calendar Date (L13W)'.CAL_DT
+
+relationship 29cf580e-451b-5ae3-c3fb-eed430216c17
+	fromColumn: WM_STORE_SALES_DAILY.BUS_DT
+	toColumn: 'WM Master - Calendar Date (L13W)'.CAL_DT
+
+relationship 3f85ef76-845d-bc57-18bb-4a9f4504b27e
+	fromColumn: WM_STORE_SALES_DAILY.UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship a7c6fc39-923a-3093-f103-1257c1fc24fe
+	fromColumn: WM_SALES_TENDER_WEEKLY.TNDR_GROUP
+	toColumn: 'WM Master - Tender Group'.WM_TNDR_GROUP
+
+relationship 89259147-d1c0-d49b-f853-6e8fd13faf8b
+	fromColumn: WM_SALES_TENDER_WEEKLY.TNDR_TYPE_CD
+	toColumn: 'WM Master - Tender Type'.TNDR_TYPE_CD
+
+relationship f6b22771-789b-bfa8-ee9e-8847ca38dfa0
+	fromColumn: WM_SALES_TENDER_WEEKLY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship 7b4b8ac8-06d4-8edc-7b51-8b820619827b
+	fromColumn: WM_SALES_TENDER_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+

@@ -1,0 +1,54 @@
+/// Service Channel Master data: The channel through which the order is fulfilled.
+table 'WM Master - Service Channel'
+	lineageTag: 39c1c59f-effa-4096-ae9b-67bd16208653
+
+	column KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: e7e22737-8878-48a7-b29f-0c1dae0cad0b
+		summarizeBy: none
+		sourceColumn: KEY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: string
+		lineageTag: ffca83c1-92ba-4e5b-b634-715becf179b1
+		summarizeBy: none
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Service Channel: The channel through which the order is fulfilled.
+	column 'Service Channel'
+		dataType: string
+		lineageTag: 352e18df-a68d-4eb1-9a1f-2ebd64e640bc
+		summarizeBy: none
+		sourceColumn: Service Channel
+		sortByColumn: KEY
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WM Master - Service Channel' = m
+		mode: import
+		queryGroup: 'Reporting - Master Data'
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlTSUXLyDAaRpZUKmXkKwSX5RalKsTrRSkZAQRdXH88w16BIEDM1J7MstagSLGcMFAjwdPYODQAxMpOzSwvA4iZAbrAbyLjgjMwCBbei/FwkE01B4kYeIDKzJFWhJF/BIz8XImUGlgJrBCkHyUH1xQIA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ID = _t, #"ID 2" = _t, #"Service Channel" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"ID", Int64.Type}, {"ID 2", type text}, {"Service Channel", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"ID", "KEY"}, {"ID 2", "ID"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

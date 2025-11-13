@@ -1,0 +1,1017 @@
+/// Model with metric to compare performance between two different Time Frames. 
+/// Used for Walmart Category Pre Post Comparison analysis; based on Category Sales model.
+/// This should be always used along with "WM Master - Pre Post Time Frame" model.
+table '07 . Metrics - Category Pre Post Comparison'
+	lineageTag: 87775885-8e77-4732-bd90-2bf6b50e9a75
+
+	/// This Year Sales Units.
+	measure 'TY Unit Sales - WMCA Pre Relay' = CALCULATE(SUM(WM_UPC_SALES[TY_SALES_UNIT_QTY]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 694c2b2c-1cee-4cb8-8c45-41af3bae434e
+
+		formatStringDefinition = "#,##0"
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'TY $ Sales - WMCA Pre Relay' = CALCULATE(SUM(WM_UPC_SALES[TY_SALES_AMT]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 7efd753d-c727-4d43-83e7-c4a07602dda7
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'TY Basket Count - WMCA Pre Relay' = CALCULATE(SUM(WM_UPC_SALES[TY_BASKET_CNT]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+		formatString: #,0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 059abcc9-9840-4278-921c-c4974616a032
+
+		changedProperty = IsHidden
+
+	measure 'LY $ Sales - WMCA Pre Relay' = CALCULATE(SUM(WM_UPC_SALES[LY_SALES_AMT]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: fc9e1ced-e4bc-4d8a-aa3f-454f12a0de66
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'LY Basket Count - WMCA Pre Relay' = CALCULATE(SUM(WM_UPC_SALES[LY_BASKET_CNT]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+		formatString: #,0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: b62ee417-b954-4a3c-88f3-d17a85454431
+
+		changedProperty = IsHidden
+
+	measure 'LY Unit Sales - WMCA Pre Relay' = CALCULATE(SUM(WM_UPC_SALES[LY_SALES_UNIT_QTY]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+		formatString: #,0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: db8bffd9-ab5c-45b4-a330-6db777851db6
+
+		changedProperty = IsHidden
+
+	/// This Year Avg Week Price.
+	measure 'TY Price - WMCA Pre Relay' = DIVIDE([TY $ Sales - WMCA Pre Relay], [TY Unit Sales - WMCA Pre Relay], 0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 43af9bdd-8678-434e-994a-4dae20850118
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg $ Sales YoY - WMCA Pre Relay' = ```
+			DIVIDE(([# Diff $ Sales YoY - WMCA Pre Relay]),[LY $ Sales - WMCA Pre Relay])
+			
+			```
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 0c41de4f-6d28-4b16-8be2-182d84592e96
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Unit Sales - WMCA Pre Relay' = ```
+			DIVIDE(([# Diff Unit Sales YoY - WMCA Pre Relay]),[LY Unit Sales - WMCA Pre Relay])
+			
+			```
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 3c004ef1-e089-4339-a5f6-76b0b6cc7f30
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Last Year Avg Week Price.
+	measure 'LY Price - WMCA Pre Relay' = DIVIDE([LY $ Sales - WMCA Pre Relay], [LY Unit Sales - WMCA Pre Relay], 0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 3bc2c4a7-7bd7-4604-a88b-bd5238155db2
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Price YoY - WMCA Pre Relay' = DIVIDE(([TY Price - WMCA Pre Relay]-[LY Price - WMCA Pre Relay]),[LY Price - WMCA Pre Relay], Blank())
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 49812645-e63b-45a4-b1f8-68a4f3cbb985
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Week Count - WMCA Pre Relay' = CALCULATE(DISTINCTCOUNT(WM_UPC_SALES[WM_YR_WK_NBR]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+		formatString: 0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: b4c50538-9a17-43bd-b315-6a286df1f25e
+
+		changedProperty = IsHidden
+
+	measure 'Store Count - WMCA Pre Relay' = CALCULATE(DISTINCTCOUNT(WM_UPC_SALES[STORE_NBR]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 3de727de-5e5e-42bd-a6ef-feac0f8c58fc
+
+		changedProperty = IsHidden
+
+	measure 'Stores/Week - WMCA Pre Relay' = CALCULATE(DISTINCTCOUNT(WM_UPC_SALES[STORE_WEEK_ID]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+		formatString: 0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 0869bf39-9a57-404a-aafe-4b3e90678110
+
+		changedProperty = IsHidden
+
+	/// This Year Average Weekly Sales Amount.
+	measure 'TY Avg Wkly $ Sales - WMCA Pre Relay' = DIVIDE([TY $ Sales - WMCA Pre Relay], [Week Count - WMCA Pre Relay], 0)
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 285671e3-1ede-4c7b-a61d-337fa1034bc2
+
+		changedProperty = IsHidden
+
+	/// Last Year Average Weekly Sales Amount.
+	measure 'LY Avg Wkly $ Sales - WMCA Pre Relay' = DIVIDE([LY $ Sales - WMCA Pre Relay], [Week Count - WMCA Pre Relay], 0)
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 04b22a50-8667-4aa1-9c30-5166854b4d19
+
+		changedProperty = IsHidden
+
+	/// This Year Average Weekly Sales Units.
+	measure 'TY Avg Wkly Unit Sales - WMCA Pre Relay' = DIVIDE([TY Unit Sales - WMCA Pre Relay], [Week Count - WMCA Pre Relay], 0)
+		formatString: #,0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 7f60b8bf-ff61-44b9-a647-0fad21b7f4c0
+
+		changedProperty = IsHidden
+
+	/// Last Year Average Weekly Sales Units.
+	measure 'LY Avg Wkly Unit Sales - WMCA Pre Relay' = DIVIDE([LY $ Sales - WMCA Pre Relay], [Week Count - WMCA Pre Relay], 0)
+		formatString: #,0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: caead6a4-3ef7-42f9-a2ca-e61bf8989f80
+
+		changedProperty = IsHidden
+
+	/// This Year $ Sales Velocity: $ per Store per Week.
+	measure 'TY $/S/W - WMCA Pre Relay' = DIVIDE([TY $ Sales - WMCA Pre Relay], [Stores/Week - WMCA Pre Relay], 0)
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 8ff402e6-bf92-447f-a6b7-22bb75e69499
+
+		changedProperty = IsHidden
+
+	/// Last Year $ Sales Velocity: $ per Store per Week.
+	measure 'LY $/S/W - WMCA Pre Relay' = DIVIDE([LY $ Sales - WMCA Pre Relay], [Stores/Week - WMCA Pre Relay], 0)
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 927e247e-8d51-4fe3-94fd-1036fab6bb6d
+
+		changedProperty = IsHidden
+
+	/// This Year Unit Sales Velocity: Units per Store per Week.
+	measure 'TY U/S/W - WMCA Pre Relay' = DIVIDE([TY Unit Sales - WMCA Pre Relay], [Stores/Week - WMCA Pre Relay], 0)
+		formatString: #,0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 565e3319-5276-480b-ab8b-8916a03bc233
+
+		changedProperty = IsHidden
+
+	/// Last Year Unit Sales Velocity: Units per Store per Week.
+	measure 'LY U/S/W - WMCA Pre Relay' = DIVIDE([LY Unit Sales - WMCA Pre Relay], [Stores/Week - WMCA Pre Relay], 0)
+		formatString: #,0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 242cd744-9f29-46f5-9ade-91dfffe623b3
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff $ Sales YoY - WMCA Pre Relay' = [TY $ Sales - WMCA Pre Relay] - [LY $ Sales - WMCA Pre Relay]
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 8a606621-32ec-460a-b99c-d3076eefbdbe
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Unit Sales YoY - WMCA Pre Relay' = [TY Unit Sales - WMCA Pre Relay] - [LY Unit Sales - WMCA Pre Relay]
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 1ab0bfc2-9ee5-4b78-84f8-7b78c43afaec
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff $/S/W YoY - WMCA Pre Relay' = [TY $/S/W - WMCA Pre Relay] - [LY $/S/W - WMCA Pre Relay]
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: a6de7af3-2d09-433d-ac0a-cc028b844de8
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff U/S/W YoY - WMCA Pre Relay' = [TY U/S/W - WMCA Pre Relay] - [LY U/S/W - WMCA Pre Relay]
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 511c798e-1386-4bf9-9804-cf8dba8d479a
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Avg Wkly $ Sales YoY - WMCA Pre Relay' = [TY Avg Wkly $ Sales - WMCA Pre Relay] - [LY Avg Wkly $ Sales - WMCA Pre Relay]
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 4cd71544-c6bf-4eb9-87c7-fedc4c87b1a5
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Avg Wkly Unit Sales YoY - WMCA Pre Relay' = [TY Avg Wkly Unit Sales - WMCA Pre Relay] - [LY Avg Wkly Unit Sales - WMCA Pre Relay]
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 8a7c6a0e-d253-4666-a01e-b2b7e0898936
+
+		changedProperty = IsHidden
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly $ Sales YoY - WMCA Pre Relay' = ```
+			DIVIDE(([# Diff Avg Wkly $ Sales YoY - WMCA Pre Relay]),[LY $ Sales - WMCA Pre Relay])
+			
+			```
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 383098de-ff15-4e03-a1e2-08e9c47bd18b
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly Unit Sales YoY - WMCA Pre Relay' = ```
+			DIVIDE(([# Diff Avg Wkly Unit Sales YoY - WMCA Pre Relay]),[LY Unit Sales - WMCA Pre Relay])
+			
+			```
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 705a0c17-ff8e-4a3d-befd-5c56767a82df
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'TY $ Sales - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY $ Sales - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY $ Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY $ Sales - WMCA Weekly] - [TY $ Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY $ Sales - WMCA Weekly]-[TY $ Sales - WMCA Pre Relay], [TY $ Sales - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 250e3556-d4aa-49ce-a085-966a3edc0cb7
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "$#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "$0,0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+$#,##0;$(#,##0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "$#,##0"
+				)
+
+		changedProperty = IsHidden
+
+	/// This Year Weekly Unit Sales.
+	measure 'TY Unit Sales - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Unit Sales - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Unit Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Unit Sales - WMCA Weekly] - [TY Unit Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Unit Sales - WMCA Weekly]-[TY Unit Sales - WMCA Pre Relay], [TY Unit Sales - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 7d6d76c3-c90a-41bd-84a8-d22aa3498712
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0,0;(#,0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "#,##0"
+				)
+
+		changedProperty = IsHidden
+
+	measure 'Store Count - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [Store Count - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [Store Count - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [Store Count - WMCA Weekly] - [Store Count - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([Store Count - WMCA Weekly]-[Store Count - WMCA Pre Relay], [Store Count - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 71c52696-1040-42f4-be48-725e30f5294f
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0,0;(#,0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "#,##0"
+				)
+
+		changedProperty = IsHidden
+
+	measure 'Weeks Count - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [Week Count - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [Week Count - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [Week Count - WMCA Weekly] - [Week Count - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([Week Count - WMCA Weekly]-[Week Count - WMCA Pre Relay], [Week Count - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 85572969-b111-4849-9de2-ae05816040f1
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0,0;(#,0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "#,##0"
+				)
+
+		changedProperty = IsHidden
+
+	/// This Year $ Sales Velocity: $ per Store per Week.
+	measure 'TY $/S/W - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY $/S/W - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY $/S/W - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY $/S/W - WMCA Weekly] - [TY $/S/W - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY $/S/W - WMCA Weekly]-[TY $/S/W - WMCA Pre Relay], [TY $/S/W - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: d1bce08e-49d5-4cbb-8c3e-78398ff4e913
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "$#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "$0,0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+$#,##0;$(#,##0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "$#,##0"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// This Year Unit Sales Velocity: Units per Store per Week.
+	measure 'TY U/S/W - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY U/S/W - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY U/S/W - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY U/S/W - WMCA Weekly] - [TY U/S/W - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY U/S/W - WMCA Weekly]-[TY U/S/W - WMCA Pre Relay], [TY U/S/W - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: c74c612c-1230-49bb-8722-3367d00ba8a3
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0,0;(#,0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "#,##0"
+				)
+
+		changedProperty = IsHidden
+
+	measure 'Store/Weeks - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [Stores/Week - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [Stores/Week - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [Stores/Week - WMCA Weekly] - [Stores/Week - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([Stores/Week - WMCA Weekly]-[Stores/Week - WMCA Pre Relay], [Stores/Week - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: e363822d-73bf-483d-989d-cf3ade6f6734
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0,0;(#,0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "#,##0"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'LY Sales - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [LY $ Sales - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [LY $ Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [LY $ Sales - WMCA Weekly] - [LY $ Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([LY $ Sales - WMCA Weekly]-[LY $ Sales - WMCA Pre Relay], [LY $ Sales - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: e66c2dd8-8a68-41a5-999f-6341d780e9a8
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "$#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "$0,0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+$#,##0;$(#,##0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "$#,##0"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'LY Unit Sales - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [LY Unit Sales - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [LY Unit Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [LY Unit Sales - WMCA Weekly] - [LY Unit Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([LY Unit Sales - WMCA Weekly]-[LY Unit Sales - WMCA Pre Relay], [LY Unit Sales - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 1f62ae61-7a6c-493f-998d-a63977f5dc7d
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0,0;(#,0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "#,##0"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Last Year $ Sales Velocity: $ per Store per Week.
+	measure 'LY $/S/W - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [LY $/S/W - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [LY $/S/W - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [LY $/S/W - WMCA Weekly] - [LY $/S/W - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([LY $/S/W - WMCA Weekly]-[LY $/S/W - WMCA Pre Relay], [LY $/S/W - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 83e2ab34-374e-4a85-97e2-0a81bbca75e8
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "$#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "$0,0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+$#,##0;$(#,##0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "$#,##0"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Last Year Unit Sales Velocity: Units per Store per Week.
+	measure 'LY U/S/W - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [LY U/S/W - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [LY U/S/W - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [LY U/S/W - WMCA Weekly] - [LY U/S/W - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([LY U/S/W - WMCA Weekly]-[LY U/S/W - WMCA Pre Relay], [LY U/S/W - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 1e701c62-1e6b-47ce-8be6-85918269cad2
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0,0;(#,0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "#,##0"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff $/S/W YoY - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [# Diff $/S/W YoY - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [# Diff $/S/W YoY - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [# Diff $/S/W YoY - WMCA Weekly] - [# Diff $/S/W YoY - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([# Diff $/S/W YoY - WMCA Weekly]-[# Diff $/S/W YoY - WMCA Pre Relay], [# Diff $/S/W YoY - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: ce176568-9211-436d-a4c2-9ce48df7cf63
+
+		formatStringDefinition = "+$#,##0;$(#,##0)"
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff U/S/W YoY - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [# Diff U/S/W YoY - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [# Diff U/S/W YoY - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [# Diff U/S/W YoY - WMCA Weekly] - [# Diff U/S/W YoY - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([# Diff U/S/W YoY - WMCA Weekly]-[# Diff U/S/W YoY - WMCA Pre Relay], [# Diff U/S/W YoY - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: e0c6bc01-6288-4f45-9839-bcf3cd805a66
+
+		formatStringDefinition = ```
+				"+0,0;(#,0)"
+				    
+				```
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg $/S/W YoY - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [% Chg $/S/W YoY - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [% Chg $/S/W YoY - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [% Chg $/S/W YoY - WMCA Weekly] - [% Chg $/S/W YoY - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", [% Chg $/S/W YoY - WMCA Weekly] - [% Chg $/S/W YoY - WMCA Pre Relay]
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 72432e54-cb9e-4051-8220-27e52e2e04da
+
+		formatStringDefinition = "+0.0%;(0.0%)"
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// This Year Average Weekly Sales Amount.
+	measure 'TY Avg Wkly $ Sales - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Avg Wkly $ Sales - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Avg Wkly $ Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Avg Wkly $ Sales - WMCA Weekly] - [TY Avg Wkly $ Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Avg Wkly $ Sales - WMCA Weekly]-[TY Avg Wkly $ Sales - WMCA Pre Relay], [TY Avg Wkly $ Sales - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: f91cd97b-58ec-44eb-b38e-7dbcbec0f8c8
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "$#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "$0,0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+$#,##0;$(#,##0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "$#,##0"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Last Year Average Weekly Sales Amount.
+	measure 'LY Avg Wkly $ Sales - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [LY Avg Wkly $ Sales - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [LY Avg Wkly $ Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [LY Avg Wkly $ Sales - WMCA Weekly] - [LY Avg Wkly $ Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([LY Avg Wkly $ Sales - WMCA Weekly]-[LY Avg Wkly $ Sales - WMCA Pre Relay], [LY Avg Wkly $ Sales - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 7d9da2ca-0944-4fd6-ba03-4f5acc78c3f6
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "$#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "$0,0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+$#,##0;$(#,##0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "$#,##0"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// This Year Average Weekly Sales Units.
+	measure 'TY Avg Wkly Unit Sales - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Avg Wkly Unit Sales - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Avg Wkly Unit Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Avg Wkly Unit Sales - WMCA Weekly] - [TY Avg Wkly Unit Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Avg Wkly Unit Sales - WMCA Weekly]-[TY Avg Wkly Unit Sales - WMCA Pre Relay], [TY Avg Wkly Unit Sales - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 54ef70e7-4e7a-43d8-a3aa-bab86984d56c
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0,0;(#,0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "#,##0"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Last Year Average Weekly Sales Units.
+	measure 'LY Avg Wkly Unit Sales - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [LY Avg Wkly Unit Sales - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [LY Avg Wkly Unit Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [LY Avg Wkly Unit Sales - WMCA Weekly] - [LY Avg Wkly Unit Sales - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([LY Avg Wkly Unit Sales - WMCA Weekly]-[LY Avg Wkly Unit Sales - WMCA Pre Relay], [LY Avg Wkly Unit Sales - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: a2cf3cb3-3dfa-49cd-b96b-3df40d3d6838
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0,0;(#,0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "#,##0"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '$ Share - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [$ Share - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [$ Share - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [$ Share - WMCA Weekly] - [$ Share - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([$ Share - WMCA Weekly]-[$ Share - WMCA Pre Relay], [$ Share - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: f51a2abb-b92c-49e8-8f1f-261280cb8093
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "0.0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "0.0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0.0;(0.0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0;(0.0)",
+				    "0.0%"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Unit Share - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [Unit Share - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [Unit Share - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [Unit Share - WMCA Weekly] - [Unit Share - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([Unit Share - WMCA Weekly]-[Unit Share - WMCA Pre Relay], [Unit Share - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: c817451a-a594-4fa0-8311-52a1831e47e6
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "0.0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "0.0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0.0;(0.0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0;(0.0)",
+				    "0.0"
+				)
+
+		changedProperty = IsHidden
+
+	measure 'TY C/S/W - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY C/S/W - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY C/S/W - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY C/S/W - WMCA Weekly] - [TY C/S/W - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY C/S/W - WMCA Weekly]-[TY C/S/W - WMCA Pre Relay], [TY C/S/W - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 108e5f1c-90df-4447-b74f-ff65bea6273f
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "#,##0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0,0;(#,0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "#,##0"
+				)
+
+		changedProperty = IsHidden
+
+	measure 'TY AUR - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Price - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Price - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Price - WMCA Weekly] - [TY Price - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Price - WMCA Weekly]-[TY Price - WMCA Pre Relay], [TY Price - WMCA Pre Relay], 0)
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 33919f2d-6851-4ed5-af05-68509aa4ebf9
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "$#,##0.0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "$#,0.0",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+$#,##0.0;$(#,##0.0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0%;(0.0%)",
+				    "$#,##0.0"
+				)
+
+		changedProperty = IsHidden
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly $ Sales vs LY - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [% Chg Avg Wkly $ Sales YoY - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [% Chg Avg Wkly $ Sales YoY - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", ([% Chg Avg Wkly $ Sales YoY - WMCA Weekly] - [% Chg Avg Wkly $ Sales YoY - WMCA Pre Relay])*100,
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", ([% Chg Avg Wkly $ Sales YoY - WMCA Weekly] - [% Chg Avg Wkly $ Sales YoY - WMCA Pre Relay])*100
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: de31cfbe-66d0-4cc0-828b-094aa7fbd934
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "+0.0%;(0.0%)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "+0.0%;(0.0%)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0.0;(0.0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0;0.0",
+				    "+0.0%;(0.0%)"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly Unit Sales YoY - WMCA Pre Post Comparison' =
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [% Chg Avg Wkly Unit Sales YoY - WMCA Weekly],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [% Chg Avg Wkly Unit Sales YoY - WMCA Pre Relay],
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", ([% Chg Avg Wkly Unit Sales YoY - WMCA Weekly] - [% Chg Avg Wkly Unit Sales YoY - WMCA Pre Relay])*100,
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", ([% Chg Avg Wkly Unit Sales YoY - WMCA Weekly] - [% Chg Avg Wkly Unit Sales YoY - WMCA Pre Relay])*100
+			)
+		displayFolder: WMCA Pre Post Comparison
+		lineageTag: 6ef96419-ada7-49e8-b799-c1f9040ab95e
+
+		formatStringDefinition =
+				SWITCH(
+				    TRUE(),
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", "+0.0%;(0.0%)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", "+0.0%;(0.0%)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", "+0.0;(0.0)",
+				    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", "+0.0;0.0",
+				    "+0.0%;(0.0%)"
+				)
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg $/S/W YoY - WMCA Pre Relay' = ```
+			DIVIDE(([# Diff $/S/W YoY - WMCA Pre Relay]),[LY $/S/W - WMCA Pre Relay])
+			
+			```
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 360d6b3b-888e-43ee-8227-995d40d1b6be
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg U/S/W YoY - WMCA Pre Relay' = ```
+			DIVIDE(([# Diff U/S/W YoY - WMCA Pre Relay]),[LY U/S/W - WMCA Pre Relay])
+			
+			```
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: fb169643-761b-4a66-ba3f-0b70691ddcd8
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '$ Share - WMCA Pre Relay' = ```
+			DIVIDE(
+			    [TY $ Sales - WMCA Pre Relay],
+			    CALCULATE(
+			        [TY $ Sales - WMCA Pre Relay],
+			        All('WM Master - Calendar Week'), 
+			        ALLEXCEPT(WM_UPC_SALES, WM_UPC_SALES[WM_YR_WK_NBR] ),
+			        REMOVEFILTERS(WM_UPC_SALES),
+			        'WM Master - Mod Trait'[TRAIT_NBR] <> BLANK(),
+			        'WM Master - Mod Trait'[TRAIT_NBR] <> 0,
+			        'WM Master - UPC'[CA_PACK_TYPE] <> Blank(),
+			        'WM Master - UPC'[CA_PACK_TYPE] <> "Not Applicable",
+			        USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR])
+			    )
+			) * 100
+			```
+		formatString: 0.0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: ae0c016f-76fb-4212-b97f-a048ae40a3ba
+
+		changedProperty = IsHidden
+
+	measure 'Unit Share - WMCA Pre Relay' = ```
+			DIVIDE(
+			    [TY Unit Sales - WMCA Pre Relay],
+			    CALCULATE(
+			        [TY Unit Sales - WMCA Pre Relay],
+			        All('WM Master - Calendar Week'), 
+			        ALLEXCEPT(WM_UPC_SALES, WM_UPC_SALES[WM_YR_WK_NBR] ),
+			        REMOVEFILTERS(WM_UPC_SALES),
+			        'WM Master - Mod Trait'[TRAIT_NBR] <> BLANK(),
+			        'WM Master - Mod Trait'[TRAIT_NBR] <> 0,
+			        'WM Master - UPC'[CA_PACK_TYPE] <> Blank(),
+			        'WM Master - UPC'[CA_PACK_TYPE] <> "Not Applicable",
+			        USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR])
+			    )
+			) * 100
+			```
+		formatString: 0.0
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 1d9c06e8-0542-43bb-9c25-8cceff5d6339
+
+		changedProperty = IsHidden
+
+	measure 'TY C/S/W - WMCA Pre Relay' = DIVIDE([TY $/S/W - WMCA Pre Relay]+[TY U/S/W - WMCA Pre Relay], 2, 0)
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 09b5bcbb-104b-4675-80b6-03fb431f432d
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'LY C/S/W - WMCA Pre Relay' = DIVIDE([LY $/S/W - WMCA Weekly]+[LY U/S/W - WMCA Weekly], 2, 0)
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 19d6e936-43c7-4f5a-887c-9b0df7f0d32a
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TY In Stock Rate - Weekly Pre Relay' =
+			
+			VAR TotalOutOfStock =
+			    CALCULATE(
+			        SUM(WM_STORE_ITEM_UPC_WEEKLY[OUT_OF_STOCK]),
+			        WM_STORE_ITEM_UPC_WEEKLY[IN_MODULAR] = "Yes",
+			        ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_STORE_ITEM_UPC_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR])
+			    )
+			VAR RowCount =
+			    CALCULATE(
+			        COUNTROWS(WM_STORE_ITEM_UPC_WEEKLY),
+			        WM_STORE_ITEM_UPC_WEEKLY[IN_MODULAR] = "Yes",
+			        ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_STORE_ITEM_UPC_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR])
+			    )
+			VAR TotalDays =
+			    RowCount * 7
+			RETURN
+			DIVIDE( TotalDays - TotalOutOfStock, TotalDays, BLANK() )
+		formatString: 0.0%;-0.0%;0.0%
+		isHidden
+		displayFolder: WMCA Pre Relay
+		lineageTag: 47520f29-1ee8-4461-8b86-65b1430240e5
+
+		changedProperty = IsHidden
+
+	partition '07 . Metrics - Category Pre Post Comparison' = m
+		mode: import
+		queryGroup: 'Reporting - Metrics'
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
