@@ -1,0 +1,221 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "1b1e8f71b15a5a29c136",
+  "displayName": "Weekly Sales - Red Bull",
+  "displayOption": "FitToWidth",
+  "height": 1080,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4d7f500c6f70fa884856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Store"
+              }
+            },
+            "Property": "STORE_NBR"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "5453b47407e770d6acd5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - UPC"
+              }
+            },
+            "Property": "CA_BRAND"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "w",
+              "Entity": "WM Master - UPC",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "w"
+                          }
+                        },
+                        "Property": "CA_BRAND"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'RED BULL'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "94e00846929370df3948",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F1EFEF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "417L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "personalizeVisual": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "perspectiveRef": {
+            "expr": {
+              "Literal": {
+                "Value": "'Sales and Fulfillment - Weekly'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "524d3127498bbf364be3",
+      "target": "38545905636cde5157a1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8bec7fa8034d68e3061d",
+      "target": "38545905636cde5157a1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "524d3127498bbf364be3",
+      "target": "f8e4c8429bcf9c12ee9d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "524d3127498bbf364be3",
+      "target": "5b362dc3a76201f3601b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "524d3127498bbf364be3",
+      "target": "2a2293102e6a7e93a0c5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8bec7fa8034d68e3061d",
+      "target": "01b7a9df4dd63bbf1af2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "524d3127498bbf364be3",
+      "target": "c63d4e7c43fad53e64ce",
+      "type": "DataFilter"
+    },
+    {
+      "source": "c63d4e7c43fad53e64ce",
+      "target": "edb5412b9008e502e923",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c63d4e7c43fad53e64ce",
+      "target": "a23986ae9a71a570df04",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c63d4e7c43fad53e64ce",
+      "target": "5acce0d4f421a14d18ff",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c63d4e7c43fad53e64ce",
+      "target": "f8e4c8429bcf9c12ee9d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c63d4e7c43fad53e64ce",
+      "target": "5b362dc3a76201f3601b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c63d4e7c43fad53e64ce",
+      "target": "2a2293102e6a7e93a0c5",
+      "type": "NoFilter"
+    }
+  ]
+}

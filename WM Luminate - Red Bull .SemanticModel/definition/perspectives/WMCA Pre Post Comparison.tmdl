@@ -1,0 +1,404 @@
+perspective 'WMCA Pre Post Comparison'
+
+	perspectiveTable 'WM Master - Store'
+
+		perspectiveColumn STORE_NBR
+
+		perspectiveColumn STORE_NM
+
+		perspectiveColumn BANNER_CD
+
+		perspectiveColumn BANNER_DESC
+
+		perspectiveColumn BASE_DIV_NBR
+
+		perspectiveColumn CITY_NM
+
+		perspectiveColumn CNTY_NM
+
+		perspectiveColumn FIN_CLOSE_DT
+
+		perspectiveColumn FIN_OPEN_DT
+
+		perspectiveColumn LAT_DGR
+
+		perspectiveColumn LONG_DGR
+
+		perspectiveColumn MARKET_NBR
+
+		perspectiveColumn MARKET_NM
+
+		perspectiveColumn OPEN_24_HR_IND
+
+		perspectiveColumn OPEN_STATUS_CD
+
+		perspectiveColumn OPEN_STATUS_DESC
+
+		perspectiveColumn OPEN_SUN_IND
+
+		perspectiveColumn OP_CLOSE_DT
+
+		perspectiveColumn REGION_NBR
+
+		perspectiveColumn REGION_NM
+
+		perspectiveColumn RELO_FLIP_DT
+
+		perspectiveColumn SEG_NBR
+
+		perspectiveColumn SEG_NM
+
+		perspectiveColumn STATE_PROV_CD
+
+		perspectiveColumn STORE_MGR_NM
+
+		perspectiveColumn STORE_TYPE_CD
+
+		perspectiveColumn STORE_TYPE_DESC
+
+		perspectiveColumn ST_PROV_NM
+
+		perspectiveColumn SUBDIVISION_NBR
+
+		perspectiveColumn SUBDIVISION_NM
+
+		perspectiveColumn STORE_NBR_TXT
+
+		perspectiveColumn STORE_REGION_NBR_TXT
+
+		perspectiveColumn MARKET_NBR_TXT
+
+		perspectiveColumn STORE_NBR_NAME
+
+		perspectiveColumn RB_BU
+
+		perspectiveColumn RB_BU_DESC
+
+		perspectiveColumn RB_REGION
+
+		perspectiveColumn RB_REGION_DESC
+
+		perspectiveColumn 'RB BU'
+
+		perspectiveColumn DP
+
+		perspectiveColumn DP_DESC
+
+		perspectiveColumn TRAIT_AS_IS
+
+	perspectiveTable 'WM Master - Service Channel'
+
+		perspectiveColumn KEY
+
+		perspectiveColumn ID
+
+		perspectiveColumn 'Service Channel'
+
+	perspectiveTable 'WM Master - Mod Trait'
+
+		perspectiveColumn MODLR_CATG_NBR
+
+		perspectiveColumn TRAIT_NBR
+
+		perspectiveColumn TRAIT_DESC
+
+		perspectiveColumn TRAIT_GROUP_DESC
+
+		perspectiveColumn TRAIT_CATEGORY_DESC
+
+		perspectiveColumn TRAIT_TXT
+
+		perspectiveColumn MODLR_CATG_DESC
+
+		perspectiveColumn MODLR_PLAN_TITLE_DESC
+
+		perspectiveColumn MODLR_WDTH_QTY
+
+		perspectiveColumn Trait
+
+		perspectiveColumn 'Mod Category'
+
+		perspectiveColumn MODLR_FOOTAGE
+
+		perspectiveColumn 'Strike Zone - Red Bull'
+
+		perspectiveColumn 'Strike Zone - Monster'
+
+		perspectiveColumn 'Strike Zone - AO'
+
+	perspectiveTable 'WM Master - Calendar Week'
+
+		perspectiveColumn WM_YR_WK_NBR
+
+		perspectiveColumn WM_WK_NBR
+
+		perspectiveColumn WM_FULL_YR_NBR
+
+		perspectiveColumn WM_YR_WK_TXT
+
+		perspectiveColumn WM_START_DATE
+
+		perspectiveColumn WM_END_DATE
+
+		perspectiveColumn FYTD_FLAG
+
+		perspectiveColumn LW_FLAG
+
+		perspectiveColumn L13W_FLAG
+
+		perspectiveColumn L4W_FLAG
+
+		perspectiveColumn L52W_FLAG
+
+	perspectiveTable 'WM Master - UPC'
+
+		perspectiveColumn UPC_NBR
+
+		perspectiveColumn UPC_TXT
+
+		perspectiveColumn OZ_PER_PACK
+
+		perspectiveColumn UPC_SHORT_DESC
+
+		perspectiveColumn UPC_LONG_DESC
+
+		perspectiveColumn 'WM UPC'
+
+		perspectiveColumn 'WM UPC Desc'
+
+		perspectiveColumn PRODUCT
+
+		perspectiveColumn FINELINE
+
+		perspectiveColumn SUBCATEGORY
+
+		perspectiveColumn CATEGORY
+
+		perspectiveColumn CATEGORY_GROUP
+
+		perspectiveColumn DEPARTMENT
+
+		perspectiveColumn SEGMENT
+
+		perspectiveColumn REVIEWED
+
+		perspectiveColumn CA_BRAND
+
+		perspectiveColumn CA_CAFFEINE_MG_PER_CAN
+
+		perspectiveColumn CA_ENERGY_CATEGORY
+
+		perspectiveColumn CA_ENERGY_SUB_CATEGORY
+
+		perspectiveColumn CA_FLAVOR_GROUP
+
+		perspectiveColumn CA_OZ_PER_CAN
+
+		perspectiveColumn CA_PACK_SIZE
+
+		perspectiveColumn CA_PACK_TYPE
+
+		perspectiveColumn CA_PRODUCT_DESCRIPTION
+
+		perspectiveColumn CA_REG_VS_REDUCED_SUGAR_CAL
+
+		perspectiveColumn CA_SUB_BRAND
+
+		perspectiveColumn CA_SUPPLIER
+
+		perspectiveColumn CA_TOTAL_OZ
+
+		perspectiveColumn USER_DEFINED_LAUNCH_DATE
+
+		perspectiveColumn MODULARIZED
+
+		perspectiveColumn ITEM_STATUS
+
+	perspectiveTable 'WM Master - Store Trait (As Is)'
+
+		perspectiveColumn TRAIT_NBR
+
+		perspectiveColumn TRAIT_DESC
+
+		perspectiveColumn TRAIT_CATEGORY_DESC
+
+		perspectiveColumn TRAIT_GROUP_DESC
+
+		perspectiveColumn MODLR_CATG_NBR
+
+		perspectiveColumn MODLR_CATG_DESC
+
+		perspectiveColumn MODLR_PLAN_TITLE_DESC
+
+		perspectiveColumn MODLR_WDTH_QTY
+
+		perspectiveColumn MODLR_FOOTAGE
+
+		perspectiveColumn 'Strike Zone - Red Bull'
+
+		perspectiveColumn 'Strike Zone - Monster'
+
+		perspectiveColumn 'Strike Zone - AO'
+
+		perspectiveColumn TRAIT_TXT
+
+		perspectiveColumn Trait
+
+		perspectiveColumn 'Mod Category'
+
+	perspectiveTable 'WM Master - Calendar Week Pre Relay'
+
+		perspectiveColumn WM_YR_WK_NBR
+
+		perspectiveColumn WM_WK_NBR
+
+		perspectiveColumn WM_FULL_YR_NBR
+
+		perspectiveColumn WM_START_DATE
+
+		perspectiveColumn WM_END_DATE
+
+		perspectiveColumn FYTD_FLAG
+
+		perspectiveColumn LW_FLAG
+
+		perspectiveColumn L13W_FLAG
+
+		perspectiveColumn L4W_FLAG
+
+		perspectiveColumn L52W_FLAG
+
+		perspectiveColumn WM_YR_WK_TXT
+
+	perspectiveTable 'WM Master - Pre Post Time Frame'
+
+		perspectiveColumn 'Time Frame ID'
+
+		perspectiveColumn 'Time Frame'
+
+		perspectiveColumn Order
+
+	perspectiveTable '07 . Metrics - Category Pre Post Comparison'
+
+		perspectiveMeasure 'TY Unit Sales - WMCA Pre Relay'
+
+		perspectiveMeasure 'TY $ Sales - WMCA Pre Relay'
+
+		perspectiveMeasure 'TY Basket Count - WMCA Pre Relay'
+
+		perspectiveMeasure 'LY $ Sales - WMCA Pre Relay'
+
+		perspectiveMeasure 'LY Basket Count - WMCA Pre Relay'
+
+		perspectiveMeasure 'LY Unit Sales - WMCA Pre Relay'
+
+		perspectiveMeasure 'TY Price - WMCA Pre Relay'
+
+		perspectiveMeasure '% Chg $ Sales YoY - WMCA Pre Relay'
+
+		perspectiveMeasure '% Chg Unit Sales - WMCA Pre Relay'
+
+		perspectiveMeasure 'LY Price - WMCA Pre Relay'
+
+		perspectiveMeasure '% Chg Price YoY - WMCA Pre Relay'
+
+		perspectiveMeasure 'Week Count - WMCA Pre Relay'
+
+		perspectiveMeasure 'Store Count - WMCA Pre Relay'
+
+		perspectiveMeasure 'Stores/Week - WMCA Pre Relay'
+
+		perspectiveMeasure 'TY Avg Wkly $ Sales - WMCA Pre Relay'
+
+		perspectiveMeasure 'LY Avg Wkly $ Sales - WMCA Pre Relay'
+
+		perspectiveMeasure 'TY Avg Wkly Unit Sales - WMCA Pre Relay'
+
+		perspectiveMeasure 'LY Avg Wkly Unit Sales - WMCA Pre Relay'
+
+		perspectiveMeasure 'TY $/S/W - WMCA Pre Relay'
+
+		perspectiveMeasure 'LY $/S/W - WMCA Pre Relay'
+
+		perspectiveMeasure 'TY U/S/W - WMCA Pre Relay'
+
+		perspectiveMeasure 'LY U/S/W - WMCA Pre Relay'
+
+		perspectiveMeasure '# Diff $ Sales YoY - WMCA Pre Relay'
+
+		perspectiveMeasure '# Diff Unit Sales YoY - WMCA Pre Relay'
+
+		perspectiveMeasure '# Diff $/S/W YoY - WMCA Pre Relay'
+
+		perspectiveMeasure '# Diff U/S/W YoY - WMCA Pre Relay'
+
+		perspectiveMeasure '# Diff Avg Wkly $ Sales YoY - WMCA Pre Relay'
+
+		perspectiveMeasure '# Diff Avg Wkly Unit Sales YoY - WMCA Pre Relay'
+
+		perspectiveMeasure '% Chg Avg Wkly $ Sales YoY - WMCA Pre Relay'
+
+		perspectiveMeasure '% Chg Avg Wkly Unit Sales YoY - WMCA Pre Relay'
+
+		perspectiveMeasure 'TY $ Sales - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'TY Unit Sales - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'Store Count - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'Weeks Count - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'TY $/S/W - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'TY U/S/W - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'Store/Weeks - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'LY Sales - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'LY Unit Sales - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'LY $/S/W - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'LY U/S/W - WMCA Pre Post Comparison'
+
+		perspectiveMeasure '# Diff $/S/W YoY - WMCA Pre Post Comparison'
+
+		perspectiveMeasure '# Diff U/S/W YoY - WMCA Pre Post Comparison'
+
+		perspectiveMeasure '% Chg $/S/W YoY - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'TY Avg Wkly $ Sales - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'LY Avg Wkly $ Sales - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'TY Avg Wkly Unit Sales - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'LY Avg Wkly Unit Sales - WMCA Pre Post Comparison'
+
+		perspectiveMeasure '$ Share - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'Unit Share - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'TY C/S/W - WMCA Pre Post Comparison'
+
+		perspectiveMeasure 'TY AUR - WMCA Pre Post Comparison'
+
+		perspectiveMeasure '% Chg Avg Wkly $ Sales vs LY - WMCA Pre Post Comparison'
+
+		perspectiveMeasure '% Chg Avg Wkly Unit Sales YoY - WMCA Pre Post Comparison'
+
+		perspectiveMeasure '% Chg $/S/W YoY - WMCA Pre Relay'
+
+		perspectiveMeasure '% Chg U/S/W YoY - WMCA Pre Relay'
+
+		perspectiveMeasure '$ Share - WMCA Pre Relay'
+
+		perspectiveMeasure 'Unit Share - WMCA Pre Relay'
+
+		perspectiveMeasure 'TY C/S/W - WMCA Pre Relay'
+
+		perspectiveMeasure 'LY C/S/W - WMCA Pre Relay'
+
+		perspectiveMeasure 'TY In Stock Rate - Weekly Pre Relay'
+

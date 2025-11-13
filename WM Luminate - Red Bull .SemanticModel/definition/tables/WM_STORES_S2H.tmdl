@@ -1,0 +1,47 @@
+table WM_STORES_S2H
+	isHidden
+	lineageTag: 1ca25e94-477c-4398-bb4a-61614facf5e1
+	sourceLineageTag: 85fba7eb-9e03-45f9-affd-8f3beb055141
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: d1aa56d9-331f-470e-9571-fcff0b688b37
+		sourceLineageTag: 72fc8d81-cb33-44bd-ae33-caccce805846
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	column STORE_NM
+		dataType: string
+		isHidden
+		lineageTag: 66a3bdad-95a9-4f7f-a4a7-948f7ad43ad1
+		sourceLineageTag: 5b383885-7378-4855-a3a1-e9d3b3fcbf95
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NM
+
+		annotation SummarizationSetBy = User
+
+	column BANNER_DESC
+		dataType: string
+		isHidden
+		lineageTag: 4dfc5faf-e2f6-474b-b22e-abfdde03023b
+		sourceLineageTag: 107fb0a3-2282-4a62-b645-265d9dffdd77
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BANNER_DESC
+
+		annotation SummarizationSetBy = User
+
+	partition WM_STORES_S2H = entity
+		mode: directQuery
+		source
+			entityName: WM_STORES_S2H
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

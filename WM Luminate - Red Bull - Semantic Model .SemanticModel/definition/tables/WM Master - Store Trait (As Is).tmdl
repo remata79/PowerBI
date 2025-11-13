@@ -1,0 +1,201 @@
+/// The Traits view provides nformation about six-digit trait numbers and how they relates to attributes of the store or items. Traits can be created to represent an attribute of the store or items.
+/// 
+/// SOURCE: WM_TRAIT_VIEW
+table 'WM Master - Store Trait (As Is)'
+	lineageTag: dda17fd0-370f-439f-b76c-a6e48aaf0216
+
+	column TRAIT_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: 62bf5623-7d2d-40e1-890b-7aedebc2bc6e
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRAIT_DESC
+		dataType: string
+		lineageTag: 1b60c77d-4a39-4cfe-af10-aba8ac6866f7
+		summarizeBy: none
+		sourceColumn: TRAIT_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRAIT_CATEGORY_DESC
+		dataType: string
+		lineageTag: 187a79d4-6779-4d15-b299-ffcc5b93749f
+		summarizeBy: none
+		sourceColumn: TRAIT_CATEGORY_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRAIT_GROUP_DESC
+		dataType: string
+		lineageTag: 73eaa569-28a2-4e5d-a44c-14b9ee13bcf7
+		summarizeBy: none
+		sourceColumn: TRAIT_GROUP_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column MODLR_CATG_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: f10e2654-70dc-4af5-aab0-11077242f8d1
+		summarizeBy: none
+		sourceColumn: MODLR_CATG_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MODLR_CATG_DESC
+		dataType: string
+		lineageTag: 92f8c015-baa2-47d7-88d0-68fc92ecb77a
+		summarizeBy: none
+		sourceColumn: MODLR_CATG_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column MODLR_PLAN_TITLE_DESC
+		dataType: string
+		lineageTag: 303da5dd-f07f-4a36-8faa-0d5df7c460d3
+		summarizeBy: none
+		sourceColumn: MODLR_PLAN_TITLE_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column MODLR_WDTH_QTY
+		dataType: double
+		lineageTag: 6cd9f8ae-fed6-4a5f-a694-5fbf16e2c923
+		summarizeBy: none
+		sourceColumn: MODLR_WDTH_QTY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MODLR_FOOTAGE
+		dataType: int64
+		lineageTag: b7f61408-a200-4554-b87c-b8f5dc1ca7b5
+		summarizeBy: none
+		sourceColumn: MODLR_FOOTAGE
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Strike Zone - Red Bull'
+		dataType: int64
+		formatString: 0
+		lineageTag: d71c08ae-3dd3-43d6-8586-69f2a6703b4d
+		summarizeBy: none
+		sourceColumn: Strike Zone - Red Bull
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Strike Zone - Monster'
+		dataType: int64
+		formatString: 0
+		lineageTag: b5481fb5-5dc2-401a-8eb0-35176005ec78
+		summarizeBy: none
+		sourceColumn: Strike Zone - Monster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Strike Zone - AO'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0760b736-92e3-4767-bacc-3fb2686164b9
+		summarizeBy: none
+		sourceColumn: Strike Zone - AO
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRAIT_TXT
+		dataType: string
+		lineageTag: b9563045-0c70-4a4f-a0ff-2993e323014f
+		summarizeBy: none
+		sourceColumn: TRAIT_TXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trait
+		dataType: string
+		lineageTag: 80c2cea2-cfae-4258-9714-652b755b3eec
+		summarizeBy: none
+		sourceColumn: Trait
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mod Category'
+		dataType: string
+		lineageTag: 26b6b7b1-e218-495c-84a8-90d70dd86d27
+		summarizeBy: none
+		sourceColumn: Mod Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOCATION
+		dataType: string
+		lineageTag: 4b4f2fb9-3f90-4b29-b179-6da8c765645d
+		summarizeBy: none
+		sourceColumn: LOCATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column TYPE
+		dataType: string
+		lineageTag: d8250511-77b6-4b3c-839d-d1338802e517
+		summarizeBy: none
+		sourceColumn: TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COLD_V_WARM
+		dataType: string
+		lineageTag: a4c3fb36-8a3a-4139-a3bf-a2adf781199c
+		summarizeBy: none
+		sourceColumn: COLD_V_WARM
+
+		annotation SummarizationSetBy = Automatic
+
+	column RED_BULL_CATEGORY
+		dataType: string
+		lineageTag: d1342fc7-56ab-4513-a195-9fad5bce4a47
+		summarizeBy: none
+		sourceColumn: RED_BULL_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column MOD_REF_CATEGORY
+		dataType: string
+		lineageTag: 7583ba89-07c1-456f-bdc8-2d87bc3d3f9b
+		summarizeBy: none
+		sourceColumn: MOD_REF_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WM Master - Store Trait (As Is)' = m
+		mode: import
+		queryGroup: 'Reporting - Master Data'
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    MODULAR_TRAIT_UPC_VIEW_View = GOLD_Schema{[Name="WM_TRAIT_VIEW",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(MODULAR_TRAIT_UPC_VIEW_View,{{"TRAIT_NBR", Int64.Type}, {"MODLR_CATG_NBR", Int64.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "TRAIT_NBR", "TRAIT_NBR - Copy"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"TRAIT_NBR - Copy", "TRAIT_TXT"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns",{{"TRAIT_TXT", type text}}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Changed Type1", "Trait", each Text.Combine({Text.From([TRAIT_NBR], "en-US"), [MODLR_PLAN_TITLE_DESC]}, " - "), type text),
+				    #"Inserted Merged Column1" = Table.AddColumn(#"Inserted Merged Column", "Mod Category", each Text.Combine({Text.From([MODLR_CATG_NBR], "en-US"), [MODLR_CATG_DESC]}, " - "), type text),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Inserted Merged Column1",{{"SZ_RED_BULL", Int64.Type}, {"SZ_MONSTER", Int64.Type}, {"SZ_ALL_OTHERS", Int64.Type}}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Changed Type2",{{"SZ_ALL_OTHERS", "Strike Zone - AO"}, {"SZ_MONSTER", "Strike Zone - Monster"}, {"SZ_RED_BULL", "Strike Zone - Red Bull"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

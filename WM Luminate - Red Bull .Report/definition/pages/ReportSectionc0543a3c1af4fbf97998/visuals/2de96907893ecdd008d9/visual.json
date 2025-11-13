@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "2de96907893ecdd008d9",
+  "position": {
+    "x": 15.407407407407407,
+    "y": 227.55555555555554,
+    "z": 0,
+    "height": 1084.4444444444446,
+    "width": 1796.2578875171469,
+    "tabOrder": 27000
+  },
+  "visualGroup": {
+    "displayName": "Mobile Visuals",
+    "groupMode": "ScaleMode"
+  }
+}

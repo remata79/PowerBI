@@ -1,0 +1,426 @@
+/// Provides information about all store sales at Store, UPC and Channel, aggregated by Walmart Week.
+/// 
+/// Recommend usage along with:
+/// - WM Master: Calendar Week
+/// - WM Master: Store
+/// - WM Master: UPC
+/// - WM Master: Service Channel
+/// - WM Master: Mod Trait
+/// 
+/// Source: WM_STORE_SALES_WEEK_VIEW
+table '01. Metrics - Store Sales Weekly'
+	lineageTag: b98c3744-63cc-4872-8264-2c138efad653
+
+	/// This Year Weekly Sales Amount.
+	measure 'TY $ Sales - Weekly' = SUM(WM_STORE_SALES_WEEKLY[TY_SALES_AMT])
+		formatString: $#,##0
+		displayFolder: This Year Metrics
+		lineageTag: a1b9e8f5-abcf-461c-a36d-941e74ca9cec
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Last Year Weekly Sales Amount.
+	measure 'LY $ Sales - Weekly' = SUM(WM_STORE_SALES_WEEKLY[LY_SALES_AMT])
+		formatString: $#,##0
+		displayFolder: Last Year Metrics
+		lineageTag: e4eebf12-74b8-4fd5-ab07-52f2c7e85d81
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg $ Sales YoY - Weekly' = ```
+			DIVIDE(([TY $ Sales - Weekly]-[LY $ Sales - Weekly]),[LY $ Sales - Weekly])
+			
+			```
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 790aaf16-65bf-4fb2-8b55-8686b49b18b4
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// This Year Sales Units.
+	measure 'TY Unit Sales - Weekly' = SUM(WM_STORE_SALES_WEEKLY[TY_QTY])
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: c4909d2b-9c0c-4d31-a090-c3b3314f90d3
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'LY Unit Sales - Weekly' = SUM(WM_STORE_SALES_WEEKLY[LY_QTY])
+		formatString: #,0
+		displayFolder: Last Year Metrics
+		lineageTag: 7f0c1db3-191b-4c94-9ca6-7267ee2119d4
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Unit Sales - Weekly' = ```
+			DIVIDE(([TY Unit Sales - Weekly]-[LY Unit Sales - Weekly]),[LY Unit Sales - Weekly])
+			
+			```
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 7922a5b3-daa6-4276-b316-4df94a486c44
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// This Year Avg Week Price.
+	measure 'TY Price - Weekly' = DIVIDE([TY $ Sales - Weekly], [TY Unit Sales - Weekly], 0)
+		formatString: $0.00
+		displayFolder: This Year Metrics
+		lineageTag: 1e90161c-0119-4fc1-88f7-d531df03da2c
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Last Year Avg Price.
+	measure 'LY Price - Weekly' = DIVIDE([LY $ Sales - Weekly], [LY Unit Sales - Weekly], 0)
+		formatString: $0.00
+		displayFolder: Last Year Metrics
+		lineageTag: 36cc0297-6b63-4c02-900a-bb227d0ef2cc
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Price YoY - Weekly' = DIVIDE(([TY Price - Weekly]-[LY Price - Weekly]),[LY Price - Weekly], Blank())
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 8e3d3241-1fab-4a40-9589-317e49d39f8c
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Count of Weeks.
+	measure 'Week Count - Weekly' = CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR]), ALL('WM Master - Calendar Week Pre Relay') )
+		formatString: #,0
+		displayFolder: Weekend Metrics
+		lineageTag: 5f2915b4-d35f-4e5a-ac34-b1df0f9fee97
+
+		changedProperty = IsHidden
+
+	measure 'Store Count - Weekly' = CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[STORE_NBR]), ALL('WM Master - Calendar Week Pre Relay') )
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: fb4e24d7-088b-4e9c-b979-1eae01a90e1e
+
+		changedProperty = IsHidden
+
+	measure 'Total Stores-Week - Weekly' = CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[STORE_WEEK_ID]), ALL('WM Master - Calendar Week Pre Relay') )
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: 901a4310-e076-49e0-ba44-e2f6d06250ed
+
+		changedProperty = IsHidden
+
+	/// This Year Average Weekly Sales Amount.
+	measure 'TY Avg Wkly $ Sales - Weekly' = DIVIDE([TY $ Sales - Weekly], [Week Count - Weekly], 0)
+		formatString: $#,##0;$(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 024e50e5-f12a-4a8d-bcae-111b02ec57c1
+
+		changedProperty = IsHidden
+
+	/// Last Year Average Weekly Sales Amount.
+	measure 'LY Avg Wkly $ Sales - Weekly' = DIVIDE([LY $ Sales - Weekly], [Week Count - Weekly], 0)
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Last Year Metrics
+		lineageTag: 47124fcd-8127-4180-bdcd-835edcf8ec49
+
+		changedProperty = IsHidden
+
+	/// This Year Average Weekly Sales Units.
+	measure 'TY Avg Wkly Unit Sales - Weekly' = DIVIDE([TY Unit Sales - Weekly], [Week Count - Weekly], 0)
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: b4aae093-cfaa-4bd0-91a3-d57aa9d3f99d
+
+		changedProperty = IsHidden
+
+	/// Last Year Average Weekly Sales Units.
+	measure 'LY Avg Wkly Unit Sales - Weekly' = DIVIDE([LY Unit Sales - Weekly], [Week Count - Weekly], 0)
+		formatString: #,0
+		displayFolder: Last Year Metrics
+		lineageTag: 7a99c4bf-e6bf-4c43-9b0e-84ca9c56c36e
+
+		changedProperty = IsHidden
+
+	/// This Year $ Sales Velocity: $ per Store per Week.
+	measure 'TY $/S/W - Weekly' = DIVIDE([TY $ Sales - Weekly], [Total Stores-Week - Weekly], 0)
+		formatString: $#,##0.0;$(#,##0.0)
+		displayFolder: This Year Metrics
+		lineageTag: dedd1fa1-0724-4be2-badc-f4c1fa773e70
+
+		changedProperty = IsHidden
+
+	/// Last Year $ Sales Velocity: $ per Store per Week.
+	measure 'LY $/S/W - Weekly' = DIVIDE([LY $ Sales - Weekly], [Total Stores-Week - Weekly], 0)
+		formatString: $#,##0.0;$(#,##0.0)
+		displayFolder: Last Year Metrics
+		lineageTag: 4a31bbed-378c-4278-9489-a2264516d9a0
+
+		changedProperty = IsHidden
+
+	/// This Year Unit Sales Velocity: Units per Store per Week.
+	measure 'TY U/S/W - Weekly' = DIVIDE([TY Unit Sales - Weekly], [Total Stores-Week - Weekly], 0)
+		formatString: #,0.00
+		displayFolder: This Year Metrics
+		lineageTag: 657f2200-f030-4c60-aa44-bdbe81687279
+
+		changedProperty = IsHidden
+
+	/// Last Year Unit Sales Velocity: Units per Store per Week.
+	measure 'LY U/S/W - Weekly' = DIVIDE([LY Unit Sales - Weekly], [Total Stores-Week - Weekly], 0)
+		formatString: #,0
+		displayFolder: Last Year Metrics
+		lineageTag: 5d56abaf-2a1c-4524-bcb7-01be3a231b21
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff $ Sales YoY - Weekly' = [TY $ Sales - Weekly] - [LY $ Sales - Weekly]
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 3ef2e860-1f09-40d4-9d08-98d5fd48c246
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Unit Sales YoY - Weekly' = [TY Unit Sales - Weekly] - [LY Unit Sales - Weekly]
+		formatString: #,##0;(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 7947e319-9346-4496-a095-3576b8b62eef
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff $/S/W YoY - Weekly' = [TY $/S/W - Weekly] - [LY $/S/W - Weekly]
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 6c7df8c6-6830-4918-8df8-4087f6f0735d
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff U/S/W YoY - Weekly' = [TY U/S/W - Weekly] - [LY U/S/W - Weekly]
+		formatString: #,##0;(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 9d2fc2ed-d399-4488-a768-7a45bea5462f
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Avg Wkly $ Sales YoY - Weekly' = [TY Avg Wkly $ Sales - Weekly] - [LY Avg Wkly $ Sales - Weekly]
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 1b31a03e-270a-433a-a490-4b0b9dbb5f32
+
+		changedProperty = IsHidden
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Avg Wkly Unit Sales YoY - Weekly' = [TY Avg Wkly Unit Sales - Weekly] - [LY Avg Wkly Unit Sales - Weekly]
+		formatString: #,##0;(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 8e6e4173-a199-4f88-afef-de5633c1cc93
+
+		changedProperty = IsHidden
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly $ Sales YoY - Weekly' = ```
+			DIVIDE(([# Diff Avg Wkly $ Sales YoY - Weekly]),[LY Avg Wkly $ Sales - Weekly])
+			
+			```
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: beef1ab7-f27f-450f-8724-486d0253a4e9
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly Unit Sales YoY - Weekly' = ```
+			DIVIDE(([# Diff Avg Wkly Unit Sales YoY - Weekly]),[LY Avg Wkly Unit Sales - Weekly])
+			
+			```
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 0e6cb5c2-3dc4-437e-9efd-71dae017336a
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// Dollar Share
+	measure '$ Share - Weekly' =
+			DIVIDE(
+			    [TY $ Sales - Weekly],
+			    CALCULATE(
+			        [TY $ Sales - Weekly],
+			        ALLEXCEPT(WM_STORE_SALES_WEEKLY, WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR] ),
+			        REMOVEFILTERS(WM_STORE_SALES_WEEKLY),
+			        'WM Master - Mod Trait'[TRAIT_NBR] <> BLANK(),
+			        'WM Master - Mod Trait'[TRAIT_NBR] <> 0,
+			        'WM Master - UPC'[CA_PACK_TYPE] <> Blank(),
+			        'WM Master - UPC'[CA_PACK_TYPE] <> "Not Applicable",
+			        VALUES(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR])
+			    )
+			) * 100
+		formatString: 0.0
+		displayFolder: This Year Metrics
+		lineageTag: 286e3825-81fc-44ea-ac49-b5a8740f6c3c
+
+		changedProperty = IsHidden
+
+	/// Unit Share.
+	measure 'Unit Share - Weekly' =
+			DIVIDE(
+			    [TY Unit Sales - Weekly],
+			    CALCULATE(
+			        [TY Unit Sales - Weekly],
+			        ALLEXCEPT(WM_STORE_SALES_WEEKLY, WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR] ),
+			        REMOVEFILTERS(WM_STORE_SALES_WEEKLY),
+			        'WM Master - Mod Trait'[TRAIT_NBR] <> BLANK(),
+			        'WM Master - Mod Trait'[TRAIT_NBR] <> 0,
+			        'WM Master - UPC'[CA_PACK_TYPE] <> Blank(),
+			        'WM Master - UPC'[CA_PACK_TYPE] <> "Not Applicable",
+			        VALUES(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR])
+			    )
+			) * 100
+		formatString: 0.0
+		displayFolder: This Year Metrics
+		lineageTag: b841d438-abb8-470a-8aa7-6ee51fb8a9ce
+
+		changedProperty = IsHidden
+
+	measure 'TY C/S/W - Weekly' = DIVIDE([TY $/S/W - Weekly]+[TY U/S/W - Weekly], 2, 0)
+		formatString: #,##0.0;(#,##0.0)
+		displayFolder: This Year Metrics
+		lineageTag: 2703b0bd-d37d-4951-9863-ccbd6356123b
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'LY C/S/W - Weekly' = DIVIDE([LY $/S/W - Weekly]+[LY U/S/W - Weekly], 2, 0)
+		formatString: #,##0.0;(#,##0.0)
+		displayFolder: Last Year Metrics
+		lineageTag: 1b10eb4d-dad9-4ef1-aa58-f7b0cc78494f
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year Weekend Sales Amount.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY $ Sales - Weekly' = SUM(WM_STORE_SALES_WEEKLY[WEEKEND_TY_SALES_AMT])
+		formatString: $#,##0
+		displayFolder: Weekend Metrics
+		lineageTag: 894125cc-861f-405b-ae57-e352d908e384
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year Weekend Sales Units.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Unit Sales - Weekly' = SUM(WM_STORE_SALES_WEEKLY[WEEKEND_TY_QTY])
+		formatString: #,0.0
+		displayFolder: Weekend Metrics
+		lineageTag: 75fc73e0-b248-4dbc-bf18-d7ccd3388351
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	/// This Year Weekend $ Sales Velocity: $ per Store per Week.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY $/S/W - Weekly' = DIVIDE([Weekend TY $ Sales - Weekly], [Total Stores-Week - Weekly], 0)
+		formatString: $#,##0.0;$(#,##0.0)
+		displayFolder: Weekend Metrics
+		lineageTag: 4c0cd6ca-4cf4-49df-aaf1-17ea6460b207
+
+		changedProperty = IsHidden
+
+	/// This Year Weekend Unit Sales Velocity: Units per Store per Week.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY U/S/W - Weekly' = DIVIDE([Weekend TY Unit Sales - Weekly], [Total Stores-Week - Weekly], 0)
+		formatString: #,0.0
+		displayFolder: Weekend Metrics
+		lineageTag: be94087b-59b1-4385-b9e8-66dc5025d924
+
+		changedProperty = IsHidden
+
+	/// This Year Weekend Average Weekly Sales Units.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Avg Wkly Unit Sales - Weekly' = DIVIDE([Weekend TY Unit Sales - Weekly], [Week Count - Weekly], 0)
+		formatString: #,0
+		displayFolder: Weekend Metrics
+		lineageTag: 6939c1bf-e3ee-4fd4-a3e9-9b0da925d69b
+
+		changedProperty = IsHidden
+
+	measure 'LY Stores Selling - Weekly' = ```
+			CALCULATE(
+			    DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[STORE_NBR]), 
+			    WM_STORE_SALES_WEEKLY[LY_SALES_AMT] > 0
+			)
+			```
+		formatString: 0
+		displayFolder: Last Year Metrics
+		lineageTag: c926d6e8-cf93-4e57-8f76-028fd29eb90b
+
+	measure 'TY Stores Selling - Weekly' = ```
+			CALCULATE(
+			    DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[STORE_NBR]), 
+			    WM_STORE_SALES_WEEKLY[TY_SALES_AMT] > 0
+			)
+			```
+		formatString: 0
+		displayFolder: This Year Metrics
+		lineageTag: 530c4a2e-93d8-4ca0-8512-36bc531f943b
+
+	/// This Year Weekend Average Weekly $ Sales.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Avg Wkly $ Sales - Weekly' = DIVIDE([Weekend TY $ Sales - Weekly], [Week Count - Weekly], 0)
+		displayFolder: Weekend Metrics
+		lineageTag: 54b5e321-5811-4ec8-9827-060117049dd9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition '01. Metrics - Store Sales Weekly' = m
+		mode: import
+		queryGroup: 'Reporting - Metrics'
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

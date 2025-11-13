@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "4c7b51aa69cbc10eb611",
+  "position": {
+    "x": 1770,
+    "y": 176.59259259259258,
+    "z": 28000,
+    "height": 416,
+    "width": 150,
+    "tabOrder": 28000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WM Master - UPC"
+                    }
+                  },
+                  "Property": "CA_BRAND"
+                }
+              },
+              "queryRef": "WM Master - UPC.CA_BRAND",
+              "nativeQueryRef": "CA_BRAND"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

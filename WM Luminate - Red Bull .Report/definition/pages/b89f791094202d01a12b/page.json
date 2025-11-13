@@ -1,0 +1,230 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "b89f791094202d01a12b",
+  "displayName": "Cluster Performance - Category",
+  "displayOption": "FitToWidth",
+  "height": 1550,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4d7f500c6f70fa884856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Store"
+              }
+            },
+            "Property": "STORE_NBR"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "9a1171604192c0648425",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Mod Trait"
+              }
+            },
+            "Property": "TRAIT_NBR"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "w",
+              "Entity": "WM Master - Mod Trait",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "w"
+                              }
+                            },
+                            "Property": "TRAIT_NBR"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "51b5d644073a80c4e695",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F1EFEF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "417L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "personalizeVisual": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "perspectiveRef": {
+            "expr": {
+              "Literal": {
+                "Value": "'WMCA Sales - Weekly'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "db55b3eb800895c215b0",
+      "target": "6fe1dfb8d8bca5d145b3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "db55b3eb800895c215b0",
+      "target": "29dba309610050278122",
+      "type": "NoFilter"
+    },
+    {
+      "source": "db55b3eb800895c215b0",
+      "target": "5365950e83338334e1c3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d02e986c6e0680a8adeb",
+      "target": "70629763aee4793e554a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "db55b3eb800895c215b0",
+      "target": "7df2fa8205c264540abd",
+      "type": "DataFilter"
+    },
+    {
+      "source": "7df2fa8205c264540abd",
+      "target": "d225a3519d07d4c577a0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7df2fa8205c264540abd",
+      "target": "79731d7025c824a22687",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7df2fa8205c264540abd",
+      "target": "d506d77a2dad065bb590",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7df2fa8205c264540abd",
+      "target": "6fe1dfb8d8bca5d145b3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7df2fa8205c264540abd",
+      "target": "29dba309610050278122",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7df2fa8205c264540abd",
+      "target": "5365950e83338334e1c3",
+      "type": "NoFilter"
+    }
+  ]
+}

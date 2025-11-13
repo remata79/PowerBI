@@ -1,0 +1,66 @@
+table 'Weekly Metrics'
+	isHidden
+	lineageTag: c3937824-6ad4-4462-8855-a18199e8d95a
+
+	column 'Weekly Metrics'
+		isHidden
+		lineageTag: 8223f8e3-d0e2-4cb6-880a-fd5a4087e2a0
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Set ID'
+
+		relatedColumnDetails
+			groupByColumn: 'Weekly Metrics Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekly Metrics Fields'
+		isHidden
+		lineageTag: 12af6088-cfd0-4a3c-ad21-314d93a3b866
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Set ID'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Set ID'
+		isHidden
+		formatString: 0
+		lineageTag: b75c64b8-45d5-47a2-abe0-85e79426e601
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = User
+
+	column 'Metric ID'
+		isHidden
+		formatString: 0
+		lineageTag: b0b053a0-2cb9-4ce3-a44e-b1f8c78abf4a
+		summarizeBy: none
+		sourceColumn: [Value4]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Weekly Metrics' = calculated
+		mode: import
+		source =
+				{
+				    ("TY Sales", NAMEOF([TY $ Sales - Weekly]), 0, 0),
+				    ("LY Sales", NAMEOF([LY $ Sales - Weekly]), 1, 0),
+				    ("% Chg Sales", NAMEOF([% Chg $ Sales YoY - Weekly]), 3, 0),
+				    ("TY Qty", NAMEOF([TY Unit Sales - Weekly]), 0, 1),
+				    ("LY Qty", NAMEOF([LY Unit Sales - Weekly]), 1, 1),
+				    ("% Chg Qty", NAMEOF([% Chg Unit Sales - Weekly]), 3, 1),
+				    ("TY Price", NAMEOF([TY Price - Weekly]), 0, 2),
+				    ("LY Price", NAMEOF([LY Price - Weekly]), 1, 2),
+				    ("% Chg Price", NAMEOF([% Chg Price YoY - Weekly]), 3, 2)
+				}
+
+	annotation PBI_Id = 05b22c95f0dc4af6bef29d3d1cd9ca4f
+

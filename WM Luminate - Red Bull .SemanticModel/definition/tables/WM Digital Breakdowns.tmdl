@@ -1,0 +1,55 @@
+table 'WM Digital Breakdowns'
+	isHidden
+	lineageTag: 0576440c-fe05-4059-bfff-967865b9740f
+
+	column Breakdown
+		dataType: string
+		isHidden
+		lineageTag: 99bbbb95-1f3f-493b-aec8-e1d4a874b115
+		summarizeBy: none
+		sourceColumn: Breakdown
+		sortByColumn: Order
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2d53509e-057a-4e32-a216-cd77fdd80dc7
+		summarizeBy: sum
+		sourceColumn: Order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Digital Metric'
+		dataType: string
+		isHidden
+		lineageTag: 94dde9a6-e6ae-4b1d-9d7a-864d9f7dd18f
+		summarizeBy: none
+		sourceColumn: Digital Metric
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WM Digital Breakdowns' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcgsJCFLSUXJJzUmsTE1RCMhMzgZyDZVidaKVAopSFYJLk4B8CGkEEc0vLoEK+2XmwHQYK8XGAgA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"OPD Metric" = _t, Breakdown = _t, Order = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Breakdown", type text}, {"Order", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"OPD Metric", "Digital Metric"}})
+				in
+				    #"Renamed Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

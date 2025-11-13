@@ -1,0 +1,759 @@
+/// Model with metrics to compare performance between two different Time Frames. 
+/// Used for Red Bull only Pre Post Comparison analysis; based on Store Sales and Store Fulfillment models.
+/// This should be always used along with "WM Master - Pre Post Time Frame" model.
+table '06. Metrics - Store Pre Post Comparison'
+	lineageTag: c358a0cf-daa9-4eaa-9085-9cdbe0c288a8
+	sourceLineageTag: 15d44524-aef2-4a43-bff1-871f924e4f08
+
+	measure 'TY $ Sales - Weekly Pre Relay' = EXTERNALMEASURE("TY $ Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 4893dbd7-9819-45a2-a16d-c605e0b622fc
+		sourceLineageTag: 59076839-73e3-469c-a421-82d698826c95
+		dataCategory: Uncategorized
+
+	measure 'LY $ Sales - Weekly Pre Relay' = EXTERNALMEASURE("LY $ Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 315752fa-310a-47f8-a23a-e7653c54f98e
+		sourceLineageTag: 103e7273-beb4-4ed4-a126-9d94f7a4fc26
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg $ Sales YoY - Weekly Pre Relay' = EXTERNALMEASURE("% Chg $ Sales YoY - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: ef0c13b2-9238-42a8-ae84-0a6a1ab53040
+		sourceLineageTag: f500ff0b-9923-4d87-b159-5932f293a6aa
+		dataCategory: Uncategorized
+
+	/// This Year Sales Units.
+	measure 'TY Unit Sales - Weekly Pre Relay' = EXTERNALMEASURE("TY Unit Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 513868f4-4f31-42ee-b8b9-e0701dcd013f
+		sourceLineageTag: 41f30423-c326-48af-895c-c38cf2619e0f
+		dataCategory: Uncategorized
+
+	measure 'LY Unit Sales - Weekly Pre Relay' = EXTERNALMEASURE("LY Unit Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: b14fc54e-0924-4512-9f98-714b80c945c6
+		sourceLineageTag: 85f3f944-7158-41ad-82fc-85f67ee6eec7
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Unit Sales - Weekly Pre Relay' = EXTERNALMEASURE("% Chg Unit Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 344ad0fd-4ac6-40cc-b89a-8c2aaf6772bc
+		sourceLineageTag: 36dc7930-6748-417d-8c98-d99d91d827bf
+		dataCategory: Uncategorized
+
+	/// This Year Avg Week Price.
+	measure 'TY Price - Weekly Pre Relay' = EXTERNALMEASURE("TY Price - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: a5aacefc-86b3-4f93-8f8e-79ca9e9a809c
+		sourceLineageTag: ea5b53af-5f42-4400-bff8-1215f8b0b3a7
+		dataCategory: Uncategorized
+
+	/// Last Year Avg Week Price.
+	measure 'LY Price - Weekly Pre Relay' = EXTERNALMEASURE("LY Price - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: f869d390-8ef4-41b5-bc21-abe5576d4180
+		sourceLineageTag: 921d54f5-9183-4e7b-8380-9d71bdd7457f
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Price YoY - Weekly Pre Relay' = EXTERNALMEASURE("% Chg Price YoY - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 519da97e-7986-4db8-b808-7c8968f3c663
+		sourceLineageTag: 571d9305-47c4-4856-bb31-dcfd941bd895
+		dataCategory: Uncategorized
+
+	measure 'Week Count - Weekly Pre Relay' = EXTERNALMEASURE("Week Count - Weekly Pre Relay", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 6d6ae648-a19e-4333-89de-50f32cc3070a
+		sourceLineageTag: 67b727f2-cdc8-411a-aa07-3b2acb8893ba
+		dataCategory: Uncategorized
+
+	measure 'Store Count - Weekly Pre Relay' = EXTERNALMEASURE("Store Count - Weekly Pre Relay", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: a891efa9-c102-4faf-a975-4ac0b3c74911
+		sourceLineageTag: 05ab297a-22b3-4f31-8ca9-5c47aa8ec0ae
+		dataCategory: Uncategorized
+
+	measure 'Stores/Week - Weekly Pre Relay' = EXTERNALMEASURE("Stores/Week - Weekly Pre Relay", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 843a6c9a-3ff7-4bbe-96c9-caa3f5a4a110
+		sourceLineageTag: b492803b-7d3e-4f61-874d-8a609fccb4d7
+		dataCategory: Uncategorized
+
+	/// This Year Average Weekly Sales Amount.
+	measure 'TY Avg Wkly $ Sales - Weekly Pre Relay' = EXTERNALMEASURE("TY Avg Wkly $ Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 3966842f-6107-4800-b1ed-fa1487c2349c
+		sourceLineageTag: 5c61569c-cdac-46e8-99ad-ebb557395efd
+		dataCategory: Uncategorized
+
+	/// Last Year Average Weekly Sales Amount.
+	measure 'LY Avg Wkly $ Sales - Weekly Pre Relay' = EXTERNALMEASURE("LY Avg Wkly $ Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: ffa1c311-ab9f-413d-81ff-abed23d5fe39
+		sourceLineageTag: a803ac6f-8352-4eae-b9b0-cdb699babc46
+		dataCategory: Uncategorized
+
+	/// This Year Average Weekly Sales Units.
+	measure 'TY Avg Wkly Unit Sales - Weekly Pre Relay' = EXTERNALMEASURE("TY Avg Wkly Unit Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 2f20a637-3e22-47b5-a301-d0c236e0a1d9
+		sourceLineageTag: a4604b40-2658-45c9-a39c-e5304d36c7b1
+		dataCategory: Uncategorized
+
+	/// Last Year Average Weekly Sales Units.
+	measure 'LY Avg Wkly Unit Sales - Weekly Pre Relay' = EXTERNALMEASURE("LY Avg Wkly Unit Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 5e58201b-a987-4597-b6d2-d917cd573850
+		sourceLineageTag: cdfa9245-def3-4acc-943f-6ef1f551a0e3
+		dataCategory: Uncategorized
+
+	/// This Year $ Sales Velocity: $ per Store per Week.
+	measure 'TY $/S/W - Weekly Pre Relay' = EXTERNALMEASURE("TY $/S/W - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: aa1dbcea-d073-4627-b491-2af274eed40a
+		sourceLineageTag: 42dee1be-a117-4a01-a475-b47341c6da34
+		dataCategory: Uncategorized
+
+	measure 'LY $/S/W - Weekly Pre Relay' = EXTERNALMEASURE("LY $/S/W - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 822e2ac9-d87c-4682-9175-278327dc07f5
+		sourceLineageTag: 58ba5b95-72bf-4e0b-a458-cb7edf723905
+		dataCategory: Uncategorized
+
+	/// This Year Unit Sales Velocity: Units per Store per Week.
+	measure 'TY U/S/W - Weekly Pre Relay' = EXTERNALMEASURE("TY U/S/W - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 5f9458b6-682a-4b4a-860d-a9607d14890b
+		sourceLineageTag: 53bfb2fb-c42f-492e-950d-034a95445882
+		dataCategory: Uncategorized
+
+	/// Last Year Unit Sales Velocity: Units per Store per Week.
+	measure 'LY U/S/W - Weekly Pre Relay' = EXTERNALMEASURE("LY U/S/W - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 7b4c87f6-9ff7-410a-b679-1aec24d9fce6
+		sourceLineageTag: b10731aa-bfd0-4aea-95e4-a3f835a20822
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff $ Sales YoY - Weekly Pre Relay' = EXTERNALMEASURE("# Diff $ Sales YoY - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 63d79020-5117-405b-b343-aa0c288ae07f
+		sourceLineageTag: 9d4d4e8c-b00b-409d-8329-3ee9ea5d86d8
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Unit Sales YoY - Weekly Pre Relay' = EXTERNALMEASURE("# Diff Unit Sales YoY - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: cf959230-ae51-4109-92fe-3a495b34f1ea
+		sourceLineageTag: 956fcff7-cb60-40a3-b7dc-8edb3c9aa1a4
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff $/S/W YoY - Weekly Pre Relay' = EXTERNALMEASURE("# Diff $/S/W YoY - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 65fc3511-fda7-4f35-8c59-2e11a074c269
+		sourceLineageTag: 9f0cac7b-8d68-4559-84e7-cc5a1229b083
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff U/S/W YoY - Weekly Pre Relay' = EXTERNALMEASURE("# Diff U/S/W YoY - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: f889e40f-6d22-4355-8362-5b8592b4095b
+		sourceLineageTag: f724edc1-5210-47e0-b481-71f17acbe4a1
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Avg Wkly $ Sales YoY - Weekly Pre Relay' = EXTERNALMEASURE("# Diff Avg Wkly $ Sales YoY - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 30b00e1e-765a-4f4a-a466-1c867a98168d
+		sourceLineageTag: d71f7f46-155a-46e3-9b5d-5491ced63ba6
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Avg Wkly Unit Sales YoY - Weekly Pre Relay' = EXTERNALMEASURE("# Diff Avg Wkly Unit Sales YoY - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: b6ad9007-5706-4253-ac74-5063ff1ad557
+		sourceLineageTag: 2f1878d3-5c47-4495-88b2-76d6a79d3125
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly $ Sales YoY - Weekly Pre Relay' = EXTERNALMEASURE("% Chg Avg Wkly $ Sales YoY - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 77f4040f-221c-4178-9469-fa49f93df59f
+		sourceLineageTag: 82703c2c-cc40-4c6b-b074-1c1cc3fc7c2b
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly Unit Sales YoY - Weekly Pre Relay' = EXTERNALMEASURE("% Chg Avg Wkly Unit Sales YoY - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 7ac93363-e8c1-4119-bcd2-b551930e956d
+		sourceLineageTag: eb7b939c-ff1d-4835-8e9d-f95f02de8677
+		dataCategory: Uncategorized
+
+	measure '$ Share - Weekly Pre Relay' = EXTERNALMEASURE("$ Share - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 963bdad5-a1aa-4121-8b0c-69a63d354d25
+		sourceLineageTag: 84823eed-5684-476e-8b68-a62949185bfa
+		dataCategory: Uncategorized
+
+	measure 'Unit Share - Weekly Pre Relay' = EXTERNALMEASURE("Unit Share - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 8d9b8f53-bcfd-44f2-ae10-8f2b4989dcc4
+		sourceLineageTag: 16886baa-e4cc-4453-8e9e-d258d3f19998
+		dataCategory: Uncategorized
+
+	measure 'TY C/S/W - Weekly Pre Relay' = EXTERNALMEASURE("TY C/S/W - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: acc74809-5d91-45bb-a26d-dc4cd034da24
+		sourceLineageTag: 35e86822-33ec-4623-960f-d4f947fc9e9b
+		dataCategory: Uncategorized
+
+	measure 'LY C/S/W - Weekly Pre Relay' = EXTERNALMEASURE("LY C/S/W - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 424d7206-3273-46ec-93ae-65c4556bbe6d
+		sourceLineageTag: e7a3635e-3744-40e7-baf0-a3ac62e9d68e
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Sales Amount.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY $ Sales - Weekly Pre Relay' = EXTERNALMEASURE("Weekend TY $ Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: e9f6fc7f-ac1e-4f84-9fb2-8a4eb72858bf
+		sourceLineageTag: 8e8a7b3b-5acb-4e7d-b3ad-0da39ddb10d5
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Sales Units.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Unit Sales - Weekly Pre Relay' = EXTERNALMEASURE("Weekend TY Unit Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 82692ec8-45a9-4ae8-936a-eaaf4a0f3221
+		sourceLineageTag: 21e9f8f3-d1e2-4183-b936-b076b746b74a
+		dataCategory: Uncategorized
+
+	/// This Year Weekend $ Sales Velocity: $ per Store per Week.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY $/S/W - Weekly Pre Relay' = EXTERNALMEASURE("Weekend TY $/S/W - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: e978fc63-6b0b-4704-9385-095f3701ab90
+		sourceLineageTag: c5b004fe-f66e-4261-b4e1-4b79588339cb
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Unit Sales Velocity: Units per Store per Week.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY U/S/W - Weekly Pre Relay' = EXTERNALMEASURE("Weekend TY U/S/W - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: c8fd0e0d-4e2b-4349-ab55-3d89b498e133
+		sourceLineageTag: 97a006f4-4cbe-4e46-8e36-49019e611133
+		dataCategory: Uncategorized
+
+	/// This Year First Time Pick Rate:
+	/// The percentage of items that were picked in the first pick-walk for store fulfilled orders.
+	measure 'TY FTPR - Weekly Pre Relay' = EXTERNALMEASURE("TY FTPR - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 92b38cd4-f60d-4aa1-ac89-cff7cd2556fa
+		sourceLineageTag: 7f7fc853-0061-4688-9f3d-151ef62b736c
+		dataCategory: Uncategorized
+
+	/// This Year First Time Pick Rate Denominator
+	measure 'TY FTPR Denominator - Weekly Pre Relay' = EXTERNALMEASURE("TY FTPR Denominator - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 9a3070ce-da24-46de-8cdc-8ca27a603bb5
+		sourceLineageTag: 610a0a44-33f9-4ff0-a90e-9494c88edab1
+		dataCategory: Uncategorized
+
+	/// This Year First Time Pick Rate Numerator
+	measure 'TY FTPR Numerator - Weekly Pre Relay' = EXTERNALMEASURE("TY FTPR Numerator - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 2c67646c-ada7-4298-811b-66b515e88c54
+		sourceLineageTag: 88a017ae-db80-4dc1-90ab-7c23c4a76433
+		dataCategory: Uncategorized
+
+	measure 'TY Nil Pick Denominator - Weekly Pre Relay' = EXTERNALMEASURE("TY Nil Pick Denominator - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 9b60f577-8702-4dde-b49b-743368b105ac
+		sourceLineageTag: 6abbea55-a0ee-4eaa-801f-d076610f1546
+		dataCategory: Uncategorized
+
+	measure 'TY Nil Pick Numerator - Weekly Pre Relay' = EXTERNALMEASURE("TY Nil Pick Numerator - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: c8f4c455-776b-4d49-b720-5abda0f77083
+		sourceLineageTag: 75b5a8a0-8ab4-4d64-a62d-3c93ace2eded
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
+	measure 'TY Nil Pick Qty - Weekly Pre Relay' = EXTERNALMEASURE("TY Nil Pick Qty - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 8f9bb7ea-2041-4563-b8ab-601ebd62e966
+		sourceLineageTag: 0bfb34e1-b4de-4b82-8826-b07d4412db85
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
+	measure 'TY Nil Pick Rate - Weekly Pre Relay' = EXTERNALMEASURE("TY Nil Pick Rate - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: fd2ac013-2aed-4d10-8ed0-6805e3db267f
+		sourceLineageTag: 96b42b16-5830-4632-974f-e3e728ba6b10
+		dataCategory: Uncategorized
+
+	measure 'TY Total PODs - Weekly Pre Relay' = EXTERNALMEASURE("TY Total PODs - Weekly Pre Relay", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 93988d07-2974-4a3a-b207-203e513e3950
+		sourceLineageTag: 0037fc69-d768-4c60-a637-23d95fd11b94
+		dataCategory: Uncategorized
+
+	/// This Year First Time Pick Rate:
+	/// The percentage of items that were picked in the first pick-walk for store fulfilled orders.
+	measure 'TY FTPR - RB Pre Post Comparison' = EXTERNALMEASURE("TY FTPR - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: f23a69c8-16b2-4392-b7d7-69553b824d35
+		sourceLineageTag: 652cc607-bdee-4ddd-8f12-09c287484ab7
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY FTPR - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
+	measure 'TY Nil Pick Qty - RB Pre Post Comparison' = EXTERNALMEASURE("TY Nil Pick Qty - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: a06cfeb1-5d44-4b6e-8c16-5fef35b75c62
+		sourceLineageTag: 4c064852-dfbe-4eb2-b71e-539aa96c8f92
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY Nil Pick Qty - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
+	measure 'TY Nil Pick Rate - RB Pre Post Comparison' = EXTERNALMEASURE("TY Nil Pick Rate - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 6fde82e3-edce-4ebc-a6d8-fef4e16edb6a
+		sourceLineageTag: 982d4f3c-d23f-4612-9be2-baca474be47f
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY Nil Pick Rate - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'DOS - RB Pre Post Comparison' = EXTERNALMEASURE("DOS - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: b762e6b3-2b09-4356-9f48-c0e583296da4
+		sourceLineageTag: 55610397-9b04-4693-b9f7-813219dda713
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_DOS - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'In Stock Rate - RB Pre Post Comparison' = EXTERNALMEASURE("In Stock Rate - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: e3a32c7d-bc19-4912-9b21-a69f077655c4
+		sourceLineageTag: 4d2e33b0-5732-4645-9b66-03035d5317f3
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_In Stock Rate - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'Store UPC Capacity - Weekly Pre Relay' = EXTERNALMEASURE("Store UPC Capacity - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: dd719855-1653-4001-99fb-cf124180805d
+		sourceLineageTag: 0197a1db-ca66-45be-a2bd-1add7cf9d6cc
+		dataCategory: Uncategorized
+
+	measure 'Total Capacity - Weekly Pre Relay' = EXTERNALMEASURE("Total Capacity - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: e8ff7e4d-9860-4def-9109-70438a98ea43
+		sourceLineageTag: 32ae6996-5514-4e29-814f-a2580d6ebd5c
+		dataCategory: Uncategorized
+
+	measure 'Total Capacity - RB Pre Post Comparison' = EXTERNALMEASURE("Total Capacity - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 1bf1740c-90be-46a6-9028-55855935652a
+		sourceLineageTag: d5392261-bbe1-473e-8d7c-6853a8caee6e
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Total Capacity - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff $/S/W YoY - RB Pre Post Comparison' = EXTERNALMEASURE("# Diff $/S/W YoY - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 65dc53ab-f9ee-401c-aef8-7747eb966a65
+		sourceLineageTag: 0a58dbee-9696-4f09-93a2-637af5014c29
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_# Diff $/S/W YoY - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff U/S/W YoY - RB Pre Post Comparison' = EXTERNALMEASURE("# Diff U/S/W YoY - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 2b60d571-17de-4c5d-b070-ecbc943263d1
+		sourceLineageTag: 5b4497e5-a330-47b5-9755-61bcba03017b
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_# Diff U/S/W YoY - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly $ Sales vs LY - RB Pre Post Comparison' = EXTERNALMEASURE("% Chg Avg Wkly $ Sales vs LY - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 232b8e2f-d842-47e5-be2c-79cb2747bb6b
+		sourceLineageTag: c4797779-b9ca-45bd-8111-7d540d1cc711
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_% Chg Avg Wkly $ Sales vs LY - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly Unit Sales YoY - RB Pre Post Comparison' = EXTERNALMEASURE("% Chg Avg Wkly Unit Sales YoY - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 0f943f88-ec0b-4ee7-860e-27d1de70c62b
+		sourceLineageTag: 025d33e8-0e72-405d-ae7d-3faf1fc7be01
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_% Chg Avg Wkly Unit Sales YoY - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure '$ Share - RB Pre Post Comparison' = EXTERNALMEASURE("$ Share - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: e017235a-a7a2-4fd8-9f96-bbe2ec7f5841
+		sourceLineageTag: b8a3082e-d3eb-487b-8685-f623f8323c59
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_$ Share - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// Last Year $ Sales Velocity: $ per Store per Week.
+	measure 'LY $/S/W - RB Pre Post Comparison' = EXTERNALMEASURE("LY $/S/W - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 3a503d9f-b136-4bb1-a87f-3849bb64de7f
+		sourceLineageTag: eac8a3f7-7e4e-4648-bdab-0c8aca9b74c9
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_LY $/S/W - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// Last Year Average Weekly Sales Amount.
+	measure 'LY Avg Wkly $ Sales - RB Pre Post Comparison' = EXTERNALMEASURE("LY Avg Wkly $ Sales - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 6034796d-66d7-4ac3-9856-d490206f8403
+		sourceLineageTag: 31340fb5-cc10-4a6a-aa3a-cb90b8cbc906
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_LY Avg Wkly $ Sales - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// Last Year Average Weekly Sales Units.
+	measure 'LY Avg Wkly Unit Sales - RB Pre Post Comparison' = EXTERNALMEASURE("LY Avg Wkly Unit Sales - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 163b979a-1808-4f94-8ac9-6991733d9fba
+		sourceLineageTag: dcc3a204-308b-48b7-8f38-7c2b5c8c7dca
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_LY Avg Wkly Unit Sales - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'LY Sales - RB Pre Post Comparison' = EXTERNALMEASURE("LY Sales - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: ed974048-9d9e-46b7-9c50-6156b3e7bcc1
+		sourceLineageTag: 09541104-0ec7-4123-9090-bad7cf6a9622
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_LY Sales - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// Last Year Unit Sales Velocity: Units per Store per Week.
+	measure 'LY U/S/W - RB Pre Post Comparison' = EXTERNALMEASURE("LY U/S/W - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: dea673bf-caf3-4c59-8e89-9865ab06b88a
+		sourceLineageTag: 41d42dd9-fbfe-4ea6-883b-01e8911a8cc2
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_LY U/S/W - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'LY Unit Sales - RB Pre Post Comparison ' = EXTERNALMEASURE("LY Unit Sales - RB Pre Post Comparison ", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 17c5c23b-0342-4e57-8822-a92647a07e66
+		sourceLineageTag: 09263925-a369-4fdd-ad1e-f4f9bfbb1fef
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_LY Unit Sales - RB Pre Post Comparison  FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'Store Count - RB Pre Post Comparison' = EXTERNALMEASURE("Store Count - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 4f575752-9f5f-4f3a-8a36-3a7f55fb672c
+		sourceLineageTag: f59efee6-d96e-418e-8c2b-399ce643b0d7
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Store Count - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'Store/Weeks - RB Pre Post Comparison' = EXTERNALMEASURE("Store/Weeks - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: ddfb3ad1-17c4-488d-b46a-4bc19606b783
+		sourceLineageTag: f4581e40-b0cf-4350-80e4-5a6833cc3635
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Store/Weeks - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'TY $ Sales - RB Pre Post Comparison' = EXTERNALMEASURE("TY $ Sales - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: b6336315-ddba-43f7-9974-7ee5f252db88
+		sourceLineageTag: b89faa83-097a-479d-a504-0dc5b14e2991
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY $ Sales - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year $ Sales Velocity: $ per Store per Week.
+	measure 'TY $/S/W - RB Pre Post Comparison' = EXTERNALMEASURE("TY $/S/W - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 5a593aea-ef5c-4003-ab5e-60c2df5ec4ba
+		sourceLineageTag: 825e800e-e9a6-4f11-8ed7-1b25157f4ce8
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY $/S/W - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'TY AUR - RB Pre Post Comparison' = EXTERNALMEASURE("TY AUR - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 3a9171e5-b04b-47f2-b946-60b648ca26a9
+		sourceLineageTag: 06e9a03a-1094-473d-93af-df12b3e7e4b7
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY AUR - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Average Weekly Sales Amount.
+	measure 'TY Avg Wkly $ Sales - RB Pre Post Comparison' = EXTERNALMEASURE("TY Avg Wkly $ Sales - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 90b17907-74c4-4b1c-97c4-699c4c7c1607
+		sourceLineageTag: 81e19a9b-9760-4f36-9158-5b784d49394a
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY Avg Wkly $ Sales - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Average Weekly Sales Units.
+	measure 'TY Avg Wkly Unit Sales - RB Pre Post Comparison' = EXTERNALMEASURE("TY Avg Wkly Unit Sales - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 8748ba0a-48d6-409f-9e26-75e1357d2b66
+		sourceLineageTag: 9edc0d7d-772a-4532-b9e9-4dbdda6cf5ab
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY Avg Wkly Unit Sales - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'TY C/S/W - RB Pre Post Comparison' = EXTERNALMEASURE("TY C/S/W - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: d4dac18c-7b5a-456c-a64f-7e1e11eceffd
+		sourceLineageTag: 00af8d12-9bd1-45d5-9095-73c33cdc152d
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY C/S/W - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Unit Sales Velocity: Units per Store per Week.
+	measure 'TY U/S/W - RB Pre Post Comparison' = EXTERNALMEASURE("TY U/S/W - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 35206079-cd39-4775-9d7a-31714f6079ae
+		sourceLineageTag: c3b07096-2284-4629-9890-70b62524fe23
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY U/S/W - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Weekly Unit Sales.
+	measure 'TY Unit Sales - RB Pre Post Comparison' = EXTERNALMEASURE("TY Unit Sales - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: a3495cfc-37f0-4d10-88c1-eeaa65aabf53
+		sourceLineageTag: 3d511a97-fd9a-4d9f-8daa-e361b7a55280
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_TY Unit Sales - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'Unit Share - RB Pre Post Comparison' = EXTERNALMEASURE("Unit Share - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 1da1038e-f08d-4e69-924c-1f246827ce60
+		sourceLineageTag: 44b2482e-8b52-4df1-b8c8-0fd6de83dbe6
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Unit Share - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'Weeks Count - RB Pre Post Comparison' = EXTERNALMEASURE("Weeks Count - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 68963a47-5fcf-45a8-84b6-ec581b841fa0
+		sourceLineageTag: 3b26a1cd-cedc-4f7a-ab30-5751f52fc849
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Weeks Count - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Weekend Sales Amount.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY $ Sales - RB Pre Post Comparison' = EXTERNALMEASURE("Weekend TY $ Sales - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: cc8379cb-a5cd-49d2-be76-01ae479dcefb
+		sourceLineageTag: bb0371a7-b43a-4c9d-b39b-469af98cf0ee
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Weekend TY $ Sales - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Weekend Sales Units.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Unit Sales - RB Pre Post Comparison' = EXTERNALMEASURE("Weekend TY Unit Sales - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 4484dd00-a378-4dbf-8ba9-1c3fa1f770bb
+		sourceLineageTag: f9e91772-5c5a-4d4c-8155-742d102e67a8
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Weekend TY Unit Sales - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Weekend $ Sales Velocity: $ per Store per Week.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY $/S/W - RB Pre Post Comparison' = EXTERNALMEASURE("Weekend TY $/S/W - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: c67ca839-df30-4aee-b871-303de1fc1c19
+		sourceLineageTag: 92269f37-96d5-4d22-9230-6bdd2bb15ea6
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Weekend TY $/S/W - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Weekend Unit Sales Velocity: Units per Store per Week.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY U/S/W - RB Pre Post Comparison' = EXTERNALMEASURE("Weekend TY U/S/W - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: 606ea83c-72df-4e0b-994a-5ba6b1b5e03a
+		sourceLineageTag: 828830be-8356-4171-aed4-7e4dd67c748f
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Weekend TY U/S/W - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	measure 'Main Placement Capacity - Weekly Pre Relay' = EXTERNALMEASURE("Main Placement Capacity - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 6cb1ee49-2e95-4c32-897c-5b64559f7e86
+		sourceLineageTag: 9b655ab7-5002-423c-9158-8aa656776fe1
+		dataCategory: Uncategorized
+
+	measure 'Mod Rack Capacity - Weekly Pre Relay' = EXTERNALMEASURE("Mod Rack Capacity - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 219402ab-d326-438c-9653-2d80c29803d3
+		sourceLineageTag: ca3f3e5b-381a-4a3f-8562-925405d9c9ec
+		dataCategory: Uncategorized
+
+	measure 'DOS - Weekly Pre Relay' = EXTERNALMEASURE("DOS - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0.0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: f924fbea-cebe-4893-83c7-50baf1beda91
+		sourceLineageTag: e4dc3fca-b665-42e9-909e-5884f05c4c13
+		dataCategory: Uncategorized
+
+	/// Weekend Days of Supply (DOS): 
+	/// Store UPC Capacity / (Weekend Avg Weekly Units / 3)
+	/// Weekend days: Friday - Sunday
+	measure 'Weekend DOS - Weekly Pre Relay' = EXTERNALMEASURE("Weekend DOS - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0.0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: c5bff4de-c8ea-4e57-8080-d97404b69782
+		sourceLineageTag: 95f9afba-fdd2-4143-9a50-e5c7d6aab476
+		dataCategory: Uncategorized
+
+	/// Weekend Days of Supply (DOS): 
+	/// Store UPC Capacity / (Weekend Avg Weekly Units / 3)
+	/// Weekend days: Friday - Sunday
+	measure 'Weekend DOS - RB Pre Post Comparison' = EXTERNALMEASURE("Weekend DOS - RB Pre Post Comparison", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: RB Pre Post Comparison
+		lineageTag: fc510bb2-001e-459c-ae15-44c13c562ca8
+		sourceLineageTag: 60999e0d-3219-4633-b6ec-081dc960c667
+		dataCategory: Uncategorized
+
+		formatStringDefinition = EXTERNALMEASURE("_Weekend DOS - RB Pre Post Comparison FormatString", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+
+	/// This Year Weekend Average Weekly Sales Units.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Avg Wkly Unit Sales - Weekly Pre Relay' = EXTERNALMEASURE("Weekend TY Avg Wkly Unit Sales - Weekly Pre Relay", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		isHidden
+		displayFolder: RB Pre Relay
+		lineageTag: 2df6e3cc-abd6-4fa3-969e-b897e1a62194
+		sourceLineageTag: 6e5f8c64-8b33-4cad-a7ec-687710bba62f
+		dataCategory: Uncategorized
+
+	partition '06. Metrics - Store Pre Post Comparison' = entity
+		mode: directQuery
+		source
+			entityName: 06. Metrics - Store Pre Post Comparison
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

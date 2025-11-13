@@ -1,0 +1,890 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.2.0/schema.json",
+  "position": {
+    "x": 0,
+    "y": 722,
+    "z": 10000,
+    "height": 179,
+    "width": 324,
+    "tabOrder": 9000
+  },
+  "objects": {
+    "values": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "columnHeaders": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "rowHeaders": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "9D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "columnWidth": [
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "64.52965124106393D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 52 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.First Time Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "57.013323725585494D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 52 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Pre Sub Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "57.893955829339504D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 52 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Post Sub Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "52.529235452972436D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 52 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "85D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "WM_ITEM_ATTRIBUTES.CA_PACK_TYPE"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "63.44547027754685D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'FYTD'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.First Time Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "55.55916202756882D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'FYTD'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Pre Sub Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "55D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'FYTD'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Post Sub Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "53.242317458925996D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'FYTD'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "63.94442087098357D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 13 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.First Time Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "53.80607978790903D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 13 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Pre Sub Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "55D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 13 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Post Sub Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "54.811074640253096D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 13 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "65.44914011228144D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 4 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.First Time Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "50.764507067955336D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 4 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Pre Sub Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "55D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 4 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Post Sub Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "57.574133088084636D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 4 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "62.48206856682902D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last Week'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.First Time Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "54.60015626675654D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last Week'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Pre Sub Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "60D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last Week'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Post Sub Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "53.193080234984976D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last Week'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Rate"
+        }
+      }
+    ]
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "11D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "spacing": [
+      {
+        "properties": {
+          "verticalSpacing": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "padding": [
+      {
+        "properties": {
+          "top": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          },
+          "bottom": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          },
+          "left": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          },
+          "right": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

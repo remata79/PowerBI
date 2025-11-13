@@ -1,0 +1,189 @@
+/// Walmart Category Sales model. 
+/// UPC Sales (Shopper Behavior) view provides information about store and eComm sales at UPC and store level.
+/// The UPC Store Sales endpoint will contain Store & Ecomm sales, aggregated weekly. Ecomm sales are reported under the store number “-999”. 
+/// The sales number under the UPC Store Sales endpoint may not match with the sales number under our Store Sales endpoint.
+/// This model is refreshed weekly on Mondays, resulting in a 9 to 15-day delay.
+/// 
+/// SOURCE: WM_UPC_SALES_VIEW
+table WM_UPC_SALES
+	isHidden
+	lineageTag: 61b2f0fe-fdc7-4256-bcf8-badcc9c8d640
+	sourceLineageTag: f32ce528-3aca-45a1-b116-b589a3e03db3
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: double
+		isHidden
+		lineageTag: d43e91d4-81fe-4b8c-b5cd-51d95bd20b73
+		sourceLineageTag: 2875cca9-a26f-46de-b9af-b5dd2031de14
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Omni UPC Number
+	column OMNI_UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0660c886-7419-49b8-bba8-ebc26e404df9
+		sourceLineageTag: 963b5daf-7d7c-4fa3-abb6-13c8d24181b2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OMNI_UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Year Week Number.
+	/// A number representing the full Walmart year and week.
+	column WM_YR_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2697d8de-53e1-48a4-bffb-92872ab8a4cf
+		sourceLineageTag: d202c9e7-362d-4d98-acb4-61f36d0a600e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Service Channel: The channel through which the order is fulfilled.
+	column SB_CHNL_NM
+		dataType: string
+		isHidden
+		lineageTag: 2557d23d-60d2-4c37-825a-4b8e598ab5d9
+		sourceLineageTag: a9c14f5f-1eb1-4f50-a33f-420f525177c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SB_CHNL_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Operational Company Code
+	column OP_CMPNY_CD
+		dataType: string
+		isHidden
+		lineageTag: fdcf2273-e846-433e-8835-3fd4d1d8da34
+		sourceLineageTag: 6920a056-0f61-4492-9184-49fa539f511d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OP_CMPNY_CD
+
+		annotation SummarizationSetBy = User
+
+	/// Geographic Region Code
+	column GEO_REGION_CD
+		dataType: string
+		isHidden
+		lineageTag: 8556aa4f-9533-41f6-98fa-be41321dd1db
+		sourceLineageTag: d0f22062-5631-4d1b-9a80-49ad2a1f25f2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: GEO_REGION_CD
+
+		annotation SummarizationSetBy = User
+
+	/// This Year Basket Transactions Count. The number of transactions that contained the selected product or product group.
+	column TY_BASKET_CNT
+		dataType: double
+		isHidden
+		lineageTag: 67dce785-819b-4ecb-b8f9-8daf1d4cddc3
+		sourceLineageTag: 35f901bc-f2ec-4524-8c30-1a095b9eb4e9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_BASKET_CNT
+
+		annotation SummarizationSetBy = User
+
+	/// Last Year Basket Transactions Count
+	column LY_BASKET_CNT
+		dataType: double
+		isHidden
+		lineageTag: ae076311-bf0c-4ad7-94d9-7feb2fec8364
+		sourceLineageTag: b6cc7e0f-7121-49fc-99a9-8392176fe290
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_BASKET_CNT
+
+		annotation SummarizationSetBy = User
+
+	/// This Year (TY) Sales Amount
+	column TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 015dc2d8-7367-4ede-a823-58d3a84c7c85
+		sourceLineageTag: d9e1bacf-c800-41df-acc6-0fcba7310384
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last Year Sales Amount
+	column LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: b771c8e7-6af3-46cf-adf3-305b3eec8e23
+		sourceLineageTag: 5fe35997-2bc7-4e68-beba-1fae961032c3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// This Year (TY) Sales Units
+	column TY_SALES_UNIT_QTY
+		dataType: double
+		isHidden
+		lineageTag: 30caf540-5d0d-4d9d-9e7c-5e92c7b4eb02
+		sourceLineageTag: 8f59ef29-0560-4990-abb4-226d2816c2c8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_SALES_UNIT_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last Year Sales Units
+	column LY_SALES_UNIT_QTY
+		dataType: double
+		isHidden
+		lineageTag: 7b25e7cc-e883-4e9e-82b1-91aa5132d092
+		sourceLineageTag: 724839eb-afa2-4c58-a015-9eb2b3fffeab
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_SALES_UNIT_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column TRAIT_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 093e5789-34f1-40e1-8dda-a61c2720f24f
+		sourceLineageTag: 7813a068-aa2e-42f5-970a-2efc389d63b8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Combination of Store and Week IDs
+	column STORE_WEEK_ID
+		dataType: string
+		lineageTag: 41e99a82-c595-4020-8697-2a6e9d33d59a
+		sourceLineageTag: 67fc8c9f-5fec-4eb9-89c4-fb642ebc603e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_WEEK_ID
+
+		annotation SummarizationSetBy = User
+
+	partition WM_UPC_SALES = entity
+		mode: directQuery
+		source
+			entityName: WM_UPC_SALES
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

@@ -1,0 +1,722 @@
+/// Calendar view provides Walmart calendar date, month, and week details. It also has specific flags for TimePeriods: LW Last Week, L4W Last 4 Weeks, L13W Last 13 Weeks, L52W Last 52 Weeks, FYTD Walmart Fiscal Year to Date.
+/// 
+/// Source: WM_CALENDAR_WEEK_VIEW
+table 'WM Master - Calendar Date (L13W)'
+	lineageTag: e645753a-fb6b-4044-a0b5-954bf0c640f6
+
+	column CAL_DT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 941b4735-ade0-4b99-b685-c5601f48e82d
+		summarizeBy: none
+		sourceColumn: CAL_DT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column GEO_REGION_CD
+		dataType: string
+		lineageTag: 45145197-359b-45c9-bd46-272a08b38ade
+		summarizeBy: none
+		sourceColumn: GEO_REGION_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	column LY_CAL_DT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a9f4de28-40c7-40ee-9719-ec68d2f90e47
+		summarizeBy: none
+		sourceColumn: LY_CAL_DT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column JULIAN_DT
+		dataType: double
+		lineageTag: d16b4b2e-fc43-47bd-ae68-a5b93aeadfd0
+		summarizeBy: sum
+		sourceColumn: JULIAN_DT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DATE_DESC
+		dataType: string
+		lineageTag: 4df23f6b-91be-4f94-baea-f8f706f405b9
+		summarizeBy: none
+		sourceColumn: DATE_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_DAY_ALPHA_NBR
+		dataType: string
+		lineageTag: ffdcdbdd-4afb-4860-8c4c-64f0e4744166
+		summarizeBy: none
+		sourceColumn: CAL_DAY_ALPHA_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_WK_DAY_NBR
+		dataType: double
+		lineageTag: 46c6b311-11b6-4fb4-aa63-796b357e90d0
+		summarizeBy: sum
+		sourceColumn: CAL_WK_DAY_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_WK_DAY_NM
+		dataType: string
+		lineageTag: a2adc1cc-9c20-4305-960c-f5335728652e
+		summarizeBy: none
+		sourceColumn: CAL_WK_DAY_NM
+		sortByColumn: CAL_WK_DAY_NBR
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_WK_DAY_ABBR
+		dataType: string
+		lineageTag: a4a3be6b-8f65-4981-b314-8ae8d5583d02
+		summarizeBy: none
+		sourceColumn: CAL_WK_DAY_ABBR
+		sortByColumn: CAL_WK_DAY_NBR
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_DT_START_TS
+		dataType: string
+		lineageTag: 911073d2-b4a9-49c2-ae83-dcd47fbef952
+		summarizeBy: none
+		sourceColumn: CAL_DT_START_TS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_DT_END_TS
+		dataType: string
+		lineageTag: 0f214453-1458-401e-8645-36c654ffe729
+		summarizeBy: none
+		sourceColumn: CAL_DT_END_TS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DAY_CNT
+		dataType: double
+		lineageTag: 8a4717b0-3464-48f8-b5fb-28518b3f02ae
+		summarizeBy: sum
+		sourceColumn: DAY_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_WK_NBR
+		dataType: double
+		lineageTag: bab92fb6-6469-488a-9436-aae37742b6dd
+		summarizeBy: sum
+		sourceColumn: CAL_WK_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_WK_NM
+		dataType: string
+		lineageTag: 0f969b3c-eff5-47cf-8269-28c895ddf1b5
+		summarizeBy: none
+		sourceColumn: CAL_WK_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_WK_CNT
+		dataType: double
+		lineageTag: de6870f4-2bc0-4311-95bb-8726e3cd1b85
+		summarizeBy: sum
+		sourceColumn: CAL_WK_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_MTH_ALPHA_NBR
+		dataType: string
+		lineageTag: e1a9659a-04ea-4ae3-a8a2-481923712c70
+		summarizeBy: none
+		sourceColumn: CAL_MTH_ALPHA_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_MTH_NBR
+		dataType: double
+		lineageTag: 993da1de-3efe-433f-b190-72e8e3ef22d8
+		summarizeBy: sum
+		sourceColumn: CAL_MTH_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_MTH_DESC
+		dataType: string
+		lineageTag: 69bf56b1-1240-4629-9df5-90270bdd2174
+		summarizeBy: none
+		sourceColumn: CAL_MTH_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_MTH_ABBR
+		dataType: string
+		lineageTag: 71d0076e-7116-4434-b132-32d7ebc23d10
+		summarizeBy: none
+		sourceColumn: CAL_MTH_ABBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_QTR_NBR
+		dataType: double
+		lineageTag: 76223aa3-79ce-49dd-9ee5-acc006803660
+		summarizeBy: sum
+		sourceColumn: CAL_QTR_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_MTH_CNT
+		dataType: double
+		lineageTag: 9c298ed9-27ea-4bc6-831d-c5ee5aef30cf
+		summarizeBy: sum
+		sourceColumn: CAL_MTH_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_QTR_DESC
+		dataType: string
+		lineageTag: 5607fe1e-ff33-4f1d-9b5b-9e9bc042c17b
+		summarizeBy: none
+		sourceColumn: CAL_QTR_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_QTR_CNT
+		dataType: double
+		lineageTag: 54d85b2d-6ab5-41dc-8e83-d166330aee32
+		summarizeBy: sum
+		sourceColumn: CAL_QTR_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_HALF_YR_NBR
+		dataType: double
+		lineageTag: c5d78ee3-b6d7-4abc-b5f7-8ee0b884b106
+		summarizeBy: sum
+		sourceColumn: CAL_HALF_YR_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_HALF_YR_NM
+		dataType: string
+		lineageTag: 7c15dcd9-c0d1-431c-a7b9-b9387a18cfa9
+		summarizeBy: none
+		sourceColumn: CAL_HALF_YR_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_HALF_CNT
+		dataType: double
+		lineageTag: ea4bc026-c67e-43dc-92ce-7b4660973cee
+		summarizeBy: sum
+		sourceColumn: CAL_HALF_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_FULL_YR_NBR
+		dataType: double
+		lineageTag: 5459d5ee-1667-47df-8f65-2d11891d35e2
+		summarizeBy: sum
+		sourceColumn: CAL_FULL_YR_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAL_YR_NM
+		dataType: string
+		lineageTag: 9b1a187d-52bb-4b27-acc2-439854ecc359
+		summarizeBy: none
+		sourceColumn: CAL_YR_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_MTH_NBR
+		dataType: double
+		lineageTag: 1e325f46-b8a9-4013-b5ea-6e70a7ad71cf
+		summarizeBy: sum
+		sourceColumn: FISCAL_MTH_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_MTH_ALPHA_NBR
+		dataType: string
+		lineageTag: 6804e185-bf02-4fbc-94b3-3b03d58a84f7
+		summarizeBy: none
+		sourceColumn: FISCAL_MTH_ALPHA_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_MTH_NM
+		dataType: string
+		lineageTag: 2d876356-d37b-407d-a95d-6421691bd91c
+		summarizeBy: none
+		sourceColumn: FISCAL_MTH_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_MTH_ABBR
+		dataType: string
+		lineageTag: 88302c09-1971-4ef8-bd4b-868d3f8a9182
+		summarizeBy: none
+		sourceColumn: FISCAL_MTH_ABBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_MTH_CNT
+		dataType: double
+		lineageTag: bc6054c0-0d33-4a69-924d-b37b36736f5c
+		summarizeBy: sum
+		sourceColumn: FISCAL_MTH_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_QTR_NBR
+		dataType: double
+		lineageTag: 0e1fbb6f-16bc-4f57-a70f-ad04f043bc7e
+		summarizeBy: sum
+		sourceColumn: FISCAL_QTR_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_QTR_NM
+		dataType: string
+		lineageTag: e8ad2297-1d78-400e-9bc3-4e6390a89d81
+		summarizeBy: none
+		sourceColumn: FISCAL_QTR_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_QTR_CNT
+		dataType: double
+		lineageTag: 778aa775-e96d-47e1-8e5b-11743667fadd
+		summarizeBy: sum
+		sourceColumn: FISCAL_QTR_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_HALF_YR_NBR
+		dataType: double
+		lineageTag: 3c7cefe4-1711-44af-9886-5a878e118cf0
+		summarizeBy: sum
+		sourceColumn: FISCAL_HALF_YR_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_HALF_YR_NM
+		dataType: string
+		lineageTag: c0450d55-45b5-4731-94b8-4fc9b3adf5d5
+		summarizeBy: none
+		sourceColumn: FISCAL_HALF_YR_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_HALF_CNT
+		dataType: double
+		lineageTag: 5a93fdcb-c71d-484b-a391-c119ed2974c2
+		summarizeBy: sum
+		sourceColumn: FISCAL_HALF_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_FULL_YR_NBR
+		dataType: double
+		lineageTag: cd8bbb50-307b-490b-8d77-cbfc47df1b92
+		summarizeBy: sum
+		sourceColumn: FISCAL_FULL_YR_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_YR_NM
+		dataType: string
+		lineageTag: 29a4e5ce-0c22-48eb-9b9b-97efc25ed556
+		summarizeBy: none
+		sourceColumn: FISCAL_YR_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column LY_COMP_VISIT_DT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cde66c9e-8a5f-49f6-b06a-025ab6f082c1
+		summarizeBy: none
+		sourceColumn: LY_COMP_VISIT_DT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WM_WK_DAY_NBR
+		dataType: double
+		lineageTag: 017b33ff-dfa5-488b-956b-56f625555394
+		summarizeBy: sum
+		sourceColumn: WM_WK_DAY_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WM_WK_CNT
+		dataType: double
+		lineageTag: e0691f38-a143-4d6a-ac30-bc82eaf8466d
+		summarizeBy: sum
+		sourceColumn: WM_WK_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WM_WK_NBR
+		dataType: double
+		lineageTag: 9e235960-df4a-40d2-b447-d45b35d2d7d6
+		summarizeBy: sum
+		sourceColumn: WM_WK_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WM_WK_NM
+		dataType: string
+		lineageTag: c1abd669-1dd4-4b56-96e4-08ba1e029cdb
+		summarizeBy: none
+		sourceColumn: WM_WK_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_YR_WK_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: 17c93dfe-a15e-4978-a73b-bdd01a2e9fb5
+		summarizeBy: sum
+		sourceColumn: WM_YR_WK_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_MTH_NBR
+		dataType: double
+		lineageTag: c493edf0-3a12-4594-88f7-ba79ab7a5d2c
+		summarizeBy: sum
+		sourceColumn: WM_MTH_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WM_MTH_ALPHA_NBR
+		dataType: string
+		lineageTag: b9fcb7f7-461c-4c2c-89e0-c987593b1466
+		summarizeBy: none
+		sourceColumn: WM_MTH_ALPHA_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_MTH_NM
+		dataType: string
+		lineageTag: 7552a5c8-1cfb-42ba-bc92-148904e7bd8e
+		summarizeBy: none
+		sourceColumn: WM_MTH_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_MTH_ABBR
+		dataType: string
+		lineageTag: 47df0c75-c32d-4025-988c-1cdb23a65953
+		summarizeBy: none
+		sourceColumn: WM_MTH_ABBR
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_MTH_CNT
+		dataType: double
+		lineageTag: 8112aeec-d2a4-4cdd-b723-469b9779c5cf
+		summarizeBy: sum
+		sourceColumn: WM_MTH_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WM_QTR_NBR
+		dataType: double
+		lineageTag: 0ba6eb79-f6c3-4160-9b3a-77cfc3ef5304
+		summarizeBy: sum
+		sourceColumn: WM_QTR_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WM_QTR_NM
+		dataType: string
+		lineageTag: 89d21c58-e5e6-433a-a56f-96abed1cda4a
+		summarizeBy: none
+		sourceColumn: WM_QTR_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_REFER_QTR_CNT
+		dataType: double
+		lineageTag: 710df90f-f079-478d-8db2-fe11ac28ff48
+		summarizeBy: sum
+		sourceColumn: WM_REFER_QTR_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WM_HALF_YR_NBR
+		dataType: double
+		lineageTag: f399ce81-07e9-450e-ae45-c87049be8158
+		summarizeBy: sum
+		sourceColumn: WM_HALF_YR_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WM_HALF_YR_NM
+		dataType: string
+		lineageTag: 4c24e19d-434b-4b0c-b02a-d1372ac013a7
+		summarizeBy: none
+		sourceColumn: WM_HALF_YR_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_EPOC_HALF_CNT
+		dataType: double
+		lineageTag: 588e0a34-3595-4120-bed8-52f1ddcb375b
+		summarizeBy: sum
+		sourceColumn: WM_EPOC_HALF_CNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WM_FULL_YR_NBR
+		dataType: double
+		lineageTag: 56e93f2b-d992-44b3-8099-3149cc672973
+		summarizeBy: sum
+		sourceColumn: WM_FULL_YR_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WM_YR_DESC
+		dataType: string
+		lineageTag: 725de30a-3730-48cd-8005-6ce6d15151b4
+		summarizeBy: none
+		sourceColumn: WM_YR_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column LY_COMP_YR_WK_NBR
+		dataType: double
+		lineageTag: 3c5833ca-fcfc-4c0d-a7d0-95869788f555
+		summarizeBy: sum
+		sourceColumn: LY_COMP_YR_WK_NBR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STATUS_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b8800c38-b73b-450e-9508-b3c524864961
+		summarizeBy: none
+		sourceColumn: STATUS_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FEED_TYPE
+		dataType: string
+		lineageTag: 4baf1712-2984-4519-b143-85ddbce4627a
+		summarizeBy: none
+		sourceColumn: FEED_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FILE_NAME
+		dataType: string
+		lineageTag: 4863d2f7-d601-4958-9965-4e19422068a0
+		summarizeBy: none
+		sourceColumn: FILE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column LY_BUS_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7396d691-1240-481e-98ad-5851634fc024
+		summarizeBy: none
+		sourceColumn: LY_BUS_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CW_FLAG
+		dataType: string
+		lineageTag: bfb006a8-67a0-4742-9229-c5b598a7bbb7
+		summarizeBy: none
+		sourceColumn: CW_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column LW_FLAG
+		dataType: string
+		lineageTag: ea255a58-451e-49ed-8e27-d66c3d3daed3
+		summarizeBy: none
+		sourceColumn: LW_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column L4W_FLAG
+		dataType: string
+		lineageTag: ecd7ba03-962f-41b4-9965-f138bc8c7db0
+		summarizeBy: none
+		sourceColumn: L4W_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column L13W_FLAG
+		dataType: string
+		lineageTag: 896c93f8-5d85-4f81-bdc8-b17c1f9538df
+		summarizeBy: none
+		sourceColumn: L13W_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column L52W_FLAG
+		dataType: string
+		lineageTag: 335a97ca-1ec0-4c37-b940-a81b8f549d63
+		summarizeBy: none
+		sourceColumn: L52W_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column FYTD_FLAG
+		dataType: string
+		lineageTag: d48173be-8966-46e4-b93d-2efc5d5ccdca
+		summarizeBy: none
+		sourceColumn: FYTD_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column LW_PREVIOUS_DATE
+		dataType: string
+		lineageTag: a538a77b-3e9d-40fc-aa27-b819d5bbb2eb
+		summarizeBy: none
+		sourceColumn: LW_PREVIOUS_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column L4W_PREVIOUS_DATE
+		dataType: string
+		lineageTag: b986ac8f-9d2d-4286-ac05-84289aed3946
+		summarizeBy: none
+		sourceColumn: L4W_PREVIOUS_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column L13W_PREVIOUS_DATE
+		dataType: string
+		lineageTag: 745505a3-90fa-4a67-bb05-d829ff5d64f5
+		summarizeBy: none
+		sourceColumn: L13W_PREVIOUS_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column L52W_PREVIOUS_DATE
+		dataType: string
+		lineageTag: acd07baa-dd09-45dd-bf92-974479bdccae
+		summarizeBy: none
+		sourceColumn: L52W_PREVIOUS_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column FYTD_PREVIOUS_DATE
+		dataType: string
+		lineageTag: 9bf15af7-311f-45a9-96df-abafbd9e50bf
+		summarizeBy: none
+		sourceColumn: FYTD_PREVIOUS_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_YR_WK_TXT
+		dataType: string
+		lineageTag: 849181c4-5f93-4ad0-b05b-400432e8a5bf
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_TXT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WM Master - Calendar Date (L13W)' = m
+		mode: import
+		queryGroup: 'Reporting - Master Data'
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    SILVER_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    WM_CALENDAR_VIEW = SILVER_Schema{[Name="WM_CALENDAR_VIEW",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(WM_CALENDAR_VIEW,{{"WM_YR_WK_NBR", Int64.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "WM_YR_WK_NBR", "WM_YR_WK_TXT"),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Duplicated Column",{{"WM_YR_WK_TXT", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type1", each ([L13W_FLAG] = "X"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

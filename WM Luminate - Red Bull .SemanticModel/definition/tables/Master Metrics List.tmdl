@@ -1,0 +1,49 @@
+table 'Master Metrics List'
+	isHidden
+	lineageTag: ddadd580-8a77-4622-93d9-b1b28b15ee42
+
+	column Metric
+		dataType: string
+		isHidden
+		lineageTag: c9ff56d8-d44a-45f5-a501-556b1cfbce41
+		summarizeBy: none
+		sourceColumn: Metric
+		sortByColumn: 'Master ID'
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Master ID'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d5fcaf81-08e7-4320-bcda-9cb8d41790dc
+		summarizeBy: none
+		sourceColumn: Master ID
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	partition 'Master Metrics List' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("fZTbSsNAFEV/ZQgtKBSb3lJ91IoiiBaTIqX2IcShHYyJpKPSvzc4pzlnro/Za8NkrzDZbKI4GkTZmvVYmpf8EG0Hm2jURo9rEozb4PomZYv9jqSTNu0b2bTNFnUlL9h9U//KPUEzddCqElIFiToGgzk5BtPL7hjMrsxjEI1g0LIRBVcJ7CEJHURiXERCaxJhsKk3TIev7CyVdcMPLOVlKarduarAylCF7g710ESoZbkJlMcgaxWogL1QheoM9dBvqGUJD5XhC2RNLiR/Z6qjEJh3IWrcxdG0i1qGHaUJmNVfWqHT/XIg7aY5OLlzDmrfPkcJjD1UP7xq8ZGt3r7jeDyH9wZrPkzN+Tpoz9ewDHqKU7C4yL/yQsijCsGfHlJzOkFnem7Z0jF46jNZGwQUOQi148AoxgEtJ3ZnBjpun1P1DCa6ZyqhC3F/F1nTOwKrn0RZsqUoPuDfDZPNmO41GY41ibXUKCQw8040B8ky8cn/IXvJpfrvJrDbX6Ai/C004+9YqtzV7R8=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Master ID" = _t, Metric = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Master ID", Int64.Type}}),
+				    #"Sorted Rows" = Table.Sort(#"Changed Type",{{"Master ID", Order.Ascending}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Sorted Rows",{{"Master ID", Int64.Type}})
+				in
+				    #"Changed Type1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

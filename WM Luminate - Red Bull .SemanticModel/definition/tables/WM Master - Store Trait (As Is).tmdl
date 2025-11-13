@@ -1,0 +1,169 @@
+/// The Traits view provides nformation about six-digit trait numbers and how they relates to attributes of the store or items. Traits can be created to represent an attribute of the store or items.
+/// 
+/// SOURCE: WM_TRAIT_VIEW
+table 'WM Master - Store Trait (As Is)'
+	lineageTag: ffa556b1-581b-4401-9ded-8e714460ad5f
+	sourceLineageTag: dda17fd0-370f-439f-b76c-a6e48aaf0216
+
+	column TRAIT_NBR
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: ac018090-2497-4341-b581-c02518d87db9
+		sourceLineageTag: 62bf5623-7d2d-40e1-890b-7aedebc2bc6e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		annotation SummarizationSetBy = User
+
+	column TRAIT_DESC
+		dataType: string
+		lineageTag: f65ef6e5-a49f-441c-b70e-8821fd48c939
+		sourceLineageTag: 1b60c77d-4a39-4cfe-af10-aba8ac6866f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_DESC
+
+		annotation SummarizationSetBy = User
+
+	column TRAIT_CATEGORY_DESC
+		dataType: string
+		lineageTag: 575dcf36-e86a-4e23-a7cf-b0f4a5b7d297
+		sourceLineageTag: 187a79d4-6779-4d15-b299-ffcc5b93749f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_CATEGORY_DESC
+
+		annotation SummarizationSetBy = User
+
+	column TRAIT_GROUP_DESC
+		dataType: string
+		lineageTag: e46c2107-85e6-4dfd-9a02-5161abefb165
+		sourceLineageTag: 73eaa569-28a2-4e5d-a44c-14b9ee13bcf7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_GROUP_DESC
+
+		annotation SummarizationSetBy = User
+
+	column MODLR_CATG_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: d5d39a3b-bf3d-4f4c-adbd-8af01248c0b5
+		sourceLineageTag: f10e2654-70dc-4af5-aab0-11077242f8d1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MODLR_CATG_NBR
+
+		annotation SummarizationSetBy = User
+
+	column MODLR_CATG_DESC
+		dataType: string
+		lineageTag: 0564fe29-8924-424a-9268-521065a2dc80
+		sourceLineageTag: 92f8c015-baa2-47d7-88d0-68fc92ecb77a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MODLR_CATG_DESC
+
+		annotation SummarizationSetBy = User
+
+	column MODLR_PLAN_TITLE_DESC
+		dataType: string
+		lineageTag: 41a19472-1c78-4cc7-b15e-0cd49ad80e66
+		sourceLineageTag: 303da5dd-f07f-4a36-8faa-0d5df7c460d3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MODLR_PLAN_TITLE_DESC
+
+		annotation SummarizationSetBy = User
+
+	column MODLR_WDTH_QTY
+		dataType: double
+		lineageTag: 9cb954fd-b939-424e-b866-b3ff5c051d46
+		sourceLineageTag: 6cd9f8ae-fed6-4a5f-a694-5fbf16e2c923
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MODLR_WDTH_QTY
+
+		annotation SummarizationSetBy = User
+
+	column MODLR_FOOTAGE
+		dataType: int64
+		lineageTag: f876628f-753c-4e23-a831-8bea8a957eb9
+		sourceLineageTag: b7f61408-a200-4554-b87c-b8f5dc1ca7b5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MODLR_FOOTAGE
+
+		annotation SummarizationSetBy = User
+
+	column 'Strike Zone - Red Bull'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ebd1a29-02eb-4c8a-a013-9d794caaf1ce
+		sourceLineageTag: d71c08ae-3dd3-43d6-8586-69f2a6703b4d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Strike Zone - Red Bull
+
+		annotation SummarizationSetBy = User
+
+	column 'Strike Zone - Monster'
+		dataType: int64
+		formatString: 0
+		lineageTag: 00cfc425-efe4-48c2-ac66-d6cd8d1c4a2f
+		sourceLineageTag: b5481fb5-5dc2-401a-8eb0-35176005ec78
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Strike Zone - Monster
+
+		annotation SummarizationSetBy = User
+
+	column 'Strike Zone - AO'
+		dataType: int64
+		formatString: 0
+		lineageTag: c3f3e992-bc92-474b-a125-0f80761f040b
+		sourceLineageTag: 0760b736-92e3-4767-bacc-3fb2686164b9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Strike Zone - AO
+
+		annotation SummarizationSetBy = User
+
+	column TRAIT_TXT
+		dataType: string
+		lineageTag: eeebe0e0-7ec7-4d62-9c27-3b72225719da
+		sourceLineageTag: b9563045-0c70-4a4f-a0ff-2993e323014f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_TXT
+
+		annotation SummarizationSetBy = User
+
+	column Trait
+		dataType: string
+		lineageTag: 7c25f4d1-715f-47ba-97da-2960e36c5dbc
+		sourceLineageTag: 80c2cea2-cfae-4258-9714-652b755b3eec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Trait
+
+		annotation SummarizationSetBy = User
+
+	column 'Mod Category'
+		dataType: string
+		lineageTag: eb7dd539-32c3-4a17-8237-d837a2d8711f
+		sourceLineageTag: 26b6b7b1-e218-495c-84a8-90d70dd86d27
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mod Category
+
+		annotation SummarizationSetBy = User
+
+	partition 'WM Master - Store Trait (As Is)' = entity
+		mode: directQuery
+		source
+			entityName: WM Master - Store Trait (As Is)
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

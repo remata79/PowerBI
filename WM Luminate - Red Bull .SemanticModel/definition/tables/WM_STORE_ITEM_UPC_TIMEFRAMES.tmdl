@@ -1,0 +1,496 @@
+/// The Store Item UPC Measures view provides information about Inventory at the store level; several types of metrics across in-stock inventory; and markup, markdown, and margins on an item, store, and day grain.
+/// This model provides the metrics aggregated at different Time Frames:
+/// - LW Last Week
+/// - L4W Last 4 Weeks
+/// - L13W Last 13 Weeks
+/// - L52W Last 52 Weeks
+/// - FYTD Walmart Fiscal Year to Date
+/// - CW Current Week
+/// 
+/// Source: WM_STORE_ITEM_UPC_TRIMMED_VIEW
+table WM_STORE_ITEM_UPC_TIMEFRAMES
+	isHidden
+	lineageTag: b7ae1e89-0674-41d6-8489-37389f5b7b19
+	sourceLineageTag: e98a1af9-4572-423d-8018-15806638b02e
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f7e398cc-ae5b-4307-8e7c-77375ede5e66
+		sourceLineageTag: d623d961-8c12-43ea-820f-6c7c824ff52d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Average on hand Qty for this Time Period.
+	column L4W_TY_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 085df706-ca55-433d-a9a7-fbd2f0635870
+		sourceLineageTag: dd985a85-5c0d-4a56-bbaa-9e672a57a945
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Average on hand Qty for this Time Period.
+	column L13W_TY_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 08aa04bd-c5da-47ed-b16b-f831c9c62b09
+		sourceLineageTag: 2abb1923-e413-47b3-9fba-2052fee48210
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Average on hand Qty for this Time Period.
+	column LW_TY_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: b0649683-7283-4aad-8fb4-0050ee329632
+		sourceLineageTag: 43d56f9b-2eed-4c83-89cd-cc35246e03bd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Average on hand Qty for this Time Period.
+	column L52W_TY_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 56e6fec4-5b98-4ec1-b828-646e5b437e25
+		sourceLineageTag: 3fbebb23-b383-49ad-8c4c-8b2254046261
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Average on hand Qty for this Time Period.
+	column FYTD_TY_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 11110b71-9071-4733-aa9a-918b7a954ee1
+		sourceLineageTag: 38bea50b-af59-49b2-8671-ad8fe56aa8b1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Average on hand Qty for this Time Period.
+	column CW_TY_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 0ba7f7f7-c08d-4684-acc9-23e31342422a
+		sourceLineageTag: d081775b-0354-455b-a736-4b97cb721068
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Number of days UPC was Out of Stock in that Store/TimeFrame.
+	column L4W_OUT_OF_STOCK
+		dataType: double
+		isHidden
+		lineageTag: fd7e8982-f405-4a1b-9586-f1b8a2896632
+		sourceLineageTag: b92b428a-4629-4cd0-9076-a5f72671830c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_OUT_OF_STOCK
+
+		annotation SummarizationSetBy = User
+
+	/// Number of days UPC was Out of Stock in that Store/TimeFrame.
+	column L13W_OUT_OF_STOCK
+		dataType: double
+		isHidden
+		lineageTag: 8274808a-f767-4dbe-a10e-9ef41bff1557
+		sourceLineageTag: 3b1268de-eb80-4ecf-bb38-12a1ab2906c3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_OUT_OF_STOCK
+
+		annotation SummarizationSetBy = User
+
+	/// Number of days UPC was Out of Stock in that Store/TimeFrame.
+	column LW_OUT_OF_STOCK
+		dataType: double
+		isHidden
+		lineageTag: 9ae5f312-99e7-4768-badb-d11ae640dd44
+		sourceLineageTag: fc146ca2-d7ed-4ed0-991e-aeddc8f8a29a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_OUT_OF_STOCK
+
+		annotation SummarizationSetBy = User
+
+	/// Number of days UPC was Out of Stock in that Store/TimeFrame.
+	column L52W_OUT_OF_STOCK
+		dataType: double
+		isHidden
+		lineageTag: 3a9d4952-911e-416c-a8d9-0c432d3cab9f
+		sourceLineageTag: 4107518e-bbcc-49d8-80ed-63aeef816cb6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_OUT_OF_STOCK
+
+		annotation SummarizationSetBy = User
+
+	/// Number of days UPC was Out of Stock in that Store/TimeFrame.
+	column FYTD_OUT_OF_STOCK
+		dataType: double
+		isHidden
+		lineageTag: 3fc53c03-aba3-4c5a-9d91-fb4b7279df2c
+		sourceLineageTag: ad3428b9-4b3f-4cdc-a6e1-1c5d19144335
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_OUT_OF_STOCK
+
+		annotation SummarizationSetBy = User
+
+	/// Number of days UPC was Out of Stock in that Store/TimeFrame.
+	column CW_OUT_OF_STOCK
+		dataType: double
+		isHidden
+		lineageTag: d263440e-d989-4676-bfa0-0abd2b34cb5e
+		sourceLineageTag: 65734ef1-0a22-48ac-b6d0-5cd897767606
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_OUT_OF_STOCK
+
+		annotation SummarizationSetBy = User
+
+	/// Count of Store UPC combination on the period. 
+	/// Count of Store UPC combination on the period, used for Average calculation metrics.
+	column L4W_STORE_ITEM_COUNT
+		dataType: double
+		isHidden
+		lineageTag: 909a3ed9-b134-4f63-86dd-e3b6f4fe2453
+		sourceLineageTag: 107891bd-88a6-493a-a4dc-b200710f6e7c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_STORE_ITEM_COUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Count of Store UPC combination on the period. 
+	/// Count of Store UPC combination on the period, used for Average calculation metrics.
+	column L13W_STORE_ITEM_COUNT
+		dataType: double
+		isHidden
+		lineageTag: 294004c9-b35c-4e7e-9147-87c6cbcc6f8d
+		sourceLineageTag: bf696d06-f9ad-4a0f-936c-9241bc3453f7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_STORE_ITEM_COUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Count of Store UPC combination on the period. 
+	/// Count of Store UPC combination on the period, used for Average calculation metrics.
+	column L52W_STORE_ITEM_COUNT
+		dataType: double
+		isHidden
+		lineageTag: 0d2e7dc0-7975-4989-99f7-19fbee47444a
+		sourceLineageTag: 1634018d-49d4-462f-a418-91a0abb53d4a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_STORE_ITEM_COUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Count of Store UPC combination on the period. 
+	/// Count of Store UPC combination on the period, used for Average calculation metrics.
+	column LW_STORE_ITEM_COUNT
+		dataType: double
+		isHidden
+		lineageTag: 6cfb862a-2ff7-4705-a3b7-087964a1d94a
+		sourceLineageTag: a745e012-8f46-4205-a378-5617ed371fac
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_STORE_ITEM_COUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Count of Store UPC combination on the period. 
+	/// Count of Store UPC combination on the period, used for Average calculation metrics.
+	column FYTD_STORE_ITEM_COUNT
+		dataType: double
+		isHidden
+		lineageTag: 2b75aaf0-96f2-48ab-a3bf-839a8f26f404
+		sourceLineageTag: 0cedda26-5ab0-4758-bfdb-c4b815bafbac
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_STORE_ITEM_COUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Count of Store UPC combination on the period. 
+	/// Count of Store UPC combination on the period, used for Average calculation metrics.
+	column CW_STORE_ITEM_COUNT
+		dataType: double
+		isHidden
+		lineageTag: 882f9a52-8175-4fe9-a2c3-ff51127691ad
+		sourceLineageTag: 8a98590c-5f5b-48f4-896e-e386bb6b08f7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_STORE_ITEM_COUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Last updated date.
+	column BUS_DT
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 905cf59f-2400-48dd-a378-ead6cba16249
+		sourceLineageTag: 3b8d624c-ce33-4bcd-b6c6-f71e93de3f74
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BUS_DT
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Week Number
+	column CAL_WM_WK_NBR
+		dataType: double
+		isHidden
+		lineageTag: fab0cdd3-cc57-44d8-b050-443236cceffe
+		sourceLineageTag: 3fc83f16-be84-4216-b711-3d00fd2dda4a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	column CAL_WM_WK_DAY_NBR
+		dataType: double
+		isHidden
+		lineageTag: 7db2b030-28f6-419e-8b71-891c3e1fc3d7
+		sourceLineageTag: 3acf410a-1789-49a6-a0d8-c6b426d3462a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_DAY_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Universal Product Code Number
+	column WM_UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8e0ef8c0-1070-402d-9304-9e89ab25cb75
+		sourceLineageTag: d29d31ba-4fd6-4678-b046-dec41b700a38
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the Start of the Time Period.
+	column L4W_TY_START_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: c2c46aa9-9ace-477d-aef1-560ec513f655
+		sourceLineageTag: 857a48af-4280-4070-9cee-b51721dcbb31
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_START_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the Start of the Time Period.
+	column L13W_TY_START_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 16d27d7d-953b-4265-b2a7-19c4d2a00bcb
+		sourceLineageTag: c8d32b2b-8ab6-4aa0-b33e-9d8f5d41ed65
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_START_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the Start of the Time Period.
+	column LW_TY_START_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 0e74d6ba-a43b-4657-b0b6-3a29c4e805f1
+		sourceLineageTag: 1521ff76-7035-4225-81a7-7ab842d1f4f3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_START_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the Start of the Time Period.
+	column L52W_TY_START_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 4c4ec7d4-998d-4f91-8e47-b54791003eb8
+		sourceLineageTag: b780d17f-e8eb-486f-b96d-168d98648953
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_START_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the Start of the Time Period.
+	column FYTD_TY_START_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 08d80a58-826b-4374-a217-7f2b949b0fcd
+		sourceLineageTag: 9de80cab-bf9d-4a86-a806-fe5ba6c65e3a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_START_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the end of Time Period.
+	column L4W_TY_END_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 5f4d8a33-1752-42e2-a91e-3d53dcbcc885
+		sourceLineageTag: a68faafd-cd70-45e8-9f17-b5bd849ef180
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_END_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the end of Time Period.
+	column L13W_TY_END_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 027bcb33-4aa8-4c3a-9702-fe110509d34f
+		sourceLineageTag: 34399515-b1b6-4f15-852e-a56b572e4ad0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_END_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the end of Time Period.
+	column LW_TY_END_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: a1408560-6da4-4cb1-aa8b-fee837364cee
+		sourceLineageTag: 08d795a2-9acb-4ebc-bd7f-9c41780516e5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_END_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	column L52W_TY_END_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 3e3d9399-1251-4982-b25c-1e352a3e81e6
+		sourceLineageTag: ae5eeb95-fd6c-4401-a069-fd43a0045187
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_END_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the end of Time Period.
+	column FYTD_TY_END_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 9c921e28-0c60-46cb-8ec5-46a73ef9d729
+		sourceLineageTag: e3fd5b64-7d26-44de-a58b-c25f11c2ec04
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_END_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Net Receipt Quantity - This Year.
+	column L4W_TY_NET_RCPT_QTY
+		dataType: double
+		isHidden
+		lineageTag: e379cfd9-45aa-45c9-af6a-0e02437e771b
+		sourceLineageTag: 649d6036-e322-4b75-95e0-6596f2bdb02c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_NET_RCPT_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Net Receipt Quantity - This Year.
+	column L13W_TY_NET_RCPT_QTY
+		dataType: double
+		isHidden
+		lineageTag: 0d502067-6e55-4f58-8355-c6b93fb0b649
+		sourceLineageTag: 1aa78282-eb12-417a-a091-290cc82d96d6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_NET_RCPT_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Net Receipt Quantity - This Year.
+	column LW_TY_NET_RCPT_QTY
+		dataType: double
+		isHidden
+		lineageTag: bcaaa63a-ae3a-47b5-92e2-f7783f5f564d
+		sourceLineageTag: ec599ef2-c2e0-478e-9d86-7af6fcca65f2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_NET_RCPT_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Net Receipt Quantity - This Year.
+	column L52W_TY_NET_RCPT_QTY
+		dataType: double
+		isHidden
+		lineageTag: 18ee4033-726d-4059-8858-7a8e72796b0a
+		sourceLineageTag: 1187ea13-a3d0-4c37-8207-65c8379b8c1d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_NET_RCPT_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Net Receipt Quantity - This Year.
+	column FYTD_TY_NET_RCPT_QTY
+		dataType: double
+		isHidden
+		lineageTag: 65111067-2b9a-4690-86b2-17ca0a56b64b
+		sourceLineageTag: da293ba0-2c44-4fed-bada-d935d9b14c18
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_NET_RCPT_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Net Receipt Quantity - This Year.
+	column CW_TY_NET_RCPT_QTY
+		dataType: double
+		isHidden
+		lineageTag: 015888ab-46fa-4c34-b2d8-da820572d044
+		sourceLineageTag: f3d8e250-4e26-4f79-a280-b999a652df99
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_NET_RCPT_QTY
+
+		annotation SummarizationSetBy = User
+
+	partition WM_STORE_ITEM_UPC_TIMEFRAMES = entity
+		mode: directQuery
+		source
+			entityName: WM_STORE_ITEM_UPC_TIMEFRAMES
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

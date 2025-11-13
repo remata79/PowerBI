@@ -1,0 +1,1692 @@
+/// Provides information about all scheduled store fulfillment orders at Walmart UPC and store level.
+/// 
+/// This model provides the metrics aggregated at different Time Frames:
+/// - LW Last Week
+/// - L4W Last 4 Weeks
+/// - L13W Last 13 Weeks
+/// - L52W Last 52 Weeks
+/// - FYTD Walmart Fiscal Year to Date
+/// - CW Current Week
+/// 
+/// Source: WM_STORE_FULFILMENT_TRIMMED_VIEW
+table WM_STORE_FULFILLMENT_TIMEFRAMES
+	isHidden
+	lineageTag: 193c8907-8277-4f2a-a89d-37e10c859fa3
+	sourceLineageTag: 41865303-4cae-4749-9d7c-aa4fb02e904e
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4382444b-ca3b-4b15-a874-70af2199e117
+		sourceLineageTag: 0dcdb074-bd31-4669-a925-2f9d4c270e42
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - This Year Nil Pick Units.
+	column L4W_TY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: 8cc0c86f-0f94-4c66-b162-c6492d6bd1a6
+		sourceLineageTag: 4e3ee795-f3ca-43b1-b943-713930f5901c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - This Year Nil Pick Units.
+	column L13W_TY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: 514ad5b6-206b-4875-b35e-b74f7c6c74fe
+		sourceLineageTag: f4086cb2-b0a7-428b-9d0a-b6e30039981c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - This Year Nil Pick Units.
+	column LW_TY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: a70994fa-1d81-4393-a35c-6bfdc65713eb
+		sourceLineageTag: fd3b8b43-3f87-4f1e-82f0-8052e151e287
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - This Year Nil Pick Units.
+	column L52W_TY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: 70f774d8-5f04-48f3-b62a-93fd523084f5
+		sourceLineageTag: 0fd1548e-a511-45a2-a053-cc7e2ad9d25a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - This Year Nil Pick Units.
+	column FYTD_TY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: 9ee02812-cdf7-4b06-b3ae-b922f246d761
+		sourceLineageTag: 6ffa82c7-0318-4618-a011-a8f767c85617
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week - This Year Nil Pick Units.
+	column CW_TY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: 6a46151c-ae4a-442e-932c-fb82696cd09f
+		sourceLineageTag: a4cc3d23-19bb-4617-be7f-a550a7da48c4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - Last Year Nil Pick Units.
+	column L4W_LY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: 38d7e30b-b04b-401b-9a5b-6b5de855abdd
+		sourceLineageTag: 79455e01-c851-47b3-912d-63d45a81d18c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - Last Year Nil Pick Units.
+	column L13W_LY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: d2ea8997-29bf-407c-b107-57c8c917e3ea
+		sourceLineageTag: 3b6651ec-03ca-473c-8f96-5fee756c3751
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - Last Year Nil Pick Units.
+	column LW_LY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: 0b8fde58-22f9-4f51-b6ae-bd38f50893d5
+		sourceLineageTag: f877aea9-943d-46e9-af75-8a83984fb55d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - Last Year Nil Pick Units.
+	column L52W_LY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: 94618157-25d1-4c59-aae6-8bc300ff4f8b
+		sourceLineageTag: 13d007a7-9977-482d-9a15-23a6911d25a8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year To Date - Last Year Nil Pick Units.
+	column FYTD_LY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: bafdc0fd-7231-4c7e-b22d-729b8ee73233
+		sourceLineageTag: 590ed1b0-0322-4285-a7f6-57610c2b3b2f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year Nil Pick Units.
+	column CW_LY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: f90dede6-002a-467a-a827-5111579df5d5
+		sourceLineageTag: 3f5be081-6f06-4399-95ed-3522d0bbc9b0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - This Year Nil Pick Rate Numerator.
+	column L4W_TY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 8f4836a5-05b7-4556-9a24-bc484f6b33ef
+		sourceLineageTag: eaf7ae69-bf98-412d-8d95-d61b9819d644
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - This Year Nil Pick Rate Numerator.
+	column L13W_TY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 7f35629d-f22c-464b-9bf0-c4acafa621ad
+		sourceLineageTag: 1785d394-2042-44de-b2b6-691bb6c828aa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - This Year Nil Pick Rate Numerator.
+	column LW_TY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 1d4e8870-e804-4a83-8ad8-e0c20c151ad4
+		sourceLineageTag: 18e0d63d-5226-490d-984d-00cc4cf1fe98
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - This Year Nil Pick Rate Numerator.
+	column L52W_TY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: c55b107d-65d8-4ac2-8d3b-b472a50e5095
+		sourceLineageTag: 9724fda4-5376-4092-a9fc-febd4b094049
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - This Year Nil Pick Rate Numerator.
+	column FYTD_TY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: ed6647c3-a79a-4585-bef6-1fef163a5391
+		sourceLineageTag: bdae0569-e6f5-4f9d-b242-e5e8d46dcc2c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week - This Year Nil Pick Rate Numerator.
+	column CW_TY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 43927653-6a18-484b-8bd4-113cf065912b
+		sourceLineageTag: ee974c78-323a-4d79-a891-596501fa5870
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - Last Year Nil Pick Rate Numerator.
+	column L4W_LY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 7520cc0b-7502-4b84-9ded-49982611292d
+		sourceLineageTag: f3977f8f-ed3f-4972-a8b1-a0f81cb5c034
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - Last Year Nil Pick Rate Numerator.
+	column L13W_LY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 7d8fd107-5466-41c6-a6a8-122b80b1c1e1
+		sourceLineageTag: 8ac4d2eb-ac8b-4e53-8daf-a74d0e2b1f92
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - Last Year Nil Pick Rate Numerator.
+	column LW_LY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: d5e72db6-18a7-4e0e-bca0-74f9a6b19832
+		sourceLineageTag: 509ac88e-a91b-4966-b316-aec1525601bb
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - Last Year Nil Pick Rate Numerator.
+	column L52W_LY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: bc06e836-5ad1-411e-983d-8a2df0657b63
+		sourceLineageTag: 5c5c4997-6c57-434c-b1b6-e8f7ff710244
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - Last Year Nil Pick Rate Numerator.
+	column FYTD_LY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 17eafebc-3640-4ba1-9c82-f41a5783f8aa
+		sourceLineageTag: 3e28bec2-fb78-4d84-9a27-62bb6b6d7509
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year Nil Pick Rate Numerator.
+	column CW_LY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 2e96d130-1900-4d15-b593-2ad16b06b4fd
+		sourceLineageTag: 48938988-3b88-404d-ab5c-7a57e025d275
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - This Year Nil Pick Rate Denominator.
+	column L4W_TY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 1d9a29a1-a65e-467f-9bf7-20f6ea9c83f1
+		sourceLineageTag: 2b3463ff-6757-492c-9693-fd75694bb338
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - This Year Nil Pick Rate Denominator.
+	column L13W_TY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 597040c7-aec3-4b9b-bb98-3df0f43ac3ed
+		sourceLineageTag: 044cae13-a526-478d-9555-d34275e93d7b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - This Year Nil Pick Rate Denominator.
+	column LW_TY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 059b4ed4-65b7-42a6-88b7-1b645fbcd7c9
+		sourceLineageTag: db97ff10-7e86-4936-aa1e-3b40a3a35cf7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - This Year Nil Pick Rate Denominator.
+	column L52W_TY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 7e9d5a95-1fd9-4c2c-8042-3b025f316679
+		sourceLineageTag: 30e44f63-f7de-4b4d-ba04-e0e17275d977
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - This Year Nil Pick Rate Denominator.
+	column FYTD_TY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 9288da4b-58e4-4df7-8738-cf97deb71a73
+		sourceLineageTag: ec43a43d-5ab9-4ce2-8414-fc072ea13f14
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week - This Year Nil Pick Rate Denominator.
+	column CW_TY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: bc39503a-da08-490d-9da6-32dc48611878
+		sourceLineageTag: 3bbe32fc-70a6-4950-93f7-ee6c1482bde5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - Last Year Nil Pick Rate Denominator.
+	column L4W_LY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 7163f703-4f23-422b-9322-a73dc37c2fe9
+		sourceLineageTag: a369f57f-4f54-4530-842f-612f72964679
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - Last Year Nil Pick Rate Denominator.
+	column L13W_LY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 73fcc1a5-d1f7-4acb-bd38-c5a189a917a1
+		sourceLineageTag: 0b2c98b4-4794-4483-b759-19e8ddfdc5de
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - Last Year Nil Pick Rate Denominator.
+	column LW_LY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: ddaaea84-8bd6-4d4d-a7c0-05885c980315
+		sourceLineageTag: 4d3909ab-f47b-4183-90f4-e6c82f134cfc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - Last Year Nil Pick Rate Denominator.
+	column L52W_LY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 5f41af5a-8c4a-41de-8fdb-a1254c324e4b
+		sourceLineageTag: 1025845a-f9dc-4422-baa1-2d132b40c32f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - Last Year Nil Pick Rate Denominator.
+	column FYTD_LY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 118c0488-7b82-4d53-bb7c-03e1bec19275
+		sourceLineageTag: 4a5b59a0-b4a9-4341-b99b-93aedb049279
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year Nil Pick Rate Denominator.
+	column CW_LY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: c3c6f5a6-633e-4bd4-bd97-d9ccd18f0e46
+		sourceLineageTag: 9186820e-6dd2-45ea-a32b-15c2c6eded08
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - This Year First Time Pick Rate Numerator.
+	column L4W_TY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 64a90195-a014-4ae7-a3b7-10a9beabf6cd
+		sourceLineageTag: 15763578-b7ab-487d-88a5-e9048d30eba6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - This Year First Time Pick Rate Numerator.
+	column L13W_TY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 2f17ef38-e972-4365-a15f-f5d53e104a2e
+		sourceLineageTag: eaeb987e-575a-4820-85cf-1434eb0309c6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - This Year First Time Pick Rate Numerator.
+	column LW_TY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 75d29353-9e0d-4d79-8e55-839a8ce4b479
+		sourceLineageTag: 40c5d0bd-b821-4b7f-93c3-97756e3a63c1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - This Year First Time Pick Rate Numerator.
+	column L52W_TY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: a53ae70c-fb34-4590-98b3-c4a7d884decf
+		sourceLineageTag: 3f08f000-17cd-4147-bcad-52943629e6de
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year To Date - This Year First Time Pick Rate Numerator.
+	column FYTD_TY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: bf3f1dcf-a03c-4497-a1e1-8441b8c60c7a
+		sourceLineageTag: dff2e073-225b-4aa5-b814-cf37a9b41b3e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week - This Year First Time Pick Rate Numerator.
+	column CW_TY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: e828f685-6e61-4719-b0ad-47ae3d4bfeda
+		sourceLineageTag: 6a7f574c-a181-49e9-8138-e243a8796eba
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - Last Year First Time Pick Rate Numerator.
+	column L4W_LY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: a8accff7-bc79-4cec-af72-477573eb8e67
+		sourceLineageTag: abd81999-118b-4a58-a991-c3e6a15e53cb
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - Last Year First Time Pick Rate Numerator.
+	column L13W_LY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: b09d28f7-ff19-43bb-840e-d07a20c1d4a9
+		sourceLineageTag: 06b86c81-12ed-40e4-86d8-276d2bbce596
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - Last Year First Time Pick Rate Numerator.
+	column LW_LY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: e71ab167-d690-4a50-989b-ef3453ff43dc
+		sourceLineageTag: bc771196-08d6-4143-93bb-943512382e4a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - Last Year First Time Pick Rate Numerator.
+	column L52W_LY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 98c315c1-ff08-43d8-82bc-1df7a59f004a
+		sourceLineageTag: e4eecffd-250c-4e13-89ef-f0d68542ba44
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - Last Year First Time Pick Rate Numerator.
+	column FYTD_LY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 6f4e80b7-11c6-426f-a287-0519334b11d2
+		sourceLineageTag: 513cb070-7d34-40b6-baa1-b360cf315039
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year First Time Pick Rate Numerator.
+	column CW_LY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 13d59e2e-b8be-4565-9c30-739a8e71a411
+		sourceLineageTag: 02d46e02-0ce8-41c1-9737-884f3f0cc2a1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - This Year First Time Pick Rate Denominator.
+	column L4W_TY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 9e2bb5b2-1ca5-4607-845e-016d04e1c45d
+		sourceLineageTag: 0e9a3c78-4244-426f-9704-924777615292
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - This Year First Time Pick Rate Denominator.
+	column L13W_TY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 3a45c8c4-2882-40e5-8088-aaadc226fb3b
+		sourceLineageTag: 94a455a1-192a-4e48-8904-c3c14848d65b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - This Year First Time Pick Rate Denominator.
+	column LW_TY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: dda28b8b-e655-4007-ab91-2f32fb3542e0
+		sourceLineageTag: 28f83ac0-3201-4e0e-ac34-b108563a3b92
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - This Year First Time Pick Rate Denominator.
+	column L52W_TY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: e758ba63-7271-4740-aa38-df15737419ee
+		sourceLineageTag: 406b3671-1d64-42b5-baba-b0edb36e5eb8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year To Date - This Year First Time Pick Rate Denominator.
+	column FYTD_TY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 1aacace8-a29b-4c1f-b07e-d7338358416f
+		sourceLineageTag: af0fb494-d410-4c1f-9921-3c260f85cb54
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week - This Year First Time Pick Rate Denominator.
+	column CW_TY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: bb86e4be-f8dc-4e48-8548-227feee4ef89
+		sourceLineageTag: dc8798b8-fd86-45ac-a59a-e0dd9a4a5655
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - Last Year First Time Pick Rate Denominator.
+	column L4W_LY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 164414bd-4a28-4e16-bc8a-17f053f2b76d
+		sourceLineageTag: 54da7464-8bda-41ad-ad0b-97b252517202
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - Last Year First Time Pick Rate Denominator.
+	column L13W_LY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: e9958d50-77d8-4651-b4d5-9271a7c4f18d
+		sourceLineageTag: f5950c00-c7fa-4cc2-b9e5-e3be061b3d7d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - Last Year First Time Pick Rate Denominator.
+	column LW_LY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: a4d8ffd5-af61-492a-8c6f-c2924070c9b3
+		sourceLineageTag: 06230413-d7cb-4d30-8148-336f46cc7963
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - Last Year First Time Pick Rate Denominator.
+	column L52W_LY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 46ec3110-a037-4460-a55f-26282c10b1fe
+		sourceLineageTag: 715ff2c6-9d4c-4871-b6df-aac5a43793e0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date Last Year First Time Pick Rate Denominator.
+	column FYTD_LY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 0a971d98-40b9-4578-9639-c7393a3f758c
+		sourceLineageTag: fa7fa627-2569-4a85-bb5c-8f9dd8acd3df
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year First Time Pick Rate Denominator.
+	column CW_LY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 54b00f18-283d-43dd-92e7-1e2cd47f16c1
+		sourceLineageTag: 5f4ee881-9047-4e5d-9032-8ce96fc1eb13
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// DO NOT USE: TO BE DELETED.
+	/// 
+	column L4W_TOT_CPCTY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 44c616c3-1b0c-4f12-9cb1-78ed70b748c8
+		sourceLineageTag: 04274ea8-18b2-4cc0-bc46-c123d4f485fa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TOT_CPCTY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// DO NOT USE: TO BE DELETED.
+	/// 
+	column L13W_TOT_CPCTY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 081c367e-ba9b-4557-8337-fa4f3ec0e6a8
+		sourceLineageTag: b836bf38-226e-426a-9454-b520dc7479d3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TOT_CPCTY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// DO NOT USE: TO BE DELETED.
+	/// 
+	column LW_TOT_CPCTY_QTY
+		dataType: double
+		isHidden
+		lineageTag: c48b5d24-3868-4fd2-83f4-c85bf2b3b48a
+		sourceLineageTag: ee7e6066-23f0-4003-adfd-4bce97fbf136
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TOT_CPCTY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// DO NOT USE: TO BE DELETED.
+	/// 
+	column L52W_TOT_CPCTY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 2434e052-205a-47a3-a032-d067d0703bfe
+		sourceLineageTag: f4016eea-f13d-41eb-8cae-d18ab24e8376
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TOT_CPCTY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// DO NOT USE: TO BE DELETED.
+	/// 
+	column FYTD_TOT_CPCTY_QTY
+		dataType: double
+		isHidden
+		lineageTag: af2e1b97-9155-4185-bd0a-f6ec6fcc8e22
+		sourceLineageTag: 15a60df6-f022-4629-86b5-ca7b94d0dbd3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TOT_CPCTY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// DO NOT USE: TO BE DELETED.
+	/// 
+	column CW_TOT_CPCTY_QTY
+		dataType: double
+		isHidden
+		lineageTag: ff58c2aa-3f50-4311-b35e-5c2c47f37406
+		sourceLineageTag: 7fb7fe97-53e2-4290-8f85-acd76b30051b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TOT_CPCTY_QTY
+
+		annotation SummarizationSetBy = User
+
+	column L4W_TY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: 9e18d715-fe11-44fd-ace1-175d835f256e
+		sourceLineageTag: 78106c68-8400-43b3-9176-6c3a29271f2b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column L13W_TY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: 075a97f1-64db-4413-8b48-09bf35a94280
+		sourceLineageTag: 2acc29f5-e403-4fea-a207-d9f9816d1b9e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column LW_TY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: 08557399-8d3b-4551-97d0-9232bc25a0d3
+		sourceLineageTag: 704841a5-8333-40c4-9aaa-afd426f31943
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column L52W_TY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: 9c8c7181-806f-4b6b-9ee7-c7c5d09494d5
+		sourceLineageTag: dd8c03f6-aab3-4657-b3b7-da5629d60fce
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_TY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: 2a4366c6-538a-4078-9b66-6584f6ebcd35
+		sourceLineageTag: 52cfaf7d-a831-4c21-bb9b-7b41b999c7d3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column CW_TY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: cae69726-e8d3-49dc-84a6-238c3f88e08b
+		sourceLineageTag: 9d7b1472-4568-4fe0-945a-fca910199a51
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column L4W_LY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: eaf5905e-bd77-4c17-9135-21136eb9609f
+		sourceLineageTag: 2568aafa-90bf-40d3-94c5-83a4a549e2f5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column L13W_LY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: 326af9a2-b52e-4ad0-a5a7-52467d5aba20
+		sourceLineageTag: c6c58c48-f05d-466a-b2f4-49f76ab08d87
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column LW_LY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: 38ef62f6-b4d8-4006-90a6-fd55cad45102
+		sourceLineageTag: 4aadc9c4-e4da-406d-921a-8cc6d2ef29b5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column L52W_LY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: 44edd4f3-ba96-4a77-aea3-8bf81ddad227
+		sourceLineageTag: 14279d4a-642f-4782-aa21-9ff12a49f876
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_LY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: a52044de-c1c1-4397-b46d-ef443d937b1d
+		sourceLineageTag: ef044afc-ef4e-4e8c-aef0-7a1055d6ba7e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year Pre Sub Units.
+	column CW_LY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: 67d02db5-4a3f-435a-b6ba-42e9e2821171
+		sourceLineageTag: 834a6fac-e8b1-48bf-9ae1-4c9251bc7369
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column L4W_TY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 95aa829c-ff95-46cd-8b02-49786373ed3e
+		sourceLineageTag: 7e4921b1-4d45-4374-b810-6e5ccee6af11
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L13W_TY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: d9f38822-739f-4a42-a782-70c20c993dc2
+		sourceLineageTag: 4f928780-51dc-452c-b558-33239cd05d4b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column LW_TY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 17810a76-2669-489b-bfa8-c98aa3a24474
+		sourceLineageTag: 7caa676b-cac4-43c2-b41c-93650523432d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L52W_TY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 3a3d12a7-5810-4f14-95f3-995091936f83
+		sourceLineageTag: cb3331d4-bb5f-40f6-a541-4ede3ce2e55f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_TY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 005a2cdf-1eea-4f55-8438-7cfa86fabb2e
+		sourceLineageTag: 3525ec07-bf9d-49b0-b34d-3035220c3d00
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column CW_TY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: bd030446-4666-4517-92cc-d3a992cd8bbc
+		sourceLineageTag: 40ef7beb-e8ad-4998-9dcd-21c808496077
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L4W_LY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 0e1013a2-1cbe-42a6-b4de-80badccf842c
+		sourceLineageTag: 6ea57a6d-093c-4730-8053-e7b9a6be609a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L13W_LY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: cf834660-023c-4b89-9d11-b6547e2c4e86
+		sourceLineageTag: 10d7fe07-66d6-4170-b111-d81151ba45d6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column LW_LY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: f0112220-deaf-4fd5-912d-e85bdf758ab7
+		sourceLineageTag: 3144abed-cd2f-4b6b-b99b-07ba5f6b21d1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L52W_LY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: c751ea67-11a0-4346-9321-5cedab64c796
+		sourceLineageTag: 51bf3641-ee76-4217-bbc6-896a411a796f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_LY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 69e3bcc6-f94e-4f8e-8387-4ee1410f18f0
+		sourceLineageTag: d959a634-445c-467d-90fe-9e2fa4697f73
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year Pre Sub Rate Denominator.
+	column CW_LY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 5b79402f-79d7-452f-8edc-bae63f32c77b
+		sourceLineageTag: 0a7ca99c-9b7f-4011-ad6f-37f04fc5732d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L4W_TY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: e0baf8dc-5230-4972-a97a-1b0fabdffcc0
+		sourceLineageTag: 7f3410a6-46f9-461b-b3f6-dcfd01d7831a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L13W_TY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 88a846b8-a013-4e74-824e-0e73932c418c
+		sourceLineageTag: f42c5907-aa9c-4058-9331-996f6f364678
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column LW_TY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 183e5390-59a4-4e57-b777-65fe68866308
+		sourceLineageTag: ebe5febd-73d2-4a34-ab0f-52a0611ed8b5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L52W_TY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 8cc6a837-fd28-4682-a501-72939efe6d73
+		sourceLineageTag: 608e332b-832b-4738-b085-02732dfbac07
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_TY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: d6136f53-af24-49fd-bcc8-13c9f7ce0c1c
+		sourceLineageTag: da98dfdf-3aa8-4c45-97d1-2de72df1052b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column CW_TY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: b6cf97db-72e6-40cf-9174-b8bb81c44a38
+		sourceLineageTag: fad2ad5f-a7c0-443b-bb03-b51e983420ee
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L4W_LY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 0588ad91-1fc1-4848-9103-1be996454dd6
+		sourceLineageTag: e9a60750-be0f-46d9-aeef-675629d1220d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L13W_LY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: c602ee79-ab84-4167-8ada-100e73531b20
+		sourceLineageTag: 2a493e3d-eacb-46b5-ad04-4f4fd9f6aaf2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column LW_LY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: b1c0ad96-2f97-4ef9-83fa-22afb462b696
+		sourceLineageTag: 550d918e-7ff8-4a8e-9a16-d14bdb57c38e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L52W_LY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 4fc4b4c6-f770-46a0-a069-a69249c86649
+		sourceLineageTag: a782c028-72b9-4a25-8b07-7c0cb4972a75
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_LY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 29ec1773-771b-4079-b76e-d3f47839b7db
+		sourceLineageTag: 9f2ca279-d34e-4f14-8c63-f5492ca385f6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year Pre Sub Rate Numerator.
+	column CW_LY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: a11c48e9-9896-4dd3-8ccf-a3a615fbf0e6
+		sourceLineageTag: 2484475b-0cd5-4123-8910-7a533c482e89
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L4W_TY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 22404d59-cdb3-401b-8189-98547883bc9c
+		sourceLineageTag: 43b31ac3-4e9b-47ea-8105-047625061bee
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L13W_TY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 0561a050-efec-4bf7-bb80-5aa8ff201cfc
+		sourceLineageTag: a715aa32-236d-40dc-ba72-a08551fd0100
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column LW_TY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 651d95a6-4a9f-4f78-90bd-b5c3785fe07b
+		sourceLineageTag: 82e86df0-7bfa-4cd0-a3df-5bb0437eab08
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L52W_TY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 2e99801b-cca7-4f3d-868f-d3c717d588e2
+		sourceLineageTag: 430d4b09-f8b1-4666-9f50-6729ca22d7f5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_TY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 4ca14910-2f37-492a-91b5-4608ca34f071
+		sourceLineageTag: c281e9d5-7f9b-4bb1-b097-4af32b477804
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column CW_TY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 72d57b8b-d079-4560-9ad1-353479deedc2
+		sourceLineageTag: 005ef4d5-a2ae-404d-a5fb-6789475366fd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L4W_LY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 7db3fbb2-2d14-4905-b383-6712265d16d1
+		sourceLineageTag: 5ad91e39-5aed-4e6f-a580-7b730b140a85
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L13W_LY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 56a4b2a5-d040-475e-8523-eadb38472b20
+		sourceLineageTag: fa7780ab-e671-47c5-b83d-0fef23b6b801
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column LW_LY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 2362aff5-50ab-49d0-8b16-d30afc6351af
+		sourceLineageTag: 92cab13a-9ccc-4daa-a0e1-b527265998df
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L52W_LY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 5f6ab8c0-3fd3-4346-adc8-c178e6e8144e
+		sourceLineageTag: 2de33301-f1bf-4c53-8d4e-43a137246380
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_LY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 9b10e218-527e-4837-b0ef-27ef1bae0228
+		sourceLineageTag: b1e232fb-c109-434e-923f-29b01bcf0c37
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year Post Sub Rate Denominator.
+	column CW_LY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 69817b81-cba8-461e-833e-3a00a96a6865
+		sourceLineageTag: 8b920756-bd15-4a79-9ba3-20bf32710be5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column L4W_TY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 59d6cd10-fb47-4f50-808e-266714c58835
+		sourceLineageTag: 3a624be7-ea85-47da-afde-e84084023752
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L13W_TY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 82966278-6063-4c3e-8a6c-cd51f5e46508
+		sourceLineageTag: 1ef92d21-7b38-44e1-afd4-d3e1254feb88
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column LW_TY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 18ee30e7-6d88-4809-b18d-914d92e394b0
+		sourceLineageTag: 266cbd34-5e6a-4a6a-a9f2-ef47c31d5a71
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L52W_TY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: a2e48a61-a319-4284-8e36-ce9a10b519a8
+		sourceLineageTag: cf9f08b0-bd7f-43bd-b8c2-8c5acd8efd11
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_TY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 70006e48-4bf6-481c-bc07-20410979c6ed
+		sourceLineageTag: 2f2e432f-af71-4303-a8ce-a941e1751dd6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column CW_TY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 98092638-f187-487c-a1e2-a47933b2aff8
+		sourceLineageTag: 3dfb2e6b-8c7b-42bc-ad6b-c15fa47feff6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L4W_LY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 30520521-9669-42cf-9423-3546e0e7c946
+		sourceLineageTag: e5b2a071-97e9-4eab-9efe-aacea0d635ed
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L13W_LY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 3083b97a-7a92-4720-b712-c6ca341123d2
+		sourceLineageTag: 1d519a36-3a3e-456c-96ff-14b30a234f17
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column LW_LY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: e7ba7f10-e2cd-4ba5-9f85-5fd4e78ed863
+		sourceLineageTag: 577bb925-1fd9-4c59-8158-808a81ab7343
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column L52W_LY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 560222c4-fce9-44ba-a511-61d8bd095f91
+		sourceLineageTag: 8003a2fc-c58b-40ec-8357-39c80048de52
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_LY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 452c65e0-ef83-4894-8ff0-a95a7ec18ee3
+		sourceLineageTag: 1cf3088a-c408-41d1-bcb1-11500d190656
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year Post Sub Rate Numerator.
+	column CW_LY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 65059f0d-98e2-429e-ad7c-5b6c9fa354a1
+		sourceLineageTag: de2af721-4171-4b34-aea1-fdbafaff2bac
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - This Year Nil Pick Amount.
+	column L4W_TY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 93afc75c-e7ba-442d-a260-a7f9fd1e5101
+		sourceLineageTag: 4bd2a3ed-63ea-416c-a9d6-490b7b88f68d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - This Year Nil Pick Amount.
+	column L13W_TY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 7daf17fa-c466-45fb-933d-9573d3d8906f
+		sourceLineageTag: a82e8a2e-4d8b-41b1-9a32-825c458ad26e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - This Year Nil Pick Amount.
+	column LW_TY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: d465e4cf-d18d-4328-aa1c-82faa7ffc96f
+		sourceLineageTag: 8efa3212-8b10-4e48-9c58-7a6584ebebbf
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - This Year Nil Pick Amount.
+	column L52W_TY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 241d4a46-c923-48fc-ab1d-0e829542a020
+		sourceLineageTag: 79bd17d9-7619-46bb-927d-f24cd10c9fc7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - This Year Nil Pick Amount.
+	column FYTD_TY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 46c2cd74-fe50-4e02-a9e8-f0c80ba1397e
+		sourceLineageTag: 61234475-84b6-496a-9549-d3e7b2097f93
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week - This Year Nil Pick Amount.
+	column CW_TY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 77c44adc-bc9a-4ae3-bee2-ba5ce74acf7e
+		sourceLineageTag: 2bc27857-e019-48fb-9d17-0fdb4ca64928
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - Last Year Nil Pick Amount.
+	column L4W_LY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 34c04ee6-eaab-4c04-8424-9d253d64ca8e
+		sourceLineageTag: e9680457-6941-45bc-8755-d9b25c6da5b1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - Last Year Nil Pick Amount.
+	column L13W_LY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: eac98ea7-ed83-48f2-a31e-25dd39ce2663
+		sourceLineageTag: fd0862b8-8f00-4f05-a09d-b48b7688ebc0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - Last Year Nil Pick Amount.
+	column LW_LY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: d233c07e-f64e-4175-8740-92b93704c228
+		sourceLineageTag: 7ebf7d4b-8bd4-4900-9c8e-6136f59d3b95
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - Last Year Nil Pick Amount.
+	column L52W_LY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 64d5c8f1-6b67-4c87-9c61-20770521e256
+		sourceLineageTag: e0345662-dd64-4fd2-a0b1-b3979bc5ea5b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - Last Year Nil Pick Amount.
+	column FYTD_LY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 9aec5eab-124c-493e-b12a-705ef77478ee
+		sourceLineageTag: 26bafe64-1bff-49f8-9c0a-1a9736ee3074
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Last Year Nil Pick Amount.
+	column CW_LY_NIL_PICK_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: b9df43aa-7991-43f3-b156-722a4f310803
+		sourceLineageTag: 599cae47-dfd0-4e1f-a550-607b55a72700
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_NIL_PICK_AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	/// Last updated date.
+	column BUS_DT
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: ed8a1b35-2c69-4409-b10e-783d0955f211
+		sourceLineageTag: 943509c3-30a4-4955-b934-75d80e789ed3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BUS_DT
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Week Number
+	column CAL_WM_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f29a933e-5a7a-460c-9fb4-f4e6169d883f
+		sourceLineageTag: a4e4750a-32a0-4beb-8674-b286ca4e848b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	column CAL_WM_WK_DAY_NBR
+		dataType: double
+		isHidden
+		lineageTag: da67fb3c-97ab-43df-acd4-4b520a331333
+		sourceLineageTag: 288c825b-efbf-4ecc-bfc2-0dda3dddbe9e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_DAY_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Universal Product Code Number
+	column WM_UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3245599e-9056-4541-a9ad-2815833aba0f
+		sourceLineageTag: 6df13c6a-706c-4a7c-af3d-ae29ff8e786e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	partition WM_STORE_FULFILLMENT_TIMEFRAMES = entity
+		mode: directQuery
+		source
+			entityName: WM_STORE_FULFILLMENT_TIMEFRAMES
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

@@ -1,0 +1,282 @@
+/// Walmart Category Sales model. 
+/// UPC Sales (Shopper Behavior) view provides information about store and eComm sales at UPC and store level.
+/// The UPC Store Sales endpoint will contain Store & Ecomm sales, aggregated weekly. Ecomm sales are reported under the store number “-999”. 
+/// The sales number under the UPC Store Sales endpoint may not match with the sales number under our Store Sales endpoint.
+/// This model is refreshed weekly on Mondays, resulting in a 9 to 15-day delay.
+/// 
+/// SOURCE: WM_UPC_SALES_VIEW
+table WM_STORE_SALES_DAILY
+	isHidden
+	lineageTag: ed934d15-8703-4049-b282-931b74e36148
+
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f5539c2e-11e2-4861-b959-fc3b0ff45703
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_ITEM_NBR
+		dataType: double
+		isHidden
+		lineageTag: b361fcfc-947e-4e73-b171-ca7bdec4146d
+		summarizeBy: sum
+		sourceColumn: WM_ITEM_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SVC_CHNL_NM
+		dataType: string
+		isHidden
+		lineageTag: 7d196e32-3798-4534-b35f-0f58c5cb24ab
+		summarizeBy: none
+		sourceColumn: SVC_CHNL_NM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column BUS_DT
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 81634eb4-f2e9-4df6-bd64-2520707b18d3
+		summarizeBy: none
+		sourceColumn: BUS_DT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MDS_FAM_ID
+		dataType: double
+		isHidden
+		lineageTag: b94f5b1c-8a99-4fc7-b47f-f14a040a5379
+		summarizeBy: count
+		sourceColumn: MDS_FAM_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RPT_CD
+		dataType: string
+		isHidden
+		lineageTag: 63712007-4f57-4bd1-9278-b1ec5f4d4cdb
+		summarizeBy: none
+		sourceColumn: RPT_CD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OP_CMPNY_CD
+		dataType: string
+		isHidden
+		lineageTag: 0f0355ea-a4a4-4379-a608-6a3f5550386e
+		summarizeBy: none
+		sourceColumn: OP_CMPNY_CD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEO_REGION_CD
+		dataType: string
+		isHidden
+		lineageTag: b9a735ab-581e-44a2-a168-12bc4c5e2356
+		summarizeBy: none
+		sourceColumn: GEO_REGION_CD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column VENDOR_NBR
+		dataType: double
+		isHidden
+		lineageTag: 3146b4ec-202f-4031-8e4a-13928f89250a
+		summarizeBy: sum
+		sourceColumn: VENDOR_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VENDOR_NM
+		dataType: string
+		isHidden
+		lineageTag: a61feb32-b564-43a8-a84e-da095286e0f9
+		summarizeBy: none
+		sourceColumn: VENDOR_NM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WM_YR_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c3e45da4-15c0-4659-8675-a3406ba9a6b8
+		summarizeBy: sum
+		sourceColumn: WM_YR_WK_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 007fa177-db9a-4915-9bd0-0c0a9843eeca
+		summarizeBy: sum
+		sourceColumn: SALES_AMT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QTY
+		dataType: double
+		isHidden
+		lineageTag: 50bf96d7-b66e-49fc-a48f-a5abf93278ba
+		summarizeBy: sum
+		sourceColumn: QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AUR
+		dataType: double
+		isHidden
+		lineageTag: 13489921-679b-40b5-b51f-ee22da211d94
+		summarizeBy: sum
+		sourceColumn: AUR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SCAN_CNT
+		dataType: double
+		isHidden
+		lineageTag: 0347cecf-7aaf-43ca-a351-a4c2dabae982
+		summarizeBy: sum
+		sourceColumn: SCAN_CNT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DELTA_FLAG
+		dataType: string
+		isHidden
+		lineageTag: 9af3d6d4-c868-4e38-94a7-bc50b1a330ad
+		summarizeBy: none
+		sourceColumn: DELTA_FLAG
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS_DATE
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 4dd35d7d-d885-4fbf-8290-c5337e3673f4
+		summarizeBy: none
+		sourceColumn: STATUS_DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FEED_TYPE
+		dataType: string
+		isHidden
+		lineageTag: 2e3a5fea-2ebd-4f85-bf4c-d2e762807054
+		summarizeBy: none
+		sourceColumn: FEED_TYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FILE_NAME
+		dataType: string
+		isHidden
+		lineageTag: 8fa9dc43-4dac-4d86-857a-a8d99b1463ef
+		summarizeBy: none
+		sourceColumn: FILE_NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UPC_NBR
+		dataType: string
+		isHidden
+		lineageTag: 30ecd5ea-30ba-4f4d-bc31-89247bbf7311
+		summarizeBy: none
+		sourceColumn: UPC_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAL_WK_DAY_ABBR
+		dataType: string
+		isHidden
+		lineageTag: 5eda4c88-87ea-4e80-ae22-9e16adf53624
+		summarizeBy: none
+		sourceColumn: CAL_WK_DAY_ABBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition WM_STORE_SALES_DAILY = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
+				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
+				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
+				    WM_STORE_SALES_DAILY = GOLD_Schema{[Name="WM_STORE_SALES_DAILY_VIEW",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(WM_STORE_SALES_DAILY,{{"WM_YR_WK_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

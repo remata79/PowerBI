@@ -1,0 +1,592 @@
+table Formatting
+	isHidden
+	lineageTag: 54cea721-caf5-48f0-82ee-f3ed72935341
+
+	measure 'Cond. Formating - WMCA TY Avg Wkly $ Sales' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY Avg Wkly $ Sales - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY Avg Wkly $ Sales - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: b5807da5-3485-4a43-9ed8-8fc91738b0b5
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - WMCA TY Avg Wkly Units' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY Avg Wkly Unit Sales - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY Avg Wkly Unit Sales - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: bf8a6023-e83c-46d2-88ea-a557c5611e72
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - WMCA TY $ Sales' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY $ Sales - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY $ Sales - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 29835918-56af-4e9e-8e33-1f19153c080c
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - WMCA TY Units' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY Unit Sales - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY Unit Sales - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 86dfc03b-177c-4961-8ece-761f0eb98475
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - WMCA TY $/S/W' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY $/S/W - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY $/S/W - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 25f622a2-25c8-49dc-a0ae-a50d3a91e0cf
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - WMCA TY U/S/W' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY U/S/W - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY U/S/W - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 2b34a18f-5c69-4f3a-a501-484e196176b2
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - WMCA TY C/S/W' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY C/S/W - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY C/S/W - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: b2397c50-17c1-4614-a344-9e17506b110c
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - WMCA $ Share' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [$ Share - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [$ Share - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 81b2a6bb-303c-4802-9573-8d6493b051f4
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - WMCA Units Share' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [Unit Share - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [Unit Share - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: fbd207d1-3d4a-45df-9414-1203a2b94142
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - WMCA TY AUR' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY AUR - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY AUR - WMCA Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: bc74146f-4e33-45c5-9520-7af52c86fb30
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB TY FTPR' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY FTPR - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY FTPR - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 6ecad682-344f-40aa-97d7-b52da813826a
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB TY Nil Pick Rate' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY Nil Pick Rate - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY Nil Pick Rate - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 7e0ee9fe-7a65-4bff-b7f7-6cc878a1d359
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB TY Nil Pick Qty' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY Nil Pick Qty - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY Nil Pick Qty - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 5454c505-95db-4e2c-b10f-ad0fdc1619ea
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB In Stock Rate' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [In Stock Rate - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [In Stock Rate - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: a36afff5-d2b2-4f22-bfda-a3212f199aad
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB DOS' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [DOS - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [DOS - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: bc66492c-8155-453d-9cdf-756bf0177abe
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB TY Avg Wkly $ Sales' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY Avg Wkly $ Sales - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY Avg Wkly $ Sales - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: a0242a11-28c4-442a-8c03-03c754e133b9
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB TY Avg Wkly Units' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY Avg Wkly Unit Sales - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY Avg Wkly Unit Sales - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: e0fe7a29-34e3-4d1f-9617-fc9f375d10f7
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB TY $ Sales' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY $ Sales - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY $ Sales - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 5cf088df-3829-4f35-93d9-92180f079e79
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB TY Units' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY Unit Sales - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY Unit Sales - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: f0595c4e-edfb-40c2-b73e-d3ab0c83ed0a
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB TY $/S/W' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY $/S/W - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY $/S/W - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 3963b24f-c876-4bef-9744-f49e0c98b119
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB TY U/S/W' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY U/S/W - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY U/S/W - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 0ad650f4-7827-4662-9419-9573b455685c
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB TY C/S/W' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY C/S/W - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY C/S/W - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: c711b570-f911-4659-b18a-12695bd17592
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB $ Share' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [$ Share - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [$ Share - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: e37da889-c9b8-47b9-b6e5-516060cee582
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB Units Share' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [Unit Share - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [Unit Share - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: f1f53ed5-1157-408a-8870-262a2df4d38b
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - TY AUR ' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [TY AUR - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [TY AUR - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 43c717e9-5b84-42d1-b7cc-6ecd3081959a
+
+		changedProperty = IsHidden
+
+	measure 'Cond. Formating - RB Total Capacity' = ```
+			SWITCH(
+			    TRUE(),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", IF(
+			        [Total Capacity - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", IF(
+			        [Total Capacity - RB Pre Post Comparison] >= 0,
+			        "#00B050",  -- green
+			        "#FF0000"   -- red
+			    ),
+			    "#252423"
+			)
+			
+			```
+		isHidden
+		lineageTag: 27f32075-e2cf-44c2-b7a6-f9b1e8eb24a7
+
+		changedProperty = IsHidden
+
+	partition Formatting = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,28 @@
+table View
+	isHidden
+	lineageTag: 2447909f-0881-40f9-a326-eba4966ced9a
+
+	column View
+		dataType: string
+		isHidden
+		lineageTag: 7833c945-6f2c-4e37-9bb0-db4f85222561
+		summarizeBy: none
+		sourceColumn: View
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition View = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCkhMzlYIqSxIVYrVgfKCM6sgPP/SvGQIy6koMS9FKTYWAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [View = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"View", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

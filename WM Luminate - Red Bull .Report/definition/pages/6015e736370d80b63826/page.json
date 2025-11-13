@@ -1,0 +1,270 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "6015e736370d80b63826",
+  "displayName": "Pre Post Trait As Is - Category",
+  "displayOption": "FitToWidth",
+  "height": 2900,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4d7f500c6f70fa884856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Store"
+              }
+            },
+            "Property": "STORE_NBR"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "ce62217ae17702908d4c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Mod Trait"
+              }
+            },
+            "Property": "TRAIT_NBR"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "f6302a6e6597bfeb228b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Store"
+              }
+            },
+            "Property": "TRAIT_AS_IS"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "w",
+              "Entity": "WM Master - Store",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "w"
+                              }
+                            },
+                            "Property": "TRAIT_AS_IS"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "7d67ecddce852ac96686",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F1EFEF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "417L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "personalizeVisual": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "perspectiveRef": {
+            "expr": {
+              "Literal": {
+                "Value": "'WMCA Pre Post Comparison'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "35a388e7cd54c5d7cd66",
+      "target": "b36f79c85edcb62287d0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a1dc718303e4591dd015",
+      "target": "b36f79c85edcb62287d0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "35a388e7cd54c5d7cd66",
+      "target": "23ded306158b4efeea95",
+      "type": "NoFilter"
+    },
+    {
+      "source": "35a388e7cd54c5d7cd66",
+      "target": "a13b0f4b03a8d13055f5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "35a388e7cd54c5d7cd66",
+      "target": "4050e809a923160b053e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a1dc718303e4591dd015",
+      "target": "e1aa0173faf0d6171537",
+      "type": "NoFilter"
+    },
+    {
+      "source": "35a388e7cd54c5d7cd66",
+      "target": "e912c9a3a2a43a2d1c9a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "e912c9a3a2a43a2d1c9a",
+      "target": "adb1dc18c2df05f72a1a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e912c9a3a2a43a2d1c9a",
+      "target": "a74967e3f3ecc90c54c0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e912c9a3a2a43a2d1c9a",
+      "target": "9053c6553d3e08d730cf",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e912c9a3a2a43a2d1c9a",
+      "target": "23ded306158b4efeea95",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e912c9a3a2a43a2d1c9a",
+      "target": "a13b0f4b03a8d13055f5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e912c9a3a2a43a2d1c9a",
+      "target": "4050e809a923160b053e",
+      "type": "NoFilter"
+    }
+  ]
+}

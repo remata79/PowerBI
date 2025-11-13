@@ -1,0 +1,60 @@
+table 'Metric 1'
+	isHidden
+	lineageTag: a74eef47-1956-4a1b-8312-adc7104549b9
+
+	column Measure
+		dataType: string
+		isHidden
+		lineageTag: 6cc70531-3247-478c-a99d-47aedb3991ce
+		summarizeBy: none
+		sourceColumn: Measure
+		sortByColumn: ID
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b8df2710-c12a-4dbb-bfb0-dc8bdeea7d9b
+		summarizeBy: none
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Format
+		dataType: string
+		isHidden
+		lineageTag: 89f98980-dc49-4405-b3d4-7ded5079f80b
+		summarizeBy: none
+		sourceColumn: Format
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Metric 1' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("fZDNqsIwEIVfZYgVrlAwabVV3Irgxlus4qLtokiUwZhCjcJ9e/NTTL2CizAZzsfMOVMUJIC8FvxGQkL1K8tgENLFj6ujhatGpKQKC7KXqAzL9OsEZoWsxSPXbfR1SGTZYJyPD7qNv7KxW9ixE79wYoWcC4HyDLlqWms/8URiibV8cKnVP9iXd0qj1FCpp1JLrbC9KdjhlUOGxwtsa2VysPgFMudkCM0Jdo2qBfibsc7X0P3/ca9rTXvU1FJLPKMblXHJVVsrbKSRkx7qcvxmy08s7WEuyAbFe4KZTzB7I6yluVfnpKqe", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Measure = _t, ID = _t, Format = _t, #"Metric ID" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Measure", type text}, {"ID", Int64.Type}, {"Format", type text}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Changed Type",{"ID", "Measure", "Format", "Metric ID"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Reordered Columns",{{"Metric ID", "Set ID"}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Renamed Columns",{"Set ID"}),
+				    #"Sorted Rows" = Table.Sort(#"Removed Columns",{{"ID", Order.Ascending}})
+				in
+				    #"Sorted Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

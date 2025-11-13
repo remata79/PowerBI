@@ -1,0 +1,37 @@
+table '99. Year Master'
+	isHidden
+	lineageTag: 7af7b275-e3db-4b6a-a21d-027d849b1ea1
+
+	column ID
+		isHidden
+		formatString: 0
+		lineageTag: d29992c4-9a95-4d16-91e2-e089a529d60f
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: [ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		isHidden
+		lineageTag: d6acca91-54d8-4b7b-8137-35d3716a7415
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '99. Year Master' = calculated
+		mode: import
+		source = ```
+				DATATABLE(
+				    "ID",  INTEGER,
+				    "Year",  STRING,
+				    { 
+				        {2, "TY"},
+				        {1, "LY"}
+				    })
+				```
+
+	annotation PBI_Id = aac92ec983484d60a7dda6e506659f62
+

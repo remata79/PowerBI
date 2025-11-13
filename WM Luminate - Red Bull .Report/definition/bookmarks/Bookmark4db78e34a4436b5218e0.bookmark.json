@@ -1,0 +1,5742 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Brands",
+  "name": "Bookmark4db78e34a4436b5218e0",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "4a3a3d14617c59008176",
+      "597d5bf94e04b9999ade",
+      "5974f09a8650ac9f30db",
+      "57ffc1d703304c41a02d",
+      "eff5e2c7dc2986273b59",
+      "39b4b4e7be543f3395b0",
+      "a4ae8879e121ac620d82"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.11",
+    "activeSection": "ReportSection6b66120671b442c19be5",
+    "filters": {
+      "byExpr": [
+        {
+          "name": "Filterefbd0b2b17dbb5219238",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "s",
+                "Entity": "WM Master - Store",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "Not": {
+                    "Expression": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "s"
+                                }
+                              },
+                              "Property": "STORE_STATE_PROV_CD"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'PR'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "WM Master - Store"
+                }
+              },
+              "Property": "STORE_STATE_PROV_CD"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSection6b66120671b442c19be5": {
+        "filters": {
+          "byExpr": [
+            {
+              "name": "Filterbb37907e69113b6621fb",
+              "type": "Advanced",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Metric 1"
+                    }
+                  },
+                  "Property": "ID"
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "Filter9ae66315a6e065d23354",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "w",
+                    "Entity": "WM_STORE_SALES_TIMEFRAMES",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "w"
+                                }
+                              },
+                              "Property": "FEED_NAME"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'storesales'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WM_STORE_SALES_TIMEFRAMES"
+                    }
+                  },
+                  "Property": "FEED_NAME"
+                }
+              },
+              "howCreated": 1
+            },
+            {
+              "name": "Filter677b80d574075c3d60bc",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "i",
+                    "Entity": "WM Master - Item",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Not": {
+                        "Expression": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "i"
+                                    }
+                                  },
+                                  "Property": "ITEM_RB_PACK_TYPE"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Not Applicable'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WM Master - Item"
+                    }
+                  },
+                  "Property": "ITEM_RB_PACK_TYPE"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {
+          "410e16ece8c924e2c3db": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter8e95ac5100387a7dbec4",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "s",
+                        "Entity": "Measure Selection",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "s"
+                                        }
+                                      },
+                                      "Property": "Selection"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure Selection"
+                        }
+                      },
+                      "Property": "Selection"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "m",
+                                "Entity": "Measure Selection",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "Not": {
+                                    "Expression": {
+                                      "In": {
+                                        "Expressions": [
+                                          {
+                                            "Column": {
+                                              "Expression": {
+                                                "SourceRef": {
+                                                  "Source": "m"
+                                                }
+                                              },
+                                              "Property": "Selection"
+                                            }
+                                          }
+                                        ],
+                                        "Values": [
+                                          [
+                                            {
+                                              "Literal": {
+                                                "Value": "'ABS Chg'"
+                                              }
+                                            }
+                                          ],
+                                          [
+                                            {
+                                              "Literal": {
+                                                "Value": "'Cont. Growth'"
+                                              }
+                                            }
+                                          ],
+                                          [
+                                            {
+                                              "Literal": {
+                                                "Value": "'LY Value'"
+                                              }
+                                            }
+                                          ]
+                                        ]
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure Selection"
+                        }
+                      },
+                      "Property": "Selection"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "a4ae8879e121ac620d82": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter58d357257ad3d3707dc8",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "w",
+                        "Entity": "WM_STORE_SALES_TIMEFRAMES",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "w"
+                                        }
+                                      },
+                                      "Property": "SVC_CHNL_NM"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM_STORE_SALES_TIMEFRAMES"
+                        }
+                      },
+                      "Property": "SVC_CHNL_NM"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "Filter2f9bd7ffca44e9cec053",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "WM Master - Time Frame",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "p"
+                                        }
+                                      },
+                                      "Property": "Time Frame"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'FYTD 2'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d1c03ec3a4bf49d1a595",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Column"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6264b95c91e8dbc96c8e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a6e89f1b8c2878b7c000",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Unit Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "32c0b7bf66b20bbd58aa",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Price YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cc08d1e90cbe9c2240ee",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "320ecf0a272c0bf6b763",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a396ee582dd54605d3d4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Unit Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9139410bbc6135865268",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM_STORE_SALES_TIMEFRAMES"
+                        }
+                      },
+                      "Property": "SVC_CHNL_NM"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Values": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric"
+                          }
+                        },
+                        "Property": "Metric"
+                      }
+                    },
+                    "index": 0,
+                    "length": 7
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "WM_SALES_IMPORT.SVC_CHNL_NM"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "b53fc6c4be4133914c86": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter880b56bf5d70a75c727a",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "WM Master - Time Frame",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "p"
+                                        }
+                                      },
+                                      "Property": "Time Frame"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'FYTD 2'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "263c692cba6c1f24ee44": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "edc7c5f7a034cf01c2aa",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM_STORE_SALES_TIMEFRAMES"
+                        }
+                      },
+                      "Property": "SVC_CHNL_NM"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM_STORE_SALES_TIMEFRAMES"
+                        }
+                      },
+                      "Property": "SVC_CHNL_NM"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6ea0fbdaf03d8e8283ba": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "1a8feb4cf6bd08d9f816",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_TYPE"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_TYPE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "432cbd4738e801172db7": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e1236200cf3bd5d64092",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_SIZE"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_SIZE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "780765084b8b36325b8e": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8055b99d628d5c7412dd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_OZ_SIZE"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_OZ_SIZE"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "8704d39b37b0506e4b65": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "04f127dc605779395e72",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "034c57147859e0ee9505": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "bf0c122e066709d5e53b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_MANUFACTURER"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_MANUFACTURER"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6afcffa36c2e2bee9a4a": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "baf36ea5bd294bc7a29f",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_BRAND"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        },
+                        "isInvertedSelectionMode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_BRAND"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "06ae9d79d6b10b8ac843": {
+            "singleVisual": {
+              "visualType": "textbox",
+              "objects": {}
+            }
+          },
+          "54561e570fdf836866be": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d916669cdc80b5f9c1ef": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "39b4b4e7be543f3395b0": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter58d357257ad3d3707dc8",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "w",
+                        "Entity": "WM_STORE_SALES_TIMEFRAMES",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "w"
+                                        }
+                                      },
+                                      "Property": "SVC_CHNL_NM"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM_STORE_SALES_TIMEFRAMES"
+                        }
+                      },
+                      "Property": "SVC_CHNL_NM"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filterd1952d50978520221417",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "WM Master - Time Frame",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "p"
+                                        }
+                                      },
+                                      "Property": "Time Frame"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'FYTD 2'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "26e1fc1a7a42bc585744",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Column"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4faf0d0ba945b393f83e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "416f3d924e550cff8111",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Unit Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "493e8e922fea145ea3db",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Price YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "265bcca6075c13041570",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b9da319863a63e1689b3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5ed5bf568f7a596a137e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Unit Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1014c11726d3113ed90f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "acc83fb86ed6372a7240",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Store"
+                        }
+                      },
+                      "Property": "STORE_BANNER_DESC"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Store"
+                        }
+                      },
+                      "Property": "STORE_BANNER_DESC"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Values": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric"
+                          }
+                        },
+                        "Property": "Metric"
+                      }
+                    },
+                    "index": 0,
+                    "length": 7
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "STORE_DIMENSIONS_VIEW.STORE_BANNER_DESC"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "eff5e2c7dc2986273b59": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter0a6b8ebd6b07dba0a91d",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "WM Master - Time Frame",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "p"
+                                        }
+                                      },
+                                      "Property": "Time Frame"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'FYTD 2'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "31540bd99fca16f623b7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Column"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8021bed8dc4d8de69059",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "580e1f2cb6719ae76048",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2507683cfb25e1e54abc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Unit Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "08dc5d53452cb25ed9d0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Unit Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8d6f6a55ef0ad626e474",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b1ff703a740f76c1501c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Price YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "73f14fba7f0bc60fbfbc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "Filter5b718e5298d7c5a9d658",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "i",
+                        "Entity": "WM Master - Item",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "i"
+                                    }
+                                  },
+                                  "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'FS'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'SF'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Values": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric"
+                          }
+                        },
+                        "Property": "Metric"
+                      }
+                    },
+                    "index": 0,
+                    "length": 7
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "57ffc1d703304c41a02d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter58d357257ad3d3707dc8",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "w",
+                        "Entity": "WM_STORE_SALES_TIMEFRAMES",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "w"
+                                        }
+                                      },
+                                      "Property": "SVC_CHNL_NM"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM_STORE_SALES_TIMEFRAMES"
+                        }
+                      },
+                      "Property": "SVC_CHNL_NM"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filteraecef6ac18b028a0ee00",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "WM Master - Time Frame",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "p"
+                                        }
+                                      },
+                                      "Property": "Time Frame"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'FYTD 2'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "916192bc53455a05c805",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Column"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0592e98e183306828c15",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1aa8bd6621f16effb8fc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "48756c178e651d29b2ca",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Unit Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b3f293d814a7cbd05e0c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Unit Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3dcbd23b1b21a1864378",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9243e8309bbbf4d1e6b9",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Price YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "76ad15c45ad55ca54328",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e540d057e5ad6bc4f9bd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_TYPE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0d6f6f259c72d5993a03",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_SIZE"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_TYPE"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_SIZE"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Values": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric"
+                          }
+                        },
+                        "Property": "Metric"
+                      }
+                    },
+                    "index": 0,
+                    "length": 7
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_PACK_TYPE"
+                      ],
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "ITEM_ATTRIBUTES_VIEW"
+                              }
+                            },
+                            "Property": "ITEM_RB_PACK_TYPE"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_PACK_SIZE"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "5974f09a8650ac9f30db": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter58d357257ad3d3707dc8",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "w",
+                        "Entity": "WM_STORE_SALES_TIMEFRAMES",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "w"
+                                        }
+                                      },
+                                      "Property": "SVC_CHNL_NM"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "null"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM_STORE_SALES_TIMEFRAMES"
+                        }
+                      },
+                      "Property": "SVC_CHNL_NM"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filterc7c528d388eb9492d10b",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "WM Master - Time Frame",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "p"
+                                        }
+                                      },
+                                      "Property": "Time Frame"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'FYTD 2'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b9fb33163a254f628619",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Column"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c9b679530491b4e50edd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ca28197456431812ce2f",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1e30616606957518f718",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "281893696d253e2ec656",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Unit Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6de5cf1ef2163d50b5b1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Unit Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3e098dd257b37922e33e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Price YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "93d15d956e45b456dd56",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "aea02982c58de9ce4d6c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_BRAND"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "aecc1b4b0557b3eadf80",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_SUB_BRAND"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "289647569647423da8ec",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_BRAND"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_SUB_BRAND"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Values": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric"
+                          }
+                        },
+                        "Property": "Metric"
+                      }
+                    },
+                    "index": 0,
+                    "length": 7
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_BRAND"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_SUB_BRAND"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ]
+            }
+          },
+          "4a3a3d14617c59008176": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterd656a38f4edc73dae1d5",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "WM Master - Time Frame",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "p"
+                                        }
+                                      },
+                                      "Property": "Time Frame"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'FYTD 2'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "71c80fbfb1c417948b15",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Column"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dbb52cd1c1ad99709c92",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ccf70169ba08bdd366ad",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Unit Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b3c07b2ff639bb4d62a7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Price YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d99b267a44a19c7a347b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "80ebd60ef557d40bebed",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Unit Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "8eae0cc1ef3f92d391cc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46ac93750e0dabdc5627",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1abe42b374bbd6811153",
+                  "type": "TopN",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "subquery",
+                        "Expression": {
+                          "Subquery": {
+                            "Query": {
+                              "Version": 2,
+                              "From": [
+                                {
+                                  "Name": "i",
+                                  "Entity": "WM Master - Item",
+                                  "Type": 0
+                                },
+                                {
+                                  "Name": "m",
+                                  "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames",
+                                  "Type": 0
+                                }
+                              ],
+                              "Select": [
+                                {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "i"
+                                      }
+                                    },
+                                    "Property": "ITEM_WM_UPC_NBR"
+                                  },
+                                  "Name": "field"
+                                }
+                              ],
+                              "OrderBy": [
+                                {
+                                  "Direction": 2,
+                                  "Expression": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "m"
+                                        }
+                                      },
+                                      "Property": "L13W TY Sales"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Top": 10
+                            }
+                          }
+                        },
+                        "Type": 2
+                      },
+                      {
+                        "Name": "i",
+                        "Entity": "WM Master - Item",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "i"
+                                    }
+                                  },
+                                  "Property": "ITEM_WM_UPC_NBR"
+                                }
+                              }
+                            ],
+                            "Table": {
+                              "SourceRef": {
+                                "Source": "subquery"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_WM_UPC_NBR"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c79c61784db47cf5af39",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_WM_UPC_DESC"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4838f5407a9fce455dc6",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_CA_FLAVOR_SCENT"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ecce809c1d48f3c9d3cd",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "Filtera3e02e6f0aeb5415b52e",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "i",
+                        "Entity": "WM Master - Item",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "i"
+                                    }
+                                  },
+                                  "Property": "ITEM_RB_PACK_TYPE"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'MP'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_TYPE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "037b825083d4231484a7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_SIZE"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_WM_UPC_NBR"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_WM_UPC_DESC"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_CA_FLAVOR_SCENT"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_TYPE"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_SIZE"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Values": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric"
+                          }
+                        },
+                        "Property": "Metric"
+                      }
+                    },
+                    "index": 0,
+                    "length": 7
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_WM_UPC_NBR"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_WM_UPC_DESC"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_CA_FLAVOR_SCENT"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_PACK_TYPE"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_PACK_SIZE"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "7e798bc9052c34d77859": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter44c47a1f243ca0a025da",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "Measure Selection 3",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Selection"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'% Chg'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure Selection 3"
+                        }
+                      },
+                      "Property": "Selection"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "5c4438ad1ec25d5e9e31",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5d4469adb70c3452414c",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Store"
+                        }
+                      },
+                      "Property": "STORE_ST_PROV_NM"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "shapeMap",
+              "objects": {},
+              "projections": {
+                "Value": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Sales"
+                    }
+                  }
+                ],
+                "Category": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Value": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric 3"
+                          }
+                        },
+                        "Property": "Master Metric 3"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ]
+              }
+            }
+          },
+          "e4b91f209e8a663d65ca": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filter740bff3d33eb711fb137",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "Measure Selection 1",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Selection"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'TY Value'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure Selection 1"
+                        }
+                      },
+                      "Property": "Selection"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filtere1a912ac553b7ffaa18f",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "Measure Selection 2",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Selection"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'LY Value'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure Selection 2"
+                        }
+                      },
+                      "Property": "Selection"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter422c92e6b0645d87afa4",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "Measure Selection 3",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Selection"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'% Chg'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure Selection 3"
+                        }
+                      },
+                      "Property": "Selection"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "Filter94474511a768b17999d9",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "WM Master - Time Frame",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "p"
+                                    }
+                                  },
+                                  "Property": "Time Frame"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'FYTD 2'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "deb709e9575c639b3be8",
+                  "type": "Advanced",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM_STORE_SALES_TIMEFRAMES"
+                        }
+                      },
+                      "Property": "CAL_WM_WK_NBR"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "cbe8a99af3b8f957655a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "20ac3930e6b47b43d8d3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "LY $ Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2c8b98dd913612954df4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "lineClusteredColumnComboChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM_STORE_SALES_TIMEFRAMES"
+                        }
+                      },
+                      "Property": "CAL_WM_WK_NBR"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Y": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "LY $ Sales"
+                    }
+                  }
+                ],
+                "Y2": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Sales"
+                    }
+                  }
+                ],
+                "Category": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Y": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric"
+                          }
+                        },
+                        "Property": "Metric"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  },
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric 2"
+                          }
+                        },
+                        "Property": "Master Metric 2"
+                      }
+                    },
+                    "index": 1,
+                    "length": 1
+                  }
+                ],
+                "Y2": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric 3"
+                          }
+                        },
+                        "Property": "Master Metric 3"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ]
+              }
+            }
+          },
+          "f66ae89d35226bcf2cd9": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filteredfb193c6f0b59c9d50e",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "Metric 3",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Measure"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Sales'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Units'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'Price'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Metric 3"
+                        }
+                      },
+                      "Property": "Measure"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "m",
+                                "Entity": "Metric 3",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "m"
+                                            }
+                                          },
+                                          "Property": "Measure"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Sales'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Metric 3"
+                        }
+                      },
+                      "Property": "Measure"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "702bb5b4c44bb6250aa4": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterfe16677de6a2b8aee937",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "m",
+                        "Entity": "Measure Selection 1",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "m"
+                                    }
+                                  },
+                                  "Property": "Selection"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'TY Value'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measure Selection 1"
+                        }
+                      },
+                      "Property": "Selection"
+                    }
+                  },
+                  "howCreated": 1
+                },
+                {
+                  "name": "d1cec49c37bb502d1fe1",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3c3d3b40038fbeb733bc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "map",
+              "objects": {},
+              "projections": {
+                "Size": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Sales"
+                    }
+                  }
+                ],
+                "Tooltips": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  }
+                ],
+                "X": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Y": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Size": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric 3"
+                          }
+                        },
+                        "Property": "Master Metric 3"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ],
+                "Tooltips": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric"
+                          }
+                        },
+                        "Property": "Metric"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
+          "057a91264695e23d9ca0": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "d2dc952cb55f6393189c": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          },
+          "53021ca5b749034db062": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "e3067c2921dc54941028": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          },
+          "2b66909b81e0d004e611": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filtera7dc9d31045e4d080b24",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "WM Master - Time Frame",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "p"
+                                        }
+                                      },
+                                      "Property": "Time Frame"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'FYTD 2'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "p",
+                                "Entity": "WM Master - Time Frame",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "p"
+                                            }
+                                          },
+                                          "Property": "Time Frame"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'FYTD'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "597d5bf94e04b9999ade": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "Filterd656a38f4edc73dae1d5",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "p",
+                        "Entity": "WM Master - Time Frame",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "In": {
+                                "Expressions": [
+                                  {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "p"
+                                        }
+                                      },
+                                      "Property": "Time Frame"
+                                    }
+                                  }
+                                ],
+                                "Values": [
+                                  [
+                                    {
+                                      "Literal": {
+                                        "Value": "'FYTD 2'"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "Filtera3e02e6f0aeb5415b52e",
+                  "type": "Categorical",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "i",
+                        "Entity": "WM Master - Item",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "i"
+                                    }
+                                  },
+                                  "Property": "ITEM_RB_PACK_TYPE"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'SS'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_TYPE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d5b84b7d07b2574b97ae",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Column"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "9e7efd2a261a965c95c3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2eabcf1f8f4dbd935837",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1d379c7a2c028303899e",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6f0d01a24a85ca0949ed",
+                  "type": "TopN",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "subquery",
+                        "Expression": {
+                          "Subquery": {
+                            "Query": {
+                              "Version": 2,
+                              "From": [
+                                {
+                                  "Name": "i",
+                                  "Entity": "WM Master - Item",
+                                  "Type": 0
+                                },
+                                {
+                                  "Name": "m",
+                                  "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames",
+                                  "Type": 0
+                                }
+                              ],
+                              "Select": [
+                                {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "i"
+                                      }
+                                    },
+                                    "Property": "ITEM_WM_UPC_NBR"
+                                  },
+                                  "Name": "field"
+                                }
+                              ],
+                              "OrderBy": [
+                                {
+                                  "Direction": 2,
+                                  "Expression": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "m"
+                                        }
+                                      },
+                                      "Property": "L13W TY Sales"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Top": 10
+                            }
+                          }
+                        },
+                        "Type": 2
+                      },
+                      {
+                        "Name": "i",
+                        "Entity": "WM Master - Item",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "i"
+                                    }
+                                  },
+                                  "Property": "ITEM_WM_UPC_NBR"
+                                }
+                              }
+                            ],
+                            "Table": {
+                              "SourceRef": {
+                                "Source": "subquery"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_WM_UPC_NBR"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "46dce7f30f5ad7c060fe",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_WM_UPC_DESC"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3d1de6f9e080fc20a1a9",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_CA_FLAVOR_SCENT"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e5f107c2a8200a099bd2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "fd3278f5d02f02574728",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_SIZE"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d815c5b19e8456288abd",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Unit Sales"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "be57f3de8bd00833490b",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Unit Sales YoY"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6a545bca9be1ccf26065",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4d14edd968a177574df0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "% Chg Price YoY"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pivotTable",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "03. Metrics - Store Sales and Fulfillment Time Frames"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Rows": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_WM_UPC_NBR"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_WM_UPC_DESC"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_CA_FLAVOR_SCENT"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_TYPE"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Item"
+                        }
+                      },
+                      "Property": "ITEM_RB_PACK_SIZE"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WM Master - Time Frame"
+                        }
+                      },
+                      "Property": "Time Frame"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY $ Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Sales"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Units"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "TY Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "% Chg Price"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Measures Table"
+                        }
+                      },
+                      "Property": "Chg Sales"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Rows": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  },
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ],
+                "Columns": [
+                  {
+                    "Literal": {
+                      "Value": "null"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Values": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Master Metric"
+                          }
+                        },
+                        "Property": "Metric"
+                      }
+                    },
+                    "index": 0,
+                    "length": 7
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Rows"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_WM_UPC_NBR"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_WM_UPC_DESC"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_CA_FLAVOR_SCENT"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_REG_VS_REDUCED_SUGAR_CAL"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_PACK_TYPE"
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "ITEM_ATTRIBUTES_VIEW.ITEM_RB_PACK_SIZE"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "true"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

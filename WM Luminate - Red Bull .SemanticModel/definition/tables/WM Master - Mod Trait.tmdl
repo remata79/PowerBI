@@ -1,0 +1,184 @@
+/// The Traits view provides nformation about six-digit trait numbers and how they relates to attributes of the store or items. Traits can be created to represent an attribute of the store or items.
+/// 
+/// SOURCE: WM_TRAIT_VIEW
+table 'WM Master - Mod Trait'
+	lineageTag: b4be1e47-be62-47cb-879b-6e11fcf9cb12
+	sourceLineageTag: 74b4afb2-08eb-4699-8790-3384685662c0
+
+	/// Modular Category Number
+	column MODLR_CATG_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: 6415a633-e16c-405c-8855-62d853b539a3
+		sourceLineageTag: aff9f084-3a5a-4ebb-b58d-2a3a49dff3f5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MODLR_CATG_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store.
+	column TRAIT_NBR
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: a86f1057-a6ae-4bea-8cfa-7d5e945783f1
+		sourceLineageTag: f5eee487-ab83-464b-9aa1-49705d29b57e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Description
+	column TRAIT_DESC
+		dataType: string
+		lineageTag: e9e2c476-7e28-48a1-9f52-9bbae32a4fc7
+		sourceLineageTag: 50dac513-7ff7-4d37-adb3-30739ca4e9a9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Group Description
+	column TRAIT_GROUP_DESC
+		dataType: string
+		lineageTag: c5cf25be-6e89-4f78-ac0c-608eb3b51bda
+		sourceLineageTag: eba23f9c-3d95-4cdb-a8b5-3c23e7ad17fc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_GROUP_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Category Description
+	column TRAIT_CATEGORY_DESC
+		dataType: string
+		lineageTag: 808dc841-7272-49a0-80b1-ae69bce2d476
+		sourceLineageTag: 5d76d4c0-9460-4738-b579-cd04ca3c253f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_CATEGORY_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Number - Text format.
+	column TRAIT_TXT
+		dataType: string
+		lineageTag: e22ad4b5-07cc-4f21-8939-8075abb76008
+		sourceLineageTag: 8b2dceb2-db2a-407d-8eba-4af1531be10f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_TXT
+		sortByColumn: TRAIT_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Category Description
+	column MODLR_CATG_DESC
+		dataType: string
+		lineageTag: 43c32615-121e-4deb-a08a-aa8080de5aff
+		sourceLineageTag: c2b03731-683e-4c5f-a940-9dd9c29ff915
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MODLR_CATG_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Plan Title Description	
+	column MODLR_PLAN_TITLE_DESC
+		dataType: string
+		lineageTag: 78cbcee8-49dd-4b51-9dc0-6b7becb90ba2
+		sourceLineageTag: 5b3fe790-efdb-4242-9de1-b60d2f4081a1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MODLR_PLAN_TITLE_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Width Quantity: The number of inches for the width of the base of the sections for this planogram.
+	column MODLR_WDTH_QTY
+		dataType: double
+		lineageTag: d43051e3-742e-4509-a49d-359612b896fe
+		sourceLineageTag: 80bbf33b-c35c-4631-b3f6-fbd70347b62d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MODLR_WDTH_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column Trait
+		dataType: string
+		lineageTag: 44e55882-46da-4e02-b475-dff551dcb936
+		sourceLineageTag: 7fb0a6b9-744d-447e-b2f4-fa7e5ec91c80
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Trait
+		sortByColumn: TRAIT_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Category
+	column 'Mod Category'
+		dataType: string
+		lineageTag: 79dd14d3-96e1-4f45-a8cd-fd001ef77173
+		sourceLineageTag: e2d6672e-bffa-461c-86f7-3d9d5d6d0764
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mod Category
+		sortByColumn: MODLR_CATG_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Footage
+	column MODLR_FOOTAGE
+		dataType: int64
+		lineageTag: 1a0af5a6-b0c0-4c7d-8c1b-c0ada723dee9
+		sourceLineageTag: 1a0ebc4f-55eb-4eb8-95e4-ba6cbc64664c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MODLR_FOOTAGE
+
+		annotation SummarizationSetBy = User
+
+	/// Red Bull Strike Zone Trait
+	column 'Strike Zone - Red Bull'
+		dataType: int64
+		lineageTag: 2da54125-7d8c-4ce6-952a-c95a5eb0260f
+		sourceLineageTag: a77113b3-826c-4deb-a332-ac75ed34c841
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Strike Zone - Red Bull
+
+		annotation SummarizationSetBy = User
+
+	/// Monster Strike Zone Trait
+	column 'Strike Zone - Monster'
+		dataType: int64
+		lineageTag: 80850197-1393-418a-8e16-8af41e8f8af0
+		sourceLineageTag: 0ed1df42-8368-487c-ad30-4764359c360f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Strike Zone - Monster
+
+		annotation SummarizationSetBy = User
+
+	/// All Others Strike Zone Trait
+	column 'Strike Zone - AO'
+		dataType: int64
+		lineageTag: 27ded63c-3f4c-46fe-9610-9a9fe27ebcca
+		sourceLineageTag: da4188e0-f06a-4c46-a574-caf1fb363c2a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Strike Zone - AO
+
+		annotation SummarizationSetBy = User
+
+	partition 'WM Master - Mod Trait' = entity
+		mode: directQuery
+		source
+			entityName: WM Master - Mod Trait
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

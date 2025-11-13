@@ -1,0 +1,88 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Reporting - Master Data'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Reporting - Metrics'
+
+	annotation PBI_QueryGroupOrder = 1
+
+annotation PBI_QueryOrder = ["Metric 1","Metric 2","Measures (2)","Measure Selection","Metric 3","Measure Selection 2","Measure Selection 1","View","Master Metrics List","Measure Selection 3","99. Metric Selection","99. Titles","WM Digital Rates","WM Digital Breakdowns","pLoadAllRecords","Formatting","DirectQuery to AS - WM Luminate - Red Bull - Semantic Model","00.  Local Metrics"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","CalcGroup","DevMode"]
+
+ref table 'Metric 1'
+ref table 'Metric 2'
+ref table 'Measure Selection'
+ref table 'Metric 3'
+ref table 'Measure Selection 2'
+ref table 'Measure Selection 1'
+ref table View
+ref table 'Master Metrics List'
+ref table 'Master Metric 1'
+ref table 'Master Metric 2'
+ref table 'Master Metric 3'
+ref table 'Measure Selection 3'
+ref table '99. Metric Selection'
+ref table 'Weekly Metrics'
+ref table 'Weekly Metrics 2'
+ref table 'Weekly Metrics 3'
+ref table '99. Titles'
+ref table 'WM Digital Rates'
+ref table 'WM Digital Breakdowns'
+ref table 'Week Periods'
+ref table Formatting
+ref table '03. Metrics - Store Sales and Fulfillment Time Frames'
+ref table 'WM Master - Time Frame'
+ref table 'WM Master - Item'
+ref table 'WM Master - Store'
+ref table WM_CATEGORY_INFO
+ref table WM_STORE_FULFILLMENT_TIMEFRAMES
+ref table WM_STORE_ITEM_UPC_TIMEFRAMES
+ref table WM_STORE_SALES_TIMEFRAMES
+ref table WM_STORE_SALES_WEEKLY
+ref table 'WM Master - Service Channel'
+ref table WM_STORES_S2H
+ref table 'WM Master - Mod Trait'
+ref table 'WM Master - Calendar Week'
+ref table 'WM Master - Calendar Week Pre Relay'
+ref table 'WM Master - Pre Post Time Frame'
+ref table 'WM Master - UPC'
+ref table WM_UPC_SALES
+ref table '05. Metrics - Category Sales Weekly'
+ref table '04. Metrics - Store Inventory Latest'
+ref table '07 . Metrics - Category Pre Post Comparison'
+ref table WM_STORE_ITEM_UPC_WEEKLY
+ref table WM_STORE_ITEM_UPC_LATEST
+ref table WM_STORE_FULFILLMENT_WEEKLY
+ref table '01. Metrics - Store Sales Weekly'
+ref table WM_STORE_MODULAR_UPC_WEEK
+ref table '02. Metrics - Store Fulfillment Weekly'
+ref table '06. Metrics - Store Pre Post Comparison'
+ref table WM_STORE_MOD_RACK_UPC_WEEK
+ref table '99. Year Master'
+ref table '00.  Local Metrics'
+ref table 'WM Master - Store Trait (As Is)'
+ref table 'WM Master - In Modular'
+
+ref perspective 'WMCA Pre Post Comparison'
+ref perspective 'Red Bull Pre Post Comparison'
+ref perspective 'Sales and Fulfillment - TimeFrames'
+ref perspective 'WMCA Sales - Weekly'
+ref perspective 'Sales and Fulfillment - Weekly'
+ref perspective 'Store Item - Current Voids'
+
+ref cultureInfo en-US
+

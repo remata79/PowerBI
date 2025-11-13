@@ -1,0 +1,484 @@
+/// The Store Dimensions model provides attribute information for the given Walmart store number, including information such as location, manager details, and related codes. 
+/// 
+/// Source: WM_STORE_DIMENSIONS_VIEW
+table 'WM Master - Store'
+	lineageTag: 347e0aa1-fb4b-4850-be03-c6b5dd36adcb
+	sourceLineageTag: c3ef04a7-3e5f-4554-aeb4-91cfcced9f3d
+
+	/// Store Number
+	column STORE_NBR
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: 85d5c508-7010-47eb-be5a-ba52b74bb3e6
+		sourceLineageTag: 4f93b9c3-4e46-4847-97ec-359eb0027eea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Store Name
+	column STORE_NM
+		dataType: string
+		lineageTag: b3dfc9c4-9f7f-4d98-9008-116ab75d396a
+		sourceLineageTag: af8fb983-3d23-479c-894c-731b42bab15d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Banner Code: A code which represents the sign or banner on the outside of the store.
+	column BANNER_CD
+		dataType: string
+		lineageTag: db8d5f27-8829-41ba-9f17-5f082a184346
+		sourceLineageTag: 70302891-0dd3-4a1e-b18c-37812f7977bd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BANNER_CD
+
+		annotation SummarizationSetBy = User
+
+	/// Banner Description: The description of the sign or banner on the outside of the store.
+	column BANNER_DESC
+		dataType: string
+		lineageTag: a2602afe-b305-4aee-af05-a1025396ea58
+		sourceLineageTag: ea411884-b389-4c4f-aced-1215beabd5cb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BANNER_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// Base Division Number
+	column BASE_DIV_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: cf94a9cd-4bbc-400e-bbac-a9b4ce869e81
+		sourceLineageTag: 54454b05-275b-4139-9b57-ed1e6c9beaa0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: BASE_DIV_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// City Name
+	column CITY_NM
+		dataType: string
+		lineageTag: 7bf6d5d9-8964-46c9-af27-86d9c7bbeb91
+		sourceLineageTag: fa66797a-9e15-4a0e-88e2-9daf18c7c35b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CITY_NM
+
+		annotation SummarizationSetBy = User
+
+	/// County Name
+	column CNTY_NM
+		dataType: string
+		lineageTag: d0b3df18-dbf0-4008-8d24-370d7f7268bc
+		sourceLineageTag: 0fad62c1-b874-4dee-b836-c200967e712d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CNTY_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Close Date: The date the store closed for business.
+	column FIN_CLOSE_DT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 04db3dba-cc0d-4e6f-a34c-709891a2f574
+		sourceLineageTag: 45b83ad5-0976-4279-b039-1baf7ad35903
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FIN_CLOSE_DT
+
+		annotation SummarizationSetBy = User
+
+	/// Financial Open Date: This is the date that the store opened for business.
+	column FIN_OPEN_DT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2888e280-a212-40f4-bbc7-e74eeed6edd3
+		sourceLineageTag: 8dd01aad-af43-416c-b48b-3775083bba9d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FIN_OPEN_DT
+
+		annotation SummarizationSetBy = User
+
+	/// Latitude Degree
+	column LAT_DGR
+		dataType: double
+		lineageTag: d65d9caf-7704-4ebb-9a42-075b7f550bfc
+		sourceLineageTag: 4b037a5c-05c0-43c5-82ee-913f87914928
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LAT_DGR
+
+		annotation SummarizationSetBy = User
+
+	/// Longitude Degree
+	column LONG_DGR
+		dataType: double
+		lineageTag: c050fa5a-69dd-4a44-bb20-ce257ab9c69b
+		sourceLineageTag: 6944fba4-1b87-4ce7-adba-33b22c6ccac0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LONG_DGR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Market Number
+	column MARKET_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: f37b13cb-74d4-4c49-a97c-34018e78a3b3
+		sourceLineageTag: 9835fd76-9650-4da9-9d15-70fb8a6993c0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MARKET_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Market Name
+	column MARKET_NM
+		dataType: string
+		lineageTag: ec4a4970-ab3d-461a-bf82-98960beec641
+		sourceLineageTag: c6cefc24-d5a8-49fd-a657-2ea8dba1d6c2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MARKET_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Open 24 HR Indicator
+	column OPEN_24_HR_IND
+		dataType: double
+		lineageTag: bf0b8a22-b2bb-488e-ab6d-bd8d766cc762
+		sourceLineageTag: 1a9858f3-b24b-4253-b68b-767015fb8d8f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OPEN_24_HR_IND
+
+		annotation SummarizationSetBy = User
+
+	/// Open Status Code
+	column OPEN_STATUS_CD
+		dataType: string
+		lineageTag: 5715500c-8307-4b1a-a02a-6042eae2e7da
+		sourceLineageTag: 4db6f8b9-5e90-4849-91cc-a9f03d3b2946
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OPEN_STATUS_CD
+
+		annotation SummarizationSetBy = User
+
+	/// Open Status Description
+	column OPEN_STATUS_DESC
+		dataType: string
+		lineageTag: b8671b4e-a6ed-4747-9e06-32db03b9ba5c
+		sourceLineageTag: 89b07ed5-631e-4e3f-8b31-f60696edfa44
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OPEN_STATUS_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// Open Sunday Indicator
+	column OPEN_SUN_IND
+		dataType: double
+		lineageTag: cdf460a8-1d93-4644-861a-79eb356e4600
+		sourceLineageTag: 39ac2282-d5c0-4b97-9611-66510cf3902f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OPEN_SUN_IND
+
+		annotation SummarizationSetBy = User
+
+	/// Operation Close Date
+	column OP_CLOSE_DT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d2c9c8fc-6012-4bbc-b61c-f1ffe4910de9
+		sourceLineageTag: 9a448162-0d5e-4ca9-a555-10c34ee8ac01
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OP_CLOSE_DT
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Region Number
+	column REGION_NBR
+		dataType: int64
+		formatString: 0
+		lineageTag: ac0b76a6-b898-4c88-a3af-9b3cccd7d521
+		sourceLineageTag: 693d8895-19d2-41fb-81f1-8f61e664fc2b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: REGION_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Region Name
+	column REGION_NM
+		dataType: string
+		lineageTag: 1e6e7934-7985-4031-98a5-a072a27475f5
+		sourceLineageTag: ee7150ec-f6e3-4671-b065-8bb5a9f7e907
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: REGION_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Relocation Flip Date
+	column RELO_FLIP_DT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 183ecbe0-8b1a-4452-82cd-fa544c00043b
+		sourceLineageTag: d84c878e-71da-4a0e-a5b1-f50b3065332a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RELO_FLIP_DT
+
+		annotation SummarizationSetBy = User
+
+	/// Segment Number
+	column SEG_NBR
+		dataType: double
+		lineageTag: c9644931-1da7-4e8a-9bff-d7d1b2aa71a7
+		sourceLineageTag: 6077158d-e55b-4b91-852c-cb87748aac03
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: SEG_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Segment Name
+	column SEG_NM
+		dataType: string
+		lineageTag: e66c758d-01ca-484c-ac71-731092380131
+		sourceLineageTag: a6e4677d-95d1-4a7b-9c71-c9facfd8c3cf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SEG_NM
+
+		annotation SummarizationSetBy = User
+
+	/// State or Province Code	
+	column STATE_PROV_CD
+		dataType: string
+		lineageTag: 98fc94fa-a1e3-4638-b18f-315996ec46da
+		sourceLineageTag: 8e5e51de-3e21-46fd-b58a-07a88803718a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STATE_PROV_CD
+
+		annotation SummarizationSetBy = User
+
+	/// Manager Name
+	column STORE_MGR_NM
+		dataType: string
+		lineageTag: 229e694f-7ba7-4e1e-98ff-777784565281
+		sourceLineageTag: dc67af10-2af2-4aa2-b623-41189c33cfee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_MGR_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Store Type Code
+	column STORE_TYPE_CD
+		dataType: string
+		lineageTag: 253ed036-63e6-4d84-9c49-637998d63261
+		sourceLineageTag: c27b7b2e-ee81-43e1-9ac9-23359f3069e2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_TYPE_CD
+
+		annotation SummarizationSetBy = User
+
+	/// Store Type Description	
+	column STORE_TYPE_DESC
+		dataType: string
+		lineageTag: 7caec958-d81f-490e-9ad4-3e042c5cb8f8
+		sourceLineageTag: 9d08864f-1786-4574-9475-c23ae93388ba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_TYPE_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// State Province Name
+	column ST_PROV_NM
+		dataType: string
+		lineageTag: 345f69bf-dcdc-4c76-8fc7-ce111c6a71c8
+		sourceLineageTag: 5ffcc482-14e7-42dc-9fb9-d99953501b51
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ST_PROV_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Subdivision Number
+	column SUBDIVISION_NBR
+		dataType: string
+		lineageTag: 946205a7-7e1c-4745-a8c7-9f6cf419974f
+		sourceLineageTag: 96c37015-2391-4d27-af40-2c2b37efae90
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SUBDIVISION_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Subdivision Name
+	column SUBDIVISION_NM
+		dataType: string
+		lineageTag: 28968be4-8471-4ca4-a9a3-0aa84593a9bd
+		sourceLineageTag: 124c21c4-cbac-4d07-bc91-14b6d5d5a973
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SUBDIVISION_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Store Number - Text Format
+	column STORE_NBR_TXT
+		dataType: string
+		lineageTag: c0c4be52-24e8-470e-a75d-c732e86745b1
+		sourceLineageTag: 23936142-bb55-4edf-9db4-0065609ac1a1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR_TXT
+
+		annotation SummarizationSetBy = User
+
+	/// Store Region Number - Text Format
+	column STORE_REGION_NBR_TXT
+		dataType: string
+		lineageTag: f089e21f-9a74-4054-bde3-c01dead2d213
+		sourceLineageTag: 2c4beb33-beb6-4ffc-8cc1-1c2a7a0d2c94
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_REGION_NBR_TXT
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Market Number - Text Format
+	column MARKET_NBR_TXT
+		dataType: string
+		lineageTag: 4a112811-3e08-44fc-bd46-89782478c183
+		sourceLineageTag: 1289ea94-3d4a-4033-9684-765262ae8c7f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MARKET_NBR_TXT
+
+		annotation SummarizationSetBy = User
+
+	column STORE_NBR_NAME
+		dataType: string
+		lineageTag: ec369730-2909-4ffd-80db-99bb22118ed6
+		sourceLineageTag: 419864a1-019f-49b8-acaa-35b5a672b6e3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR_NAME
+		sortByColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Red Bull Business Unit
+	column RB_BU
+		dataType: string
+		lineageTag: 56c54877-3cd5-4f83-a25d-69b6adb30b79
+		sourceLineageTag: 93c2f821-30cc-409d-bebd-5f92488ab9e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RB_BU
+
+		annotation SummarizationSetBy = User
+
+	/// Red Bull Business Unit Description
+	column RB_BU_DESC
+		dataType: string
+		lineageTag: 74e11988-47c8-4419-a7e9-f2075986da98
+		sourceLineageTag: 52570517-a9ac-4f06-8fd0-4631423c2ea0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RB_BU_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// Red Bull Region
+	column RB_REGION
+		dataType: string
+		lineageTag: 75018e4b-9926-442b-9b46-596b044abc17
+		sourceLineageTag: 4c27837d-53b5-4bca-ac16-95d4d91d0dd4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RB_REGION
+
+		annotation SummarizationSetBy = User
+
+	/// Red Bull Region Description
+	column RB_REGION_DESC
+		dataType: string
+		lineageTag: f264f3a6-ea51-44de-a0b2-0e6bdd067be4
+		sourceLineageTag: 2aa4b9c8-3b8a-4eba-9026-a1608b8aba50
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RB_REGION_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// Red Bull Business Unit
+	column 'RB BU'
+		dataType: string
+		lineageTag: c38a0c6b-bf73-40a4-9ba4-7514010f5c10
+		sourceLineageTag: e734d1e1-c8db-4305-950d-0ef4c5663bf8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RB BU
+
+		annotation SummarizationSetBy = User
+
+	/// Distribution Partner Number
+	column DP
+		dataType: string
+		lineageTag: 4d8eb3c2-3b69-4b10-95fe-6df1e696ee64
+		sourceLineageTag: 97359f8b-76ef-4a09-9752-32c975b2b6ad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DP
+
+		annotation SummarizationSetBy = User
+
+	/// Distribution Partner Description
+	column DP_DESC
+		dataType: string
+		lineageTag: e55a87ab-d876-44e7-b8e5-bb64ac1f7eb2
+		sourceLineageTag: 19fc43a9-868b-4bfa-9d15-3b3f70e00ad9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DP_DESC
+
+		annotation SummarizationSetBy = User
+
+	/// Store Trait (As Is): This is the Main Placement or Combo Mod Trait Number currently assigned to the Store.
+	column TRAIT_AS_IS
+		dataType: int64
+		lineageTag: 5b88d8e8-5b7c-4023-bcb7-e94402b9bdb3
+		sourceLineageTag: a3b20d9b-6ab1-4f57-a9ce-070fb4a26946
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_AS_IS
+
+		annotation SummarizationSetBy = User
+
+	partition 'WM Master - Store' = entity
+		mode: directQuery
+		source
+			entityName: WM Master - Store
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

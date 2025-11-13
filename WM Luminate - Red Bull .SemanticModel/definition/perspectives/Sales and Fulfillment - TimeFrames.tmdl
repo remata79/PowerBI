@@ -1,0 +1,678 @@
+perspective 'Sales and Fulfillment - TimeFrames'
+
+	perspectiveTable '99. Metric Selection'
+
+		perspectiveColumn Measure
+
+		perspectiveColumn ID
+
+	perspectiveTable '03. Metrics - Store Sales and Fulfillment Time Frames'
+
+		perspectiveMeasure 'FYTD TY Sales'
+
+		perspectiveMeasure 'FYTD LY Sales'
+
+		perspectiveMeasure 'L13W LY Sales'
+
+		perspectiveMeasure 'L13W TY Sales'
+
+		perspectiveMeasure 'L4W LY Sales'
+
+		perspectiveMeasure 'L4W TY Sales'
+
+		perspectiveMeasure 'LW LY Sales'
+
+		perspectiveMeasure 'LW TY Sales'
+
+		perspectiveMeasure 'FYTD LY Qty'
+
+		perspectiveMeasure 'FYTD TY Qty'
+
+		perspectiveMeasure 'L13W TY Qty'
+
+		perspectiveMeasure 'L13W LY Qty'
+
+		perspectiveMeasure 'L4W LY Qty'
+
+		perspectiveMeasure 'LW LY Qty'
+
+		perspectiveMeasure 'L4W TY Units'
+
+		perspectiveMeasure 'LW TY Units'
+
+		perspectiveMeasure 'FYTD LY Price'
+
+		perspectiveMeasure 'FYTD TY Price'
+
+		perspectiveMeasure 'L13W TY Price'
+
+		perspectiveMeasure 'L4W TY Price'
+
+		perspectiveMeasure 'L13W LY Price'
+
+		perspectiveMeasure 'LW TY Price'
+
+		perspectiveMeasure 'LW LY Price'
+
+		perspectiveMeasure 'L4W LY Price'
+
+		perspectiveMeasure 'TY $ Sales'
+
+		perspectiveMeasure 'TY Unit Sales'
+
+		perspectiveMeasure 'TY Price'
+
+		perspectiveMeasure '% Chg Sales YoY'
+
+		perspectiveMeasure '% Chg Unit Sales YoY'
+
+		perspectiveMeasure '% Chg Price YoY'
+
+		perspectiveMeasure 'ABS Chg Sales YoY'
+
+		perspectiveMeasure 'ABS Chg Price YoY'
+
+		perspectiveMeasure 'ABS Chg Unit Sales YoY'
+
+		perspectiveMeasure 'LY $ Sales'
+
+		perspectiveMeasure 'LY Price'
+
+		perspectiveMeasure 'LY Unit Sales'
+
+		perspectiveMeasure 'Cont. Growth Sales'
+
+		perspectiveMeasure 'Cont. Growth Unit Sales'
+
+		perspectiveMeasure 'Cont. Growth Price'
+
+		perspectiveMeasure 'FYTD LY Sales (FYTD)'
+
+		perspectiveMeasure 'FYTD LY Qty (FYTD)'
+
+		perspectiveMeasure 'FYTD LY Price (FYTD)'
+
+		perspectiveMeasure 'WM Week Num'
+
+		perspectiveMeasure 'FYTD TY Stores Selling'
+
+		perspectiveMeasure 'LW TY Stores Selling'
+
+		perspectiveMeasure 'L4W LY Stores Selling'
+
+		perspectiveMeasure 'L13W TY Stores Selling'
+
+		perspectiveMeasure 'L52W TY Stores Selling'
+
+		perspectiveMeasure 'FYTD Weeks Count'
+
+		perspectiveMeasure 'TY Store Selling Count'
+
+		perspectiveMeasure 'TY $/S/W'
+
+		perspectiveMeasure 'TY U/S/W'
+
+		perspectiveMeasure 'FYTD LY Stores Selling'
+
+		perspectiveMeasure 'L13W LY Stores Selling'
+
+		perspectiveMeasure 'LW LY Stores Selling'
+
+		perspectiveMeasure 'LY Stores Selling'
+
+		perspectiveMeasure 'L4W TY Stores Selling'
+
+		perspectiveMeasure 'LY $/S/W'
+
+		perspectiveMeasure 'ABS Chg $/S/W YoY'
+
+		perspectiveMeasure 'ABS Chg Stores Selling YoY'
+
+		perspectiveMeasure '% Chg Stores Selling YoY'
+
+		perspectiveMeasure '% Chg $/S/W YoY'
+
+		perspectiveMeasure 'LY U/S/W'
+
+		perspectiveMeasure 'ABS Chg U/S/W YoY'
+
+		perspectiveMeasure '% Chg U/S/W YoY'
+
+		perspectiveMeasure 'Cont. Growth $/S/W'
+
+		perspectiveMeasure 'LW TY Nil Picks'
+
+		perspectiveMeasure 'L4W TY Nil Picks'
+
+		perspectiveMeasure 'L13W TY Nil Picks'
+
+		perspectiveMeasure 'FYTD TY Nil Picks'
+
+		perspectiveMeasure 'LW LY Nil Picks'
+
+		perspectiveMeasure 'L4W LY Nil Picks'
+
+		perspectiveMeasure 'L13W LY Nil Picks'
+
+		perspectiveMeasure 'FYTD LY Nil Picks'
+
+		perspectiveMeasure 'LW TY First Time Pick Rate'
+
+		perspectiveMeasure 'L4W TY First Time Pick Rate'
+
+		perspectiveMeasure 'L13W TY First Time Pick Rate'
+
+		perspectiveMeasure 'FYTD TY First Time Pick Rate'
+
+		perspectiveMeasure 'TY FTPR'
+
+		perspectiveMeasure 'LW LY First Time Pick Rate'
+
+		perspectiveMeasure 'L4W LY First Time Pick Rate'
+
+		perspectiveMeasure 'L13W LY First Time Pick Rate'
+
+		perspectiveMeasure 'FYTD LY First Time Pick Rate'
+
+		perspectiveMeasure 'LY FTPR'
+
+		perspectiveMeasure 'ABS Chg FTPR YoY'
+
+		perspectiveMeasure '% Chg FTPR YoY'
+
+		perspectiveMeasure 'Cont. Growth First Time Pick Rate'
+
+		perspectiveMeasure 'LW StoresSelling 2'
+
+		perspectiveMeasure 'FYTD Sales % Chg'
+
+		perspectiveMeasure 'FYTD Qty % Chg'
+
+		perspectiveMeasure 'FYTD Price % Chg'
+
+		perspectiveMeasure 'TY Avg Inventory U''s - TODO'
+
+		perspectiveMeasure 'Cont. Growth U/S/W'
+
+		perspectiveMeasure 'Cont. Growth Stores Selling'
+
+		perspectiveMeasure 'LW TY Avg Inventory'
+
+		perspectiveMeasure 'L4W TY Avg Inventory'
+
+		perspectiveMeasure 'L13W TY Avg Inventory'
+
+		perspectiveMeasure 'FYTD TY Avg Inventory'
+
+		perspectiveMeasure 'WM Yr Week Num'
+
+		perspectiveMeasure 'L13W Sales % Chg'
+
+		perspectiveMeasure 'L4W Sales % Chg'
+
+		perspectiveMeasure 'LW Sales % Chg'
+
+		perspectiveMeasure 'LW TY Out Of Stock'
+
+		perspectiveMeasure 'LW In Stock'
+
+		perspectiveMeasure 'Weeks Count'
+
+		perspectiveMeasure 'FYTD Days Count'
+
+		perspectiveMeasure 'FYTD TY Inventory'
+
+		perspectiveMeasure 'Count Store-UPCs'
+
+		perspectiveMeasure 'LY % of Total $ Sales'
+
+		perspectiveMeasure 'LY % of Total Units'
+
+		perspectiveMeasure 'L52W TY Sales'
+
+		perspectiveMeasure 'CW TY Sales'
+
+		perspectiveMeasure 'L52W TY Units'
+
+		perspectiveMeasure 'CW TY Units'
+
+		perspectiveMeasure 'L52W TY Price'
+
+		perspectiveMeasure 'CW TY Price'
+
+		perspectiveMeasure 'L52W TY Nil Picks'
+
+		perspectiveMeasure 'CW TY Nil Picks'
+
+		perspectiveMeasure 'L52W TY First Time Pick Rate'
+
+		perspectiveMeasure 'CW TY First Time Pick Rate'
+
+		perspectiveMeasure 'L52W TY Avg Inventory'
+
+		perspectiveMeasure 'CW TY Avg Inventory'
+
+		perspectiveMeasure 'CW Days Count'
+
+		perspectiveMeasure 'CW TY Stores Selling'
+
+		perspectiveMeasure 'L52W LY Stores Selling'
+
+		perspectiveMeasure 'CW LY Stores Selling'
+
+		perspectiveMeasure 'L52W LY Qty'
+
+		perspectiveMeasure 'CW LY Qty'
+
+		perspectiveMeasure 'L52W LY Price'
+
+		perspectiveMeasure 'L52W LY Sales'
+
+		perspectiveMeasure 'CW LY Sales'
+
+		perspectiveMeasure 'L52W LY Nil Picks'
+
+		perspectiveMeasure 'CW LY Nil Picks'
+
+		perspectiveMeasure 'L52W LY First Time Pick Rate'
+
+		perspectiveMeasure 'CW LY First Time Pick Rate'
+
+		perspectiveMeasure 'CW LY Price'
+
+		perspectiveMeasure 'LW TY Nil Pick Rate'
+
+		perspectiveMeasure 'CW TY Nil Pick Rate'
+
+		perspectiveMeasure 'L4W TY Nil Pick Rate'
+
+		perspectiveMeasure 'L13W TY Nil Pick Rate'
+
+		perspectiveMeasure 'L52W TY Nil Pick Rate'
+
+		perspectiveMeasure 'LW LY Nil Pick Rate'
+
+		perspectiveMeasure 'CW LY Nil Pick Rate'
+
+		perspectiveMeasure 'L4W LY Nil Pick Rate'
+
+		perspectiveMeasure 'L13W LY Nil Pick Rate'
+
+		perspectiveMeasure 'L52W LY Nil Pick Rate'
+
+		perspectiveMeasure 'TY Nil Pick Rate'
+
+		perspectiveMeasure 'FYTD TY Nil Pick Rate'
+
+		perspectiveMeasure 'FYTD LY Nil Pick Rate'
+
+		perspectiveMeasure 'LY Nil Pick Rate'
+
+		perspectiveMeasure 'ABS Chg Nil Pick Rate YoY'
+
+		perspectiveMeasure '% Chg Nil Pick Rate YoY'
+
+		perspectiveMeasure 'TY Pre Sub Rate'
+
+		perspectiveMeasure 'TY Post Sub Rate'
+
+		perspectiveMeasure 'TY Delayed Pick'
+
+		perspectiveMeasure 'TY Digital $ Penetration'
+
+		perspectiveMeasure 'TY Digital $ Sales'
+
+		perspectiveMeasure 'LY Digital $ Sales'
+
+		perspectiveMeasure 'ABS Chg Digital $ Sales YoY'
+
+		perspectiveMeasure '% Chg Digital $ Sales  YoY'
+
+		perspectiveMeasure 'LY Digital Penetration'
+
+		perspectiveMeasure 'ABS Chg Digital Penetration YoY'
+
+		perspectiveMeasure '% Chg Digital Penetration YoY'
+
+		perspectiveMeasure 'FYTD LY Pre Sub Rate'
+
+		perspectiveMeasure 'FYTD TY Pre Sub Rate'
+
+		perspectiveMeasure 'LW LY Pre Sub Rate'
+
+		perspectiveMeasure 'CW LY Pre Sub Rate'
+
+		perspectiveMeasure 'LW TY Pre Sub Rate'
+
+		perspectiveMeasure 'CW TY Pre Sub Rate'
+
+		perspectiveMeasure 'L4W TY Pre Sub Rate'
+
+		perspectiveMeasure 'L13W TY Pre Sub Rate'
+
+		perspectiveMeasure 'L52W TY Pre Sub Rate'
+
+		perspectiveMeasure 'L4W LY Pre Sub Rate'
+
+		perspectiveMeasure 'L13W LY Pre Sub Rate'
+
+		perspectiveMeasure 'L52W LY Pre Sub Rate'
+
+		perspectiveMeasure 'FYTD LY Post Sub Rate'
+
+		perspectiveMeasure 'FYTD TY Post Sub Rate'
+
+		perspectiveMeasure 'CW TY Post Sub Rate'
+
+		perspectiveMeasure 'LW TY Post Sub Rate'
+
+		perspectiveMeasure 'CW LY Post Sub Rate'
+
+		perspectiveMeasure 'LW LY Post Sub Rate'
+
+		perspectiveMeasure 'L4W LY Post Sub Rate'
+
+		perspectiveMeasure 'L13W LY Post Sub Rate'
+
+		perspectiveMeasure 'L52W LY Post Sub Rate'
+
+		perspectiveMeasure 'L4W TY Post Sub Rate'
+
+		perspectiveMeasure 'L13W TY Post Sub Rate'
+
+		perspectiveMeasure 'L52W TY Post Sub Rate'
+
+		perspectiveMeasure '% Digital $ Growth YoY'
+
+		perspectiveMeasure '% of Digital Sales YoY'
+
+		perspectiveMeasure 'FYTD TY Nil Pick Qty'
+
+		perspectiveMeasure 'LW TY Nil Pick Qty'
+
+		perspectiveMeasure 'L4W TY Nil Pick Qty'
+
+		perspectiveMeasure 'L13W TY Nil Pick Qty'
+
+		perspectiveMeasure 'L52W TY Nil Pick Qty'
+
+		perspectiveMeasure 'CW TY Nil Pick Qty'
+
+		perspectiveMeasure 'LW LY Nil Pick Qty'
+
+		perspectiveMeasure 'L4W LY Nil Pick Qty'
+
+		perspectiveMeasure 'CW LY Nil Pick Qty'
+
+		perspectiveMeasure 'L13W LY Nil Pick Qty'
+
+		perspectiveMeasure 'L52W LY Nil Pick Qty'
+
+		perspectiveMeasure 'FYTD LY Nil Pick Qty'
+
+		perspectiveMeasure 'TY Nil Pick Qty'
+
+		perspectiveMeasure 'LY Nil Pick Qty'
+
+		perspectiveMeasure 'ABS Chg Nil Pick Qty YoY'
+
+		perspectiveMeasure '% Chg Nil Pick Qty YoY'
+
+		perspectiveMeasure 'TY Nil Pick Lost $ Sales'
+
+		perspectiveMeasure 'L13W Avg Weekly Nil Pick Lost $ Sales'
+
+		perspectiveMeasure 'Avg Weekly Nil Pick Lost $ Sales'
+
+		perspectiveMeasure 'TY OPD $ Sales'
+
+		perspectiveMeasure 'LY OPD $ Sales'
+
+		perspectiveMeasure 'TY OPD $ Penetration'
+
+		perspectiveMeasure 'LY % OPD Penetration'
+
+		perspectiveMeasure 'ABS Chg OPD Penetration YoY'
+
+		perspectiveMeasure '% of OPD Sales YoY'
+
+		perspectiveMeasure '% Chg OPD $ Sales YoY'
+
+		perspectiveMeasure 'ABS Chg OPD $ Sales YoY'
+
+		perspectiveMeasure 'Sales % by Pack Type'
+
+		perspectiveMeasure 'LW TY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'L4W TY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'L13W TY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'L52W TY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'CW TY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'FYTD TY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'LW LY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'L4W LY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'L13W LY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'L52W LY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'CW LY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'FYTD LY Nil Pick Lost Sales'
+
+		perspectiveMeasure 'LY Nil Pick Lost $ Sales'
+
+		perspectiveMeasure 'TY Stores Selling (All)'
+
+		perspectiveMeasure 'FYTD Weeks Filter'
+
+		perspectiveMeasure 'Total Open Stores'
+
+		perspectiveMeasure 'TY Distribution %'
+
+		perspectiveMeasure 'LY Distribution %'
+
+		perspectiveMeasure '% Chg Distribution YoY'
+
+		perspectiveMeasure 'L52W TY $/S/W'
+
+		perspectiveMeasure 'L52W TY U/S/W'
+
+		perspectiveMeasure 'FYTD % Chg Distribution'
+
+	perspectiveTable 'WM Master - Store'
+
+		perspectiveColumn STORE_NBR
+
+		perspectiveColumn STORE_NM
+
+		perspectiveColumn BANNER_CD
+
+		perspectiveColumn BANNER_DESC
+
+		perspectiveColumn BASE_DIV_NBR
+
+		perspectiveColumn CITY_NM
+
+		perspectiveColumn CNTY_NM
+
+		perspectiveColumn FIN_CLOSE_DT
+
+		perspectiveColumn FIN_OPEN_DT
+
+		perspectiveColumn LAT_DGR
+
+		perspectiveColumn LONG_DGR
+
+		perspectiveColumn MARKET_NBR
+
+		perspectiveColumn MARKET_NM
+
+		perspectiveColumn OPEN_24_HR_IND
+
+		perspectiveColumn OPEN_STATUS_CD
+
+		perspectiveColumn OPEN_STATUS_DESC
+
+		perspectiveColumn OPEN_SUN_IND
+
+		perspectiveColumn OP_CLOSE_DT
+
+		perspectiveColumn REGION_NBR
+
+		perspectiveColumn REGION_NM
+
+		perspectiveColumn RELO_FLIP_DT
+
+		perspectiveColumn SEG_NBR
+
+		perspectiveColumn SEG_NM
+
+		perspectiveColumn STATE_PROV_CD
+
+		perspectiveColumn STORE_MGR_NM
+
+		perspectiveColumn STORE_TYPE_CD
+
+		perspectiveColumn STORE_TYPE_DESC
+
+		perspectiveColumn ST_PROV_NM
+
+		perspectiveColumn SUBDIVISION_NBR
+
+		perspectiveColumn SUBDIVISION_NM
+
+		perspectiveColumn STORE_NBR_TXT
+
+		perspectiveColumn STORE_REGION_NBR_TXT
+
+		perspectiveColumn MARKET_NBR_TXT
+
+		perspectiveColumn STORE_NBR_NAME
+
+		perspectiveColumn RB_BU
+
+		perspectiveColumn RB_BU_DESC
+
+		perspectiveColumn RB_REGION
+
+		perspectiveColumn RB_REGION_DESC
+
+		perspectiveColumn 'RB BU'
+
+		perspectiveColumn DP
+
+		perspectiveColumn DP_DESC
+
+		perspectiveColumn TRAIT_AS_IS
+
+	perspectiveTable 'WM Master - Service Channel'
+
+		perspectiveColumn KEY
+
+		perspectiveColumn ID
+
+		perspectiveColumn 'Service Channel'
+
+	perspectiveTable 'WM Master - UPC'
+
+		perspectiveColumn UPC_NBR
+
+		perspectiveColumn UPC_TXT
+
+		perspectiveColumn OZ_PER_PACK
+
+		perspectiveColumn UPC_SHORT_DESC
+
+		perspectiveColumn UPC_LONG_DESC
+
+		perspectiveColumn 'WM UPC'
+
+		perspectiveColumn 'WM UPC Desc'
+
+		perspectiveColumn PRODUCT
+
+		perspectiveColumn FINELINE
+
+		perspectiveColumn SUBCATEGORY
+
+		perspectiveColumn CATEGORY
+
+		perspectiveColumn CATEGORY_GROUP
+
+		perspectiveColumn DEPARTMENT
+
+		perspectiveColumn SEGMENT
+
+		perspectiveColumn REVIEWED
+
+		perspectiveColumn CA_BRAND
+
+		perspectiveColumn CA_CAFFEINE_MG_PER_CAN
+
+		perspectiveColumn CA_ENERGY_CATEGORY
+
+		perspectiveColumn CA_ENERGY_SUB_CATEGORY
+
+		perspectiveColumn CA_FLAVOR_GROUP
+
+		perspectiveColumn CA_OZ_PER_CAN
+
+		perspectiveColumn CA_PACK_SIZE
+
+		perspectiveColumn CA_PACK_TYPE
+
+		perspectiveColumn CA_PRODUCT_DESCRIPTION
+
+		perspectiveColumn CA_REG_VS_REDUCED_SUGAR_CAL
+
+		perspectiveColumn CA_SUB_BRAND
+
+		perspectiveColumn CA_SUPPLIER
+
+		perspectiveColumn CA_TOTAL_OZ
+
+		perspectiveColumn USER_DEFINED_LAUNCH_DATE
+
+		perspectiveColumn MODULARIZED
+
+		perspectiveColumn ITEM_STATUS
+
+	perspectiveTable 'WM Master - Store Trait (As Is)'
+
+		perspectiveColumn TRAIT_NBR
+
+		perspectiveColumn TRAIT_DESC
+
+		perspectiveColumn TRAIT_CATEGORY_DESC
+
+		perspectiveColumn TRAIT_GROUP_DESC
+
+		perspectiveColumn MODLR_CATG_NBR
+
+		perspectiveColumn MODLR_CATG_DESC
+
+		perspectiveColumn MODLR_PLAN_TITLE_DESC
+
+		perspectiveColumn MODLR_WDTH_QTY
+
+		perspectiveColumn MODLR_FOOTAGE
+
+		perspectiveColumn 'Strike Zone - Red Bull'
+
+		perspectiveColumn 'Strike Zone - Monster'
+
+		perspectiveColumn 'Strike Zone - AO'
+
+		perspectiveColumn TRAIT_TXT
+
+		perspectiveColumn Trait
+
+		perspectiveColumn 'Mod Category'
+

@@ -1,0 +1,332 @@
+/// Provides information about all scheduled store fulfillment orders at Walmart item, store and week level.
+/// All metrics are aggregated at Walmart Week Level.
+/// 
+/// Source: WM_STORE_FULFILMENT_WEEK_VIEW
+table WM_STORE_FULFILLMENT_WEEKLY
+	isHidden
+	lineageTag: fb60100c-47c3-40e7-b496-302b74a82a6a
+	sourceLineageTag: 2e769c4b-752d-455a-90b5-be2e92ae1fd5
+
+	/// Universal Product Code Number
+	column WM_UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f969072a-d8f5-473b-a096-72ad98bac70d
+		sourceLineageTag: a0eee5a1-64f2-4be8-a5fa-8c00c8fcfa62
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ce1c1ebf-aeaf-4fa3-b554-d7371395bc1d
+		sourceLineageTag: 55a707cc-314e-4f77-8d95-0e356be1d212
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Year Week Number.
+	/// A number representing the full Walmart year and week.
+	column WM_YR_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a5e0be4d-c9c0-4465-86af-ec6aeacb1021
+		sourceLineageTag: 473e190d-8520-4449-9dad-84dbc927d8fc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// This Year Nil Pick Units.
+	column TY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: d7439e6c-e374-4e06-9c2a-14443d80109a
+		sourceLineageTag: a6cdfe4d-1371-4706-b6a5-0850976e1cdc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	column LY_NIL_PICK_QTY
+		dataType: double
+		isHidden
+		lineageTag: c43b5ab8-9ee9-44a2-a58e-71dc35c8bf34
+		sourceLineageTag: d70e9c84-72eb-4085-81fe-e56be6d0b0a8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_NIL_PICK_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// This Year Nil Pick Rate Numerator.
+	column TY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: cc28271f-7bfd-497f-81f9-f76bb57df1c4
+		sourceLineageTag: 0526a0a2-8a3b-4f53-93f1-8da56bd9ee23
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column LY_NIL_PICK_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: ee577d44-a634-43bd-a311-5414a2757546
+		sourceLineageTag: 014f8597-f99f-44c5-9bac-49147c3e2202
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_NIL_PICK_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// This Year Nil Pick Rate Denominator.
+	column TY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: ff624d38-a3cf-4034-bddd-4e17b81093e2
+		sourceLineageTag: b1b22a85-779e-4491-8ba2-2bc240b53656
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column LY_NIL_PICK_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 8dc04be7-08e2-4bcc-9f96-9a664ae34ab4
+		sourceLineageTag: cbfa3b81-56b8-4391-80c7-fba4ad6f252b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_NIL_PICK_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// This Year First Time Pick Rate Numerator.
+	column TY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: ddf7bcad-fef5-416e-8aa4-84d627a48166
+		sourceLineageTag: 406f1fa5-43f1-4b9a-ba4a-92d0ac8f7d47
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// First Time Pick Rate Numerator.
+	column LY_FTPR_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: f7e9709d-3b28-479d-8537-6de837c9d465
+		sourceLineageTag: 5761637b-dfb1-4ec8-9345-382ee3b8280b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_FTPR_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// This Year First Time Pick Rate Denominator.
+	column TY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 29d7cd45-18a5-4734-8469-69cad9333ba3
+		sourceLineageTag: 689f5cef-5cd8-42b8-ae77-74c83cadc7e3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	///  Last Year First Time Pick Rate Denominator.
+	column LY_FTPR_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 7368e1be-b57d-4415-8cd8-9f5ac27aeaf2
+		sourceLineageTag: 8a51942f-9b29-4568-ba21-fcaa9ee0c035
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_FTPR_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	/// Total Capacity Quantity.
+	/// This is the sum of the total capacity of a product on a specific MODULAR PLANOGRAM.
+	column TOT_CPCTY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 9c70c359-5e9d-4734-9a79-9e00073c164c
+		sourceLineageTag: dc7ef29c-0605-4cf0-8a33-d3e250fc07dd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TOT_CPCTY_QTY
+
+		annotation SummarizationSetBy = User
+
+	column TY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: 656c5914-9028-461f-9cf6-fa108f26e3f6
+		sourceLineageTag: 7350d7c8-8896-4eed-961e-3f412bf5cc0b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column LY_PRESUB_QTY
+		dataType: double
+		isHidden
+		lineageTag: c592de34-3f4b-4670-8424-97a8758cdd27
+		sourceLineageTag: f59577cc-caaa-4685-b41a-c8def015593e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_PRESUB_QTY
+
+		annotation SummarizationSetBy = User
+
+	column TY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 278a38e5-05af-4cb4-bc1b-f347ab892ad4
+		sourceLineageTag: d8c7078e-cf8c-4144-95fa-cf6db95e231f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column LY_PRESUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: 725e01c8-5dc5-4912-aab4-705444b1a28a
+		sourceLineageTag: 2f41748b-f61e-4164-9807-333b76cde2ca
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_PRESUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column TY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 260032ac-eb3e-481a-b2b1-92e54f18091d
+		sourceLineageTag: 07a4290a-d40f-413a-9bcb-c1f4182b1831
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column LY_PRESUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: b0ad111c-4b7b-4ca2-9947-e77231f9ed93
+		sourceLineageTag: b5eabe3c-8816-4181-927f-e78f2522f7ba
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_PRESUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column TY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: e9bd0865-eab3-48bc-9740-5fde53339675
+		sourceLineageTag: b79749d9-d994-4a7e-96fa-fa8dacd39989
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column LY_POSTSUB_RATE_DNMNTR
+		dataType: double
+		isHidden
+		lineageTag: b796aaee-bf72-4ebe-9fda-e3ca46edef0c
+		sourceLineageTag: 3fb10439-4868-43ac-b541-1d569ce7323f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_POSTSUB_RATE_DNMNTR
+
+		annotation SummarizationSetBy = User
+
+	column TY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 1564d9f8-51ff-4e08-9e20-cccf8c66f752
+		sourceLineageTag: e0d92c96-b31f-4a61-a772-6e6ddb5649b6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	column LY_POSTSUB_RATE_NMRTR
+		dataType: double
+		isHidden
+		lineageTag: 410bb2a4-e136-4d70-91b4-228f524609b8
+		sourceLineageTag: a428f1e4-e139-4f05-8adc-1b75c44b9a25
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_POSTSUB_RATE_NMRTR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Week Number
+	column CAL_WM_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 027e660d-479d-4460-8c82-a72bfdcf9f1f
+		sourceLineageTag: 60ceb1f2-0fc4-4080-ae90-7c429e7e1105
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// In Modular Flag indicating the UPC is included in the store planogram for the week
+	column IN_MODULAR
+		dataType: string
+		isHidden
+		lineageTag: 6390f78d-8034-41ff-8860-47f00463899d
+		sourceLineageTag: 96dd5fb2-954f-4ab3-a52f-1a536eb569f1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: IN_MODULAR
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column TRAIT_NBR
+		dataType: double
+		isHidden
+		lineageTag: 7006594c-63d6-4c8b-89a0-10048a00ce0e
+		sourceLineageTag: edf518e9-ee63-4182-b787-22459cd602e2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		annotation SummarizationSetBy = User
+
+	partition WM_STORE_FULFILLMENT_WEEKLY = entity
+		mode: directQuery
+		source
+			entityName: WM_STORE_FULFILLMENT_WEEKLY
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

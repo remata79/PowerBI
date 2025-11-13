@@ -1,0 +1,576 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.2.0/schema.json",
+  "position": {
+    "x": 0,
+    "y": 1204,
+    "z": 12000,
+    "height": 294,
+    "width": 324,
+    "tabOrder": 11000
+  },
+  "objects": {
+    "values": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "9D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "columnHeaders": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "9D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "rowHeaders": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          },
+          "wordWrap": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "columnWidth": [
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "76.14811489096876D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "WM_ITEM_ATTRIBUTES.WM_UPC_NBR"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "131.58977659009724D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "WM_ITEM_ATTRIBUTES.ITEM_NAME"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "63.52079956558752D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 52 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Lost $ Sales"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "48.69298402021495D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 52 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.First Time Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "53.09162617030562D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 52 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "189D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "WM_ITEM_ATTRIBUTES.WM_UPC_Item_Name"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "72.54225015581184D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'FYTD'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Lost $ Sales"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "57D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'FYTD'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "58.74989779167291D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 13 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Lost $ Sales"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "63D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 13 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "67.96988583650099D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 4 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Lost $ Sales"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "58D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last 4 Weeks'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Rate"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "61.96539805349334D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last Week'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Lost $ Sales"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "63D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "scopeId": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Periods"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Last Week'"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "metadata": "Measures Table.Nil Pick Rate"
+        }
+      }
+    ]
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "11D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "spacing": [
+      {
+        "properties": {
+          "verticalSpacing": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "padding": [
+      {
+        "properties": {
+          "top": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          },
+          "right": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          },
+          "left": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

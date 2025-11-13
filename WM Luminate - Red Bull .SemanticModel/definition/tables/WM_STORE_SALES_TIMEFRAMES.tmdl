@@ -1,0 +1,431 @@
+/// Provides information about all store sales at Store, UPC and Channel level; for different Time Frames.
+/// This model provides the metrics aggregated at different Time Frames:
+/// - LW Last Week
+/// - L4W Last 4 Weeks
+/// - L13W Last 13 Weeks
+/// - L52W Last 52 Weeks
+/// - FYTD Walmart Fiscal Year to Date
+/// - CW Current Week
+/// 
+/// Source: WM_STORE_SALES_NEW_TRIMMED_VIEW
+table WM_STORE_SALES_TIMEFRAMES
+	isHidden
+	lineageTag: 20b2eef1-8839-4a40-b764-9e178bbc3fd7
+	sourceLineageTag: 342cdcc2-aaff-4e85-98f0-d264490f7030
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fde292e8-d71e-4583-b991-5a2888a79708
+		sourceLineageTag: 7f6305d7-baef-4472-bc55-36e9b37bef5d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Service Channel: The channel through which the order is fulfilled.
+	column SVC_CHNL_NM
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fe3e6804-9d3c-4f57-9d5f-8ca6a18cc2c9
+		sourceLineageTag: ceffba04-171b-48e7-9889-e79591d5ee23
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SVC_CHNL_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - This Year Sales Amount.
+	column L4W_TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 1f9e2486-1384-4148-86be-e8735656033d
+		sourceLineageTag: fddf7c4e-159f-4a8e-9da7-a24f35379e36
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - This Year Sales Amount.
+	column L13W_TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: a484c765-53c7-4384-a196-7b74e5e7236b
+		sourceLineageTag: c38bc8a8-88ea-4bec-abc9-20f426a120c4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - This Year Sales Amount.
+	column LW_TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 10e06dde-dd70-4c20-a9d0-b0817b37dc0f
+		sourceLineageTag: df84d4f9-368b-44e2-b9b4-b20bc8199312
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - This Year Sales Amount.
+	column L52W_TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: cfd2cde8-d66e-42c9-8699-0c1deb875c1e
+		sourceLineageTag: 8540ff6b-0a3a-4e3e-b0f7-1db9bb6be55d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - This Year Sales Amount.
+	column FYTD_TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 16b75045-a21d-4660-8267-498a68ff3842
+		sourceLineageTag: fde1b000-92b5-47c2-962a-c0c12f7b3878
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week - This Year TY Sales Amount.
+	column CW_TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 0b51737f-7da9-4a95-9ef4-f47bd5c09035
+		sourceLineageTag: d179786a-d38e-4b63-b4a6-94a489c1c0ca
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - Last Year Sales Amount.
+	column L4W_LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 2bbf88e5-0fcb-4c23-9abc-8beec2d677d2
+		sourceLineageTag: 1a5ef81c-ee2a-4401-84b5-7cdcfede7b50
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - Last Year Sales Amount.
+	column L13W_LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 42c5c653-22a5-4e3b-b297-08de2acf9562
+		sourceLineageTag: b8b0010d-a937-47e4-8861-afa0e622b230
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - Last Year Sales Amount.
+	column LW_LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 7bbc9e76-125d-4ff4-ae69-3ed41d1a2d5b
+		sourceLineageTag: f8650345-6aea-4002-9e3d-ee4e69a4e7f9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - Last Year Sales Amount.
+	column L52W_LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 62246c27-4a4b-4efa-87b8-7040652caa9d
+		sourceLineageTag: ba2d767e-6b2d-4148-93f6-72f22d937775
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - Last Year Sales Amount.
+	column FYTD_LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 98290d71-e4dd-4aab-bce5-6c263e61f31b
+		sourceLineageTag: 0e0f4db2-5f5c-46a1-b307-de14636286e4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week - Last Year Sales Amount.
+	column CW_LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 7f11fa26-f755-4b04-a5db-70aff5c23c11
+		sourceLineageTag: bcd1359a-5e23-44d3-852f-81a36a1e1d39
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - This Year Sales Units.
+	column L4W_TY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 15693ec5-dc15-4f28-a117-80796c66461d
+		sourceLineageTag: ac7fed67-dee4-4b06-a616-bcc81ee76785
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_TY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - This Year Sales Units.
+	column L13W_TY_QTY
+		dataType: double
+		isHidden
+		lineageTag: ebe07362-5729-4902-b22f-975e70dc3034
+		sourceLineageTag: c59394c1-cdc4-4d56-a4a9-aa7e3fd295cd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_TY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - This Year Sales Units.
+	column LW_TY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 35c9f9e8-f52d-4555-9982-f44bf8227a28
+		sourceLineageTag: 93aea101-3b58-4c3e-adb6-14ada0aacd84
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_TY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - This Year Sales Units.
+	column L52W_TY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 73171af1-1c4f-4fb4-a794-5f518e045aa3
+		sourceLineageTag: 33c4f92e-d0b0-486c-bb61-7bf28d6ab3eb
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_TY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - This Year Sales Units.
+	column FYTD_TY_QTY
+		dataType: double
+		isHidden
+		lineageTag: dba215d3-0d65-4259-b494-1e08ca3427cd
+		sourceLineageTag: 0b857d42-ccce-48a7-a7a2-1bf6622a9a96
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_TY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week - This Year Sales Units.
+	column CW_TY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 93ee8834-1790-4dcc-8fca-56bf361fa178
+		sourceLineageTag: 1e92bb83-35a2-4b7b-8cec-b4352ac85e23
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_TY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 4 Weeks - Last Year Sales Units.
+	column L4W_LY_QTY
+		dataType: double
+		isHidden
+		lineageTag: b8a9ee93-08dc-453c-9df9-e1fe62544c7f
+		sourceLineageTag: a345f7d1-4825-4b4a-a04d-68d23bc7aac3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L4W_LY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 13 Weeks - Last Year Sales Units.
+	column L13W_LY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 5c75736f-e2ca-49e9-bf99-af42f6bd561b
+		sourceLineageTag: 54077a28-261e-44a8-a9b1-434eb8611e94
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L13W_LY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week - Last Year Sales Units.
+	column LW_LY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 1d56f715-4f3a-4693-b1e4-ed72170607b4
+		sourceLineageTag: b7489353-8327-46b4-b87a-af32326ceec5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LW_LY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last 52 Weeks - Last Year Sales Units.
+	column L52W_LY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 76d22e23-0926-45cf-b9d8-2ce5a2c8c87c
+		sourceLineageTag: fb6a11a9-9906-416c-92b5-3aacade408f1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: L52W_LY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year to Date - Last Year Sales Units.
+	column FYTD_LY_QTY
+		dataType: double
+		isHidden
+		lineageTag: cebbdbd8-071a-4526-9101-b6bf3cda52e0
+		sourceLineageTag: ab2a3c6f-cd1b-4f08-9a34-433e1870a567
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FYTD_LY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week - Last Year Sales Units.
+	column CW_LY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 172e2568-5814-494f-95cc-80b5896cab50
+		sourceLineageTag: 020b88e3-8d4b-4f70-a394-c823d61e76a4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CW_LY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last updated date.
+	column BUS_DT
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 697f7900-c7f2-4102-82ae-526db6d2abc1
+		sourceLineageTag: 7bf1cb41-d0e3-4117-99d9-4196817bbdb1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BUS_DT
+
+		annotation SummarizationSetBy = User
+
+	column CAL_WM_MTH_NBR
+		dataType: double
+		isHidden
+		lineageTag: 7c607939-ed49-43fb-ac40-efa30eca3b09
+		sourceLineageTag: 89e417c2-1fb7-4569-856f-8cdfa9c608ee
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_MTH_NBR
+
+		annotation SummarizationSetBy = User
+
+	column CAL_WM_MTH_NM
+		dataType: string
+		isHidden
+		lineageTag: b85a3af8-eba2-4dfd-ab55-76dda282b9ec
+		sourceLineageTag: 1344e248-48a1-4c1f-947a-1a3782ce0a7a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CAL_WM_MTH_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Week Number
+	column CAL_WM_WK_NBR
+		dataType: double
+		isHidden
+		lineageTag: 48ceaa46-4ea6-4081-9e6c-8a87eaed05ff
+		sourceLineageTag: 637fc375-2dec-473f-bf95-bfcf1780b0fd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	column CAL_WM_WK_NM
+		dataType: string
+		isHidden
+		lineageTag: 1aaec9e9-5c29-45bd-a071-c02ac77ef099
+		sourceLineageTag: a96f5c34-2444-4d6a-b924-d6eb6402aa78
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CAL_WM_WK_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Year Week Number.
+	/// A number representing the full Walmart year and week.
+	column CAL_WM_YR_WK_NBR
+		dataType: double
+		isHidden
+		lineageTag: 17d28a5d-5f30-4896-9fb5-761799fe4cc0
+		sourceLineageTag: 541973a1-55a9-433a-8f39-2fe75cea3e18
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_YR_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	column CAL_WM_WK_DAY_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e872f124-f3ab-4d0c-a194-a33afcf36d64
+		sourceLineageTag: 798f2b12-f419-4d70-9e6a-5e81637ed634
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_DAY_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Universal Product Code Number
+	column WM_UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c9363f6a-75be-401e-9d58-540c675c23d5
+		sourceLineageTag: ae14471b-53da-49e6-a2a2-797277a329fb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	partition WM_STORE_SALES_TIMEFRAMES = entity
+		mode: directQuery
+		source
+			entityName: WM_STORE_SALES_TIMEFRAMES
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+
