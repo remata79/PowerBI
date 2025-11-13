@@ -1,0 +1,318 @@
+/// This view displays all Modular (Store Planogram) assignments for each store by week, including both Main Placements and Mod Racks. It also lists the UPCs included in the Main Placement planograms.
+/// 
+/// Source: WM_STORE_MODULAR_UPC_WEEK_VIEW
+table WM_STORE_MODULAR_UPC_WEEK
+	isHidden
+	lineageTag: c19c549d-dd3b-4387-9f0a-1608cd6fcba9
+	sourceLineageTag: fc2ccab4-ddf2-4ddd-8ead-41b506c28da5
+
+	/// Modular Planogram ID
+	column MODLR_PLAN_ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 482eaaad-7cc8-46d0-a17b-7d9cd3cf88d4
+		sourceLineageTag: 0c8d53fa-5e85-450a-94a1-40254b96101b
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: MODLR_PLAN_ID
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column TRAIT_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: eb23220a-92ee-4f9e-a05f-d36731ffe6db
+		sourceLineageTag: 1f007e85-1545-4a5c-baeb-cbb1da88cf3c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Universal Product Code Number
+	column UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d4f1fe5c-f407-452f-8aba-aee21193436c
+		sourceLineageTag: c0246950-d53d-40a1-8a25-a11c412d4f27
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Total Capacity Quantity.
+	/// This is the sum of the total capacity of a product on a specific MODULAR PLANOGRAM.
+	column TOT_CPCTY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 4cf8f9c9-649e-4b99-b207-104cee96ef54
+		sourceLineageTag: e7f0c825-76f7-4ea1-9a85-a4f7d0a8f290
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TOT_CPCTY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Total Depth Facing Quantity.
+	/// The sum of the depth_facings_nbr of a product on this modular plan.
+	column TOT_DEPTH_FACING_QTY
+		dataType: double
+		isHidden
+		lineageTag: f0d15790-d3e4-4b42-90a5-2f8b342ac7c6
+		sourceLineageTag: 893fbe61-934f-4e47-90f7-89559bc57d0f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TOT_DEPTH_FACING_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Total Horizontal Facing Quantity
+	/// This is the sum of the horiz_facings_nbr of a product on this modular plan.
+	column TOT_HRZNL_FACING_QTY
+		dataType: double
+		isHidden
+		lineageTag: c2e77412-1125-4220-90d0-5327bc8db6b0
+		sourceLineageTag: 89d8d89a-e6b6-47bb-8bcf-c9da0561a4fc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TOT_HRZNL_FACING_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Total Vertical Facing Quantity.
+	/// The sum of the vert_facings_nbr of a product on this modular plan.
+	column TOT_VERTICAL_FACING_QTY
+		dataType: double
+		isHidden
+		lineageTag: 9930882f-b4ab-4c3d-b611-6047388bea45
+		sourceLineageTag: 4639d768-f44a-49e9-8c10-fcafeb388f6f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TOT_VERTICAL_FACING_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7b21c62f-14f6-4a8b-aeb5-d7e25a3aa996
+		sourceLineageTag: 3a5bf9db-6a0c-470b-9ba6-32a7d41ef805
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Plan Status Code	
+	column SM_STATUS
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 06d4a8bc-5d92-4703-85ff-65ddd316c2f4
+		sourceLineageTag: aac9babd-01a3-4cf4-88c2-b7ba20b49a86
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: SM_STATUS
+
+		annotation SummarizationSetBy = User
+
+	/// Effective Date
+	column SM_EFF_DT
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 2cb131e8-5bd4-414e-b727-28c36402e3e3
+		sourceLineageTag: f8b7d357-0558-4cc2-ba1a-bce43aee208c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SM_EFF_DT
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Trait Status Code
+	column MT_STATUS
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d6686e77-379b-4a71-b8a6-8b302d51ed90
+		sourceLineageTag: a1828442-df53-40af-9ab2-b19ba76d4e8d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MT_STATUS
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Category Number
+	column MODLR_CATG_NBR
+		dataType: double
+		isHidden
+		lineageTag: ac64f4ec-2377-4d27-9aa8-8e13a3a937a5
+		sourceLineageTag: 55087316-6ec8-4aba-b66b-6e34895c4e75
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MODLR_CATG_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Store Modular Unassigned Date
+	column UNASSIGNED_DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: d041556c-45ee-4018-93d3-e642eb62db5a
+		sourceLineageTag: d682b6e7-b8c6-46c5-ae67-503a9efd5121
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: UNASSIGNED_DATE
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Year Week Number.
+	/// A number representing the full Walmart year and week.
+	column WM_YR_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 86661bc2-f3c9-4087-9fed-59748fb1ce31
+		sourceLineageTag: f7f7af3d-6ce8-4a97-b4b8-f0c00b783898
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Full Year Number
+	column WM_FULL_YR_NBR
+		dataType: double
+		isHidden
+		lineageTag: 1e5c304e-960f-47c6-b730-c1ce68da2b76
+		sourceLineageTag: 89227f22-5c51-44b5-ac45-42316c88dcd0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WM_FULL_YR_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Week Number
+	column WM_WK_NBR
+		dataType: double
+		isHidden
+		lineageTag: ec3792a5-d6eb-4a5c-a922-89e6bc0eeee2
+		sourceLineageTag: 290be30e-d29c-46d9-a077-d34b5d52ed42
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WM_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Mod Rack - Category Number
+	column MOD_RACK_CATG_NBR
+		dataType: double
+		isHidden
+		lineageTag: 36305f68-62d8-446f-8dee-97e9bea7d25b
+		sourceLineageTag: a2b3b951-b600-4528-a0ac-f6e5d0a7bd49
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MOD_RACK_CATG_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	/// Mod Rack - Planogram ID
+	column MOD_RACK_MODLR_PLAN_ID
+		dataType: double
+		isHidden
+		lineageTag: b18a8ff5-e9e0-4fa5-80e4-ab1a2e092918
+		sourceLineageTag: f7f3b8f5-418b-4b54-b472-b2d21761c215
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: MOD_RACK_MODLR_PLAN_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	/// Mora Rack Trait Number
+	column MOD_RACK_TRAIT_NBR
+		dataType: double
+		isHidden
+		lineageTag: dc15c214-ab9f-43e3-ae88-de588486ab31
+		sourceLineageTag: 78bc714c-9a04-440d-a807-301c96f2d69b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MOD_RACK_TRAIT_NBR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Planogram Description
+	column MODLR_PLAN_TITLE_DESC
+		dataType: string
+		isHidden
+		lineageTag: 836e5a8d-f00c-41a0-95a7-3207457b9ff3
+		sourceLineageTag: 7d5b3542-0bae-4b8d-b0b3-27b3297e94a8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MODLR_PLAN_TITLE_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	/// Modular Category Description
+	column MODLR_CATG_DESC
+		dataType: string
+		isHidden
+		lineageTag: d6e38fb0-4235-43bb-993a-145fa0a58d99
+		sourceLineageTag: 45bb001f-459c-4ae0-97ee-c327f8c7f353
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MODLR_CATG_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	/// Do not use.
+	column STORE_SM_STATUS_CNT
+		dataType: double
+		isHidden
+		lineageTag: 1f5e98fb-a5e0-4ca5-8cdf-e0c22450bc6c
+		sourceLineageTag: 339ea553-45f5-4ae8-aee3-3ba94f990473
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: STORE_SM_STATUS_CNT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	/// Flag indicating this Modular Planogram and UPC has been assigned in the Store as part of ModularPlanUPC feed.
+	column MODLR_UPC_EXISTS
+		dataType: string
+		isHidden
+		lineageTag: 3afefec3-2712-4385-9216-21c652df6192
+		sourceLineageTag: b368623a-3130-43f4-9978-9c9b8756ed58
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MODLR_UPC_EXISTS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	partition WM_STORE_MODULAR_UPC_WEEK = entity
+		mode: directQuery
+		source
+			entityName: WM_STORE_MODULAR_UPC_WEEK
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

@@ -1,0 +1,153 @@
+/// The Store Item UPC Measures view provides information about Inventory at the store level; several types of metrics across in-stock inventory; and markup, markdown, and margins on an item, store, and day grain.
+/// This model is aggregated at Year Week, Store and UPC level.
+/// 
+/// Source: WM_STORE_ITEM_UPC_WEEK_VIEW
+table WM_STORE_ITEM_UPC_WEEKLY
+	isHidden
+	lineageTag: 972aa75b-54fd-46bf-b474-3f24e64985bf
+	sourceLineageTag: 5336c442-5a00-40e7-a36f-a804ea012dd6
+
+	/// Universal Product Code Number
+	column WM_UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 38ce79b9-8322-4a15-8d98-8d330e79b833
+		sourceLineageTag: a9bd4fe9-a8c6-4947-b3c6-9d368f64ebfd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b4d164ca-ec1a-4870-94cb-4ea0c55e4900
+		sourceLineageTag: fa2427b0-d2f5-411d-88a1-aa24332a1628
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Year Week Number.
+	/// A number representing the full Walmart year and week.
+	column WM_YR_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 82797978-7e65-40c1-a1e6-ffb010d626f7
+		sourceLineageTag: 75b87a8d-61d8-49c4-963f-a05032640b10
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Average on hand Qty for this week
+	column TY_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 784a7be2-949c-4585-a9e3-f104a2de1f9d
+		sourceLineageTag: 6d930a0e-3d9d-46ab-8a27-6d8e7df2d292
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the Start of the Week.
+	column TY_START_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 4a032fea-1ca9-49f4-95a8-9f4d82838605
+		sourceLineageTag: 62bb1f17-8086-463c-9941-fadd792734f8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_START_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// On Hand Qty on the end of the Week.
+	column TY_END_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 6d2eaf24-be94-49d3-b675-71889bc9c345
+		sourceLineageTag: 6a605f0c-b3cf-449c-8a22-571caa5d929f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_END_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Net Receipt Quantity - This Year.
+	/// 
+	column TY_NET_RCPT_QTY
+		dataType: double
+		isHidden
+		lineageTag: cb6722f3-2fe3-4bfc-9ecf-9c68f2218844
+		sourceLineageTag: 8207b784-81b6-44ea-b0e7-67c2d1992ad3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_NET_RCPT_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Number of days UPC was Out of Stock in that Store/Week.
+	column OUT_OF_STOCK
+		dataType: double
+		isHidden
+		lineageTag: d9a835bd-cb23-46c8-a4cd-8d724195d733
+		sourceLineageTag: 727f2604-6e4d-4932-a0ca-94be015e19a9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OUT_OF_STOCK
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Week Number
+	column CAL_WM_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 346e265d-fdd8-476b-bc0a-9e497dcb3399
+		sourceLineageTag: 314f2764-010e-4f49-bc18-eb370f240da0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// In Modular Flag indicating the UPC is included in the store planogram for the week
+	column IN_MODULAR
+		dataType: string
+		isHidden
+		lineageTag: 6548ed70-97d5-4c45-b312-7bd8ae20d89c
+		sourceLineageTag: c51da4d1-a78b-4536-b699-ed25a4369a09
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: IN_MODULAR
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column TRAIT_NBR
+		dataType: double
+		isHidden
+		lineageTag: 80478769-2ad0-483d-a5cb-027851c67f24
+		sourceLineageTag: cb292d51-4f1b-473b-bd06-dd96de5074d6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		annotation SummarizationSetBy = User
+
+	partition WM_STORE_ITEM_UPC_WEEKLY = entity
+		mode: directQuery
+		source
+			entityName: WM_STORE_ITEM_UPC_WEEKLY
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

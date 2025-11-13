@@ -1,0 +1,200 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "1c0c4e89f2fae553ca0d",
+  "displayName": "Weekly Sales - Category",
+  "displayOption": "FitToWidth",
+  "height": 1080,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4d7f500c6f70fa884856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Store"
+              }
+            },
+            "Property": "STORE_NBR"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "w",
+              "Entity": "WM Master - Store",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "w"
+                              }
+                            },
+                            "Property": "STORE_NBR"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "-999L"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "c22ca2b325af0d118b19",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F1EFEF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "417L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "personalizeVisual": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "perspectiveRef": {
+            "expr": {
+              "Literal": {
+                "Value": "'WMCA Sales - Weekly'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "7c51bf078c9afddce331",
+      "target": "2b8b81a83bcf490492bc",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7c51bf078c9afddce331",
+      "target": "685e291aa184ce969b54",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7c51bf078c9afddce331",
+      "target": "efd514db6e836010f7b1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a2eb910542d11de6945c",
+      "target": "f7ac1876812addfda0d2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "7c51bf078c9afddce331",
+      "target": "47d09df606ef3a678e2c",
+      "type": "DataFilter"
+    },
+    {
+      "source": "47d09df606ef3a678e2c",
+      "target": "f8bb59305d0a7ce3a354",
+      "type": "NoFilter"
+    },
+    {
+      "source": "47d09df606ef3a678e2c",
+      "target": "2102f4b2337faad617d8",
+      "type": "NoFilter"
+    },
+    {
+      "source": "47d09df606ef3a678e2c",
+      "target": "321fe00657a90705d56f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "47d09df606ef3a678e2c",
+      "target": "2b8b81a83bcf490492bc",
+      "type": "NoFilter"
+    },
+    {
+      "source": "47d09df606ef3a678e2c",
+      "target": "685e291aa184ce969b54",
+      "type": "NoFilter"
+    },
+    {
+      "source": "47d09df606ef3a678e2c",
+      "target": "efd514db6e836010f7b1",
+      "type": "NoFilter"
+    }
+  ]
+}

@@ -1,0 +1,1748 @@
+/// Combination of Store Sales and Store Fulfillment metrics.
+/// 
+/// This model provides the metrics aggregated at different Time Frames:
+/// - LW Last Week
+/// - L4W Last 4 Weeks
+/// - L13W Last 13 Weeks
+/// - L52W Last 52 Weeks
+/// - FYTD Walmart Fiscal Year to Date
+/// - CW Current Week
+/// 
+/// Recommend usage along with:
+/// - WM Master: Time Frame
+/// - WM Master: Store
+/// - WM Master: UPC
+/// - WM Master: Mod Trait
+/// 
+/// Source: WM_STORE_FULFILMENT_WEEK_VIEW
+/// WM_STORE_SALES_WEEK_VIEW
+/// 
+table '03. Metrics - Store Sales and Fulfillment Time Frames'
+	lineageTag: d0ade0a9-c3d9-4a42-8fd5-cb5319316d57
+	sourceLineageTag: 77a7e025-40b3-4e31-aa9c-9b42a1b070dc
+
+	measure 'FYTD TY Sales' = EXTERNALMEASURE("FYTD TY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 8cebc3a4-f8fe-43c5-9e2e-4faff4348d09
+		sourceLineageTag: 4c148097-30ff-44a3-94ec-8eaeae6cd7a6
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Sales' = EXTERNALMEASURE("FYTD LY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: b36a62d1-f064-47da-bd18-babfc77c0404
+		sourceLineageTag: 339a2533-beb6-4faf-892f-001d953518a8
+		dataCategory: Uncategorized
+
+	measure 'L13W LY Sales' = EXTERNALMEASURE("L13W LY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 4053246d-c1cc-4d5e-b19c-68819fc02548
+		sourceLineageTag: 3809dbfe-9187-49f1-8f7d-deb31ef24111
+		dataCategory: Uncategorized
+
+	measure 'L13W TY Sales' = EXTERNALMEASURE("L13W TY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: fff0e766-b6cd-4807-bacf-f8d82d0a08ac
+		sourceLineageTag: 495fef33-957d-444f-a0dc-220fdad9c38f
+		dataCategory: Uncategorized
+
+	measure 'L4W LY Sales' = EXTERNALMEASURE("L4W LY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 77f879af-b1ab-4c82-a82d-9592a61bfa8f
+		sourceLineageTag: 4f1bec3e-d6b5-4a8f-9936-319260422bd0
+		dataCategory: Uncategorized
+
+	measure 'L4W TY Sales' = EXTERNALMEASURE("L4W TY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 05ec360f-f667-4a6f-b91a-a385528d1a31
+		sourceLineageTag: e20c2a18-1c73-47cb-a5de-17ffdfe965b2
+		dataCategory: Uncategorized
+
+	measure 'LW LY Sales' = EXTERNALMEASURE("LW LY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 9e4c9b32-8bda-4596-b23f-26dec50f9f8c
+		sourceLineageTag: 80115c12-3cc7-458f-bc05-842facb7e94e
+		dataCategory: Uncategorized
+
+	measure 'LW TY Sales' = EXTERNALMEASURE("LW TY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 498aa4cf-0366-47d8-9e34-986fdfc66abe
+		sourceLineageTag: 29334768-78a9-453d-8f7d-cd5e97a475d4
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Qty' = EXTERNALMEASURE("FYTD LY Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: a09dbdb6-52df-49fc-a67c-60e6a9ac1e0f
+		sourceLineageTag: 853ae28f-b899-425a-ba25-522661530cf8
+		dataCategory: Uncategorized
+
+	measure 'FYTD TY Qty' = EXTERNALMEASURE("FYTD TY Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: bd318570-c4c8-402b-aa78-c488fe2d6b88
+		sourceLineageTag: 483f4c7d-4656-45a9-b10e-9ac1fa3dadc2
+		dataCategory: Uncategorized
+
+	measure 'L13W TY Qty' = EXTERNALMEASURE("L13W TY Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 62d8fdab-b966-45f5-9833-c6578ff302e2
+		sourceLineageTag: f5b5422d-f085-48cf-ab7b-ed12e03c1bd8
+		dataCategory: Uncategorized
+
+	measure 'L13W LY Qty' = EXTERNALMEASURE("L13W LY Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: f1bc942a-ae09-4c5b-a319-433239154768
+		sourceLineageTag: 86ebe83a-78ba-4595-a787-822b3af9eac4
+		dataCategory: Uncategorized
+
+	measure 'L4W LY Qty' = EXTERNALMEASURE("L4W LY Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: ef78b80f-9b36-490a-a4cd-e7a35f7498a0
+		sourceLineageTag: 099747bf-260e-4a44-8079-d64e343666a9
+		dataCategory: Uncategorized
+
+	measure 'LW LY Qty' = EXTERNALMEASURE("LW LY Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 0c0c1684-c240-4dca-91a3-6a9d44334928
+		sourceLineageTag: 96ee38ba-1f8f-4692-b544-c54e733da34b
+		dataCategory: Uncategorized
+
+	/// This Year Unit Sales.
+	measure 'L4W TY Units' = EXTERNALMEASURE("L4W TY Units", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 5fd125ab-9fb7-48dc-9f56-ce38a7467270
+		sourceLineageTag: 298ece13-e114-4250-a2f5-09dcd4d78d8d
+		dataCategory: Uncategorized
+
+	/// This Year Unit Sales.
+	measure 'LW TY Units' = EXTERNALMEASURE("LW TY Units", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 1807b620-f349-420b-b31b-66b298091bc1
+		sourceLineageTag: 203a1454-0533-4720-83a8-fee1a1f70fe6
+		dataCategory: Uncategorized
+
+	/// Last Year Avg Period Price.
+	measure 'FYTD LY Price' = EXTERNALMEASURE("FYTD LY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: eaba0069-7303-4319-a75c-8a75235ce097
+		sourceLineageTag: f03b9afb-0a52-4cb6-bf02-3387ecb6fcef
+		dataCategory: Uncategorized
+
+	/// This Year Avg Period Price.
+	measure 'FYTD TY Price' = EXTERNALMEASURE("FYTD TY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: ee147282-9ed3-431d-8cf9-ac6179084e24
+		sourceLineageTag: 835892f2-c216-4819-baa8-ed3ba468fbb7
+		dataCategory: Uncategorized
+
+	/// This Year Avg Period Price.
+	measure 'L13W TY Price' = EXTERNALMEASURE("L13W TY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 8d5ae73e-160b-49dc-ad2f-b2a53a68da47
+		sourceLineageTag: bc6e40ef-91b6-4cf9-9842-157916b203e4
+		dataCategory: Uncategorized
+
+	/// This Year Avg Period Price.
+	measure 'L4W TY Price' = EXTERNALMEASURE("L4W TY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 551b4823-22f5-4e93-87b2-d0bb7c44b9ba
+		sourceLineageTag: d307f1e7-cdd2-4ce0-a2b3-6cefa3724721
+		dataCategory: Uncategorized
+
+	/// Last Year Avg Period Price.
+	measure 'L13W LY Price' = EXTERNALMEASURE("L13W LY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 6eb0f4cb-42d5-449d-99bf-79f93aebae40
+		sourceLineageTag: 1b642439-cc14-412e-b4d3-cf207845bd8b
+		dataCategory: Uncategorized
+
+	/// This Year Avg Period Price.
+	measure 'LW TY Price' = EXTERNALMEASURE("LW TY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 728cf1ca-7a8c-42bb-bc98-aacea71c6d3f
+		sourceLineageTag: 9293dbba-28ef-4366-94c2-28cf0787661c
+		dataCategory: Uncategorized
+
+	/// Last Year Avg Period Price.
+	measure 'LW LY Price' = EXTERNALMEASURE("LW LY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 4bb83663-9bfe-4258-94a0-981610e3890b
+		sourceLineageTag: 53f9a9ca-7344-4307-ab1f-3e7bac198bbf
+		dataCategory: Uncategorized
+
+	/// Last Year Avg Period Price.
+	measure 'L4W LY Price' = EXTERNALMEASURE("L4W LY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 1ae40a98-55d0-4e57-a0be-593bd837f388
+		sourceLineageTag: f77bd013-286c-46e3-a692-c30c48bd5263
+		dataCategory: Uncategorized
+
+	/// This Year Sales Amount.
+	measure 'TY $ Sales' = EXTERNALMEASURE("TY $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: cc037c60-997d-459e-a3c7-7670fba53cda
+		sourceLineageTag: 2ce5285d-0236-4f78-ac7d-50d4cea706a0
+		dataCategory: Uncategorized
+
+	/// This Year Unit Sales.
+	measure 'TY Unit Sales' = EXTERNALMEASURE("TY Unit Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: a9b73b59-e63f-42bb-bc1e-b7508c595199
+		sourceLineageTag: 02260d89-c9c6-4f4b-9b6d-3ddd2bfe62d1
+		dataCategory: Uncategorized
+
+	/// This Year Avg Period Price.
+	measure 'TY Price' = EXTERNALMEASURE("TY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $0.00;$(0.00)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 546f47fb-9242-4f3d-92c0-36ccc0e9f31b
+		sourceLineageTag: 405b4a12-855b-4876-a8ec-f1ee5bab183f
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Sales YoY' = EXTERNALMEASURE("% Chg Sales YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 86a4afcc-4cdc-425e-8bfd-16b16ee69342
+		sourceLineageTag: 8182040d-c26c-46a6-ab3d-5f24d2e011c5
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Unit Sales YoY' = EXTERNALMEASURE("% Chg Unit Sales YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: c1616186-3acf-4a1e-b511-145157190c7b
+		sourceLineageTag: 5346f4db-164f-4bb3-9003-32f6093371a5
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Price YoY' = EXTERNALMEASURE("% Chg Price YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: d35ed12b-0fcb-48b7-835e-507d3fd3a0f9
+		sourceLineageTag: 6a49d377-18c5-49c3-9972-0b5aeedf4b05
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg Sales YoY' = EXTERNALMEASURE("ABS Chg Sales YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: b3ba11d5-51fc-4cc6-ba5c-22905915e986
+		sourceLineageTag: 989607b6-4bfe-434c-a6bb-2284b614abe0
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg Price YoY' = EXTERNALMEASURE("ABS Chg Price YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: ,##0.00;(##0.00)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: b27d0518-1e79-491f-aa62-238e76eb12f9
+		sourceLineageTag: b88eb78f-8bf9-438b-a02e-62d15bff65bf
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg Unit Sales YoY' = EXTERNALMEASURE("ABS Chg Unit Sales YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: d820cc75-d9de-4456-89b4-55b09becb883
+		sourceLineageTag: 30829d86-f3b8-4316-a607-4fc5d5de48c9
+		dataCategory: Uncategorized
+
+	/// Last Year Sales Amount.
+	measure 'LY $ Sales' = EXTERNALMEASURE("LY $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: ae5188f6-1dac-40e2-a714-5e7e293196cd
+		sourceLineageTag: 2e483dcc-cde4-4ded-a46e-d110aee65eec
+		dataCategory: Uncategorized
+
+	/// Last Year Avg Period Price.
+	measure 'LY Price' = EXTERNALMEASURE("LY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $0.00;$(0.00)
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: f76eb5eb-2b2a-496b-83d9-fccbe1275dbb
+		sourceLineageTag: 07206a67-30c3-49d8-b1b2-ffc0abbea054
+		dataCategory: Uncategorized
+
+	measure 'LY Unit Sales' = EXTERNALMEASURE("LY Unit Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 4fea0136-aeb9-48df-99ae-526329b9027e
+		sourceLineageTag: 3dbd171b-8455-45f0-9739-2175e2b8bec8
+		dataCategory: Uncategorized
+
+	measure 'Cont. Growth Sales' = EXTERNALMEASURE("Cont. Growth Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0;(0.0)
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: d292ceb2-ae8a-4e8f-bb76-245ff37e798f
+		sourceLineageTag: 7c5a2c8e-bdcb-4855-b705-d32e38228852
+		dataCategory: Uncategorized
+
+	measure 'Cont. Growth Unit Sales' = EXTERNALMEASURE("Cont. Growth Unit Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0;(0.0)
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 13c25d9e-44f1-44ac-a5ec-372319e80d21
+		sourceLineageTag: 31f717bb-1026-4dd6-8bd8-b5f0c97755f4
+		dataCategory: Uncategorized
+
+	measure 'Cont. Growth Price' = EXTERNALMEASURE("Cont. Growth Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0;(0.0)
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 16e5d361-488b-46bf-9a90-d3f85dbcaa8a
+		sourceLineageTag: ac4492d2-db74-4286-995f-9f6f4256e9b9
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Sales (FYTD)' = EXTERNALMEASURE("FYTD LY Sales (FYTD)", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 1d8363c6-ce1f-4717-aedd-85658f4441c3
+		sourceLineageTag: c4d17cbb-1a15-4816-810e-20478f843f9c
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Qty (FYTD)' = EXTERNALMEASURE("FYTD LY Qty (FYTD)", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 3b42e15f-0405-40d2-b93a-a91cb7b90517
+		sourceLineageTag: 0ddb080d-6ccf-4d83-bf6b-98827e30b4bb
+		dataCategory: Uncategorized
+
+	/// Last Year Avg Period Price.
+	measure 'FYTD LY Price (FYTD)' = EXTERNALMEASURE("FYTD LY Price (FYTD)", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 5648d28c-1074-471a-98b2-7f21c8b016f4
+		sourceLineageTag: 08ebe966-3546-4ee2-bb27-df2864e6b565
+		dataCategory: Uncategorized
+
+	measure 'WM Week Num' = EXTERNALMEASURE("WM Week Num", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 6b9fb519-cb3b-4c3d-a7d5-eb0ee80a21b7
+		sourceLineageTag: 7efc24d6-cbff-4e7f-be67-4954ae5376be
+		dataCategory: Uncategorized
+
+	measure 'FYTD TY Stores Selling' = EXTERNALMEASURE("FYTD TY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: b7d33a91-11c2-426d-ad8b-5b2d48ece834
+		sourceLineageTag: 64b23701-59e7-43b3-b349-9b3ca3809c1a
+		dataCategory: Uncategorized
+
+	measure 'LW TY Stores Selling' = EXTERNALMEASURE("LW TY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: b5ce2042-085a-4439-9b30-c2f00439ea95
+		sourceLineageTag: 1d890b3b-2c83-48f0-8568-df059324545e
+		dataCategory: Uncategorized
+
+	measure 'L4W LY Stores Selling' = EXTERNALMEASURE("L4W LY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: d2488f3b-befd-4ad8-bfcc-fa26e5fe073d
+		sourceLineageTag: e9760924-bbba-421a-a3fe-6df032964de9
+		dataCategory: Uncategorized
+
+	measure 'L13W TY Stores Selling' = EXTERNALMEASURE("L13W TY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 7742428f-e06c-4f3d-95ee-b893faadaae0
+		sourceLineageTag: 07cea5d1-166c-4cdc-badc-88186a6518ff
+		dataCategory: Uncategorized
+
+	measure 'L52W TY Stores Selling' = EXTERNALMEASURE("L52W TY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: c863531e-63c6-4789-a2a1-734b7b44a597
+		sourceLineageTag: b2b34abb-39f5-4571-9a69-fd34bbd13668
+		dataCategory: Uncategorized
+
+	measure 'FYTD Weeks Count' = EXTERNALMEASURE("FYTD Weeks Count", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 8ae7d1b9-29ee-4eb6-af4f-fa2c7a923705
+		sourceLineageTag: 4189b7b6-1837-4976-b0c8-66856af4ce76
+		dataCategory: Uncategorized
+
+	measure 'TY Store Selling Count' = EXTERNALMEASURE("TY Store Selling Count", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 7f0223d6-9202-4b07-bd87-ddea901ddcea
+		sourceLineageTag: 8c349365-a7b8-44aa-9a9c-8036e093206f
+		dataCategory: Uncategorized
+
+	/// This Year $ Sales Velocity: $ per Store per Week.
+	measure 'TY $/S/W' = EXTERNALMEASURE("TY $/S/W", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0.00;$(#,##0.00)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: f7c0a480-88c3-47ae-bf40-159c9ab0e607
+		sourceLineageTag: cc5db0d2-a0d3-49e4-a209-590c83198c68
+		dataCategory: Uncategorized
+
+	/// This Year Unit Sales Velocity: Units per Store per Week.
+	measure 'TY U/S/W' = EXTERNALMEASURE("TY U/S/W", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0.00
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: b022568a-7ace-4e93-abff-cba216f7a429
+		sourceLineageTag: d0f5bbe7-1cd2-4e1e-b49a-5c869d280c21
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Stores Selling' = EXTERNALMEASURE("FYTD LY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 7fe32b3f-5538-49e9-82be-e3ea92635b25
+		sourceLineageTag: cdbf1524-0cb3-4ead-8ffb-1befbfddd06c
+		dataCategory: Uncategorized
+
+	measure 'L13W LY Stores Selling' = EXTERNALMEASURE("L13W LY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 58dcbf47-2c8f-44ad-83c5-d0c1519468bd
+		sourceLineageTag: 4f0b0922-4ac6-4e9d-9540-d92277da3f64
+		dataCategory: Uncategorized
+
+	measure 'LW LY Stores Selling' = EXTERNALMEASURE("LW LY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 56544fde-a642-48dd-8c69-91aa35f7a09e
+		sourceLineageTag: 21a086c4-77c3-46bf-a1ee-562631ca4ad7
+		dataCategory: Uncategorized
+
+	measure 'LY Stores Selling' = EXTERNALMEASURE("LY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 8008f28c-6322-4a04-9086-426f15c163c0
+		sourceLineageTag: fd026d2e-da93-412a-8425-0b7d624afbd4
+		dataCategory: Uncategorized
+
+	measure 'L4W TY Stores Selling' = EXTERNALMEASURE("L4W TY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 6baeef8c-94b7-436a-bee1-808945999920
+		sourceLineageTag: 7ca00679-ce3a-4ff6-812e-cca832ab0592
+		dataCategory: Uncategorized
+
+	/// Last Year $ Sales Velocity: $ per Store per Week.
+	measure 'LY $/S/W' = EXTERNALMEASURE("LY $/S/W", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0.00;$(#,##0.00)
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 04f90dda-fdf9-4d2c-81b2-cef301a48090
+		sourceLineageTag: f527abb2-b567-4914-956e-468584260d6b
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg $/S/W YoY' = EXTERNALMEASURE("ABS Chg $/S/W YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0.00;$(#,##0.00)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 74b0a865-c953-454d-aa1c-6902c8657873
+		sourceLineageTag: bc88a7e2-ff44-40c0-af4e-a41e603213f2
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg Stores Selling YoY' = EXTERNALMEASURE("ABS Chg Stores Selling YoY", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: b9bf918e-63d5-4e85-bd27-85339fc97e49
+		sourceLineageTag: 8ba83d0b-5b2c-4fb7-b2af-9433bbd139c3
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Stores Selling YoY' = EXTERNALMEASURE("% Chg Stores Selling YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: f273fe60-58b2-40df-bbb9-2b51ec8d762a
+		sourceLineageTag: 72cdc7c1-239f-452d-883f-a97ed54782cb
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg $/S/W YoY' = EXTERNALMEASURE("% Chg $/S/W YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 20cbc4c8-faff-4553-b237-993a0343460f
+		sourceLineageTag: a150e63f-00b8-4daf-ad23-576a6cd96486
+		dataCategory: Uncategorized
+
+	/// Last Year Unit Sales Velocity: Units per Store per Week.
+	measure 'LY U/S/W' = EXTERNALMEASURE("LY U/S/W", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: f5c2a5fe-7363-4c7e-8a76-317f6b7e53a5
+		sourceLineageTag: 46db39d7-4018-496f-9c63-24781d9f969f
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg U/S/W YoY' = EXTERNALMEASURE("ABS Chg U/S/W YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0.00;(#,##0.00)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 5a44fa5a-3331-477c-89e8-9ca3593e97ed
+		sourceLineageTag: 7c015152-bf9a-41fe-8fdc-21c0e5ceb8ee
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg U/S/W YoY' = EXTERNALMEASURE("% Chg U/S/W YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: b14d3ab6-8cb8-43cc-83fb-51a79c8290db
+		sourceLineageTag: 6049c9cb-befb-4132-bf4a-74e8eebc96fc
+		dataCategory: Uncategorized
+
+	measure 'Cont. Growth $/S/W' = EXTERNALMEASURE("Cont. Growth $/S/W", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: eea405f9-26e7-411f-823f-d315a6b4e738
+		sourceLineageTag: 7f690aee-6c2f-4648-bbc2-76b36d4ab409
+		dataCategory: Uncategorized
+
+	measure 'LW TY Nil Picks' = EXTERNALMEASURE("LW TY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 73ae8cbd-b280-4783-955f-e14f8213fb2e
+		sourceLineageTag: cc0eca9b-e11f-46c4-a4f8-1c55ca4a9c62
+		dataCategory: Uncategorized
+
+	measure 'L4W TY Nil Picks' = EXTERNALMEASURE("L4W TY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 9df694ef-a099-4ca8-bc57-20060831bd78
+		sourceLineageTag: 2b8e8b85-f3ab-40c7-90c2-118436b35042
+		dataCategory: Uncategorized
+
+	measure 'L13W TY Nil Picks' = EXTERNALMEASURE("L13W TY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 722360e0-dd53-4b5f-9d92-566efd800da2
+		sourceLineageTag: 0f8b0e43-fc10-4334-942b-fc0856fe43c8
+		dataCategory: Uncategorized
+
+	measure 'FYTD TY Nil Picks' = EXTERNALMEASURE("FYTD TY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 88133cde-6129-4444-8508-369b18a91a7f
+		sourceLineageTag: d444b2d5-755f-4420-8b12-b0dd6fae781b
+		dataCategory: Uncategorized
+
+	measure 'LW LY Nil Picks' = EXTERNALMEASURE("LW LY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 657cdba9-5de0-4b49-983d-0f9a241e4406
+		sourceLineageTag: 48d912b1-79c4-42da-9138-0e782b2666b9
+		dataCategory: Uncategorized
+
+	measure 'L4W LY Nil Picks' = EXTERNALMEASURE("L4W LY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 1e3dc323-6174-4a0e-9601-6556ffb248e3
+		sourceLineageTag: 1cfef6eb-037f-43e5-b6ef-3c9fd4f6458a
+		dataCategory: Uncategorized
+
+	measure 'L13W LY Nil Picks' = EXTERNALMEASURE("L13W LY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: b84cff90-7c97-4006-9fc5-08b8f5211ecc
+		sourceLineageTag: fe6f18ad-3053-41e1-8a07-c230b776f532
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Nil Picks' = EXTERNALMEASURE("FYTD LY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 71ea7d6d-32d9-4e97-b687-263aa23cf8eb
+		sourceLineageTag: 8f733bf2-3b62-4e85-90bb-5139401e2148
+		dataCategory: Uncategorized
+
+	measure 'LW TY First Time Pick Rate' = EXTERNALMEASURE("LW TY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 0a779732-d9f8-412b-b827-951d5070b189
+		sourceLineageTag: 019dfac9-6dbf-4a82-b7c8-b9b67e10a611
+		dataCategory: Uncategorized
+
+	measure 'L4W TY First Time Pick Rate' = EXTERNALMEASURE("L4W TY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: feb0c09e-901f-44c7-a988-486d6ce400fd
+		sourceLineageTag: 0d928e35-bfdf-4f5e-8d68-de00654cde61
+		dataCategory: Uncategorized
+
+	measure 'L13W TY First Time Pick Rate' = EXTERNALMEASURE("L13W TY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: b95ec0da-7379-4d26-ac41-a5534ec7323f
+		sourceLineageTag: d16e9158-a57c-45b3-972f-417729476dae
+		dataCategory: Uncategorized
+
+	measure 'FYTD TY First Time Pick Rate' = EXTERNALMEASURE("FYTD TY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: c694ed03-2685-4649-963c-9785071d7147
+		sourceLineageTag: 3aa05c35-3a01-44a3-bcd0-770c19fcd8ee
+		dataCategory: Uncategorized
+
+	measure 'TY FTPR' = EXTERNALMEASURE("TY FTPR", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 0ef820e9-911e-4066-a81c-b0b21b99c4fe
+		sourceLineageTag: e3911e3a-0c6f-418a-b100-743847282e3c
+		dataCategory: Uncategorized
+
+	measure 'LW LY First Time Pick Rate' = EXTERNALMEASURE("LW LY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 64acf020-1896-4627-ab0a-b05d1fdb10cd
+		sourceLineageTag: 8dd0d20f-38ee-4244-8dae-46abfa9eefe8
+		dataCategory: Uncategorized
+
+	measure 'L4W LY First Time Pick Rate' = EXTERNALMEASURE("L4W LY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: b00c9feb-2fde-40ab-9aa2-a12b682ff640
+		sourceLineageTag: 20ca26f1-57d7-477c-b365-827e7da475e2
+		dataCategory: Uncategorized
+
+	measure 'L13W LY First Time Pick Rate' = EXTERNALMEASURE("L13W LY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: ab225246-96fc-45aa-b2ee-1b9920d4f2a4
+		sourceLineageTag: 24ebb133-0558-4732-9bd7-29a904c265bf
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY First Time Pick Rate' = EXTERNALMEASURE("FYTD LY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: ee697517-5ee2-4ad2-8f5d-47caa7c65883
+		sourceLineageTag: acbe0093-9928-43a1-87c0-01275dafe2e0
+		dataCategory: Uncategorized
+
+	/// Last Year First Time Pick Rate:
+	/// The percentage of items that were picked in the first pick-walk for store fulfilled orders.
+	measure 'LY FTPR' = EXTERNALMEASURE("LY FTPR", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 93e4768b-63cf-4c55-bec6-0cacec2a71ae
+		sourceLineageTag: 8e1c9a45-fe1f-45c6-b2cd-b281ca671192
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg FTPR YoY' = EXTERNALMEASURE("ABS Chg FTPR YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: ##0.00;(##0.00)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 113e4585-3534-4bb8-88a9-556ff38e1526
+		sourceLineageTag: ac91d2b8-0f6f-4ced-96c8-afb22b8b5d0f
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg FTPR YoY' = EXTERNALMEASURE("% Chg FTPR YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: b7a39d6b-5c24-4760-b579-822da7d5815e
+		sourceLineageTag: 33cf279f-1fd2-4b7b-b98c-2eb5e7b704f7
+		dataCategory: Uncategorized
+
+	measure 'Cont. Growth First Time Pick Rate' = EXTERNALMEASURE("Cont. Growth First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 9a79192d-e149-468b-af04-19363e71b5a3
+		sourceLineageTag: 9bc71d6e-9fb3-4a4c-82b5-1420e4d7c737
+		dataCategory: Uncategorized
+
+	measure 'LW StoresSelling 2' = EXTERNALMEASURE("LW StoresSelling 2", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 1fa45915-40f7-4d40-9330-fb1b06b62b59
+		sourceLineageTag: 9e1b5ea8-ccb7-4028-bcf5-2a17da13eccc
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure 'FYTD Sales % Chg' = EXTERNALMEASURE("FYTD Sales % Chg", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 4b2be6e3-fc28-435c-96b6-77016078463d
+		sourceLineageTag: bca072cc-36ad-4dab-961b-8a4d6b16058d
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure 'FYTD Qty % Chg' = EXTERNALMEASURE("FYTD Qty % Chg", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: b411b532-395f-485a-9520-4a280356e586
+		sourceLineageTag: 7020edac-6514-4af0-8686-f665c3424065
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure 'FYTD Price % Chg' = EXTERNALMEASURE("FYTD Price % Chg", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: dd3adb60-8ffa-4755-bc40-c41263efddd9
+		sourceLineageTag: 4713dc80-dd57-41d4-ad40-3aa05190f06d
+		dataCategory: Uncategorized
+
+	measure 'TY Avg Inventory U''s - TODO' = EXTERNALMEASURE("TY Avg Inventory U's - TODO", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 0a1fdedf-19d7-4b75-9700-271fdcece95e
+		sourceLineageTag: 64407db1-761f-43ae-8ecc-42b52475b76c
+		dataCategory: Uncategorized
+
+	measure 'Cont. Growth U/S/W' = EXTERNALMEASURE("Cont. Growth U/S/W", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 44beed12-1981-402f-b38f-ed2ffb8887e8
+		sourceLineageTag: 1de26716-bd6a-4920-99fe-413948cbb0bf
+		dataCategory: Uncategorized
+
+	measure 'Cont. Growth Stores Selling' = EXTERNALMEASURE("Cont. Growth Stores Selling", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 5fd9e4a4-ed7d-4f51-b397-8f532a2f73f5
+		sourceLineageTag: 2156114b-d141-4a4a-a488-56bd5e2b5859
+		dataCategory: Uncategorized
+
+	measure 'LW TY Avg Inventory' = EXTERNALMEASURE("LW TY Avg Inventory", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 3efa3b13-e048-4784-b691-f33c7ea590b4
+		sourceLineageTag: b22ab1a2-9bcc-4600-b41c-6c143ecab229
+		dataCategory: Uncategorized
+
+	measure 'L4W TY Avg Inventory' = EXTERNALMEASURE("L4W TY Avg Inventory", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: f64033f2-5503-433f-a67c-c7327553deef
+		sourceLineageTag: 0e4e7d29-8746-401d-ac4e-7b6fd84eb665
+		dataCategory: Uncategorized
+
+	measure 'L13W TY Avg Inventory' = EXTERNALMEASURE("L13W TY Avg Inventory", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 2707f459-b185-460d-bf79-18163e61df31
+		sourceLineageTag: efcb6d7c-00ea-481a-ba44-65c355f2eeaa
+		dataCategory: Uncategorized
+
+	measure 'FYTD TY Avg Inventory' = EXTERNALMEASURE("FYTD TY Avg Inventory", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 85167f75-c826-4eb5-9523-405e17314ac9
+		sourceLineageTag: f516d961-6699-4a4b-9763-e1fc6b3e98e5
+		dataCategory: Uncategorized
+
+	measure 'WM Yr Week Num' = EXTERNALMEASURE("WM Yr Week Num", DATETIME, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: General Number
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: b6ad01eb-42d7-4f96-8821-21c707896b2f
+		sourceLineageTag: 6aaede0b-6f19-45ba-ba9c-f20cb43ccac1
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure 'L13W Sales % Chg' = EXTERNALMEASURE("L13W Sales % Chg", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 49494270-2efe-46bd-ab29-5a7545cb0586
+		sourceLineageTag: 551bf153-a4fa-4195-afa9-ed7951bd6e11
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure 'L4W Sales % Chg' = EXTERNALMEASURE("L4W Sales % Chg", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: c3884ae9-aad4-49ab-8936-68ea371c7e6b
+		sourceLineageTag: d5c845b9-1b59-469b-8529-257b3e6b52ac
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure 'LW Sales % Chg' = EXTERNALMEASURE("LW Sales % Chg", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: da9e7d79-6831-416e-9acd-a90ffa55e339
+		sourceLineageTag: b22da1e5-7826-44e1-9085-ff0d1e37c84d
+		dataCategory: Uncategorized
+
+	measure 'LW TY Out Of Stock' = EXTERNALMEASURE("LW TY Out Of Stock", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: c01e53ce-e02a-4b08-b6d4-5202c1043c48
+		sourceLineageTag: 70788eaa-4c4b-488a-ba36-481368843945
+		dataCategory: Uncategorized
+
+	measure 'LW In Stock' = EXTERNALMEASURE("LW In Stock", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 3a02b68d-29bf-4522-afe2-0c6fcd0dae5e
+		sourceLineageTag: e35a3a38-2521-49fe-9e36-47e890ed514e
+		dataCategory: Uncategorized
+
+	measure 'Weeks Count' = EXTERNALMEASURE("Weeks Count", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: ca8f277c-dd77-4c3d-a981-b67cbc365fc0
+		sourceLineageTag: 55ae87a4-1d6b-4c6b-a8c6-b787ed9e9740
+		dataCategory: Uncategorized
+
+	measure 'FYTD Days Count' = EXTERNALMEASURE("FYTD Days Count", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: a7e00d6b-5191-4960-89f6-bc22ed680d86
+		sourceLineageTag: fb114109-9df0-4bfb-a73b-1f5354061c28
+		dataCategory: Uncategorized
+
+	measure 'FYTD TY Inventory' = EXTERNALMEASURE("FYTD TY Inventory", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: a43dc56b-75be-4abe-9a06-7e9f62264109
+		sourceLineageTag: 4a457424-bd7b-4522-96b5-1553a8914a93
+		dataCategory: Uncategorized
+
+	measure 'Count Store-UPCs' = EXTERNALMEASURE("Count Store-UPCs", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 910ac390-505d-4424-9d49-59fe7b9eadc4
+		sourceLineageTag: 41f8198c-6ca7-4a30-ad46-9449dd84d013
+		dataCategory: Uncategorized
+
+	measure 'LY % of Total $ Sales' = EXTERNALMEASURE("LY % of Total $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: dda4851b-059f-454a-9914-2e1d00e56e1f
+		sourceLineageTag: 853bd603-4710-4885-be10-0f1e9fa79fb5
+		dataCategory: Uncategorized
+
+	measure 'LY % of Total Units' = EXTERNALMEASURE("LY % of Total Units", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 6ddcc8d1-373b-4594-b065-16beb2ea494f
+		sourceLineageTag: c979dca0-5161-4937-a4dd-3a54e8646498
+		dataCategory: Uncategorized
+
+	measure 'L52W TY Sales' = EXTERNALMEASURE("L52W TY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: ed384bf2-2da0-4590-800b-528b69c4ffe1
+		sourceLineageTag: 4bb5eace-a533-4979-bb77-71dab11e2a74
+		dataCategory: Uncategorized
+
+	measure 'CW TY Sales' = EXTERNALMEASURE("CW TY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: cf897d5a-e113-4652-bedc-c481272ed976
+		sourceLineageTag: 7657a55d-8ac5-4ccc-ae8a-0384737f1fc6
+		dataCategory: Uncategorized
+
+	/// This Year Unit Sales.
+	measure 'L52W TY Units' = EXTERNALMEASURE("L52W TY Units", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: ed289af2-f6ff-4b0c-968e-4957af3e16b6
+		sourceLineageTag: 2399a627-6dc4-402d-9569-896c9f8e9ac7
+		dataCategory: Uncategorized
+
+	/// This Year Unit Sales.
+	measure 'CW TY Units' = EXTERNALMEASURE("CW TY Units", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: eb45d9cb-435a-487b-b6d9-c9198e0e2af1
+		sourceLineageTag: 1df2fa4b-7bd4-478d-959b-0e58bc92fe74
+		dataCategory: Uncategorized
+
+	/// This Year Avg Period Price.
+	measure 'L52W TY Price' = EXTERNALMEASURE("L52W TY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 5c6c38d0-90f4-4c8a-8b75-3a42eefbdbc2
+		sourceLineageTag: d6be1791-0872-4435-9cbf-72d1c72ebfdc
+		dataCategory: Uncategorized
+
+	/// This Year Avg Period Price.
+	measure 'CW TY Price' = EXTERNALMEASURE("CW TY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 0f6da478-8d3a-4d7d-a161-3411a32a5f8e
+		sourceLineageTag: d1aeb04f-b92e-49f3-9aab-cca713adf942
+		dataCategory: Uncategorized
+
+	measure 'L52W TY Nil Picks' = EXTERNALMEASURE("L52W TY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: d0c245ba-5c79-4254-bc6e-b93a9110a366
+		sourceLineageTag: 5b77fb83-08cd-4573-9fd2-fa7d88a751a5
+		dataCategory: Uncategorized
+
+	measure 'CW TY Nil Picks' = EXTERNALMEASURE("CW TY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 0cea108f-1954-480c-8f4c-8d015c8e2b7c
+		sourceLineageTag: 122bf80a-1a7c-4da8-9566-284425fa2e63
+		dataCategory: Uncategorized
+
+	measure 'L52W TY First Time Pick Rate' = EXTERNALMEASURE("L52W TY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: f0c6642c-859d-4680-926e-0b935d2ff5c9
+		sourceLineageTag: 64e31abe-60ea-4df8-a69e-46d1a8412387
+		dataCategory: Uncategorized
+
+	measure 'CW TY First Time Pick Rate' = EXTERNALMEASURE("CW TY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 58a95f2f-1add-46ed-aced-849ab1aa7ca3
+		sourceLineageTag: 2682ae3b-42cd-400a-a750-9bd348b8740c
+		dataCategory: Uncategorized
+
+	measure 'L52W TY Avg Inventory' = EXTERNALMEASURE("L52W TY Avg Inventory", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 16cb664c-2437-4b84-93e8-947213aba744
+		sourceLineageTag: e2c2ca5b-70a2-4419-8007-e9d074faf3bb
+		dataCategory: Uncategorized
+
+	measure 'CW TY Avg Inventory' = EXTERNALMEASURE("CW TY Avg Inventory", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: a5383e4a-ffca-4a75-9f4a-986645feaa7c
+		sourceLineageTag: af312f68-b1a7-466b-9b54-e1be710bb856
+		dataCategory: Uncategorized
+
+	measure 'CW Days Count' = EXTERNALMEASURE("CW Days Count", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: fd28d0a8-f440-49b9-a257-abd6d0d26c67
+		sourceLineageTag: bc821144-7d04-4cea-be1a-2c445cff8eec
+		dataCategory: Uncategorized
+
+	measure 'CW TY Stores Selling' = EXTERNALMEASURE("CW TY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: c4e20fe0-dfd1-4eaf-a469-3002b94a7719
+		sourceLineageTag: 7f7fa006-0354-4249-95cb-455617632b67
+		dataCategory: Uncategorized
+
+	measure 'L52W LY Stores Selling' = EXTERNALMEASURE("L52W LY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 61616628-9b99-467f-a6c6-7cb4234e7f3b
+		sourceLineageTag: d12ba30d-29e1-4d33-b229-23782182cb47
+		dataCategory: Uncategorized
+
+	measure 'CW LY Stores Selling' = EXTERNALMEASURE("CW LY Stores Selling", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 17e2ce0e-213c-457d-b45c-9c9b875fc51d
+		sourceLineageTag: 845b27e6-e6a6-43b7-98d8-b38bbcdbd0a9
+		dataCategory: Uncategorized
+
+	measure 'L52W LY Qty' = EXTERNALMEASURE("L52W LY Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 8d368af2-4c61-4527-8e41-1f53e529bdc2
+		sourceLineageTag: ea138608-1901-48ee-bc5e-08445a83ed78
+		dataCategory: Uncategorized
+
+	measure 'CW LY Qty' = EXTERNALMEASURE("CW LY Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 227a1f00-0f71-4754-8c80-e4d7b9a227c9
+		sourceLineageTag: ef820585-3c7f-4853-afe7-80b73ba7f22b
+		dataCategory: Uncategorized
+
+	/// Last Year Avg Period Price.
+	measure 'L52W LY Price' = EXTERNALMEASURE("L52W LY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 3778d6d7-b5e4-48ad-b52e-6b996216fee0
+		sourceLineageTag: 89425340-e476-4605-9faf-e13f90069291
+		dataCategory: Uncategorized
+
+	measure 'L52W LY Sales' = EXTERNALMEASURE("L52W LY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 97ca8e42-cb85-4995-b89b-464ea48e47bf
+		sourceLineageTag: 325503f1-0c55-4814-ae50-2fa83fb36c42
+		dataCategory: Uncategorized
+
+	measure 'CW LY Sales' = EXTERNALMEASURE("CW LY Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 00d76594-0e5f-4b10-b244-1d5f90da0f56
+		sourceLineageTag: ce6c2496-95b2-4c07-b20c-da3efca39aba
+		dataCategory: Uncategorized
+
+	measure 'L52W LY Nil Picks' = EXTERNALMEASURE("L52W LY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 337ac570-0bc2-4106-9e41-f5a058734839
+		sourceLineageTag: 45a3772d-6ab6-4879-9b36-b97b803770a5
+		dataCategory: Uncategorized
+
+	measure 'CW LY Nil Picks' = EXTERNALMEASURE("CW LY Nil Picks", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 3bc87846-1fb2-4fb4-89cc-0edbb4679e36
+		sourceLineageTag: ca924232-3876-4760-984b-82892d535e95
+		dataCategory: Uncategorized
+
+	measure 'L52W LY First Time Pick Rate' = EXTERNALMEASURE("L52W LY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 54d9bbfe-1822-425c-89b9-d5819e01327c
+		sourceLineageTag: cff20634-3792-4dc0-bdb9-c5bea34bc4ca
+		dataCategory: Uncategorized
+
+	measure 'CW LY First Time Pick Rate' = EXTERNALMEASURE("CW LY First Time Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 8f870325-f9f6-47f8-b7b3-94a5344a19a1
+		sourceLineageTag: 5cb5a727-183e-477b-a286-29a1af6a4280
+		dataCategory: Uncategorized
+
+	/// Last Year Avg Period Price.
+	measure 'CW LY Price' = EXTERNALMEASURE("CW LY Price", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: c6384c20-2f8d-406a-9a80-7321b4e980e4
+		sourceLineageTag: 3b72873c-fac5-4858-b9e1-6eca67b55430
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
+	measure 'LW TY Nil Pick Rate' = EXTERNALMEASURE("LW TY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 4e3ce44e-d05b-448a-9614-ff5d3ee10538
+		sourceLineageTag: 3911f97c-bcb6-4a28-b476-7b6be7d4ad21
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
+	measure 'CW TY Nil Pick Rate' = EXTERNALMEASURE("CW TY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: ad576986-4362-4f97-a6e2-3cd3ae5991ba
+		sourceLineageTag: 9726f902-07e9-4369-bf57-1ebadf594f95
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
+	measure 'L4W TY Nil Pick Rate' = EXTERNALMEASURE("L4W TY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 01b39b2f-241d-4d86-8b34-cdc148ec24b0
+		sourceLineageTag: 75be4bf0-c7cb-4062-a862-d9e007b0d34a
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
+	measure 'L13W TY Nil Pick Rate' = EXTERNALMEASURE("L13W TY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 68e96260-7a3a-43ca-b7f7-38feceec0cab
+		sourceLineageTag: ab92df56-a4ae-47c4-92dc-76c37a965736
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
+	measure 'L52W TY Nil Pick Rate' = EXTERNALMEASURE("L52W TY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 4ff991f3-b562-4975-b86e-15e790735724
+		sourceLineageTag: 95cfc3f2-99ad-4c0e-bee5-c56e2d481a95
+		dataCategory: Uncategorized
+
+	measure 'LW LY Nil Pick Rate' = EXTERNALMEASURE("LW LY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: deea56b8-88bb-48c3-a097-0168dab02a1c
+		sourceLineageTag: e4717b65-6850-4c20-a071-5db8111507da
+		dataCategory: Uncategorized
+
+	measure 'CW LY Nil Pick Rate' = EXTERNALMEASURE("CW LY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 681f92fe-197c-46d6-9450-bf86edf2ab8e
+		sourceLineageTag: 8c87a4d0-bf17-4963-ab90-4dccd8a402d5
+		dataCategory: Uncategorized
+
+	measure 'L4W LY Nil Pick Rate' = EXTERNALMEASURE("L4W LY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 15ea5201-7f2d-44f3-9c1a-073f5553949d
+		sourceLineageTag: 7bb2cbda-6b5d-4de6-a567-fb0745d9cfe9
+		dataCategory: Uncategorized
+
+	measure 'L13W LY Nil Pick Rate' = EXTERNALMEASURE("L13W LY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 322ffae0-ce92-4606-bc7e-b1db4a43e603
+		sourceLineageTag: 327ee5b2-c0e5-402b-8a06-9397c1574b4b
+		dataCategory: Uncategorized
+
+	measure 'L52W LY Nil Pick Rate' = EXTERNALMEASURE("L52W LY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: bea31a07-538a-4964-8a11-adfb705f9eaf
+		sourceLineageTag: 323cbfd1-7a03-440c-806e-744c9a9d6447
+		dataCategory: Uncategorized
+
+	measure 'TY Nil Pick Rate' = EXTERNALMEASURE("TY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 41975edf-5703-4074-96dc-2315c5426eaf
+		sourceLineageTag: a4c1d355-6982-4644-b641-c6c862124329
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
+	measure 'FYTD TY Nil Pick Rate' = EXTERNALMEASURE("FYTD TY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: e45a6929-271e-4a21-9b1e-bc6800f78e37
+		sourceLineageTag: 50b31880-b975-443f-b75a-875189a3a484
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Nil Pick Rate' = EXTERNALMEASURE("FYTD LY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 8cfe2ff5-9b54-474d-bd72-1eb6ddb1a0aa
+		sourceLineageTag: a9344df1-8e50-440e-a592-27564fdbf71d
+		dataCategory: Uncategorized
+
+	measure 'LY Nil Pick Rate' = EXTERNALMEASURE("LY Nil Pick Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: d09f2b1b-c48e-495f-b6f8-ab4ebb388b6c
+		sourceLineageTag: be77172c-3b6f-4e51-8f65-0d9349973d66
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg Nil Pick Rate YoY' = EXTERNALMEASURE("ABS Chg Nil Pick Rate YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: ##0.00;(##0.00)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 834e09f0-e50f-49b2-8b05-74d6d91c6afa
+		sourceLineageTag: 4f9a91d2-e6e4-4e2d-bae8-b477c09a1cff
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Nil Pick Rate YoY' = EXTERNALMEASURE("% Chg Nil Pick Rate YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: a4831d52-a621-4dc1-bdbd-a03b2758f80a
+		sourceLineageTag: 9f2fc9b4-1b93-461c-9ca7-436fec7218b3
+		dataCategory: Uncategorized
+
+	measure 'TY Pre Sub Rate' = EXTERNALMEASURE("TY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 1fd48c01-4650-4eed-abc2-379636969448
+		sourceLineageTag: 532f3541-9ed9-4654-b96f-d1a3ff7f6eac
+		dataCategory: Uncategorized
+
+	measure 'TY Post Sub Rate' = EXTERNALMEASURE("TY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 58bad0bf-c5fb-4f2c-a789-b3953b45610e
+		sourceLineageTag: fd2b9f9e-b850-4cee-864f-f3497fd97b1d
+		dataCategory: Uncategorized
+
+	measure 'TY Delayed Pick' = EXTERNALMEASURE("TY Delayed Pick", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 82faa30a-a393-4d54-afa4-de4806076852
+		sourceLineageTag: 952a7e78-5d79-4a36-8778-e6a645cbf717
+		dataCategory: Uncategorized
+
+	measure 'TY Digital $ Penetration' = EXTERNALMEASURE("TY Digital $ Penetration", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 6993dd70-690d-4563-b606-0e2da84b57c0
+		sourceLineageTag: fee0d5b1-3ec1-4f80-87bd-6388d5bd098f
+		dataCategory: Uncategorized
+
+	measure 'TY Digital $ Sales' = EXTERNALMEASURE("TY Digital $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: adbcce32-a627-4e04-bb22-7df6cfcaad2f
+		sourceLineageTag: 03750609-e9ac-459b-81a3-c4617807070a
+		dataCategory: Uncategorized
+
+	measure 'LY Digital $ Sales' = EXTERNALMEASURE("LY Digital $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 7d58a215-f128-49aa-9dfd-210b6938488d
+		sourceLineageTag: 413ad252-218a-4a76-ab9f-b4f6f2587b66
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg Digital $ Sales YoY' = EXTERNALMEASURE("ABS Chg Digital $ Sales YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 0071f240-d1eb-412c-bcbc-3e6e796b8abe
+		sourceLineageTag: 5274401e-3e35-4aef-a701-95ffab5c2f4d
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Digital $ Sales  YoY' = EXTERNALMEASURE("% Chg Digital $ Sales  YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 83d71e21-cccb-40a3-a527-0231f35e2eeb
+		sourceLineageTag: 496001ed-3d97-4a3b-93ee-7b473259316d
+		dataCategory: Uncategorized
+
+	measure 'LY Digital Penetration' = EXTERNALMEASURE("LY Digital Penetration", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 732c3999-de61-4263-a812-c0169ebfc45e
+		sourceLineageTag: 0b1bb3cc-f718-4c06-ab89-584fbffdcc7e
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg Digital Penetration YoY' = EXTERNALMEASURE("ABS Chg Digital Penetration YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 019a8a3f-6bc0-4295-a37f-72fb1735cefb
+		sourceLineageTag: fd5e5f28-4a64-48b3-86bd-b6b070097c8e
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Digital Penetration YoY' = EXTERNALMEASURE("% Chg Digital Penetration YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 0529d862-554c-4fb7-9da2-bb01ecb28767
+		sourceLineageTag: d567f326-36b0-4a3d-816b-a2ca716d2dbe
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Pre Sub Rate' = EXTERNALMEASURE("FYTD LY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 506d2984-1f2b-4a76-af4a-a1edf1dbaebc
+		sourceLineageTag: 6a2d89f9-8db6-45da-b28b-037cffbfa07b
+		dataCategory: Uncategorized
+
+	measure 'FYTD TY Pre Sub Rate' = EXTERNALMEASURE("FYTD TY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 4fa5a4d5-50fa-45f1-b568-48f5e8ec27f0
+		sourceLineageTag: 5a9f685e-f73c-4068-abb3-b84675257430
+		dataCategory: Uncategorized
+
+	measure 'LW LY Pre Sub Rate' = EXTERNALMEASURE("LW LY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: e43d761c-df90-44c8-9233-ddfaea437b49
+		sourceLineageTag: e7d47cba-04c6-4a83-96c8-ee16a34db2b1
+		dataCategory: Uncategorized
+
+	measure 'CW LY Pre Sub Rate' = EXTERNALMEASURE("CW LY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 098b89bd-a46d-4ca4-8fd6-c14c04c0e4a9
+		sourceLineageTag: 2c578344-5356-4132-bbbe-54a599a2335b
+		dataCategory: Uncategorized
+
+	measure 'LW TY Pre Sub Rate' = EXTERNALMEASURE("LW TY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: c4c5a222-b56c-40fc-9599-d7439870439a
+		sourceLineageTag: 44acd5e8-341a-417c-826d-f15e5cf77897
+		dataCategory: Uncategorized
+
+	measure 'CW TY Pre Sub Rate' = EXTERNALMEASURE("CW TY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: cc3a8116-4629-488d-8a32-1644fe30477e
+		sourceLineageTag: 8ba4f3fd-7e3b-49d0-bab1-42be1ca14000
+		dataCategory: Uncategorized
+
+	measure 'L4W TY Pre Sub Rate' = EXTERNALMEASURE("L4W TY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 77c2573d-2538-4789-8482-4b251e18cfb9
+		sourceLineageTag: b276e469-0cf3-4aba-ae74-b34e3413f46a
+		dataCategory: Uncategorized
+
+	measure 'L13W TY Pre Sub Rate' = EXTERNALMEASURE("L13W TY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 4f1d056b-7750-40aa-80eb-a19599632c36
+		sourceLineageTag: 2b8fcfd7-a1f3-4bfd-9de0-20aeedbaa0a0
+		dataCategory: Uncategorized
+
+	measure 'L52W TY Pre Sub Rate' = EXTERNALMEASURE("L52W TY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: c88cacab-01f7-4f76-ae6c-21fdd07f1c42
+		sourceLineageTag: 839226e8-4340-4dd8-b0cd-6cdb05319148
+		dataCategory: Uncategorized
+
+	measure 'L4W LY Pre Sub Rate' = EXTERNALMEASURE("L4W LY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: fa752594-58b6-4adf-a5dc-d0645be2acbc
+		sourceLineageTag: b804cf66-7d4e-456d-8f8e-c836a3a7da05
+		dataCategory: Uncategorized
+
+	measure 'L13W LY Pre Sub Rate' = EXTERNALMEASURE("L13W LY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 883627fd-a095-44fe-b745-4cd42efa2b92
+		sourceLineageTag: d9e1636a-c87f-494c-9007-bfe19939e9f4
+		dataCategory: Uncategorized
+
+	measure 'L52W LY Pre Sub Rate' = EXTERNALMEASURE("L52W LY Pre Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 25045550-e932-4b9b-af37-cd10148f2789
+		sourceLineageTag: 7875b05a-b9ec-454d-b784-db8a0896398c
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Post Sub Rate' = EXTERNALMEASURE("FYTD LY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 30703506-ccf2-4d93-bf72-f89c275386d2
+		sourceLineageTag: 21ad89cf-f1b9-44bc-8451-84a638e7188f
+		dataCategory: Uncategorized
+
+	measure 'FYTD TY Post Sub Rate' = EXTERNALMEASURE("FYTD TY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: f9a267fd-b400-4005-8d77-57872a519618
+		sourceLineageTag: bc36860f-83b5-4452-b07e-547c4d5ef39f
+		dataCategory: Uncategorized
+
+	measure 'CW TY Post Sub Rate' = EXTERNALMEASURE("CW TY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 0f17a4fe-a926-408e-96ff-d23d4eedde5e
+		sourceLineageTag: 21dc37d1-1e1b-47c0-99ac-2d89826d7fb7
+		dataCategory: Uncategorized
+
+	measure 'LW TY Post Sub Rate' = EXTERNALMEASURE("LW TY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: ae1719bc-ba86-4c37-ab98-2e15e90dc8d4
+		sourceLineageTag: 903a6744-cf39-4380-9e05-e4a5a0175147
+		dataCategory: Uncategorized
+
+	measure 'CW LY Post Sub Rate' = EXTERNALMEASURE("CW LY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 72d8c0f2-0837-492c-9416-339d17a92af6
+		sourceLineageTag: 6a24f625-e95d-41c3-8d96-320c053ebfe5
+		dataCategory: Uncategorized
+
+	measure 'LW LY Post Sub Rate' = EXTERNALMEASURE("LW LY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 8476337a-d711-461d-885b-a2a21bd30557
+		sourceLineageTag: 936f712e-1f3d-4b1a-bd22-2465a9db118b
+		dataCategory: Uncategorized
+
+	measure 'L4W LY Post Sub Rate' = EXTERNALMEASURE("L4W LY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 62f0d411-7e51-43d1-8e47-f63f44ab5f1d
+		sourceLineageTag: 2a0d22c3-ceec-41bc-a991-3537feb2d066
+		dataCategory: Uncategorized
+
+	measure 'L13W LY Post Sub Rate' = EXTERNALMEASURE("L13W LY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 26986be0-fbc6-490a-b5f5-e5bd54b94551
+		sourceLineageTag: 625b3455-4064-46c1-a23f-f29b4480e38b
+		dataCategory: Uncategorized
+
+	measure 'L52W LY Post Sub Rate' = EXTERNALMEASURE("L52W LY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 7e6f4368-81c9-4160-8d15-a70618a2d190
+		sourceLineageTag: 23f3185e-3f3b-432f-976f-142d50351f92
+		dataCategory: Uncategorized
+
+	measure 'L4W TY Post Sub Rate' = EXTERNALMEASURE("L4W TY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 988ae45c-adfa-4e1c-9715-e1822310a8f5
+		sourceLineageTag: f10fa915-b15f-4033-a17e-f8b7380b1f16
+		dataCategory: Uncategorized
+
+	measure 'L13W TY Post Sub Rate' = EXTERNALMEASURE("L13W TY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: cba5f0f6-402c-4788-bbf8-1cc97542fc70
+		sourceLineageTag: c4eadbe7-3a82-448e-ae1b-392cf27def01
+		dataCategory: Uncategorized
+
+	measure 'L52W TY Post Sub Rate' = EXTERNALMEASURE("L52W TY Post Sub Rate", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: fc4ca3d4-dc30-408e-803b-beb8d806249a
+		sourceLineageTag: de8c8906-86a2-45cc-9774-8bcaa91facb1
+		dataCategory: Uncategorized
+
+	measure '% Digital $ Growth YoY' = EXTERNALMEASURE("% Digital $ Growth YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 5394e94b-f899-4f36-9750-bf6a5fe4d22b
+		sourceLineageTag: c6eaa499-4ec1-460d-96a8-3e5314306c98
+		dataCategory: Uncategorized
+
+	measure '% of Digital Sales YoY' = EXTERNALMEASURE("% of Digital Sales YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 2bb94b71-6c11-40b5-837a-9be2d46db923
+		sourceLineageTag: 7f50ee0d-b773-46aa-bb51-804784ada110
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
+	measure 'FYTD TY Nil Pick Qty' = EXTERNALMEASURE("FYTD TY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 5142d69e-7ebd-4308-9a60-53b51c234292
+		sourceLineageTag: e70a795c-87ff-47de-b1e9-5ff511180d43
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
+	measure 'LW TY Nil Pick Qty' = EXTERNALMEASURE("LW TY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: ef124542-2425-4ed1-b507-d7340e5d18c7
+		sourceLineageTag: 85fa3592-9fb8-489f-b79d-f82b548b9fec
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
+	measure 'L4W TY Nil Pick Qty' = EXTERNALMEASURE("L4W TY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: e9db3500-66c4-4f75-a2ca-74ae1c8bd302
+		sourceLineageTag: 73fccf1c-32ec-4205-897d-d812ddd8974b
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
+	measure 'L13W TY Nil Pick Qty' = EXTERNALMEASURE("L13W TY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 2406fbb4-25d9-41e4-b11d-335aec035298
+		sourceLineageTag: 724a3f08-15e3-4a8d-90ab-1ae7f7850b4d
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
+	measure 'L52W TY Nil Pick Qty' = EXTERNALMEASURE("L52W TY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 26a0a127-dd89-438a-a3a6-7dddf11a2991
+		sourceLineageTag: 761072bc-7fee-4589-9fe0-8824c2130a73
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
+	measure 'CW TY Nil Pick Qty' = EXTERNALMEASURE("CW TY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 9ebbc143-60ca-427b-8206-fb24e2c6b602
+		sourceLineageTag: d521f3d3-d113-4310-8417-a4bf7e3d14fa
+		dataCategory: Uncategorized
+
+	measure 'LW LY Nil Pick Qty' = EXTERNALMEASURE("LW LY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 8a0fa3ab-827d-41a0-a0c1-9a8bf2806843
+		sourceLineageTag: 703f242e-6cf1-42d9-987c-57ed56611960
+		dataCategory: Uncategorized
+
+	measure 'L4W LY Nil Pick Qty' = EXTERNALMEASURE("L4W LY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: bc802776-41f0-46a7-9966-4e7cd235ed0a
+		sourceLineageTag: a3c04fc8-0a70-44cd-a627-4765070f55b8
+		dataCategory: Uncategorized
+
+	measure 'CW LY Nil Pick Qty' = EXTERNALMEASURE("CW LY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 14b71782-778c-4da2-98de-9e8a6a78ff9b
+		sourceLineageTag: 8a24a307-c6ef-42ec-9c05-8060f479d0cc
+		dataCategory: Uncategorized
+
+	measure 'L13W LY Nil Pick Qty' = EXTERNALMEASURE("L13W LY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 02f942fb-71b0-4955-b173-43383b4b43e1
+		sourceLineageTag: a2abf76d-f32e-4dc4-889f-ecc5d5e22e97
+		dataCategory: Uncategorized
+
+	measure 'L52W LY Nil Pick Qty' = EXTERNALMEASURE("L52W LY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: ee9d8158-3c3a-47c0-9449-158fb76ee9be
+		sourceLineageTag: 0b46444d-49fc-489e-a1de-d008b78aa200
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Nil Pick Qty' = EXTERNALMEASURE("FYTD LY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: b4e7477f-7756-4115-8778-614aeae0eaba
+		sourceLineageTag: 8a1d7cab-69ca-4c7e-b40c-74efc9ee48a0
+		dataCategory: Uncategorized
+
+	measure 'TY Nil Pick Qty' = EXTERNALMEASURE("TY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: fa89c4d5-ab37-448a-8bb3-bfad57677cec
+		sourceLineageTag: 4be1a661-0e59-4c3d-88f4-b1bee274e43c
+		dataCategory: Uncategorized
+
+	measure 'LY Nil Pick Qty' = EXTERNALMEASURE("LY Nil Pick Qty", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 5ac3413b-71ae-463b-bcac-754597e4108c
+		sourceLineageTag: 02a6bed4-49b9-4ab0-85cc-93ef7f20081f
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg Nil Pick Qty YoY' = EXTERNALMEASURE("ABS Chg Nil Pick Qty YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0;(0.0)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: a744c1de-441e-462d-b220-a187bc780954
+		sourceLineageTag: e96f493f-3a64-4b25-ac9a-13ba73221e99
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Nil Pick Qty YoY' = EXTERNALMEASURE("% Chg Nil Pick Qty YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: a6fbb848-8911-4d35-8825-f8658573dbbe
+		sourceLineageTag: 75b308d9-aec5-487f-84c1-796b96da6fee
+		dataCategory: Uncategorized
+
+	measure 'TY Nil Pick Lost $ Sales' = EXTERNALMEASURE("TY Nil Pick Lost $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 8e6c7906-de30-49e5-a9e8-2551e278f5e1
+		sourceLineageTag: 198b89d2-8fb7-40ee-8365-9ac053b8c3cc
+		dataCategory: Uncategorized
+
+	measure 'L13W Avg Weekly Nil Pick Lost $ Sales' = EXTERNALMEASURE("L13W Avg Weekly Nil Pick Lost $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 5605d8b3-540d-4133-b190-5a46a6513031
+		sourceLineageTag: 92e32862-06f2-4f55-9f9a-4e8d3d614a76
+		dataCategory: Uncategorized
+
+	measure 'Avg Weekly Nil Pick Lost $ Sales' = EXTERNALMEASURE("Avg Weekly Nil Pick Lost $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 92c08664-7772-489b-b494-6c929dac906c
+		sourceLineageTag: f376f60f-4e7f-4f9a-a9ad-96fde20ebc78
+		dataCategory: Uncategorized
+
+	measure 'TY OPD $ Sales' = EXTERNALMEASURE("TY OPD $ Sales", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 22f94054-6c32-4a45-8bcc-7dc314f5a612
+		sourceLineageTag: 9e6ee395-112d-4c43-a338-ddc4f6be571e
+		dataCategory: Uncategorized
+
+	measure 'LY OPD $ Sales' = EXTERNALMEASURE("LY OPD $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 7ee12c58-59a5-423e-98e2-a0a9d28e0510
+		sourceLineageTag: 5899f226-5d56-4c6a-9e4d-839786467809
+		dataCategory: Uncategorized
+
+	measure 'TY OPD $ Penetration' = EXTERNALMEASURE("TY OPD $ Penetration", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: a3fbbbc0-53e9-4ffd-a1f6-d4ebe9fc4217
+		sourceLineageTag: ff0d9fa9-4cb5-4c4f-b16c-881532f73e1a
+		dataCategory: Uncategorized
+
+	measure 'LY % OPD Penetration' = EXTERNALMEASURE("LY % OPD Penetration", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 0aaae227-e832-4adf-a04b-301a2afdcd8c
+		sourceLineageTag: 726cb419-66a1-4b66-b549-636bd768fa1a
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg OPD Penetration YoY' = EXTERNALMEASURE("ABS Chg OPD Penetration YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: ce629fe8-348f-49a0-9baa-8ed8af33abef
+		sourceLineageTag: 2c1c6b8f-7910-463f-be7a-5d52108f2604
+		dataCategory: Uncategorized
+
+	measure '% of OPD Sales YoY' = EXTERNALMEASURE("% of OPD Sales YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 033d4564-0fb2-450f-9310-5a7ede439979
+		sourceLineageTag: 9c2fecc2-6b36-4e0b-bbfd-a44a970b0f0e
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg OPD $ Sales YoY' = EXTERNALMEASURE("% Chg OPD $ Sales YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 6f1a0c54-ceb3-4431-829e-f3864796c7cd
+		sourceLineageTag: 1a605339-4569-4c15-ac62-0caa725dbdc5
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure 'ABS Chg OPD $ Sales YoY' = EXTERNALMEASURE("ABS Chg OPD $ Sales YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: bfc30adb-a542-4297-a11a-f5e81e84c4a9
+		sourceLineageTag: 06f7a77b-2025-4105-96ad-9e952a07a917
+		dataCategory: Uncategorized
+
+	measure 'Sales % by Pack Type' = EXTERNALMEASURE("Sales % by Pack Type", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;(0.0%)
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 575c3ae6-0b7c-4dc5-8a7c-174e6f508f6d
+		sourceLineageTag: dc28323b-06da-4eee-ac77-347b4bfd728a
+		dataCategory: Uncategorized
+
+	measure 'LW TY Nil Pick Lost Sales' = EXTERNALMEASURE("LW TY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: 671a8c7d-f3fb-4c1d-a6da-78177bfae106
+		sourceLineageTag: fa8974aa-9328-40d9-afec-c590576e9f7f
+		dataCategory: Uncategorized
+
+	measure 'L4W TY Nil Pick Lost Sales' = EXTERNALMEASURE("L4W TY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: 607d1e2d-558a-431e-bde5-4801e8764ce4
+		sourceLineageTag: a93c3465-58ec-4408-ae69-7e7de7098cd6
+		dataCategory: Uncategorized
+
+	measure 'L13W TY Nil Pick Lost Sales' = EXTERNALMEASURE("L13W TY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: 18f97bd2-784a-486f-9eb3-385def276449
+		sourceLineageTag: afdb907e-e748-4773-8e3a-0d8aaa37b9d2
+		dataCategory: Uncategorized
+
+	measure 'L52W TY Nil Pick Lost Sales' = EXTERNALMEASURE("L52W TY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 3cd8eb32-efd2-47e6-bde6-8359d9796206
+		sourceLineageTag: b18f102d-d614-4290-ab62-158a57cb4066
+		dataCategory: Uncategorized
+
+	measure 'CW TY Nil Pick Lost Sales' = EXTERNALMEASURE("CW TY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 54ec54ff-e058-46e5-8948-08815afdad79
+		sourceLineageTag: d4d13096-34c6-4a31-84c0-7a415fcb9a2e
+		dataCategory: Uncategorized
+
+	measure 'FYTD TY Nil Pick Lost Sales' = EXTERNALMEASURE("FYTD TY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: ba6150b4-d5d0-43bf-bf26-ced1e0bd0d4e
+		sourceLineageTag: e6122bf1-a3db-4101-a5cb-7294ac2e58cb
+		dataCategory: Uncategorized
+
+	measure 'LW LY Nil Pick Lost Sales' = EXTERNALMEASURE("LW LY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LW - Store Sales and Fulfillment
+		lineageTag: afd584dd-2fd3-466b-97ca-df4f2d1a7d85
+		sourceLineageTag: f3261a0a-d204-400d-b395-5d75fb65304b
+		dataCategory: Uncategorized
+
+	measure 'L4W LY Nil Pick Lost Sales' = EXTERNALMEASURE("L4W LY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L4W - Store Sales and Fulfillment
+		lineageTag: ad4e31b9-10dc-4be0-bc3b-65b86f8573d5
+		sourceLineageTag: 3823f25b-011e-43b4-b6ae-c569ab38d7f4
+		dataCategory: Uncategorized
+
+	measure 'L13W LY Nil Pick Lost Sales' = EXTERNALMEASURE("L13W LY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L13W - Store Sales and Fulfillment
+		lineageTag: a8736de0-d563-47ae-ac35-4a07a191df7b
+		sourceLineageTag: a7ea7dfa-2f6c-4b43-a011-4391f23540e2
+		dataCategory: Uncategorized
+
+	measure 'L52W LY Nil Pick Lost Sales' = EXTERNALMEASURE("L52W LY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: bbf07636-e23a-4e52-8a3f-35c6733efb14
+		sourceLineageTag: be5a55ed-e61d-43c1-a5ac-11eac86e9be5
+		dataCategory: Uncategorized
+
+	measure 'CW LY Nil Pick Lost Sales' = EXTERNALMEASURE("CW LY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: CW - Store Sales and Fulfillment
+		lineageTag: 5d955c30-dfa5-42fc-8e9a-68503a7bcacd
+		sourceLineageTag: 9f2c309a-2fe3-4103-a1ed-064a6599f019
+		dataCategory: Uncategorized
+
+	measure 'FYTD LY Nil Pick Lost Sales' = EXTERNALMEASURE("FYTD LY Nil Pick Lost Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 446f59d7-e5dc-4eab-a8d1-1a7de47c8190
+		sourceLineageTag: fb43561b-7d6f-42e9-96f5-98c38e807dd2
+		dataCategory: Uncategorized
+
+	measure 'LY Nil Pick Lost $ Sales' = EXTERNALMEASURE("LY Nil Pick Lost $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: b51d93df-0b76-4bf1-95d1-f7841067c223
+		sourceLineageTag: ad3d3581-00f0-499b-a862-78cfd48bf59d
+		dataCategory: Uncategorized
+
+	measure 'TY Stores Selling (All)' = EXTERNALMEASURE("TY Stores Selling (All)", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 41df05fe-09f6-4267-a688-2513671752a2
+		sourceLineageTag: 1309cc32-bcbf-4d4c-9fa6-3a862f9572a5
+		dataCategory: Uncategorized
+
+	measure 'FYTD Weeks Filter' = EXTERNALMEASURE("FYTD Weeks Filter", STRING, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 2dfc01de-d785-4b02-b6ea-ab1e65c7bda0
+		sourceLineageTag: 8b79a3f4-2b3e-450a-8d97-5600aeb48a33
+		dataCategory: Uncategorized
+
+	measure 'Total Open Stores' = EXTERNALMEASURE("Total Open Stores", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 1eff0a68-3bf0-4d4e-a01c-9c86f1938ec5
+		sourceLineageTag: d2a4425f-b0fe-4b01-adc4-17699a216364
+		dataCategory: Uncategorized
+
+	measure 'TY Distribution %' = EXTERNALMEASURE("TY Distribution %", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: TY Metrics - Time Frames
+		lineageTag: 3b84e44c-1779-4488-82b8-607ba4455717
+		sourceLineageTag: 8d28b797-2039-481f-838e-06b997c15607
+		dataCategory: Uncategorized
+
+	measure 'LY Distribution %' = EXTERNALMEASURE("LY Distribution %", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LY Metrics - Time Frames
+		lineageTag: 3e1ab90f-9b62-4a42-a8d9-844dae65d9e1
+		sourceLineageTag: 6d93960b-b3fd-4b22-9b1d-8713ae435cab
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Distribution YoY' = EXTERNALMEASURE("% Chg Distribution YoY", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year of Year Metrics - Time Frames
+		lineageTag: 787a9706-be55-4179-af35-4b70ba34ab8b
+		sourceLineageTag: b93559e8-ca5b-48b6-accd-22b080ed22c6
+		dataCategory: Uncategorized
+
+	/// This Year $ Sales Velocity: $ per Store per Week.
+	measure 'L52W TY $/S/W' = EXTERNALMEASURE("L52W TY $/S/W", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0.00;$(#,##0.00)
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: 6e680755-e0fc-4f42-8adb-20bdc2a41f87
+		sourceLineageTag: 398746a9-ad0b-4949-ace7-58ceed72711f
+		dataCategory: Uncategorized
+
+	/// This Year Unit Sales Velocity: Units per Store per Week.
+	measure 'L52W TY U/S/W' = EXTERNALMEASURE("L52W TY U/S/W", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: L52W - Store Sales and Fulfillment
+		lineageTag: a50484cf-5321-4448-a45e-c10fa7c85114
+		sourceLineageTag: 8d21b6f5-14dc-4ebd-81be-22ba0b85a52f
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure 'FYTD % Chg Distribution' = EXTERNALMEASURE("FYTD % Chg Distribution", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: FYTD - Store Sales and Fulfillment
+		lineageTag: 00cc8875-a910-4a3c-a131-92f2ae9edb1a
+		sourceLineageTag: 381355e1-fb53-446a-97ab-d8d98ee964e5
+		dataCategory: Uncategorized
+
+	measure 'Total Stores-Week' = EXTERNALMEASURE("Total Stores-Week", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 4e7e5a70-927c-49be-a6d6-a0990521aec3
+		sourceLineageTag: 042c3693-42de-44be-893d-925945ce75ca
+		dataCategory: Uncategorized
+
+	measure 'In Stock Rate %' = EXTERNALMEASURE("In Stock Rate %", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 452eef63-5a0c-4065-b296-289639d5f9a8
+		sourceLineageTag: 43511736-5a01-4446-86f4-acebd3261ac9
+		dataCategory: Uncategorized
+
+	/// Days of Supply (DOS): 
+	/// Store UPC Capacity / (Avg Weekly Units / 7)
+	measure DOS = EXTERNALMEASURE("DOS", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Time Frames - Store Sales and Fulfillment
+		lineageTag: 73dfc7ac-1227-446a-82d0-b27fe1d0c10e
+		sourceLineageTag: 250aa7a9-31f8-496b-8ed4-52dea5688dc2
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Weekend Days of Supply (DOS): 
+	/// Store UPC Capacity / (Weekend Avg Weekly Units / 3)
+	/// Weekend days: Friday - Sunday
+	measure 'Weekend DOS' = EXTERNALMEASURE("Weekend DOS", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Weekend Metrics - Time Frames
+		lineageTag: 175cc935-09e9-4cfa-b292-b5ef3a22587d
+		sourceLineageTag: dfd396b8-62da-4512-8635-e9be487528a4
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// This Year Weekend Sales Amount.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY $ Sales' = EXTERNALMEASURE("Weekend TY $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0
+		displayFolder: Weekend Metrics - Time Frames
+		lineageTag: 9c167241-ff3f-47c8-92e9-25aedbba6c9c
+		sourceLineageTag: 30d7de5d-1938-4291-a3f5-70df9da5dc23
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Sales Units.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Unit Sales' = EXTERNALMEASURE("Weekend TY Unit Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0.0
+		displayFolder: Weekend Metrics - Time Frames
+		lineageTag: 89e2e211-11a1-4f01-b504-4384106fa38b
+		sourceLineageTag: 695974fb-762a-41f3-911b-fa0459ba6469
+		dataCategory: Uncategorized
+
+	/// This Year Weekend $ Sales Velocity: $ per Store per Week.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY $/S/W' = EXTERNALMEASURE("Weekend TY $/S/W", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0.0;$(#,##0.0)
+		displayFolder: Weekend Metrics - Time Frames
+		lineageTag: eed23c88-5bf3-4b2b-8ff2-5a8cd23ed2e2
+		sourceLineageTag: 748dff9c-bfb7-41cb-a1b6-ff77460de630
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Unit Sales Velocity: Units per Store per Week.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY U/S/W' = EXTERNALMEASURE("Weekend TY U/S/W", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0.0
+		displayFolder: Weekend Metrics - Time Frames
+		lineageTag: ecdfc567-8138-4a69-9efd-5c15c7a1660d
+		sourceLineageTag: 3f505abe-91f9-4bc1-b410-2a5d3b3cc190
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Average Weekly Sales Units.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Avg Wkly Unit Sales' = EXTERNALMEASURE("Weekend TY Avg Wkly Unit Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: Weekend Metrics - Time Frames
+		lineageTag: c5bc95fc-fb97-4c6e-a4d1-d73992c88d92
+		sourceLineageTag: 65377e34-1767-4c29-a471-23ad7b84295c
+		dataCategory: Uncategorized
+
+	measure 'Weekend TY Avg Wkly $ Sales' = EXTERNALMEASURE("Weekend TY Avg Wkly $ Sales", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0
+		displayFolder: Weekend Metrics - Time Frames
+		lineageTag: db6ec221-fc65-4c28-ae5e-4e1545609504
+		sourceLineageTag: 89a1e071-94f1-4060-b4d4-38868972a783
+		dataCategory: Uncategorized
+
+	partition '03. Metrics - Store Sales and Fulfillment Time Frames' = entity
+		mode: directQuery
+		source
+			entityName: 03. Metrics - Store Sales and Fulfillment Time Frames
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

@@ -1,0 +1,191 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "860fbaa38c03e4388288",
+  "displayName": "Fulfillment - Red Bull",
+  "displayOption": "FitToWidth",
+  "height": 1580,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "049321bdd644906734cb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - UPC"
+              }
+            },
+            "Property": "CA_BRAND"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "w",
+              "Entity": "WM Master - UPC",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "w"
+                          }
+                        },
+                        "Property": "CA_BRAND"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'RED BULL'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "d1ae205a2b2af9d36437",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F1EFEF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "417L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "personalizeVisual": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "perspectiveRef": {
+            "expr": {
+              "Literal": {
+                "Value": "'Sales and Fulfillment - Weekly'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "72250d259d84f72f66fa",
+      "target": "7b2855991d9e9f5bf8cf",
+      "type": "NoFilter"
+    },
+    {
+      "source": "725b915ac1517d0c3925",
+      "target": "7b2855991d9e9f5bf8cf",
+      "type": "NoFilter"
+    },
+    {
+      "source": "72250d259d84f72f66fa",
+      "target": "b9bd5442179aba651e3a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "72250d259d84f72f66fa",
+      "target": "9231d529f114ed6a76a5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "72250d259d84f72f66fa",
+      "target": "169531c93b8a851cdbc0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "725b915ac1517d0c3925",
+      "target": "aee9cc2371c6b559f1da",
+      "type": "NoFilter"
+    },
+    {
+      "source": "72250d259d84f72f66fa",
+      "target": "ff2c730237fef47e63ec",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ff2c730237fef47e63ec",
+      "target": "9c8a5c0f08088a54a01f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ff2c730237fef47e63ec",
+      "target": "49ea4bcd9368d5a48af7",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ff2c730237fef47e63ec",
+      "target": "e90e43e412320160cced",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ff2c730237fef47e63ec",
+      "target": "b9bd5442179aba651e3a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ff2c730237fef47e63ec",
+      "target": "9231d529f114ed6a76a5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ff2c730237fef47e63ec",
+      "target": "169531c93b8a851cdbc0",
+      "type": "NoFilter"
+    }
+  ]
+}

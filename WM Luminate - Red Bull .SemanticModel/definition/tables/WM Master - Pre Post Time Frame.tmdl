@@ -1,0 +1,44 @@
+/// Additional Time Frame View used only to compare two different periods.
+/// Used for Pre Post Comparison analysis.
+table 'WM Master - Pre Post Time Frame'
+	lineageTag: 52541cde-43f3-4d16-b84a-21bd1b600757
+	sourceLineageTag: 48cbab9d-6115-44b5-b264-539a3c56456e
+
+	column 'Time Frame ID'
+		dataType: string
+		lineageTag: 2cc5ad13-8be5-41f2-9adf-6ca7ce8551bb
+		sourceLineageTag: e2bccbf0-eab7-4b02-9606-cb1bf64b12f8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Time Frame ID
+		sortByColumn: Order
+
+		annotation SummarizationSetBy = User
+
+	column 'Time Frame'
+		dataType: string
+		lineageTag: 83616882-7f5d-438f-8bbd-6808ab65b1bd
+		sourceLineageTag: 6df70000-cfe6-4f45-a4f7-45f3fed189e7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Time Frame
+		sortByColumn: Order
+
+		annotation SummarizationSetBy = User
+
+	column Order
+		dataType: string
+		lineageTag: ec909cf6-2a88-4ab9-a01e-88c45e73dbc0
+		sourceLineageTag: ddc0c225-63b1-4264-afac-462b3e56b4b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order
+
+		annotation SummarizationSetBy = User
+
+	partition 'WM Master - Pre Post Time Frame' = entity
+		mode: directQuery
+		source
+			entityName: WM Master - Pre Post Time Frame
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

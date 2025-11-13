@@ -1,0 +1,241 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "20c487bb907637bb72ce",
+  "displayName": "Pre Post Summary - Category",
+  "displayOption": "FitToWidth",
+  "height": 2900,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4d7f500c6f70fa884856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Store"
+              }
+            },
+            "Property": "STORE_NBR"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "4b009ec0894bda89b970",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Mod Trait"
+              }
+            },
+            "Property": "TRAIT_NBR"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "w",
+              "Entity": "WM Master - Mod Trait",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "w"
+                              }
+                            },
+                            "Property": "TRAIT_NBR"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "2e922163a0389086f771",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F1EFEF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "417L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "personalizeVisual": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "perspectiveRef": {
+            "expr": {
+              "Literal": {
+                "Value": "'WMCA Pre Post Comparison'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "5ad3cf89e3ef892a83bf",
+      "target": "c155f7e7395020cb2815",
+      "type": "NoFilter"
+    },
+    {
+      "source": "76364af7111a77aed3d5",
+      "target": "c155f7e7395020cb2815",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ad3cf89e3ef892a83bf",
+      "target": "a9512835860d4684efbe",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ad3cf89e3ef892a83bf",
+      "target": "fbc64222b939396d737d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ad3cf89e3ef892a83bf",
+      "target": "77245a5e537e5c7cac7f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "76364af7111a77aed3d5",
+      "target": "43ac6bbe3a4f6250c27d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5ad3cf89e3ef892a83bf",
+      "target": "59bbab6a49853db8bbab",
+      "type": "DataFilter"
+    },
+    {
+      "source": "59bbab6a49853db8bbab",
+      "target": "dee93e6e95f3b3f12e39",
+      "type": "NoFilter"
+    },
+    {
+      "source": "59bbab6a49853db8bbab",
+      "target": "bb4b8d04c0d64faa946f",
+      "type": "NoFilter"
+    },
+    {
+      "source": "59bbab6a49853db8bbab",
+      "target": "66b62b07039d5438e391",
+      "type": "NoFilter"
+    },
+    {
+      "source": "59bbab6a49853db8bbab",
+      "target": "a9512835860d4684efbe",
+      "type": "NoFilter"
+    },
+    {
+      "source": "59bbab6a49853db8bbab",
+      "target": "fbc64222b939396d737d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "59bbab6a49853db8bbab",
+      "target": "77245a5e537e5c7cac7f",
+      "type": "NoFilter"
+    }
+  ]
+}

@@ -1,0 +1,688 @@
+/// The Item Dimension Model provides Walmart item attribute information, including hierarchy, descriptions, and status.
+table 'WM Master - Item'
+	isHidden
+	lineageTag: e56c293a-db87-47b8-b4af-86aa9889d591
+	sourceLineageTag: 76d4c82a-c487-463a-9458-7632e4e8e750
+
+	column WM_ITEM_NBR
+		dataType: int64
+		isHidden
+		lineageTag: 717fb15c-48da-448c-a55b-eed79a7286a7
+		sourceLineageTag: a1e038d8-c1a4-43a8-9258-0698d8cf7075
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WM_ITEM_NBR
+
+		annotation SummarizationSetBy = User
+
+	column ACCTG_DEPT_NBR
+		dataType: double
+		isHidden
+		lineageTag: 059094cf-5942-4cd5-9f1c-611146e14e44
+		sourceLineageTag: cced7854-2292-4805-8b1d-04143ce86d65
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ACCTG_DEPT_NBR
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_STATUS_CD
+		dataType: string
+		isHidden
+		lineageTag: 822ed4f1-c45a-42b1-92d3-b19a2487a2f9
+		sourceLineageTag: ee4e8ea3-0599-4615-a9b9-5c394e460599
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_STATUS_CD
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_NAME
+		dataType: string
+		isHidden
+		lineageTag: e026a50f-ed3a-49a5-990a-b212f400d705
+		sourceLineageTag: 6a49f631-e3e8-4ccd-b752-777627ffead8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_NAME
+
+		annotation SummarizationSetBy = User
+
+	/// Universal Product Code Number
+	column WM_UPC_NBR
+		dataType: int64
+		isHidden
+		lineageTag: aa6e92e3-1c86-466b-8683-563267a31440
+		sourceLineageTag: cb372184-7c51-4f00-83a7-0de2598fc0df
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WM_UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	column WM_UPC_DESC
+		dataType: string
+		isHidden
+		lineageTag: 50598db8-a525-4e25-bf69-569dbfbee10e
+		sourceLineageTag: d4ec2c7a-a8c0-4e2c-9992-281c20b7e5b0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_UPC_DESC
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_TYPE_DESC
+		dataType: string
+		isHidden
+		lineageTag: 713be001-4ec2-4f06-a8c6-6aa1d976bb87
+		sourceLineageTag: a0a1732e-8b6e-41d1-a9a2-c3b06082a277
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_TYPE_DESC
+
+		annotation SummarizationSetBy = User
+
+	column ALL_LINKS_ITEM_DESC_1
+		dataType: string
+		isHidden
+		lineageTag: d58ee75f-a24a-415c-81ee-a561fd6b8b1b
+		sourceLineageTag: bf3df8c4-98fd-478f-9420-3f7d960b37be
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ALL_LINKS_ITEM_DESC_1
+
+		annotation SummarizationSetBy = User
+
+	column ALL_LINKS_ITEM_NBR
+		dataType: double
+		isHidden
+		lineageTag: df4fd100-203d-4e35-939b-e8a5f45bdb69
+		sourceLineageTag: ccce31d5-b9fd-4535-8fac-9a8910530996
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ALL_LINKS_ITEM_NBR
+
+		annotation SummarizationSetBy = User
+
+	column OMNI_CATG_NBR
+		dataType: double
+		isHidden
+		lineageTag: b2667b71-5552-4ce7-9bd4-97a5ef40b807
+		sourceLineageTag: 4fc9f2c2-6c75-47d4-99d7-fbe5de880c1c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OMNI_CATG_NBR
+
+		annotation SummarizationSetBy = User
+
+	column OMNI_CATG_DESC
+		dataType: string
+		isHidden
+		lineageTag: 2cc9d373-d2c4-41a0-8535-466faeb801f4
+		sourceLineageTag: c1f840a1-35fb-4e43-a91b-c0d5d2a66a10
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OMNI_CATG_DESC
+
+		annotation SummarizationSetBy = User
+
+	column OMNI_CATG_GRP_NBR
+		dataType: double
+		isHidden
+		lineageTag: e13a17a0-ab11-4659-92f8-0848fcf144cd
+		sourceLineageTag: 8bbad016-3253-4a28-a4ac-de751e522a39
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OMNI_CATG_GRP_NBR
+
+		annotation SummarizationSetBy = User
+
+	column OMNI_CATG_GRP_DESC
+		dataType: string
+		isHidden
+		lineageTag: e56836eb-e6ec-42ee-b0aa-427160a22a1e
+		sourceLineageTag: c42fb86e-088c-4475-9aef-4def61f687dd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OMNI_CATG_GRP_DESC
+
+		annotation SummarizationSetBy = User
+
+	column OMNI_SUBCATG_NBR
+		dataType: double
+		isHidden
+		lineageTag: 7c537a5c-018f-4c3a-809c-3bf442ebfa22
+		sourceLineageTag: 500bf144-8261-4895-808b-ab812e188134
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OMNI_SUBCATG_NBR
+
+		annotation SummarizationSetBy = User
+
+	column OMNI_SUBCATG_DESC
+		dataType: string
+		isHidden
+		lineageTag: 45aee8ac-f581-4fa6-882b-3f2c17821bbc
+		sourceLineageTag: c791b810-e8b6-4b24-b72b-43f869257885
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OMNI_SUBCATG_DESC
+
+		annotation SummarizationSetBy = User
+
+	column BRAND_NM
+		dataType: string
+		isHidden
+		lineageTag: 153dda92-12f6-487b-9762-d482bb44b026
+		sourceLineageTag: 606ee26a-6643-4709-b5b1-d4114e004ce3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BRAND_NM
+
+		annotation SummarizationSetBy = User
+
+	column BRAND_ID
+		dataType: int64
+		isHidden
+		lineageTag: eb6e913e-5eca-4bfb-b37c-ec24b6ee98e9
+		sourceLineageTag: 573997b8-f9a6-4931-bb97-ca3390e03549
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: BRAND_ID
+
+		annotation SummarizationSetBy = User
+
+	column BRAND_FAM_NM
+		dataType: string
+		isHidden
+		lineageTag: 1d54b2a9-47ea-4117-a92b-3bcae6669cb8
+		sourceLineageTag: 95fccf9e-6972-4598-a8ee-3483ce8a5809
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BRAND_FAM_NM
+
+		annotation SummarizationSetBy = User
+
+	column BRAND_FAM_ID
+		dataType: int64
+		isHidden
+		lineageTag: 54e4e927-f5e7-4413-9118-1ed79402d598
+		sourceLineageTag: e425de69-1698-494d-9142-90568d0dfbbf
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: BRAND_FAM_ID
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_DESC_2
+		dataType: string
+		isHidden
+		lineageTag: 5c1306a8-00a7-453d-9a22-7418772499aa
+		sourceLineageTag: a9295a47-80cf-4caf-a6c6-ff937f490c35
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_DESC_2
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_STATUS_DESC
+		dataType: string
+		isHidden
+		lineageTag: edf4d358-227e-49df-810e-e62eb4731713
+		sourceLineageTag: 948bfb90-55c4-4ef4-ae9d-6aafb881c426
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_STATUS_DESC
+
+		annotation SummarizationSetBy = User
+
+	column PROD_NBR
+		dataType: int64
+		isHidden
+		lineageTag: 68392319-0d5c-4850-b3f2-8605b2409ac3
+		sourceLineageTag: f0120165-86ca-47a8-854b-f328f8d62b8e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PROD_NBR
+
+		annotation SummarizationSetBy = User
+
+	column PROD_DESC
+		dataType: string
+		isHidden
+		lineageTag: 97b6bf00-0a52-453d-a2d1-c1c188657254
+		sourceLineageTag: e97e360a-af8a-496c-bfdf-da82dacd5fd5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PROD_DESC
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_IMPORT_IND
+		dataType: double
+		isHidden
+		lineageTag: fb7e9dc7-c574-434a-9489-0e05e39a2bcf
+		sourceLineageTag: 72a3f9db-a12f-4f76-91fc-0545edd24d04
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ITEM_IMPORT_IND
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_REPL_IND
+		dataType: double
+		isHidden
+		lineageTag: c10c2146-4038-4cfa-908a-4d2536386ff0
+		sourceLineageTag: 75a64fc1-9f13-4e21-9738-97021b6eaddd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ITEM_REPL_IND
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_DIM_UOM_CD
+		dataType: string
+		isHidden
+		lineageTag: 976899f8-3ca4-45a8-8c43-aa96b5b90609
+		sourceLineageTag: 85178545-273c-44e5-abe4-774101531090
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_DIM_UOM_CD
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_DIM_UOM_DESC
+		dataType: string
+		isHidden
+		lineageTag: 709f264b-bce1-46f8-ac5b-091b3ac68325
+		sourceLineageTag: f4935f2d-67c0-4aa6-9d1e-9c298b3eb84e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_DIM_UOM_DESC
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_WT_QTY
+		dataType: double
+		isHidden
+		lineageTag: 2d7bc2c6-46ec-48be-b209-5279ac271a96
+		sourceLineageTag: 908ee18b-223a-478b-955d-414842516eec
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ITEM_WT_QTY
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_WT_UOM_CD
+		dataType: string
+		isHidden
+		lineageTag: b32a9ef2-d7de-45d2-976b-4f543ca2ffee
+		sourceLineageTag: 28e7acfb-db6a-4f56-8d44-04e7d2fb7f93
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_WT_UOM_CD
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_WT_UOM_DESC
+		dataType: string
+		isHidden
+		lineageTag: e3a3e972-c4bf-49d6-ad67-e5de84d17ef1
+		sourceLineageTag: 959fab4f-9a95-448a-a865-43bf7545e03a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_WT_UOM_DESC
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_EXPIRE_DT
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 5e550694-6062-4a5c-8ddf-f6de60f36768
+		sourceLineageTag: 0aa39a04-5d1d-4d50-86c0-8a1b478c95d2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_EXPIRE_DT
+
+		annotation SummarizationSetBy = User
+
+	column CASE_UPC_NBR
+		dataType: double
+		isHidden
+		lineageTag: 76eca6df-5d19-4f6e-b2be-ebb669eb15d0
+		sourceLineageTag: d072bb72-cd1f-47e4-8a58-5b07f247869d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CASE_UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	column ITEM_STATUS_CHNG_DT
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 92c64c88-c760-4e3a-b1ca-276c20344576
+		sourceLineageTag: 56fa3af2-6b20-425d-9013-aa4f8c81e7ed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ITEM_STATUS_CHNG_DT
+
+		annotation SummarizationSetBy = User
+
+	column BUYER_FULL_NM
+		dataType: string
+		isHidden
+		lineageTag: 15474517-7105-47db-aded-9a7ec8febea9
+		sourceLineageTag: b889c8a4-d23c-4199-aafc-f07df7823b1a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BUYER_FULL_NM
+
+		annotation SummarizationSetBy = User
+
+	column WM_ITEM_NBR_TXT
+		dataType: string
+		isHidden
+		lineageTag: 41c99ebe-eaa7-4469-8ecd-715e75ee91bd
+		sourceLineageTag: ba0d1fb5-8bdf-4b5e-b3a4-ced112452cd5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_ITEM_NBR_TXT
+
+		annotation SummarizationSetBy = User
+
+	/// Universal Product Code Number - Text Format
+	column WM_UPC_NBR_TXT
+		dataType: string
+		isHidden
+		lineageTag: aec1162f-4a6e-4238-83d5-f2f1b5003887
+		sourceLineageTag: d801f5d0-0158-4ee5-b320-f6ff25981c1f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_UPC_NBR_TXT
+
+		annotation SummarizationSetBy = User
+
+	column WM_Item_NBR_Name
+		dataType: string
+		isHidden
+		lineageTag: 8d20f7f5-28fa-4c57-affc-aa3c4001239a
+		sourceLineageTag: b135cde2-beb7-4ecd-a228-a7a0909227c9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_Item_NBR_Name
+
+		annotation SummarizationSetBy = User
+
+	column WM_UPC_Name
+		dataType: string
+		isHidden
+		lineageTag: 06a2c0b1-ab0e-4067-8722-417ba8dd1ed3
+		sourceLineageTag: f467d9e0-c4a9-4c77-abfa-b81c39a716d4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_UPC_Name
+
+		annotation SummarizationSetBy = User
+
+	column Orderable_Qty
+		dataType: double
+		isHidden
+		lineageTag: 035f9e20-d97b-41ce-a035-7d426c55e070
+		sourceLineageTag: 2fd380e0-0c4a-4961-a100-eb79af6d3fd0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Orderable_Qty
+
+		annotation SummarizationSetBy = User
+
+	column CA_BRAND
+		dataType: string
+		isHidden
+		lineageTag: 11637301-db87-4aae-8bff-88468e171ccb
+		sourceLineageTag: 1525bf77-b8cb-469d-bd18-309885c78041
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_BRAND
+
+		annotation SummarizationSetBy = User
+
+	column CA_CAFFEINE_MG_PER_CAN
+		dataType: string
+		isHidden
+		lineageTag: 6c9b48bf-21d0-46fe-8e81-b855fae27e2b
+		sourceLineageTag: f0ae62e2-4cbc-47c8-8247-f75f35ef4b47
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_CAFFEINE_MG_PER_CAN
+
+		annotation SummarizationSetBy = User
+
+	column CA_ENERGY_CATEGORY
+		dataType: string
+		isHidden
+		lineageTag: 8f9a9393-d57a-4d80-a8ca-100113ecee27
+		sourceLineageTag: 5fd5f107-0ce8-4b30-9841-42e772c1986e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_ENERGY_CATEGORY
+
+		annotation SummarizationSetBy = User
+
+	column CA_ENERGY_SUB_CATEGORY
+		dataType: string
+		isHidden
+		lineageTag: c841541a-aa83-40ee-9b86-8331a372e229
+		sourceLineageTag: f360d336-f092-4623-993d-0b0ab874cf06
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_ENERGY_SUB_CATEGORY
+
+		annotation SummarizationSetBy = User
+
+	column CA_FLAVOR/SCENT
+		dataType: string
+		isHidden
+		lineageTag: 3eb27dfe-135d-4dea-82d7-ca2ea0a1d3b0
+		sourceLineageTag: d6395ace-af0e-46bc-995a-0eee80d43028
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_FLAVOR/SCENT
+
+		annotation SummarizationSetBy = User
+
+	column CA_FLAVOR_GROUP
+		dataType: string
+		isHidden
+		lineageTag: 3089fd0e-4b0c-4cee-9c9f-42233840a9a6
+		sourceLineageTag: fc7ef4a6-8dd6-450b-b27c-0a4b77354dda
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_FLAVOR_GROUP
+
+		annotation SummarizationSetBy = User
+
+	column CA_MOD_SKU
+		dataType: string
+		isHidden
+		lineageTag: 89ec4d63-a5ce-40b3-aa23-973e2d4023b3
+		sourceLineageTag: fb9a88c5-d023-4b91-8681-3482c04b1f22
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_MOD_SKU
+
+		annotation SummarizationSetBy = User
+
+	column CA_ONLINE_ONLY
+		dataType: string
+		isHidden
+		lineageTag: ab0f4db1-8467-4172-bc7e-25314ce131ca
+		sourceLineageTag: f208fbaa-8785-4226-8fe3-2e193edd4011
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_ONLINE_ONLY
+
+		annotation SummarizationSetBy = User
+
+	column CA_OZ_PER_CAN
+		dataType: string
+		isHidden
+		lineageTag: d69bc846-2165-468c-b859-fdfd97aaead9
+		sourceLineageTag: 372d379b-40b3-40fd-ade8-76c4c3352a54
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_OZ_PER_CAN
+
+		annotation SummarizationSetBy = User
+
+	column CA_PACK_SIZE
+		dataType: string
+		isHidden
+		lineageTag: e7cabdde-afac-4b03-88b8-344f6af02459
+		sourceLineageTag: 336bf9df-611e-417c-902d-7d52fac70ca6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_PACK_SIZE
+
+		annotation SummarizationSetBy = User
+
+	column CA_PACK_TYPE
+		dataType: string
+		isHidden
+		lineageTag: 3e333a83-5af5-4928-bab7-dece23c25060
+		sourceLineageTag: f6f58bc0-b91a-4243-827e-462d64c892aa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_PACK_TYPE
+
+		annotation SummarizationSetBy = User
+
+	column CA_REG_VS_REDUCED_SUGAR_CAL
+		dataType: string
+		isHidden
+		lineageTag: 48bb6e77-0cb7-4023-ae29-e26164af36e1
+		sourceLineageTag: 7dac9e92-dfe8-47c8-89fd-a6e541395445
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_REG_VS_REDUCED_SUGAR_CAL
+
+		annotation SummarizationSetBy = User
+
+	column CA_SUB_BRAND
+		dataType: string
+		isHidden
+		lineageTag: 48d340ea-900d-4e21-aa8e-cf0589763c2a
+		sourceLineageTag: c87b31a8-0831-4e42-b0cf-4585114f5b60
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_SUB_BRAND
+
+		annotation SummarizationSetBy = User
+
+	column CA_SUPPLIER
+		dataType: string
+		isHidden
+		lineageTag: 5fedb0e4-1ef5-41f4-ba06-64e0e8e25931
+		sourceLineageTag: eb8f6a22-8c01-446e-b83b-fb3e2df5568a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_SUPPLIER
+
+		annotation SummarizationSetBy = User
+
+	column CA_TOTAL_OZ
+		dataType: string
+		isHidden
+		lineageTag: 469d93c5-ea28-4557-bf2e-3047edd78957
+		sourceLineageTag: 7b1abc6d-604b-4169-be5c-586c3a44be81
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_TOTAL_OZ
+
+		annotation SummarizationSetBy = User
+
+	column 'OZ PER PACK'
+		dataType: string
+		isHidden
+		lineageTag: 6b11e4d2-bf3a-43b5-96a0-086cb851f77c
+		sourceLineageTag: daa9271b-9648-4dc3-8260-f0f21f77265d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OZ PER PACK
+
+		annotation SummarizationSetBy = User
+
+	column FINELINE_DESC
+		dataType: string
+		isHidden
+		lineageTag: 144b64f0-8c08-499b-8c15-d9c854f9caf0
+		sourceLineageTag: fb6cffad-8058-43d2-983b-9767813ebcd1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FINELINE_DESC
+
+		annotation SummarizationSetBy = User
+
+	column FINELINE_NBR
+		dataType: double
+		isHidden
+		lineageTag: c0161682-0c09-4b59-a1ca-714d9213f873
+		sourceLineageTag: 0befffbd-cfb0-4434-b189-7a311cea14fc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FINELINE_NBR
+
+		annotation SummarizationSetBy = User
+
+	column CA_PRODUCT_DESCRIPTION
+		dataType: string
+		isHidden
+		lineageTag: de6d730f-bb16-46fb-934b-6469dfa19a05
+		sourceLineageTag: 519bc247-7c3f-4401-ab3b-867af89c1bf9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CA_PRODUCT_DESCRIPTION
+
+		annotation SummarizationSetBy = User
+
+	column FUTURE_VNPK_COST_AMT
+		dataType: double
+		isHidden
+		lineageTag: d81c5573-94b9-4c75-823f-97ea7c2c09dd
+		sourceLineageTag: b51e0259-1146-4455-b875-536e25dc6699
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FUTURE_VNPK_COST_AMT
+
+		annotation SummarizationSetBy = User
+
+	column MFG_CMPNY_ID
+		dataType: string
+		isHidden
+		lineageTag: c31f3899-c4a6-416e-b5eb-2e2b672338f3
+		sourceLineageTag: e6373df6-9875-4ea5-a91a-ea5dd6065cf8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MFG_CMPNY_ID
+
+		annotation SummarizationSetBy = User
+
+	column FUTURE_EFFECTIVE_DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: e77ec02c-ce7f-49d5-acb2-405e020dc328
+		sourceLineageTag: 7d3251aa-f107-4b8b-af14-0f0967c0c59f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FUTURE_EFFECTIVE_DATE
+
+		annotation SummarizationSetBy = User
+
+	partition 'WM Master - Item' = entity
+		mode: directQuery
+		source
+			entityName: WM Master - Item
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

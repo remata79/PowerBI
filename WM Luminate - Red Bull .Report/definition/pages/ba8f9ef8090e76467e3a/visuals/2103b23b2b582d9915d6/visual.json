@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "2103b23b2b582d9915d6",
+  "position": {
+    "x": 366.46153846153851,
+    "y": 528.92307692307691,
+    "z": 5000,
+    "height": 415.38461538461547,
+    "width": 1367.0769230769231,
+    "tabOrder": 23000
+  },
+  "visualGroup": {
+    "displayName": "Mobile Tables",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

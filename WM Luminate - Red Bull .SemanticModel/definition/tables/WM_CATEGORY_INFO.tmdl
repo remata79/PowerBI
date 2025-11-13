@@ -1,0 +1,75 @@
+/// Walmart Luminate dataset information model.
+/// 
+/// Source: WM_CATEGORY_INFO_VIEW
+table WM_CATEGORY_INFO
+	isHidden
+	lineageTag: e2c5b146-0f73-46b0-a266-688821233d03
+	sourceLineageTag: 69b14861-cbac-44aa-9d48-ed3dad4be5d0
+
+	/// Last Updated Date
+	column LAST_UPDATED_DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 75aae212-3b18-49de-8d93-94cf5f621ab9
+		sourceLineageTag: 39bec977-0f20-4676-bf59-b5859e024d94
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: LAST_UPDATED_DATE
+
+		annotation SummarizationSetBy = User
+
+	/// Current Walmart Week Number
+	column CAL_WM_WK_NBR
+		dataType: double
+		isHidden
+		lineageTag: 033fcf24-05c7-416e-8156-175c9eef45d2
+		sourceLineageTag: e2fecd48-6d1f-4284-88d2-474c2273aaf9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Current Week Day Number
+	column CAL_WM_WK_DAY_NBR
+		dataType: double
+		isHidden
+		lineageTag: c1807078-9ae1-49d3-ba7f-812e14dd8c08
+		sourceLineageTag: b6f1ab44-9e69-4fa3-a917-5a4ef0b951b1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_DAY_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Last Week End Date
+	column LW_END_DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 8f1df460-d2fe-40fa-b4d7-58b95e883a43
+		sourceLineageTag: 0275f088-ea5e-4d94-bd1d-da1032cfbd84
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: LW_END_DATE
+
+		annotation SummarizationSetBy = User
+
+	/// WM UPC Sales Feed (Category) Last updated Week Number
+	column CATEGORY_WM_YR_WK_NBR
+		dataType: double
+		lineageTag: 65168a7a-833e-4e0a-81cd-a7788d7a9caf
+		sourceLineageTag: 4182bf8d-467c-4e47-a5b6-29c6bb87a5b7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CATEGORY_WM_YR_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	partition WM_CATEGORY_INFO = entity
+		mode: directQuery
+		source
+			entityName: WM_CATEGORY_INFO
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

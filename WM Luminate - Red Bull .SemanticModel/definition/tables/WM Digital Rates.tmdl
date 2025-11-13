@@ -1,0 +1,44 @@
+table 'WM Digital Rates'
+	isHidden
+	lineageTag: e42b936e-36fb-42b3-9aec-9f2de300eadb
+
+	column 'Digital Metric'
+		dataType: string
+		isHidden
+		lineageTag: 752dff53-4741-40cd-b854-ada654a612e7
+		summarizeBy: none
+		sourceColumn: Digital Metric
+		sortByColumn: Order
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 15b04be2-f0d2-4496-bbaa-e93f3d45225a
+		summarizeBy: sum
+		sourceColumn: Order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WM Digital Rates' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcgsJCFLSUTJUitWJVgooSlUILk0C8o0g/PziEqiAsVJsLAA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"OPD Metric" = _t, Order = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"OPD Metric", type text}, {"Order", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"OPD Metric", "Digital Metric"}})
+				in
+				    #"Renamed Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

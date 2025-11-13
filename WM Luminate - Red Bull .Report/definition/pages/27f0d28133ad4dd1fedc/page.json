@@ -1,0 +1,294 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "27f0d28133ad4dd1fedc",
+  "displayName": "In Stock and Voids - Red Bull",
+  "displayOption": "FitToWidth",
+  "height": 1080,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4d7f500c6f70fa884856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Store"
+              }
+            },
+            "Property": "STORE_NBR"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "049321bdd644906734cb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - UPC"
+              }
+            },
+            "Property": "CA_BRAND"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "w",
+              "Entity": "WM Master - UPC",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "w"
+                          }
+                        },
+                        "Property": "CA_BRAND"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'RED BULL'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "fe36bbc0d010b82a4941",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Mod Trait"
+              }
+            },
+            "Property": "TRAIT_NBR"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "w",
+              "Entity": "WM Master - Mod Trait",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "w"
+                              }
+                            },
+                            "Property": "TRAIT_NBR"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "f7c26f1410c2c80e95c7",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F1EFEF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "417L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "personalizeVisual": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "perspectiveRef": {
+            "expr": {
+              "Literal": {
+                "Value": "'Store Item - Current Voids'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "182e9240dabc3c05e03d",
+      "target": "1b4c09a4d92e35951e87",
+      "type": "NoFilter"
+    },
+    {
+      "source": "512fefa51021aeac4bc3",
+      "target": "1b4c09a4d92e35951e87",
+      "type": "NoFilter"
+    },
+    {
+      "source": "182e9240dabc3c05e03d",
+      "target": "6e0ae78266ab1a9f88ce",
+      "type": "NoFilter"
+    },
+    {
+      "source": "182e9240dabc3c05e03d",
+      "target": "233343c5229d70260661",
+      "type": "NoFilter"
+    },
+    {
+      "source": "182e9240dabc3c05e03d",
+      "target": "7c3c8430975a24c1cd90",
+      "type": "NoFilter"
+    },
+    {
+      "source": "512fefa51021aeac4bc3",
+      "target": "8a2686933f822efeb2ca",
+      "type": "NoFilter"
+    },
+    {
+      "source": "182e9240dabc3c05e03d",
+      "target": "4f85abf8248708729307",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4f85abf8248708729307",
+      "target": "0bf9ccd06db4a32e7c03",
+      "type": "NoFilter"
+    },
+    {
+      "source": "4f85abf8248708729307",
+      "target": "c56358aae8b96d115c68",
+      "type": "NoFilter"
+    },
+    {
+      "source": "4f85abf8248708729307",
+      "target": "20168125adcb487fb26d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "4f85abf8248708729307",
+      "target": "6e0ae78266ab1a9f88ce",
+      "type": "NoFilter"
+    },
+    {
+      "source": "4f85abf8248708729307",
+      "target": "233343c5229d70260661",
+      "type": "NoFilter"
+    },
+    {
+      "source": "4f85abf8248708729307",
+      "target": "7c3c8430975a24c1cd90",
+      "type": "NoFilter"
+    }
+  ]
+}

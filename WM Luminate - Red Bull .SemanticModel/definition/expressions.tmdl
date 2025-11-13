@@ -1,0 +1,28 @@
+expression 'Measures (2)' =
+		let
+		    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Measure = _t]),
+		    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Measure", type text}}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Measure"})
+		in
+		    #"Removed Columns"
+	lineageTag: 4b7601ed-6c2a-4ece-a99c-a763ba41527b
+
+	annotation PBI_ResultType = Table
+
+/// Load All Records
+expression pLoadAllRecords = true meta [IsParameterQuery=true, Type="Logical", IsParameterQueryRequired=true]
+	lineageTag: d9e5c688-a2bb-46df-a681-8924ea5e36ef
+
+	annotation PBI_ResultType = Logical
+
+expression 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Bev_US_Luminate_RB_Data", "WM Luminate - Red Bull - Semantic Model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: bb3c0952-b1fd-4e75-b335-24a482bf1075
+
+	annotation PBI_IncludeFutureArtifacts = True
+

@@ -1,0 +1,52 @@
+/// Latest Store UPC Inventory measures.
+/// This model only returns the latest available date (Day - 2).
+/// This will consider In Modular (Store Planogram) only records. 
+/// 
+/// Recommend usage along with:
+/// - WM Master: Store
+/// - WM Master: UPC
+/// - WM Master: Mod Trait
+/// 
+/// Source: WM_STORE_ITEM_UPC_LATEST_VIEW
+table '04. Metrics - Store Inventory Latest'
+	lineageTag: db76142b-bcb2-44d6-91b7-293aab49f214
+	sourceLineageTag: dc8883d7-7617-429b-a743-28e24150860d
+
+	/// Out of Stock Flag for Store UPC combination:
+	/// 1 - Out of Stock
+	/// 0 - No, there is stock
+	measure '# Out of Stock - Current' = EXTERNALMEASURE("# Out of Stock - Current", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		lineageTag: 44aeb6da-e061-4162-bd05-9e2436c1333c
+		sourceLineageTag: 313709da-9cc8-4474-bcec-5f8f4f14e98e
+		dataCategory: Uncategorized
+
+	/// Total Points of Distribution  count: Store and UPC combination
+	measure 'TY Total PODs - Current' = EXTERNALMEASURE("TY Total PODs - Current", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		lineageTag: 3e2639c5-6abf-4df3-a5da-386ca13eae53
+		sourceLineageTag: fd1cbd03-94c7-40c9-bc91-2a5c8f54dbe3
+		dataCategory: Uncategorized
+
+	/// This Year In Stock Rate: 
+	/// Latest percentage of UPCs with stock on a store. 
+	/// This metric considers only In Modular (Store Planogram) UPCs. 
+	measure 'TY In Stock Rate - Current' = EXTERNALMEASURE("TY In Stock Rate - Current", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b798ae87-beae-425a-ab90-68106eef8c35
+		sourceLineageTag: 9a47181c-226c-4bdb-9dab-925d15989901
+		dataCategory: Uncategorized
+
+	/// Total Points of Distribution  count (Store and UPC combination) which are Out of Stock
+	measure 'TY Total PODs Out of Stock - Current' = EXTERNALMEASURE("TY Total PODs Out of Stock - Current", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		lineageTag: 69d677c6-26fa-470d-bead-67abeb03ee1c
+		sourceLineageTag: b7a31202-7e7d-45ab-a33d-c05da1fee8fa
+		dataCategory: Uncategorized
+
+	partition '04. Metrics - Store Inventory Latest' = entity
+		mode: directQuery
+		source
+			entityName: 04. Metrics - Store Inventory Latest
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

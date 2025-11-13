@@ -1,0 +1,353 @@
+/// Provides information about all store sales at Store, UPC and Channel, aggregated by Walmart Week.
+/// 
+/// Recommend usage along with:
+/// - WM Master: Calendar Week
+/// - WM Master: Store
+/// - WM Master: UPC
+/// - WM Master: Service Channel
+/// - WM Master: Mod Trait
+/// 
+/// Source: WM_STORE_SALES_WEEK_VIEW
+table '01. Metrics - Store Sales Weekly'
+	lineageTag: a8f33f82-0d39-414e-addc-f9c1fa8b9e98
+	sourceLineageTag: b98c3744-63cc-4872-8264-2c138efad653
+
+	/// This Year Weekly Sales Amount.
+	measure 'TY $ Sales - Weekly' = EXTERNALMEASURE("TY $ Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0
+		displayFolder: This Year Metrics
+		lineageTag: 574a15d9-0ce7-48bb-8e70-2717cf5886ac
+		sourceLineageTag: a1b9e8f5-abcf-461c-a36d-941e74ca9cec
+		dataCategory: Uncategorized
+
+	/// Last Year Weekly Sales Amount.
+	measure 'LY $ Sales - Weekly' = EXTERNALMEASURE("LY $ Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0
+		displayFolder: Last Year Metrics
+		lineageTag: a94ea531-3617-4e7e-9a6c-4e092a0dd2bc
+		sourceLineageTag: e4eebf12-74b8-4fd5-ab07-52f2c7e85d81
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg $ Sales YoY - Weekly' = EXTERNALMEASURE("% Chg $ Sales YoY - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: a2dd777d-fede-41c6-a4f4-23e9a98a34b0
+		sourceLineageTag: 790aaf16-65bf-4fb2-8b55-8686b49b18b4
+		dataCategory: Uncategorized
+
+	/// This Year Sales Units.
+	measure 'TY Unit Sales - Weekly' = EXTERNALMEASURE("TY Unit Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: 0e09ffbf-b29c-4d91-a26b-2f4d49588a3f
+		sourceLineageTag: c4909d2b-9c0c-4d31-a090-c3b3314f90d3
+		dataCategory: Uncategorized
+
+	measure 'LY Unit Sales - Weekly' = EXTERNALMEASURE("LY Unit Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: Last Year Metrics
+		lineageTag: 66fa2f23-03cd-49a2-9c39-69900e4bf018
+		sourceLineageTag: 7f0c1db3-191b-4c94-9ca6-7267ee2119d4
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Unit Sales - Weekly' = EXTERNALMEASURE("% Chg Unit Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 2dbea10a-f9ff-49b2-b850-91d620f65fed
+		sourceLineageTag: 7922a5b3-daa6-4276-b316-4df94a486c44
+		dataCategory: Uncategorized
+
+	/// This Year Avg Week Price.
+	measure 'TY Price - Weekly' = EXTERNALMEASURE("TY Price - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $0.00
+		displayFolder: This Year Metrics
+		lineageTag: b6605936-70ac-4c4f-81e5-055e7d1921bb
+		sourceLineageTag: 1e90161c-0119-4fc1-88f7-d531df03da2c
+		dataCategory: Uncategorized
+
+	/// Last Year Avg Price.
+	measure 'LY Price - Weekly' = EXTERNALMEASURE("LY Price - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $0.00
+		displayFolder: Last Year Metrics
+		lineageTag: a36ce68a-191a-45db-b49c-83cbdbe37126
+		sourceLineageTag: 36cc0297-6b63-4c02-900a-bb227d0ef2cc
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Price YoY - Weekly' = EXTERNALMEASURE("% Chg Price YoY - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 2ef2d6e4-f278-44a0-8f8f-cd153c5a9aa1
+		sourceLineageTag: 8e3d3241-1fab-4a40-9589-317e49d39f8c
+		dataCategory: Uncategorized
+
+	/// Count of Weeks.
+	measure 'Week Count - Weekly' = EXTERNALMEASURE("Week Count - Weekly", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: Weekend Metrics
+		lineageTag: a38b5610-8854-4706-8689-a0543a8ae50a
+		sourceLineageTag: 5f2915b4-d35f-4e5a-ac34-b1df0f9fee97
+		dataCategory: Uncategorized
+
+	measure 'Store Count - Weekly' = EXTERNALMEASURE("Store Count - Weekly", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: db7cde61-29ef-4720-9944-fc2d51b7cddb
+		sourceLineageTag: fb4e24d7-088b-4e9c-b979-1eae01a90e1e
+		dataCategory: Uncategorized
+
+	measure 'Total Stores-Week - Weekly' = EXTERNALMEASURE("Total Stores-Week - Weekly", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: f9ba53d6-ba23-44a2-b8c0-0a927caca466
+		sourceLineageTag: 901a4310-e076-49e0-ba44-e2f6d06250ed
+		dataCategory: Uncategorized
+
+	/// This Year Average Weekly Sales Amount.
+	measure 'TY Avg Wkly $ Sales - Weekly' = EXTERNALMEASURE("TY Avg Wkly $ Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: be0ba0b5-d4be-4184-a825-03f6db5da489
+		sourceLineageTag: 024e50e5-f12a-4a8d-bcae-111b02ec57c1
+		dataCategory: Uncategorized
+
+	/// Last Year Average Weekly Sales Amount.
+	measure 'LY Avg Wkly $ Sales - Weekly' = EXTERNALMEASURE("LY Avg Wkly $ Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Last Year Metrics
+		lineageTag: 27d89dac-10e9-4e9d-b48d-660f99ec4677
+		sourceLineageTag: 47124fcd-8127-4180-bdcd-835edcf8ec49
+		dataCategory: Uncategorized
+
+	/// This Year Average Weekly Sales Units.
+	measure 'TY Avg Wkly Unit Sales - Weekly' = EXTERNALMEASURE("TY Avg Wkly Unit Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: e4e8347a-2548-4f7b-9574-f287f8fc081f
+		sourceLineageTag: b4aae093-cfaa-4bd0-91a3-d57aa9d3f99d
+		dataCategory: Uncategorized
+
+	/// Last Year Average Weekly Sales Units.
+	measure 'LY Avg Wkly Unit Sales - Weekly' = EXTERNALMEASURE("LY Avg Wkly Unit Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: Last Year Metrics
+		lineageTag: 420b88c8-1f39-41bd-8dd3-bf6462be8176
+		sourceLineageTag: 7a99c4bf-e6bf-4c43-9b0e-84ca9c56c36e
+		dataCategory: Uncategorized
+
+	/// This Year $ Sales Velocity: $ per Store per Week.
+	measure 'TY $/S/W - Weekly' = EXTERNALMEASURE("TY $/S/W - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0.0;$(#,##0.0)
+		displayFolder: This Year Metrics
+		lineageTag: ce0e24d4-ee41-4520-9f01-bb39b2976a97
+		sourceLineageTag: dedd1fa1-0724-4be2-badc-f4c1fa773e70
+		dataCategory: Uncategorized
+
+	/// Last Year $ Sales Velocity: $ per Store per Week.
+	measure 'LY $/S/W - Weekly' = EXTERNALMEASURE("LY $/S/W - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0.0;$(#,##0.0)
+		displayFolder: Last Year Metrics
+		lineageTag: 4bb61c89-69ef-462e-8b1e-49671c8cd9c8
+		sourceLineageTag: 4a31bbed-378c-4278-9489-a2264516d9a0
+		dataCategory: Uncategorized
+
+	/// This Year Unit Sales Velocity: Units per Store per Week.
+	measure 'TY U/S/W - Weekly' = EXTERNALMEASURE("TY U/S/W - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0.00
+		displayFolder: This Year Metrics
+		lineageTag: 2bda88e1-b612-44ca-a9ae-9bfe0598f45b
+		sourceLineageTag: 657f2200-f030-4c60-aa44-bdbe81687279
+		dataCategory: Uncategorized
+
+	/// Last Year Unit Sales Velocity: Units per Store per Week.
+	measure 'LY U/S/W - Weekly' = EXTERNALMEASURE("LY U/S/W - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: Last Year Metrics
+		lineageTag: e1084286-2d19-4cd4-9dcd-8e062f8774ba
+		sourceLineageTag: 5d56abaf-2a1c-4524-bcb7-01be3a231b21
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff $ Sales YoY - Weekly' = EXTERNALMEASURE("# Diff $ Sales YoY - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 101c9493-a1e7-4d2f-9e04-9aeaed620dd6
+		sourceLineageTag: 3ef2e860-1f09-40d4-9d08-98d5fd48c246
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Unit Sales YoY - Weekly' = EXTERNALMEASURE("# Diff Unit Sales YoY - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 8db457c1-83e2-4015-8a84-10109d039d4d
+		sourceLineageTag: 7947e319-9346-4496-a095-3576b8b62eef
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff $/S/W YoY - Weekly' = EXTERNALMEASURE("# Diff $/S/W YoY - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: b33f671c-f508-48c9-a0e9-e7cf5e39b94d
+		sourceLineageTag: 6c7df8c6-6830-4918-8df8-4087f6f0735d
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff U/S/W YoY - Weekly' = EXTERNALMEASURE("# Diff U/S/W YoY - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 261ffbf3-5e5c-4052-b21d-7c75adcb914a
+		sourceLineageTag: 9d2fc2ed-d399-4488-a768-7a45bea5462f
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Avg Wkly $ Sales YoY - Weekly' = EXTERNALMEASURE("# Diff Avg Wkly $ Sales YoY - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0;$(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: b6595fb8-3097-4421-808b-dd90d3181a83
+		sourceLineageTag: 1b31a03e-270a-433a-a490-4b0b9dbb5f32
+		dataCategory: Uncategorized
+
+	/// Year-over-year absolute difference: 
+	/// Absolute difference between This Year and Last Year metric.
+	measure '# Diff Avg Wkly Unit Sales YoY - Weekly' = EXTERNALMEASURE("# Diff Avg Wkly Unit Sales YoY - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 30ca8067-a205-4d9d-851b-27963b056ef3
+		sourceLineageTag: 8e6e4173-a199-4f88-afef-de5633c1cc93
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly $ Sales YoY - Weekly' = EXTERNALMEASURE("% Chg Avg Wkly $ Sales YoY - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 38a37eda-7bc8-4b73-9c9a-58bc072637e4
+		sourceLineageTag: beef1ab7-f27f-450f-8724-486d0253a4e9
+		dataCategory: Uncategorized
+
+	/// Year-over-year percentage change: the percentage difference between This Year and Last Year's metric.
+	measure '% Chg Avg Wkly Unit Sales YoY - Weekly' = EXTERNALMEASURE("% Chg Avg Wkly Unit Sales YoY - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: Year over Year (YoY) Metrics
+		lineageTag: 43f3be67-ba41-4f60-8843-2f62914dc78a
+		sourceLineageTag: 0e6cb5c2-3dc4-437e-9efd-71dae017336a
+		dataCategory: Uncategorized
+
+	/// Dollar Share
+	measure '$ Share - Weekly' = EXTERNALMEASURE("$ Share - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		displayFolder: This Year Metrics
+		lineageTag: 51863c64-a1fe-4386-8f3f-ac5a5bfb1f07
+		sourceLineageTag: 286e3825-81fc-44ea-ac49-b5a8740f6c3c
+		dataCategory: Uncategorized
+
+	/// Unit Share.
+	measure 'Unit Share - Weekly' = EXTERNALMEASURE("Unit Share - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0
+		displayFolder: This Year Metrics
+		lineageTag: c6de1502-4e7f-4f93-af42-f3e4ccb5364c
+		sourceLineageTag: b841d438-abb8-470a-8aa7-6ee51fb8a9ce
+		dataCategory: Uncategorized
+
+	measure 'TY C/S/W - Weekly' = EXTERNALMEASURE("TY C/S/W - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0.0;(#,##0.0)
+		displayFolder: This Year Metrics
+		lineageTag: d4fdce0c-1452-4868-a36f-2017b439286b
+		sourceLineageTag: 2703b0bd-d37d-4951-9863-ccbd6356123b
+		dataCategory: Uncategorized
+
+	measure 'LY C/S/W - Weekly' = EXTERNALMEASURE("LY C/S/W - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0.0;(#,##0.0)
+		displayFolder: Last Year Metrics
+		lineageTag: d2505192-7730-4813-b733-11e0096012b0
+		sourceLineageTag: 1b10eb4d-dad9-4ef1-aa58-f7b0cc78494f
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Sales Amount.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY $ Sales - Weekly' = EXTERNALMEASURE("Weekend TY $ Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0
+		displayFolder: Weekend Metrics
+		lineageTag: 47c54e28-2afc-4f0b-815c-04b8217f9753
+		sourceLineageTag: 894125cc-861f-405b-ae57-e352d908e384
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Sales Units.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Unit Sales - Weekly' = EXTERNALMEASURE("Weekend TY Unit Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0.0
+		displayFolder: Weekend Metrics
+		lineageTag: 6c2a6a18-7c35-4f5b-8424-e703287dc29b
+		sourceLineageTag: 75fc73e0-b248-4dbc-bf18-d7ccd3388351
+		dataCategory: Uncategorized
+
+	/// This Year Weekend $ Sales Velocity: $ per Store per Week.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY $/S/W - Weekly' = EXTERNALMEASURE("Weekend TY $/S/W - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: $#,##0.0;$(#,##0.0)
+		displayFolder: Weekend Metrics
+		lineageTag: e4f011a8-1d66-4b00-85da-6a55dd7ec2b0
+		sourceLineageTag: 4c0cd6ca-4cf4-49df-aaf1-17ea6460b207
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Unit Sales Velocity: Units per Store per Week.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY U/S/W - Weekly' = EXTERNALMEASURE("Weekend TY U/S/W - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0.0
+		displayFolder: Weekend Metrics
+		lineageTag: 5ffcb7ed-64e8-4410-b97a-69eb80661f4a
+		sourceLineageTag: be94087b-59b1-4385-b9e8-66dc5025d924
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Average Weekly Sales Units.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Avg Wkly Unit Sales - Weekly' = EXTERNALMEASURE("Weekend TY Avg Wkly Unit Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: Weekend Metrics
+		lineageTag: 1ad1718e-d801-4061-8169-24c8aa4cefc2
+		sourceLineageTag: 6939c1bf-e3ee-4fd4-a3e9-9b0da925d69b
+		dataCategory: Uncategorized
+
+	measure 'Measure 2' = BLANK()
+		formatString: 0
+		displayFolder: Last Year Metrics
+		lineageTag: a53e7ab4-34a8-4a12-afec-0595bd4222eb
+
+		changedProperty = DisplayFolder
+
+	measure 'LY Stores Selling - Weekly' = EXTERNALMEASURE("LY Stores Selling - Weekly", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: Last Year Metrics
+		lineageTag: 30ef63f6-a39f-4a91-ae72-27b6391b1c87
+		sourceLineageTag: c926d6e8-cf93-4e57-8f76-028fd29eb90b
+		dataCategory: Uncategorized
+
+	measure 'TY Stores Selling - Weekly' = EXTERNALMEASURE("TY Stores Selling - Weekly", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: This Year Metrics
+		lineageTag: 66b11a07-aaca-462d-ac3b-d5e07e83d6a6
+		sourceLineageTag: 530c4a2e-93d8-4ca0-8512-36bc531f943b
+		dataCategory: Uncategorized
+
+	/// This Year Weekend Average Weekly $ Sales.
+	/// Weekends only sales: Friday - Sunday.
+	measure 'Weekend TY Avg Wkly $ Sales - Weekly' = EXTERNALMEASURE("Weekend TY Avg Wkly $ Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: Weekend Metrics
+		lineageTag: 65f4e45a-437d-4087-ae4d-578d0c12d28d
+		sourceLineageTag: 54b5e321-5811-4ec8-9827-060117049dd9
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition '01. Metrics - Store Sales Weekly' = entity
+		mode: directQuery
+		source
+			entityName: 01. Metrics - Store Sales Weekly
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

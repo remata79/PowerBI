@@ -1,0 +1,22 @@
+table 'WM Master - In Modular'
+	lineageTag: a10e3282-56b1-48f7-8bb0-3b53125923c2
+	sourceLineageTag: b1cd34b2-0b9a-4bf5-b862-0fec2b2871ad
+
+	/// In Modular Flag indicating the UPC is included in the store planogram for the week
+	column IN_Modular
+		dataType: string
+		isNullable: false
+		lineageTag: 65aa22aa-9c83-4f90-9fc9-9f12b0c5f1ed
+		sourceLineageTag: bb9f0539-1f24-4228-8761-f3ce01895d53
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: IN_Modular
+
+		annotation SummarizationSetBy = User
+
+	partition 'WM Master - In Modular' = entity
+		mode: directQuery
+		source
+			entityName: WM Master - In Modular
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

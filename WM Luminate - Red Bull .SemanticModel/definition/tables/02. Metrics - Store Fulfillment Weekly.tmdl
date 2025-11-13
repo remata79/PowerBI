@@ -1,0 +1,271 @@
+/// Provides information about all scheduled store fulfillment orders at Walmart item, store and week level.
+/// All metrics are aggregated at Walmart Week Level.
+/// 
+/// Recommend usage along with:
+/// - WM Master: Calendar Week
+/// - WM Master: Store
+/// - WM Master: UPC
+/// - WM Master: Mod Trait
+/// 
+/// Source: WM_STORE_FULFILMENT_WEEK_VIEW.
+table '02. Metrics - Store Fulfillment Weekly'
+	lineageTag: f48aa543-f22b-43bf-a097-58cdb083fa6b
+	sourceLineageTag: ea04111c-aacf-469a-9cb9-effc275f241f
+
+	measure 'TY Nil Pick Denominator - Weekly' = EXTERNALMEASURE("TY Nil Pick Denominator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: a2c5fc9c-e0e4-4457-8604-92b8c716e6c2
+		sourceLineageTag: ee3e496d-ca2f-4965-812f-0c05af245ae5
+		dataCategory: Uncategorized
+
+	/// This Year First Time Pick Rate Numerator
+	measure 'TY FTPR Numerator - Weekly' = EXTERNALMEASURE("TY FTPR Numerator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: a790b361-d5c7-426b-a128-e545853c0319
+		sourceLineageTag: 37a11989-dafe-496f-88e8-cefb200d1bee
+		dataCategory: Uncategorized
+
+	/// This Year First Time Pick Rate Denominator
+	measure 'TY FTPR Denominator - Weekly' = EXTERNALMEASURE("TY FTPR Denominator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: b8896b23-e4e2-4de2-b179-7e67030c2aec
+		sourceLineageTag: 64b93aff-55b3-4cce-a7d1-3b6f26533614
+		dataCategory: Uncategorized
+
+	measure 'LY Nil Pick Qty - Weekly' = EXTERNALMEASURE("LY Nil Pick Qty - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: LY Metrics
+		lineageTag: 4eafd339-6a61-4b64-a2b2-6e9baedd9b87
+		sourceLineageTag: 24d0006b-689e-4276-bc1a-d57946c9f4ea
+		dataCategory: Uncategorized
+
+	measure 'LY Nil Pick Denominator - Weekly' = EXTERNALMEASURE("LY Nil Pick Denominator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: LY Metrics
+		lineageTag: 5448a87b-2d08-4dcf-b471-6354b21c259d
+		sourceLineageTag: c67be453-5cb7-467e-854c-7f9f07c779db
+		dataCategory: Uncategorized
+
+	measure 'LY Nil Pick Rate - Weekly' = EXTERNALMEASURE("LY Nil Pick Rate - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: LY Metrics
+		lineageTag: 0b21d22f-7d67-4c67-b814-24fffb1fb9f0
+		sourceLineageTag: 2a17fadc-f0e6-404b-a148-726c8269ec08
+		dataCategory: Uncategorized
+
+	measure 'LY FTPR Numerator - Weekly' = EXTERNALMEASURE("LY FTPR Numerator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: LY Metrics
+		lineageTag: 32557dc8-37db-44b9-8990-5e5f53934790
+		sourceLineageTag: a1ff1d3c-f2e0-4ff8-9d48-db47418efd22
+		dataCategory: Uncategorized
+
+	measure 'LY FTPR Denominator - Weekly' = EXTERNALMEASURE("LY FTPR Denominator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: LY Metrics
+		lineageTag: ab92ac01-1895-4b2e-97a1-d9b7059447b1
+		sourceLineageTag: 2e654044-5102-4c57-bcb1-2c4c099daa26
+		dataCategory: Uncategorized
+
+	/// Last Year First Time Pick Rate:
+	/// The percentage of items that were picked in the first pick-walk for store fulfilled orders.
+	measure 'LY FTPR - Weekly' = EXTERNALMEASURE("LY FTPR - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: +0.0%;(0.0%)
+		displayFolder: LY Metrics
+		lineageTag: 8006a272-6add-4629-86b7-63143bcca9d2
+		sourceLineageTag: 5f882ccb-6464-4841-9e50-20a1d6fd3f6f
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
+	measure 'TY Nil Pick Rate - Weekly' = EXTERNALMEASURE("TY Nil Pick Rate - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: This Year Metrics
+		lineageTag: e728492f-02a1-4ef9-9fc0-db9a604b4def
+		sourceLineageTag: fc3f9ede-10f1-4d37-adc5-a7cfcfa872ed
+		dataCategory: Uncategorized
+
+	/// This Year First Time Pick Rate:
+	/// The percentage of items that were picked in the first pick-walk for store fulfilled orders.
+	measure 'TY FTPR - Weekly' = EXTERNALMEASURE("TY FTPR - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: This Year Metrics
+		lineageTag: 0d304624-f93a-4446-98a6-125d7a5bcf37
+		sourceLineageTag: 6550791f-229e-4e8c-817f-7e1c51ff6593
+		dataCategory: Uncategorized
+
+	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
+	measure 'TY Nil Pick Qty - Weekly' = EXTERNALMEASURE("TY Nil Pick Qty - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: 477b27a8-2c42-48da-9824-c5b4ba835fbf
+		sourceLineageTag: d006678b-c50f-4966-b672-a879bd50a12c
+		dataCategory: Uncategorized
+
+	measure 'TY Nil Pick Numerator - Weekly' = EXTERNALMEASURE("TY Nil Pick Numerator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 9782f98e-7571-49f7-b042-17a7541c551d
+		sourceLineageTag: 990331a6-80aa-4ab7-a2c4-046e5c60c862
+		dataCategory: Uncategorized
+
+	measure 'TY PreSub Numerator - Weekly' = EXTERNALMEASURE("TY PreSub Numerator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 9a134030-b569-4e63-8385-96ca62e6671a
+		sourceLineageTag: 536c7b43-0f95-4e84-8658-64bbee63cac9
+		dataCategory: Uncategorized
+
+	measure 'TY PreSub Denominator - Weekly' = EXTERNALMEASURE("TY PreSub Denominator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 85df2bfd-b383-43bf-af51-157e0ebd67c8
+		sourceLineageTag: d8b3d66a-4e25-4d78-bfe0-0a49c85041c1
+		dataCategory: Uncategorized
+
+	measure 'TY PreSub Rate - Weekly' = EXTERNALMEASURE("TY PreSub Rate - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: This Year Metrics
+		lineageTag: ece283c1-dea5-4861-b142-9177c8fd5800
+		sourceLineageTag: 7f8d1be5-6974-4ae3-9daf-519d43515433
+		dataCategory: Uncategorized
+
+	measure 'TY PostSub Numerator - Weekly' = EXTERNALMEASURE("TY PostSub Numerator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: 6d0c2d0d-59d8-48eb-9eb7-2932f2d609bc
+		sourceLineageTag: 46848270-2e35-460b-9f63-31cd252e4a42
+		dataCategory: Uncategorized
+
+	measure 'TY PostSub Denominator - Weekly' = EXTERNALMEASURE("TY PostSub Denominator - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,##0;(#,##0)
+		displayFolder: This Year Metrics
+		lineageTag: ff4d5064-6548-4877-80a2-ab195851a3d2
+		sourceLineageTag: db11f48b-83ab-4081-854c-215a5ca0d632
+		dataCategory: Uncategorized
+
+	measure 'TY PostSub Rate - Weekly' = EXTERNALMEASURE("TY PostSub Rate - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: This Year Metrics
+		lineageTag: e9c7fe71-5ce0-4aaf-8c0f-71cc2847de08
+		sourceLineageTag: 6f962849-ee09-4f5f-aff8-d4a5260fd705
+		dataCategory: Uncategorized
+
+	/// Total UPC Capacity considering all Main Placements and Mod Racks assigned to the Store.
+	measure 'Total Capacity - Weekly' = EXTERNALMEASURE("Total Capacity - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: This Year Metrics
+		lineageTag: b39bda1c-c48f-425d-b1cd-9b20cece75f6
+		sourceLineageTag: 2759bedb-bc2d-4cbf-96c5-ce670aa7df95
+		dataCategory: Uncategorized
+
+	/// Days of Supply (DOS): 
+	/// Store UPC Capacity / (Avg Weekly Units / 7)
+	measure 'DOS - Weekly' = EXTERNALMEASURE("DOS - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: This Year Metrics
+		lineageTag: f255190e-a1f8-43c9-acfd-15813da89a80
+		sourceLineageTag: 7d763953-2e1a-4c5b-b27d-f0d2008d66ac
+		dataCategory: Uncategorized
+
+	/// This Year In Stock Rate: 
+	/// Average weekly percentage of UPCs with stock on a store. 
+	/// This metric considers only In Modular (Store Planogram) UPCs. 
+	measure 'TY In Stock Rate - Weekly' = EXTERNALMEASURE("TY In Stock Rate - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: This Year Metrics
+		lineageTag: 23dd0f90-271f-4915-a84f-f73ca6921a47
+		sourceLineageTag: 6ac57b9d-671d-4041-a9f5-54fe1bf680c7
+		dataCategory: Uncategorized
+
+	measure 'TY Total PODs - Weekly' = EXTERNALMEASURE("TY Total PODs - Weekly", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: b6c711ce-985d-4103-a2e4-bc18d9f668dd
+		sourceLineageTag: e12cf453-8796-47ef-8e91-97ad7505dba0
+		dataCategory: Uncategorized
+
+	/// Sum of # Out of Stock Store UPC combination:
+	/// 1 - Out of Stock
+	/// 0 - No, there is stock
+	measure '# Out of Stock - Store UPC Weekly' = EXTERNALMEASURE("# Out of Stock - Store UPC Weekly", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: 909b4e90-b4d4-4eee-9593-f5e582d63050
+		sourceLineageTag: c0ce2e97-317d-4f52-a3be-c6ef592e948a
+		dataCategory: Uncategorized
+
+	measure 'TY Total PODs - Store UPC Weekly' = EXTERNALMEASURE("TY Total PODs - Store UPC Weekly", INTEGER, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0
+		displayFolder: This Year Metrics
+		lineageTag: eb4836dd-4d74-4e19-bebc-a420553a48f0
+		sourceLineageTag: f55fcdf4-7a24-42f5-87a3-9da33402b8ab
+		dataCategory: Uncategorized
+
+	/// UPC Capacity on a Store Main Placement.
+	/// Calculated at Store, Trait and UPC level.
+	measure 'Main Placement Capacity - Weekly' = EXTERNALMEASURE("Main Placement Capacity - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: This Year Metrics
+		lineageTag: 9160a60c-6179-4e96-ba43-ae9c9737d56e
+		sourceLineageTag: 3f92323c-a40a-4c24-bb73-210553d5762e
+		dataCategory: Uncategorized
+
+	/// UPC Capacity on a Store Mod Rack.
+	/// Calculated at Store, Trait and UPC level.
+	measure 'Mod Rack Capacity - Weekly' = EXTERNALMEASURE("Mod Rack Capacity - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: 0
+		displayFolder: This Year Metrics
+		lineageTag: f212621c-40b4-4175-9096-e96f8e0ded9f
+		sourceLineageTag: 79465cde-db30-4a36-ad05-fc9daa1bb811
+		dataCategory: Uncategorized
+
+	/// Weekend Days of Supply (DOS): 
+	/// Store UPC Capacity / (Weekend Avg Weekly Units / 3)
+	/// Weekend days: Friday - Sunday
+	measure 'Weekend DOS - Weekly' = EXTERNALMEASURE("Weekend DOS - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		formatString: #,0.0
+		displayFolder: This Year Metrics
+		lineageTag: 14a1a35f-7cca-477b-8e0f-dfb4eb6f4a3c
+		sourceLineageTag: 82f09d63-e17d-413b-9713-2f7ca68393c7
+		dataCategory: Uncategorized
+
+	measure 'LY Nil Pick Lost $ Sales - Weekly' = EXTERNALMEASURE("LY Nil Pick Lost $ Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: LY Metrics
+		lineageTag: a56a366b-f9c3-4ff7-a235-d323adf7af54
+		sourceLineageTag: 247900fd-bad6-4468-bdab-d21a690ee261
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TY Nil Pick Lost $ Sales - Weekly' = EXTERNALMEASURE("TY Nil Pick Lost $ Sales - Weekly", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: This Year Metrics
+		lineageTag: 04b46c5e-dd02-4789-944e-334b6894c8d3
+		sourceLineageTag: 93f39090-6c4d-4325-8f32-d2cbfad16d50
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TY Avg Inventory' = EXTERNALMEASURE("TY Avg Inventory", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: This Year Metrics
+		lineageTag: 5f74862c-076f-4ce8-bfe8-8e432ee20f84
+		sourceLineageTag: 8bc712f8-582c-4eab-99d2-dfa8727f3a50
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TY Inventory Start of Week' = EXTERNALMEASURE("TY Inventory Start of Week", DOUBLE, "DirectQuery to AS - WM Luminate - Red Bull - Semantic Model")
+		displayFolder: This Year Metrics
+		lineageTag: faf4c31f-7c47-4aa2-9a7b-a9b47ff99d7c
+		sourceLineageTag: 3d16b8a6-bdc6-480b-80cb-5fc9e0a56b8b
+		dataCategory: Uncategorized
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition '02. Metrics - Store Fulfillment Weekly' = entity
+		mode: directQuery
+		source
+			entityName: 02. Metrics - Store Fulfillment Weekly
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

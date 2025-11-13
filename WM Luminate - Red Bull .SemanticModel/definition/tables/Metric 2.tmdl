@@ -1,0 +1,57 @@
+table 'Metric 2'
+	isHidden
+	lineageTag: 83844290-853d-4e47-8d0b-67bfcc2e01a2
+
+	column Measure
+		dataType: string
+		isHidden
+		lineageTag: c4f25d29-2f55-434b-88eb-fa7e0b992434
+		summarizeBy: none
+		sourceColumn: Measure
+		sortByColumn: ID
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d335d0a0-e2c7-430e-89e0-deeec83a01db
+		summarizeBy: none
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Format
+		dataType: string
+		isHidden
+		lineageTag: f670732b-fb14-4ffa-8298-7413a278e1eb
+		summarizeBy: none
+		sourceColumn: Format
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Metric 2' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("hZBPC4JAEMW/yrApFAj+qbTwKkGXkjQ6qAeRTYa2FXQL+vatqbUV1GEYZt9v9j0mSYgGUc5oQwxiyUpTbWRY/rjrE7/rJDMSsucoWsyWNbyFNRZUzs7vVc2MzINEpn8cemymOESUMeQlRKKqHyldRVzzK+VSuME+vViW47WApwArrBsBMZ4phFicYJeLNq49VRgdqiPElcgZvG5h9xn0T+R5hbkKBFhi90FIORV1LrDiLeWq1DYMvglPJTbI3oMulKCD+LBfDkJ2Bw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Measure = _t, ID = _t, Format = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Measure", type text}, {"ID", Int64.Type}, {"Format", type text}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Changed Type",{"ID", "Measure", "Format"})
+				in
+				    #"Reordered Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

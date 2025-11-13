@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "de557380912a419a66eb",
+  "position": {
+    "x": 16,
+    "y": 311,
+    "z": 28000,
+    "height": 151,
+    "width": 286,
+    "tabOrder": 27000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "02. Metrics - Store Fulfillment Weekly"
+                    }
+                  },
+                  "Property": "TY In Stock Rate - Weekly"
+                }
+              },
+              "queryRef": "Metrics - Fulfillment Weekly.TY In Stock Rate - Weekly",
+              "nativeQueryRef": "AVG In Stock Rate",
+              "displayName": "AVG In Stock Rate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "02. Metrics - Store Fulfillment Weekly"
+                  }
+                },
+                "Property": "TY In Stock Rate - Weekly"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

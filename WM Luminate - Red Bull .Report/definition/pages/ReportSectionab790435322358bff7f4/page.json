@@ -1,0 +1,374 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "ReportSectionab790435322358bff7f4",
+  "displayName": "Item Detail - Red Bull",
+  "displayOption": "FitToWidth",
+  "height": 1080,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filtera32acf93a3eed0173fc9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Time Frame"
+              }
+            },
+            "Property": "Period ID"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "WM Master - Time Frame",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "p"
+                              }
+                            },
+                            "Property": "Period ID"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'FYTD2'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "7f02ceecbd43910d718a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - UPC"
+              }
+            },
+            "Property": "CA_BRAND"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "w",
+              "Entity": "WM Master - UPC",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "w"
+                          }
+                        },
+                        "Property": "CA_BRAND"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'RED BULL'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "Pod",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F1EFEF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "417L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "personalizeVisual": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "perspectiveRef": {
+            "expr": {
+              "Literal": {
+                "Value": "'Sales and Fulfillment - TimeFrames'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "2b430238c0baa94c895c",
+      "target": "8ff282f3710b1325eb9b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b430238c0baa94c895c",
+      "target": "707aeba428177fa4ad10",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b430238c0baa94c895c",
+      "target": "dac2e394e51674ed2150",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b430238c0baa94c895c",
+      "target": "f047ef9a6780147a8c90",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b430238c0baa94c895c",
+      "target": "236c880db59d9c070c0b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d78c7bc3097602c310a0",
+      "target": "8ff282f3710b1325eb9b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d78c7bc3097602c310a0",
+      "target": "dac2e394e51674ed2150",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d78c7bc3097602c310a0",
+      "target": "f047ef9a6780147a8c90",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d78c7bc3097602c310a0",
+      "target": "236c880db59d9c070c0b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d78c7bc3097602c310a0",
+      "target": "707aeba428177fa4ad10",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ba4d65c199109c2588d2",
+      "target": "dca29946dd9660daa851",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8ff282f3710b1325eb9b",
+      "target": "dca29946dd9660daa851",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b430238c0baa94c895c",
+      "target": "94a882bd22eb834eca61",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ba4d65c199109c2588d2",
+      "target": "7ba44590396bbb3c440d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ba4d65c199109c2588d2",
+      "target": "94a882bd22eb834eca61",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8ff282f3710b1325eb9b",
+      "target": "94a882bd22eb834eca61",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8ff282f3710b1325eb9b",
+      "target": "7ba44590396bbb3c440d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b430238c0baa94c895c",
+      "target": "7ba44590396bbb3c440d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b430238c0baa94c895c",
+      "target": "09c2ff755b03e9d698c0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8ff282f3710b1325eb9b",
+      "target": "09c2ff755b03e9d698c0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ba4d65c199109c2588d2",
+      "target": "09c2ff755b03e9d698c0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d78c7bc3097602c310a0",
+      "target": "ba4d65c199109c2588d2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ba4d65c199109c2588d2",
+      "target": "bb406df995416b5b0cb0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ba4d65c199109c2588d2",
+      "target": "d78c7bc3097602c310a0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d78c7bc3097602c310a0",
+      "target": "2605d10f6caa96983044",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2b430238c0baa94c895c",
+      "target": "dca29946dd9660daa851",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dca29946dd9660daa851",
+      "target": "bb406df995416b5b0cb0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "dca29946dd9660daa851",
+      "target": "7a9b82ff6075517a70bd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "dca29946dd9660daa851",
+      "target": "c712d0d0a2d720e7d23b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "dca29946dd9660daa851",
+      "target": "94a882bd22eb834eca61",
+      "type": "NoFilter"
+    },
+    {
+      "source": "dca29946dd9660daa851",
+      "target": "7ba44590396bbb3c440d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "dca29946dd9660daa851",
+      "target": "09c2ff755b03e9d698c0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ba4d65c199109c2588d2",
+      "target": "7a9b82ff6075517a70bd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "ba4d65c199109c2588d2",
+      "target": "c712d0d0a2d720e7d23b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8ff282f3710b1325eb9b",
+      "target": "27998d49a05ea9a09a77",
+      "type": "NoFilter"
+    }
+  ]
+}

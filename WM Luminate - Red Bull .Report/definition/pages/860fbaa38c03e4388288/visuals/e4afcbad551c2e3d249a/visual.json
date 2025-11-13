@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "e4afcbad551c2e3d249a",
+  "position": {
+    "x": 1030,
+    "y": 311,
+    "z": 31000,
+    "height": 151,
+    "width": 286,
+    "tabOrder": 30000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "02. Metrics - Store Fulfillment Weekly"
+                    }
+                  },
+                  "Property": "TY Nil Pick Qty - Weekly"
+                }
+              },
+              "queryRef": "Metrics - Fulfillment Weekly.TY Nil Pick Qty - Weekly",
+              "nativeQueryRef": "Nil Pick Qty",
+              "displayName": "Nil Pick Qty"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "02. Metrics - Store Fulfillment Weekly"
+                  }
+                },
+                "Property": "TY Nil Pick Qty - Weekly"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

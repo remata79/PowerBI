@@ -1,0 +1,45 @@
+table 'Measure Selection 2'
+	isHidden
+	lineageTag: dbd6b773-50dd-4291-9556-8ed10871687c
+
+	column Selection
+		dataType: string
+		isHidden
+		lineageTag: ed3563ee-4ea7-4639-8760-828a85434271
+		summarizeBy: none
+		sourceColumn: Selection
+		sortByColumn: 'Selection ID'
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selection ID'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3515c71d-888a-40be-83ae-d57ff5a6305f
+		summarizeBy: none
+		sourceColumn: Selection ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Measure Selection 2' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WColUCEvMKU1V0lEyUIrViVbyQQgYggUcnYIVnDPSgXwjMF8VyjMG85zz80r0FNyL8stLMoCCJkqxsQA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Selection = _t, #"Selection ID" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Selection", type text}, {"Selection ID", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

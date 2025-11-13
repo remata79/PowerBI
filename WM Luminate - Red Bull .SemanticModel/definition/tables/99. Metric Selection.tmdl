@@ -1,0 +1,45 @@
+table '99. Metric Selection'
+	lineageTag: f3e15d95-f002-4e4c-80a8-5e27deb1717c
+
+	column Measure
+		dataType: string
+		lineageTag: 8ea03152-f64e-4f34-8ddd-98a9696d169e
+		summarizeBy: none
+		sourceColumn: Measure
+		sortByColumn: ID
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 75273db4-75fd-47e0-82ee-b318bd06a8ae
+		summarizeBy: none
+		sourceColumn: ID
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '99. Metric Selection' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("ZY7JCsIwFEV/5RHqrtDBOu2L4EaDaXFRuwgllocxgTQK/r1NIkp1ee55w20aEgHjUgwkJilp44bUCq2jzBM12ImRck9RwpLTSPMw+abCExNSouqBWW38uaWPd+oh1Bg9oT7f0zRfObXyaotmsFDhTQDF7gpHbt2rLFyfgb5ApS2X8K2YFb/uU3fhTYk9hhUqlLCGW9TK6dDmQMt/FdrsUU5rrCex/7EhbfsC", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Measure = _t, ID = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Measure", type text}, {"ID", Int64.Type}}),
+				    #"Sorted Rows" = Table.Sort(#"Changed Type",{{"ID", Order.Ascending}})
+				in
+				    #"Sorted Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

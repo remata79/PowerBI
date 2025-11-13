@@ -1,0 +1,221 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "9b43fb801cb6805e1b87",
+  "displayName": "Weekly Trait - Red Bull",
+  "displayOption": "FitToWidth",
+  "height": 1550,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4d7f500c6f70fa884856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - Store"
+              }
+            },
+            "Property": "STORE_NBR"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "7ad2b05eb928ed101b09",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "WM Master - UPC"
+              }
+            },
+            "Property": "CA_BRAND"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "w",
+              "Entity": "WM Master - UPC",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "w"
+                          }
+                        },
+                        "Property": "CA_BRAND"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'RED BULL'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "f960d31004d4d97a13b7",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F1EFEF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "417L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "personalizeVisual": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "perspectiveRef": {
+            "expr": {
+              "Literal": {
+                "Value": "'Red Bull Pre Post Comparison'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "c63d03e51eb3a9e640e8",
+      "target": "43dfb8402950b20a75d9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "af6b9773141cc320c0cd",
+      "target": "43dfb8402950b20a75d9",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c63d03e51eb3a9e640e8",
+      "target": "5a542f47d154aa1d7e7b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c63d03e51eb3a9e640e8",
+      "target": "0f5454f49acc6ad9ebbd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c63d03e51eb3a9e640e8",
+      "target": "ccdf1a7b707a85a7251e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "af6b9773141cc320c0cd",
+      "target": "8b4d4aaba604c60093b1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c63d03e51eb3a9e640e8",
+      "target": "d045f4f6770d0b679a26",
+      "type": "DataFilter"
+    },
+    {
+      "source": "d045f4f6770d0b679a26",
+      "target": "3647fe0f19a5a714807d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d045f4f6770d0b679a26",
+      "target": "f1ca89f00081a9d0c654",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d045f4f6770d0b679a26",
+      "target": "9eb4864f8e0a98b0c58b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d045f4f6770d0b679a26",
+      "target": "5a542f47d154aa1d7e7b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d045f4f6770d0b679a26",
+      "target": "0f5454f49acc6ad9ebbd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d045f4f6770d0b679a26",
+      "target": "ccdf1a7b707a85a7251e",
+      "type": "NoFilter"
+    }
+  ]
+}

@@ -1,0 +1,338 @@
+table '99. Titles'
+	isHidden
+	lineageTag: 43333262-8fed-4d17-ac69-62ba8dfbea39
+
+	measure 'Summary KPI Title' = ```
+			
+			IF(ISFILTERED('WM Master - Store'[ST_PROV_NM]), 
+			    CONCATENATE( SELECTEDVALUE('WM Master - Time Frame'[Time Frame]), CONCATENATE(" - ", [Selected State])),
+			    SELECTEDVALUE('WM Master - Time Frame'[Time Frame])
+			)
+			```
+		isHidden
+		lineageTag: e6bf246f-a32d-40ec-822f-ad03f1458878
+
+		changedProperty = IsHidden
+
+	measure 'Summary Map Title' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Time Frame]), CONCATENATE(" | ", CONCATENATE(SELECTEDVALUE('99. Metric Selection'[Measure]), " % Change vs LY by State")))
+		isHidden
+		lineageTag: b3721d70-c12c-46b5-9f8d-e49d47737033
+
+		changedProperty = IsHidden
+
+	measure 'Selected State' = SELECTEDVALUE('WM Master - Store'[ST_PROV_NM])
+		isHidden
+		lineageTag: 448a3a68-6d6d-44ab-8ab0-631c32cf46bf
+
+		changedProperty = IsHidden
+
+	measure 'Summary Weekly Title' = ```
+			
+			IF(ISFILTERED('WM Master - Store'[ST_PROV_NM]), 
+			    CONCATENATE(SELECTEDVALUE('99. Metric Selection'[Measure]), CONCATENATE(" by Week - ", [Selected State])),
+			    CONCATENATE(SELECTEDVALUE('99. Metric Selection'[Measure]), " by Week")
+			)
+			```
+		isHidden
+		lineageTag: 0c75d59e-13ae-4a60-9e90-3061d8480e58
+
+		changedProperty = IsHidden
+
+	measure 'Summary Channel Title' = ```
+			
+			IF(ISFILTERED('WM Master - Store'[ST_PROV_NM]), 
+			    CONCATENATE("Channel - ", [Selected State]),
+			    "Channel"
+			)
+			```
+		isHidden
+		lineageTag: f483d0c0-a0c0-42e2-82b1-d87071ba679b
+
+		changedProperty = IsHidden
+
+	measure 'Summary Store Format Title' = ```
+			
+			IF(ISFILTERED('WM Master - Store'[ST_PROV_NM]), 
+			    CONCATENATE("Store Format - ", [Selected State]),
+			    "Store Format"
+			)
+			```
+		isHidden
+		lineageTag: 24db5ae5-bdf1-4e7f-83f0-02f8c8b56794
+
+		changedProperty = IsHidden
+
+	measure 'Summary Sugar Content Title' = ```
+			
+			IF(ISFILTERED('WM Master - Store'[ST_PROV_NM]), 
+			    CONCATENATE("Sugar Content - ", [Selected State]),
+			    "Sugar Content"
+			)
+			```
+		isHidden
+		lineageTag: 41ca3bfb-48c5-48ec-80e8-fe312b4f5511
+
+		changedProperty = IsHidden
+
+	measure 'Summary Pack Type Title' = ```
+			
+			IF(ISFILTERED('WM Master - Store'[ST_PROV_NM]), 
+			    CONCATENATE("Pack Type - ", [Selected State]),
+			    "Pack Type"
+			)
+			```
+		isHidden
+		lineageTag: 71117f07-f36a-4621-99ae-bccdab373f84
+
+		changedProperty = IsHidden
+
+	measure 'Summary TOP Brands Title' = ```
+			
+			IF(ISFILTERED('WM Master - Store'[ST_PROV_NM]), 
+			    CONCATENATE("Brands - ", [Selected State]),
+			    "Brands"
+			)
+			```
+		isHidden
+		lineageTag: 17eeae64-ecf3-4936-9bf4-3e390a21fbd2
+
+		changedProperty = IsHidden
+
+	measure 'Summary TOP 10 MP Title' = ```
+			
+			IF(ISFILTERED('WM Master - Store'[ST_PROV_NM]), 
+			    CONCATENATE("TOP 10 Multipack Items by L13W $'s - ", [Selected State]),
+			    "TOP 10 Multipack Items by L13W $'s"
+			)
+			```
+		isHidden
+		lineageTag: f1c920fa-0649-49bd-868f-39b253e3a900
+
+		changedProperty = IsHidden
+
+	measure 'Summary TOP 10 Singles Title' = ```
+			
+			IF(ISFILTERED('WM Master - Store'[ST_PROV_NM]), 
+			    CONCATENATE("TOP 10 Singles Items by L13W $'s - ", [Selected State]),
+			    "TOP 10 Singles Items by L13W $'s"
+			)
+			```
+		isHidden
+		lineageTag: efd5ebd7-125a-4746-8f10-1b2f756bb4bd
+
+		changedProperty = IsHidden
+
+	measure 'Digital YoY $ Sales' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Period ID]), CONCATENATE(" | ", " YoY $ Sales"))
+		isHidden
+		lineageTag: a2e849f4-2c7b-4cf0-afa8-4d5d42195098
+
+		changedProperty = IsHidden
+
+	measure 'Digital YoY % of Total Sales' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Period ID]), CONCATENATE(" | ", " YoY % of Total Sales"))
+		isHidden
+		lineageTag: 87219065-ee58-4110-9259-1ebbd1f7c4e4
+
+		changedProperty = IsHidden
+
+	measure 'Digital TOP Singles Modular Opportunities in Nil Pick' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Period ID]), CONCATENATE(" | ", " TOP 10 Singles UPCs by Nil Pick Lost Sales"))
+		isHidden
+		lineageTag: cf0b121e-bb34-4931-92ee-8dc196f35675
+
+		changedProperty = IsHidden
+
+	measure 'OPD Metrics' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Period ID]), CONCATENATE(" | ", " OPD Metrics"))
+		isHidden
+		lineageTag: 24e8f8dc-c7d8-4493-a4cf-2c5d966da78d
+
+		changedProperty = IsHidden
+
+	measure 'OPD Metrics by Pack Type' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Period ID]), CONCATENATE(" | ", " OPD Metrics by Pack Type"))
+		isHidden
+		lineageTag: 36414b73-bfa0-4cd2-965d-f3c5fdf51bbd
+
+		changedProperty = IsHidden
+
+	measure 'Summary WE' = ```
+			"Week Ending: " & FORMAT(MAX(WM_CATEGORY_INFO[LW_END_DATE]), "MMM dd, yyyy") &
+			"
+			As On: " & FORMAT(MAX('WM_CATEGORY_INFO'[LAST_UPDATED_DATE]), "MMM dd, yyyy")
+			
+			```
+		isHidden
+		lineageTag: f0f29c0b-4fa9-4ab7-af90-466714242427
+
+		changedProperty = IsHidden
+
+	measure Measure
+		isHidden
+		lineageTag: 8fc3bae3-060f-4505-b48d-5d614069686d
+
+		changedProperty = IsHidden
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'OPD Penetration by Pack' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Period ID]), CONCATENATE(" | ", " OPD Penetration by Pack"))
+		isHidden
+		lineageTag: f31132b8-624c-4955-a332-6147961bf156
+
+		changedProperty = IsHidden
+
+	measure 'OPD Metrics by Pack' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Period ID]), CONCATENATE(" | ", " OPD Metrics by Pack"))
+		isHidden
+		lineageTag: 123fcd10-b1aa-43f4-b482-5d6981a94352
+
+		changedProperty = IsHidden
+
+	measure 'Digital TOP MP Modular Opportunities in Nil Pick' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Period ID]), CONCATENATE(" | ", " TOP 10 MP UPCs by Nil Pick Lost Sales"))
+		isHidden
+		lineageTag: 234de377-0843-41ea-91f2-75bd4a660b5a
+
+		changedProperty = IsHidden
+
+	measure 'Digital TOP Opportunities in Nil Pick' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Period ID]), CONCATENATE(" | ", " TOP 10 UPCs by Nil Pick Lost Sales"))
+		isHidden
+		lineageTag: 8e74860e-2dea-47f7-87ee-fd2957f1a203
+
+		changedProperty = IsHidden
+
+	measure 'Item Store Sales' =
+			
+			CONCATENATE(SELECTEDVALUE('WM Master - Time Frame'[Period ID]), CONCATENATE(" | ", CONCATENATE(SELECTEDVALUE('99. Metric Selection'[Measure]), " by Store")))
+		isHidden
+		lineageTag: 4c5f1d08-f1b4-4375-8346-7784c6b3356f
+
+		changedProperty = IsHidden
+
+	measure 'Item Weekly Sales' =
+			
+			CONCATENATE(SELECTEDVALUE('99. Metric Selection'[Measure]), " by Week")
+		isHidden
+		lineageTag: 7974453a-38e7-4612-bae1-428fcf0e5a1d
+
+		changedProperty = IsHidden
+
+	measure 'Mobile Summary OZ' = ```
+			
+			IF(ISFILTERED('WM Master - Item'[CA_PACK_SIZE]), 
+			    CONCATENATE("OZ per Can - ", SELECTEDVALUE('WM Master - Item'[CA_PACK_SIZE])),
+			    IF(ISFILTERED('WM Master - Item'[CA_PACK_TYPE]), 
+			        CONCATENATE("OZ per Can - ", SELECTEDVALUE('WM Master - Item'[CA_PACK_TYPE])),
+			        "OZ per Can")
+			)
+			
+			```
+		isHidden
+		lineageTag: cb6c856d-4edc-446d-a301-1204afbafdcc
+
+		changedProperty = IsHidden
+
+	measure 'Measure 3'
+		isHidden
+		lineageTag: 1b38b875-2f2a-49b7-8d99-5c87da84852c
+
+		changedProperty = IsHidden
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'Mobile Summary Pack Size' = ```
+			
+			IF(ISFILTERED('WM Master - Item'[CA_OZ_PER_CAN]), 
+			    CONCATENATE("Pack Size - ", SELECTEDVALUE('WM Master - Item'[CA_OZ_PER_CAN])),
+			    "Pack Size"
+			)
+			
+			```
+		isHidden
+		lineageTag: 2878ec22-c624-4c77-9a62-f9b35fa77512
+
+		changedProperty = IsHidden
+
+	measure 'Mobile Summary Pack Type' = ```
+			
+			IF(ISFILTERED('WM Master - Item'[CA_OZ_PER_CAN]), 
+			    CONCATENATE("Pack Type - ", SELECTEDVALUE('WM Master - Item'[CA_OZ_PER_CAN])),
+			    "Pack Type"
+			)
+			
+			```
+		isHidden
+		lineageTag: e449fe2f-b93f-45cd-8ada-51ed064f67f3
+
+		changedProperty = IsHidden
+
+	measure 'Trait Performance Title' = "Trait Performance - " & FORMAT(MIN('WM Master - Calendar'[START_DATE]), "MMM dd, yyyy") & " - " & FORMAT(MAX('WM Master - Calendar'[END_DATE]), "MMM dd, yyyy")
+		isHidden
+		lineageTag: b81d3a63-ba19-4e13-baa8-bc09f271ee72
+
+		changedProperty = IsHidden
+
+	measure 'TF1 Title' = FORMAT(MIN('WM Master - Calendar Week'[WM_START_DATE]), "MMM dd, yy") & " - " & FORMAT(MAX('WM Master - Calendar Week'[WM_END_DATE]), "MMM dd, yy")
+		isHidden
+		lineageTag: ea2e428c-8653-495c-a572-dcd40568543e
+
+		changedProperty = IsHidden
+
+	measure 'TF2 Title' = FORMAT(MIN('WM Master - Calendar Week Pre Relay'[WM_START_DATE]), "MMM dd, yy") & " - " & FORMAT(MAX('WM Master - Calendar Week Pre Relay'[WM_END_DATE]), "MMM dd, yy")
+		isHidden
+		lineageTag: d0a08113-1f3b-4971-953f-c74be6707d57
+
+		changedProperty = IsHidden
+
+	measure 'Traited Item Performance Title' = "Traited Item Performance - " & FORMAT(MIN('WM Master - Calendar'[START_DATE]), "MMM dd, yyyy") & " - " & FORMAT(MAX('WM Master - Calendar'[END_DATE]), "MMM dd, yyyy")
+		isHidden
+		lineageTag: bd84684b-5242-4745-8c78-ca811b6625c4
+
+		changedProperty = IsHidden
+
+	measure 'Summary WE Category' = ```
+			"Latest WM Week: " & MAX(WM_CATEGORY_INFO[CATEGORY_WM_YR_WK_NBR]) &
+			"
+			As On: " & FORMAT(MAX('WM_CATEGORY_INFO'[LAST_UPDATED_DATE]), "MMM dd, yyyy")
+			
+			```
+		isHidden
+		lineageTag: 5379669e-ba12-4a98-8537-8c9f33f1d63f
+
+		changedProperty = IsHidden
+
+	measure Empty = BLANK()
+		formatString: 0
+		isHidden
+		lineageTag: fc33a4f6-d0db-4b08-a292-980437a17819
+
+		changedProperty = IsHidden
+
+	partition '99. Titles' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

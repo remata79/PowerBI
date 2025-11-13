@@ -1,0 +1,51 @@
+table 'Week Periods'
+	isHidden
+	lineageTag: 38c430de-56e9-4f72-96ee-f54e51fb9f89
+
+	column Period_ID
+		isHidden
+		lineageTag: 9bcb0307-6329-4afe-a72b-169353bfb3ce
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Period_ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		isHidden
+		lineageTag: fdc16aa3-6f80-4450-b521-254350e67232
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Period]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Week Periods' = calculated
+		mode: import
+		source = ```
+				
+				VAR Period1 = (Min('WM Master - Calendar Week'[START_DATE]) & " - " & Max('WM Master - Calendar'[END_DATE]))
+				VAR Period2 = [Period Start TF2]
+				RETURN 
+				UNION(
+				    SELECTCOLUMNS(
+				        FILTER(
+				            ALL('WM Master - Calendar'),
+				            'WM Master - Calendar'[START_DATE] = [Period Start TF2]
+				        ),
+				        "Period_ID", "Period 1",
+				        "Period", [Period Start TF2]
+				    ),
+				    SELECTCOLUMNS(
+				        FILTER(
+				            ALL('WM Master - Calendar Post Relay'),
+				            'WM Master - Calendar Post Relay'[START_DATE] = [Period Start TF2]
+				        ),
+				        "Period_ID", "Period 2",
+				        "Period", [Period Start TF2]
+				    )
+				)
+				```
+
+	annotation PBI_Id = 4d1b490ebe0548d38bb986d111a9c462
+

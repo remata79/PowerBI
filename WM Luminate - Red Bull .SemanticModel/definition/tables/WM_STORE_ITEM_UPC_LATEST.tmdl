@@ -1,0 +1,94 @@
+/// Latest Store UPC Stock measures.
+/// This model only returns the latest available date (Day - 2).
+/// This will consider In Modular (Store Planogram) only records. 
+/// 
+/// Source: WM_STORE_ITEM_UPC_LATEST_VIEW
+table WM_STORE_ITEM_UPC_LATEST
+	isHidden
+	lineageTag: 66ab3ab2-db5f-40bd-a585-39014e81a306
+	sourceLineageTag: 9d1b3dd6-4b90-48fd-b9c2-929a4ed118d8
+
+	/// WM Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e00f19fd-9cf5-45cd-91b5-589a0a503de9
+		sourceLineageTag: ecbc4c83-2332-44c2-b5a1-ee38f24a207b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column TRAIT
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 38009ca2-e21d-4a5a-92b7-7b895fe56b32
+		sourceLineageTag: 8cbdaf68-44f5-4835-9666-bcaa2c91534d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TRAIT
+
+		annotation SummarizationSetBy = User
+
+	/// Universal Product Code Number
+	column UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 68d4eb0d-bd5d-4a2e-b8dd-175fb9046a80
+		sourceLineageTag: a57593a4-cd34-4b9c-a9dc-b96b6211a7a1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Current on hand Qty for this week
+	column TY_ON_HAND_QTY
+		dataType: double
+		isHidden
+		lineageTag: 935301da-0b12-48b2-b7d7-21c38c006cdf
+		sourceLineageTag: 919d3c43-1824-4eef-b283-1dd6cf0f53bc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_ON_HAND_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Out of Stock Flag for Store UPC combination:
+	/// 1 - Out of Stock
+	/// 0 - No, there is stock
+	column OUT_OF_STOCK
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 88cdb9b2-1639-4036-9456-3369801be2db
+		sourceLineageTag: aee9875c-f88a-41fb-92f6-53f0904bf983
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OUT_OF_STOCK
+
+		annotation SummarizationSetBy = User
+
+	/// Flag indicating this Store UPC exists also in WM StoreItem API data feed. 
+	column STORE_ITEM_EXISTS
+		dataType: string
+		isHidden
+		lineageTag: 2b67e283-0fe6-4cc8-92bb-9e3f06f03c1e
+		sourceLineageTag: d62fdc91-60bc-4cdd-a119-2aaa04ff2a88
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_ITEM_EXISTS
+
+		annotation SummarizationSetBy = User
+
+	partition WM_STORE_ITEM_UPC_LATEST = entity
+		mode: directQuery
+		source
+			entityName: WM_STORE_ITEM_UPC_LATEST
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

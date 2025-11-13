@@ -1,0 +1,133 @@
+/// Additional Calendar View used only to compare two different Time Frames.
+/// Used for Pre Post Comparison analysis.
+/// 
+/// Source: WM_CALENDAR_WEEK_VIEW
+table 'WM Master - Calendar Week Pre Relay'
+	lineageTag: 33e68b60-fa7f-4d6e-b2ea-efd425b0b38b
+	sourceLineageTag: b24b777c-25ac-4f73-ac97-538096d4683a
+
+	column WM_YR_WK_NBR
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		lineageTag: 57b0cf42-9dee-41f1-af9d-f76520cbb0d4
+		sourceLineageTag: 64898e75-8491-4c51-9716-2b4ac1da85be
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WM_YR_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Week Number
+	column WM_WK_NBR
+		dataType: double
+		formatString: 0
+		lineageTag: 330e9274-127d-499a-a1d9-d8d043e2cecd
+		sourceLineageTag: 1fa92c40-7b08-41a5-870f-93b768dd5708
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WM_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Full Year Number
+	column WM_FULL_YR_NBR
+		dataType: double
+		formatString: 0
+		lineageTag: 2fd4b3db-3821-4137-81c0-a4b38668ddd4
+		sourceLineageTag: 487e6df1-c5ab-437f-8dad-810d9bf06028
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WM_FULL_YR_NBR
+
+		annotation SummarizationSetBy = User
+
+	column WM_START_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bdc5096d-4d6d-47d9-bf40-4ab22bc7959a
+		sourceLineageTag: 35c6a1cd-d4fd-4caf-ae1e-1f0d069c6271
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_START_DATE
+
+		annotation SummarizationSetBy = User
+
+	column WM_END_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 37b77b03-6b89-4370-89b1-505f2cc1785f
+		sourceLineageTag: c44e5a75-4a08-4471-98d7-b51ea2808c99
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_END_DATE
+
+		annotation SummarizationSetBy = User
+
+	column FYTD_FLAG
+		dataType: string
+		lineageTag: e8445a48-8616-4a92-8e99-fc3e9dbed7fc
+		sourceLineageTag: 63137661-a888-4e4b-ba84-f1ba91ac1f91
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FYTD_FLAG
+
+		annotation SummarizationSetBy = User
+
+	column LW_FLAG
+		dataType: string
+		lineageTag: c4967956-4638-4f14-a5f5-7c6426cb550a
+		sourceLineageTag: da3de685-99e3-4b6e-817b-9264d0239838
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: LW_FLAG
+
+		annotation SummarizationSetBy = User
+
+	column L13W_FLAG
+		dataType: string
+		lineageTag: cd0e8058-5ad6-40b7-a597-bb3c976f007e
+		sourceLineageTag: 349bca55-1318-490a-b11a-6686cb505b6f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: L13W_FLAG
+
+		annotation SummarizationSetBy = User
+
+	column L4W_FLAG
+		dataType: string
+		lineageTag: 9611c79d-f74e-4828-a8fe-0f291a8d9860
+		sourceLineageTag: e539764b-7063-4fec-91bd-766dd926ace5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: L4W_FLAG
+
+		annotation SummarizationSetBy = User
+
+	column L52W_FLAG
+		dataType: string
+		lineageTag: 6a3100a4-b329-4b61-b570-52ac334cc99a
+		sourceLineageTag: 09ad2639-33b6-448d-a748-0a193c0f0824
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: L52W_FLAG
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Year Week Number - Text Format.
+	column WM_YR_WK_TXT
+		dataType: string
+		lineageTag: 27656287-6c91-4d7c-8956-536e53c5ea01
+		sourceLineageTag: 1292e7a5-8c8f-4e5a-b3aa-a1f8115a7342
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_TXT
+
+		annotation SummarizationSetBy = User
+
+	partition 'WM Master - Calendar Week Pre Relay' = entity
+		mode: directQuery
+		source
+			entityName: WM Master - Calendar Week Pre Relay
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "35e29febadd72ec5c4dd",
+  "position": {
+    "x": 391,
+    "y": 633,
+    "z": 5000,
+    "height": 197,
+    "width": 556.99999999999989,
+    "tabOrder": 42000
+  },
+  "visualGroup": {
+    "displayName": "Mobile KPIs ",
+    "groupMode": "ScaleMode"
+  }
+}

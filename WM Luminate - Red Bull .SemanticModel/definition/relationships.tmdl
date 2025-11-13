@@ -1,0 +1,253 @@
+relationship f8fcd4dd-42b4-4322-b05a-fa4259ccb9c6
+	fromColumn: 'Weekly Metrics'.'Metric ID'
+	toColumn: '99. Metric Selection'.ID
+
+relationship 2df3e945-65c8-4c6e-a3b3-a97b7c6f44e0
+	fromColumn: 'Weekly Metrics 2'.'Metric ID'
+	toColumn: '99. Metric Selection'.ID
+
+relationship d7782277-f7e4-424c-b0de-fd16663aa02b
+	fromColumn: 'Weekly Metrics 3'.'Metric ID'
+	toColumn: '99. Metric Selection'.ID
+
+relationship 49a7181d-e1d3-47eb-a602-f0c018709cc1
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'WM Master - Store'.STORE_NBR
+	toColumn: WM_STORES_S2H.STORE_NBR
+
+relationship 5a030e9b-bab8-4e5d-a16a-08643678c8cb
+	fromColumn: WM_STORE_FULFILLMENT_TIMEFRAMES.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship e7afa867-cf54-46b5-9009-41d0daa034dd
+	fromColumn: WM_STORE_FULFILLMENT_TIMEFRAMES.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 293c7a5f-8d8d-4fa9-83ed-a2d737160e07
+	fromColumn: WM_STORE_ITEM_UPC_TIMEFRAMES.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship e3916e8c-f659-43a1-b711-c5a59440b121
+	fromColumn: WM_STORE_ITEM_UPC_TIMEFRAMES.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 20aa07d7-4d01-4ab6-99f2-89de4e7177ec
+	fromColumn: WM_STORE_SALES_TIMEFRAMES.SVC_CHNL_NM
+	toColumn: 'WM Master - Service Channel'.KEY
+
+relationship 3a37d698-f3ec-4cbf-983e-bebbea71a8aa
+	fromColumn: WM_STORE_SALES_TIMEFRAMES.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship e10cd6d9-61aa-4466-9a75-f0b8659e992b
+	fromColumn: WM_STORE_SALES_TIMEFRAMES.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 94bf24a3-84ac-4bd0-abf8-fbb360279889
+	fromColumn: WM_STORE_SALES_WEEKLY.SVC_CHNL_NM
+	toColumn: 'WM Master - Service Channel'.KEY
+
+relationship 442edae8-895e-4a3b-b384-700d433b84eb
+	fromColumn: WM_STORE_SALES_WEEKLY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship 43533a60-2ac6-4e9f-b46e-2ed0189af89d
+	fromColumn: WM_STORE_SALES_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship 4f62e7d0-475d-4a40-8f80-b71d38efac1d
+	fromColumn: WM_STORE_SALES_WEEKLY.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 2f7c1da1-b711-4763-b43c-424e2babe317
+	fromColumn: WM_STORE_SALES_WEEKLY.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship f5a3c94f-3f2d-4916-9617-21fa8f361c39
+	isActive: false
+	fromColumn: WM_STORE_SALES_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship ecff312a-f795-4ccb-bad7-42822aa2d7eb
+	fromColumn: WM_UPC_SALES.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship 7124376a-54d4-4e98-ada6-1d98a648db41
+	fromColumn: WM_UPC_SALES.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship 6c0fb936-6d97-4c8a-96e6-27ce8725c5d1
+	fromColumn: WM_UPC_SALES.OMNI_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 5c31b9e0-ffd1-48f8-aed5-c480b09eaf20
+	isActive: false
+	fromColumn: WM_UPC_SALES.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship 493f18ca-a36f-4057-abaa-70b02a395912
+	fromColumn: WM_UPC_SALES.SB_CHNL_NM
+	toColumn: 'WM Master - Service Channel'.KEY
+
+relationship 1d5204f2-c2fd-4cfa-9327-2d98cb948b50
+	fromColumn: WM_UPC_SALES.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship 3ddde2ed-7b4a-4827-b558-bb05384e9a59
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship 4b964ab1-b0c9-4b89-9e29-f3b85bfc7c6a
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship ca9339de-3337-41fd-9c68-a7587336bacf
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship f0daae68-08b7-41bd-bf14-5c8fc346abe5
+	isActive: false
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship a96bd7e8-27ed-4dc9-82d1-8b7f63501df4
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship fa73b48d-bbbd-407f-9652-b61b102dc625
+	fromColumn: WM_STORE_ITEM_UPC_LATEST.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship 75be25ea-9d5b-4cc3-9da5-eca165f1a681
+	fromColumn: WM_STORE_ITEM_UPC_LATEST.UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 01b43543-48f5-4b05-bd3c-f173ab291d0e
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship bcc3005c-ee19-4f1e-b235-9a012482a577
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship 325c63fe-c63e-4c9c-b340-f53027ff6b68
+	isActive: false
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship 36dba046-7205-4792-8867-90e8daa4be14
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.WM_UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 7154d87c-d1e0-42f9-aecf-59df8b5935d3
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship 716cb428-0751-4a67-9b7e-cd282f0b790e
+	fromColumn: WM_STORE_MODULAR_UPC_WEEK.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship a7d7341b-d82e-44d9-9e22-d403e3f51a45
+	fromColumn: WM_STORE_MODULAR_UPC_WEEK.UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship b5ee7d7b-ae0f-4fda-b46a-72f462241dd3
+	fromColumn: WM_STORE_MODULAR_UPC_WEEK.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship 5ff8c179-2840-43f5-8cc1-14df73d0dd65
+	fromColumn: WM_STORE_MODULAR_UPC_WEEK.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship 3ba37e61-136c-4d8e-9b3a-87a4e4aaecc9
+	isActive: false
+	fromColumn: WM_STORE_MODULAR_UPC_WEEK.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship db7277cb-aeca-498f-96df-6752b5e0e634
+	fromColumn: WM_STORE_MOD_RACK_UPC_WEEK.STORE_NBR
+	toColumn: 'WM Master - Store'.STORE_NBR
+
+relationship 2d1546b9-8600-429d-a9b3-a44e0b4cc79b
+	fromColumn: WM_STORE_MOD_RACK_UPC_WEEK.UPC_NBR
+	toColumn: 'WM Master - UPC'.UPC_NBR
+
+relationship 459dccc1-188e-47c4-8c82-7237fb39fb58
+	fromColumn: WM_STORE_MOD_RACK_UPC_WEEK.TRAIT_NBR
+	toColumn: 'WM Master - Mod Trait'.TRAIT_NBR
+
+relationship 7233fe0a-cd6b-4c91-b726-e72d22cbdadb
+	fromColumn: WM_STORE_MOD_RACK_UPC_WEEK.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week'.WM_YR_WK_NBR
+
+relationship b48b9d47-f5d9-4646-86b7-56fedebdf561
+	isActive: false
+	fromColumn: WM_STORE_MOD_RACK_UPC_WEEK.WM_YR_WK_NBR
+	toColumn: 'WM Master - Calendar Week Pre Relay'.WM_YR_WK_NBR
+
+relationship 27e90541-a641-4c75-bc96-bf43356d2902
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'WM Master - Store'.TRAIT_AS_IS
+	toColumn: 'WM Master - Store Trait (As Is)'.TRAIT_NBR
+
+relationship 1ff3b879-28c8-4771-8895-f5dda0c227ba
+	fromColumn: WM_STORE_SALES_WEEKLY.IN_MODULAR
+	toColumn: 'WM Master - In Modular'.IN_Modular
+
+relationship 87571fc9-dd56-44ab-9e4b-5960980ef300
+	fromColumn: WM_STORE_ITEM_UPC_WEEKLY.IN_MODULAR
+	toColumn: 'WM Master - In Modular'.IN_Modular
+
+relationship 3a2c22a5-fb28-4288-b9d0-dcfc1007c442
+	fromColumn: WM_STORE_FULFILLMENT_WEEKLY.IN_MODULAR
+	toColumn: 'WM Master - In Modular'.IN_Modular
+
+relationship 37972110-fda2-4c93-be1f-36cc667b2865
+	fromColumn: 'Master Metric 1'.'Set ID'
+	toColumn: 'Measure Selection 1'.'Selection ID'
+
+relationship cf4483db-3d88-4fb1-ae66-39477494afec
+	fromColumn: 'Master Metric 1'.'Set ID'
+	toColumn: 'Measure Selection'.'Selection ID'
+
+relationship ac16fa2a-8a5d-482c-8560-077dff374db8
+	fromColumn: 'Master Metric 1'.'Metric ID'
+	toColumn: 'Metric 1'.ID
+
+relationship 5e488b77-b1c7-436d-83ba-7a35d972b488
+	fromColumn: 'Master Metric 1'.'Metric ID'
+	toColumn: '99. Metric Selection'.ID
+
+relationship a8786ccd-15eb-404f-9f02-ea8311da67d8
+	fromColumn: 'Master Metric 2'.'Set ID'
+	toColumn: 'Measure Selection'.'Selection ID'
+
+relationship 0f633600-558d-4d09-9451-9ed22bd6a580
+	fromColumn: 'Master Metric 2'.'Set ID'
+	toColumn: 'Measure Selection 2'.'Selection ID'
+
+relationship 9440c129-8818-4c3b-a9de-bfa88b0a1371
+	fromColumn: 'Master Metric 2'.'Metric ID'
+	toColumn: 'Metric 2'.ID
+
+relationship 164675b1-0860-48ea-8bc0-90e9a8268a06
+	fromColumn: 'Master Metric 2'.'Metric ID'
+	toColumn: '99. Metric Selection'.ID
+
+relationship 472c0581-8f41-42e0-83c2-d5062b026f26
+	fromColumn: 'Master Metric 3'.'Set ID'
+	toColumn: 'Measure Selection'.'Selection ID'
+
+relationship 1d3f94ce-6094-4a61-8d4f-a11d47a3b7e7
+	fromColumn: 'Master Metric 3'.'Set ID'
+	toColumn: 'Measure Selection 3'.'Selection ID'
+
+relationship 4bacdc41-ef5b-410f-bf56-9dbe0d0f59c2
+	fromColumn: 'Master Metric 3'.'Metric ID'
+	toColumn: 'Metric 3'.ID
+
+relationship dd63f492-25c2-4190-b771-d5730049da30
+	fromColumn: 'Master Metric 3'.'Metric ID'
+	toColumn: '99. Metric Selection'.ID
+

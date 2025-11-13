@@ -1,0 +1,216 @@
+/// Provides information about all store sales at Store, UPC and Channel, aggregated by Walmart Week.
+/// 
+/// Source: WM_STORE_SALES_WEEK_VIEW
+table WM_STORE_SALES_WEEKLY
+	isHidden
+	lineageTag: d89f08ad-9813-4e7b-94e7-64bb2ae24f13
+	sourceLineageTag: fd6cb434-c4dd-4062-ac6a-2d42f02a7c22
+
+	/// Store Number
+	column STORE_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: eb878a11-cfb0-4909-899b-7edb0d2079b2
+		sourceLineageTag: bd1ed37d-9b82-491a-9f40-9f03b0da6814
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Service Channel: The channel through which the order is fulfilled.
+	column SVC_CHNL_NM
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ee910b72-6246-4c4d-a64a-7dfb60bf5827
+		sourceLineageTag: 472ee5fb-97b4-4e95-a9fb-f3fd4eb971e8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SVC_CHNL_NM
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Week Number
+	column CAL_WM_WK_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 737b74fe-9871-4319-be38-dc70b35a65ec
+		sourceLineageTag: 46887066-527d-4d33-a07f-32ffa11df3c2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CAL_WM_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Walmart Year Week Number.
+	/// A number representing the full Walmart year and week.
+	column WM_YR_WK_NBR
+		dataType: double
+		isHidden
+		lineageTag: e4a95b28-0f27-4487-bd3d-0a8a04a0423f
+		sourceLineageTag: 654e4d99-ddca-43f5-a311-50eb42dff984
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_YR_WK_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Universal Product Code Number
+	column WM_UPC_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 79bcb068-b8ca-49be-a22b-c99e443a0047
+		sourceLineageTag: 5afb51c0-858d-4ddc-b624-afcde0a4b54f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WM_UPC_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// This Year (TY) Sales Amount
+	column TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: e1d83e12-2417-4592-b7c8-f88956ea89f6
+		sourceLineageTag: 105be16e-ee31-4ca2-916d-26cca7fde595
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last Year (LY) Sales Amount
+	column LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: e154f554-ec7d-4042-9c9c-32e1af000506
+		sourceLineageTag: ebe7f3c6-6ad6-435d-b6d9-f3529db62bfa
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// This Year Weekend Sales Amount.
+	/// Weekends only sales: Friday - Sunday.
+	column WEEKEND_TY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: 0235e512-cf18-4128-8976-74526c2dd388
+		sourceLineageTag: 49a7424e-ad06-4f30-80c1-116902d25d0f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WEEKEND_TY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// Last Year Weekend Sales Amount.
+	/// Weekends Only Sales: Friday - Sunday.
+	column WEEKEND_LY_SALES_AMT
+		dataType: double
+		isHidden
+		lineageTag: a2bef64d-c34a-4640-a143-de8707d6a22e
+		sourceLineageTag: 9489363f-4fb0-4025-9208-c958d1917408
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WEEKEND_LY_SALES_AMT
+
+		annotation SummarizationSetBy = User
+
+	/// This Year (TY) Sales Units
+	column TY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 3e5c08c3-3457-49e6-b6ea-74f451a11747
+		sourceLineageTag: 0754d831-a62c-4424-b809-7b7616b973d2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last Year (LY) Sales Units
+	column LY_QTY
+		dataType: double
+		isHidden
+		lineageTag: 176b06b7-a5f2-48d5-b12c-97627945a51e
+		sourceLineageTag: 52861c11-93f4-4639-8191-c6ea2dbfb30a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// This Year Weekend Sales Units.
+	/// Weekends Only Sales: Friday - Sunday.
+	column WEEKEND_TY_QTY
+		dataType: double
+		isHidden
+		lineageTag: d0f3971b-3ffd-4cc2-918c-064692655b18
+		sourceLineageTag: d028ae5d-6481-4126-a05d-369de39bd858
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WEEKEND_TY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Last Year Weekend Sales Units.
+	/// Weekends Only Sales: Friday - Sunday.
+	column WEEKEND_LY_QTY
+		dataType: double
+		isHidden
+		lineageTag: d1ed5ae2-4973-4e21-b1bb-47209150f1bc
+		sourceLineageTag: d4220c4c-5968-4636-a6b0-ad63992040f7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WEEKEND_LY_QTY
+
+		annotation SummarizationSetBy = User
+
+	/// Trait Number: This is the Main Placement or Combo Mod Trait Number at the Store
+	column TRAIT_NBR
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a7c798c8-260d-4165-b1ca-7dd367c73329
+		sourceLineageTag: 5517a325-b52b-470a-beec-735429619f73
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRAIT_NBR
+
+		annotation SummarizationSetBy = User
+
+	/// Combination of Store and Week ID
+	column STORE_WEEK_ID
+		dataType: string
+		isHidden
+		lineageTag: bfcd8d4b-8e66-48c0-a316-4d6f97d84d37
+		sourceLineageTag: bed66674-262b-4c5a-993d-ccb6dd8a0108
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STORE_WEEK_ID
+
+		annotation SummarizationSetBy = User
+
+	/// In Modular Flag indicating the UPC is included in the store planogram for the week
+	column IN_MODULAR
+		dataType: string
+		isHidden
+		lineageTag: 12c5ea78-f676-44b8-b03e-1ce4f8d50f05
+		sourceLineageTag: 2a3c8847-c438-40c6-befd-27d4f8ff7408
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: IN_MODULAR
+
+		annotation SummarizationSetBy = User
+
+	partition WM_STORE_SALES_WEEKLY = entity
+		mode: directQuery
+		source
+			entityName: WM_STORE_SALES_WEEKLY
+			expressionSource: 'DirectQuery to AS - WM Luminate - Red Bull - Semantic Model'
+

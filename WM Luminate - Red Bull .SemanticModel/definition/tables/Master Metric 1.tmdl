@@ -1,0 +1,173 @@
+table 'Master Metric 1'
+	isHidden
+	lineageTag: b0faea4d-69fe-4875-ac41-d048b7afb9e4
+
+	column Metric
+		isHidden
+		lineageTag: f2d1ebaa-a841-480d-b159-9b114d43d733
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Metric Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Metric Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Fields'
+		isHidden
+		lineageTag: 77d2accc-75b1-48e5-98db-8627ac0cd91f
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Metric Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric Order'
+		isHidden
+		formatString: 0
+		lineageTag: 90a0970a-945f-4f91-ad1c-0c89cd5d9144
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = User
+
+	column 'Set ID'
+		isHidden
+		formatString: 0
+		lineageTag: 24d4db99-cc81-4c45-9abd-522f63265d7e
+		summarizeBy: none
+		sourceColumn: [Value4]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Metric ID'
+		isHidden
+		formatString: 0
+		lineageTag: 58c0ddb2-0bc0-46b7-a12e-003000d49561
+		summarizeBy: none
+		sourceColumn: [Value5]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Master ID'
+		isHidden
+		formatString: 0
+		lineageTag: fc32c876-6e7e-4256-84b3-e35ecc125aa2
+		summarizeBy: none
+		sourceColumn: [Value6]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Master Metric 1' = calculated
+		mode: import
+		source =
+				{
+				    // $ Sales
+				    ("TY $ Sales", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[TY $ Sales]), 0, 0, 0, 0),
+				    ("LY $ Sales", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[LY $ Sales]), 1, 1, 0, 3),
+				    ("ABS Chg $ Sales", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[ABS Chg Sales YoY]), 2, 2, 0, 6),
+				    ("% Chg $ Sales", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[% Chg Sales YoY]), 3, 3, 0, 9),
+				    ("Cont. Growth $ Sales", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[Cont. Growth Sales]), 4, 4, 0, 12),
+				    //("Chg $ Sales", NAMEOF('Measures Table'[Chg Sales]), 104, 5, 0, 99),
+				
+				    // Units
+				    ("TY Units", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[TY Unit Sales]), 5, 0, 1, 1),
+				    ("LY Units", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[LY Unit Sales]), 6, 1, 1, 4),
+				    ("ABS Chg Units", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[ABS Chg Unit Sales YoY]), 7, 2, 1, 7),
+				    ("% Chg Units", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[% Chg Unit Sales YoY]), 8, 3, 1, 10),
+				    ("Cont. Growth Units", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[Cont. Growth Unit Sales]), 9, 4, 1, 13),
+				
+				    // Price
+				    ("TY Price", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[TY Price]), 10, 0, 2, 2),
+				    ("LY Price", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[LY Price]), 11, 1, 2, 5),
+				    ("ABS Chg Price", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[ABS Chg Price YoY]), 12, 2, 2, 8),
+				    ("% Chg Price", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[% Chg Price YoY]), 13, 3, 2, 11),
+				    ("Cont. Growth Price", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[Cont. Growth Price]), 14, 4, 2, 14),
+				
+				    // $/S/W (Stores Selling)
+				    ("TY $/S/W", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[TY $/S/W]), 15, 0, 3, 99),
+				    ("LY $/S/W", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[LY $/S/W]), 16, 1, 3, 99),
+				    ("ABS Chg $/S/W", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[ABS Chg $/S/W YoY]), 17, 2, 3, 99),
+				    ("% Chg $/S/W", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[% Chg $/S/W YoY]), 18, 3, 3, 99),
+				    // ("Cont. Growth $/S/W (Stores Selling)", NAMEOF('Measures Table'[Cont. Growth $/S/W]), 19, 4, 3, 99),
+				
+				    // U/S/W (Stores Selling)
+				    ("TY U/S/W", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[TY U/S/W]), 20, 0, 4, 99),
+				    ("LY U/S/W", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[LY U/S/W]), 21, 1, 4, 99),
+				    ("ABS Chg U/S/W", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[ABS Chg U/S/W YOY]), 22, 2, 4, 99),
+				    ("% Chg U/S/W", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[% Chg U/S/W YOY]), 23, 3, 4, 99),
+				    //("Cont. Growth U/S/W (Stores Selling)", NAMEOF('Measures Table'[Cont. Growth U/S/W]), 24, 4, 4, 99),
+				
+				    // Stores Selling
+				    //("TY Stores Selling", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[TY Store Count]), 30, 0, 6, 99),
+				    //("LY Stores Selling", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[LY Stores Selling]), 31, 1, 6, 99),
+				    //("ABS Chg Stores Selling", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[ABS Chg Stores Selling]), 32, 2, 6, 99),
+				    //("% Chg Stores Selling", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[% Chg Stores Selling]), 33, 3, 6, 99),
+				    //("Cont. Growth Stores Selling", NAMEOF('Measures Table'[Cont. Growth Stores Selling]), 34, 4, 6, 99),
+				
+				    // Inventory U's
+				   //("TY Inventory U's", NAMEOF('Metrics - Sales and Fulfillment'[TY Avg Inventory U's]), 35, 0, 7, 99),
+				    //("LY Inventory U's", NAMEOF('Metrics - Sales and Fulfillment'[LY Avg Inventory U's]), 36, 1, 7, 99),
+				    //("ABS Chg Inventory U's", NAMEOF('Metrics - Sales and Fulfillment'[ABS Avg Chg Inventory U's]), 37, 2, 7, 99),
+				    //("% Chg Inventory U's", NAMEOF('Metrics - Sales and Fulfillment'[% Chg Avg Inventory U's]), 38, 3, 7, 99),
+				    //("Cont. Growth Inventory U's", NAMEOF('Measures Table'[Cont. Growth Inventory U's]), 39, 4, 7, 99),
+				
+				    // First Time Pick Rate
+				    ("TY FTPR", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[TY FTPR]), 60, 0, 13, 99),
+				    ("LY FTPR", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[LY FTPR]), 61, 1, 13, 99),
+				    ("ABS Chg FTPR", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[ABS Chg FTPR YoY]), 62, 2, 13, 99),
+				    ("% Chg FTPR", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[% Chg FTPR YoY]), 63, 3, 13, 99),
+				    //("Cont. Growth First Time Pick Rate", NAMEOF('Measures Table'[Cont. Growth First Time Pick Rate]), 64, 4, 13, 99),
+				
+				    // Nill Pick Rate
+				    ("Nil Pick Rate", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[TY Nil Pick Rate]), 55, 0, 18, 99),
+				    ("LY Nil Picks Rate", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[LY Nil Pick Rate]), 56, 1, 18, 99),
+				    ("ABS Chg Nil Picks", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[ABS Chg Nil Pick Rate YoY]), 57, 2, 18, 99),
+				    ("% Chg Nil Picks", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[% Chg Nil Pick Rate YoY]), 58, 3, 18, 99),
+				    //("Cont. Growth Nill Picks", NAMEOF('Measures Table'[Cont. Growth Nill Picks]), 59, 4, 18, 99),
+				
+				    // Nill Picks
+				    ("Nil Picks", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[TY Nil Pick Qty]), 65, 0, 19, 99),
+				    ("LY Nil Picks", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[LY Nil Pick Qty]), 66, 1, 19, 99),
+				    ("ABS Chg Nil Picks", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[ABS Chg Nil Pick Qty YoY]), 67, 2, 12, 99),
+				    ("% Chg Nil Picks", NAMEOF('03. Metrics - Store Sales and Fulfillment Time Frames'[% Chg Nil Pick Qty YoY]), 68, 3, 19, 99)
+				    //("Cont. Growth Nill Picks", NAMEOF('Measures Table'[Cont. Growth Nill Picks]), 59, 4, 19, 99),
+				
+				    // % of Total $ Sales
+				    //("TY % of Total $ Sales", NAMEOF('Measures Table'[TY % of Total $ Sales]), 65, 0, 14, 99),
+				    //("LY % of Total $ Sales", NAMEOF('Measures Table'[LY % of Total $ Sales]), 66, 1, 14, 99),
+				    //("YoY % of Total $ Sales", NAMEOF('Measures Table'[ABS Chg % of Total $ Sales]), 67, 2, 14, 99),
+				    //("YoY % of Total $ Sales", NAMEOF('Measures Table'[% Chg of Total $ Sales]), 68, 3, 14, 99),
+				    //("Cont. Growth First Time Pick Rate", NAMEOF('Measures Table'[Cont. Growth First Time Pick Rate]), 69, 4, 13, 99)
+				
+				    // % of Total Units
+				    //("TY % of Total Units", NAMEOF('Measures Table'[TY % of Total Units]), 70, 0, 15, 99),
+				    //("LY % of Total Units", NAMEOF('Measures Table'[LY % of Total Units]), 71, 1, 15, 99),
+				    //("ABS Chg % of Total Units", NAMEOF('Measures Table'[ABS Chg % of Total Units]), 72, 2, 15, 99),
+				    ////("% Chg % of Total Units", NAMEOF('Measures Table'[% Chg of Total Units]), 73, 3, 15, 99),
+				    //("Cont. Growth First Time Pick Rate", NAMEOF('Measures Table'[Cont. Growth First Time Pick Rate]), 74, 4, 13, 99),
+				
+				    // % Digital Penetration
+				    //("TY Digital Penetration", NAMEOF('Measures Table'[TY Digital $ Penetration]), 75, 0, 16, 99),
+				    //("LY Digital Penetration", NAMEOF('Measures Table'[LY Digital Penetration]), 76, 1, 16, 99),
+				    //("ABS Chg Digital Penetration", NAMEOF('Measures Table'[ABS Chg Digital Penetration]), 77, 2, 16, 99),
+				    //("% Chg Digital Penetration", NAMEOF('Measures Table'[% Chg Digital Penetration]), 78, 3, 16, 99),
+				    //("Cont. Growth First Time Pick Rate", NAMEOF('Measures Table'[Cont. Growth First Time Pick Rate]), 79, 4, 16, 99),
+				
+				    // % OPD Penetration
+				    //("TY OPD $ Penetration", NAMEOF('Measures Table'[TY OPD $ Penetration]), 80, 0, 17, 99),
+				    //("LY OPD $ Penetration", NAMEOF('Measures Table'[LY OPD Penetration]), 81, 1, 17, 99),
+				    //("ABS Chg OPD $ Penetration", NAMEOF('Measures Table'[ABS Chg OPD Penetration]), 82, 2, 17, 99)
+				    //("% Chg Digital Penetration", NAMEOF('Measures Table'[% Chg Digital Penetration]), 83, 3, 17, 99)
+				    //("Cont. Growth First Time Pick Rate", NAMEOF('Measures Table'[Cont. Growth First Time Pick Rate]), 84, 4, 17, 99),
+				}
+
+	annotation PBI_Id = fc64f0eac7ea4b7d986ed5859dba971e
+
