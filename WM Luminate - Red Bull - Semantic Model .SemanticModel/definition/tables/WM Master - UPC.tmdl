@@ -20,9 +20,10 @@ table 'WM Master - UPC'
 
 	/// UPC Number - Text Format
 	column UPC_TXT
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: ecd38af2-0c67-45e2-8845-bef54a6f6bea
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: UPC_TXT
 		sortByColumn: UPC_NBR
 
@@ -102,9 +103,10 @@ table 'WM Master - UPC'
 
 	/// Caffeine per Can
 	column CA_CAFFEINE_MG_PER_CAN
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 2267ff1b-c5e9-4812-a004-030f7489cc5f
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: CA_CAFFEINE_MG_PER_CAN
 
 		changedProperty = IsHidden
@@ -223,9 +225,10 @@ table 'WM Master - UPC'
 
 	/// Total Ounce
 	column CA_TOTAL_OZ
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: d5d748dc-1803-4e6f-8363-af1baa350f2c
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: CA_TOTAL_OZ
 
 		changedProperty = IsHidden
@@ -413,9 +416,10 @@ table 'WM Master - UPC'
 				                " - "
 				            )),
 				    #"Added Custom" = Table.AddColumn(#"Inserted Merged Column 2", "UPC_DESC", each if Text.Trim([UPC_SHORT_DESC]) is null then if Text.Trim([UPC_LONG_DESC]) is null then [CA_PRODUCT_DESCRIPTION] else [UPC_LONG_DESC] else [UPC_SHORT_DESC]),
-				    #"Renamed Columns2" = Table.RenameColumns(#"Added Custom",{{"UPC_DESC", "WM UPC Desc"}})
+				    #"Renamed Columns2" = Table.RenameColumns(#"Added Custom",{{"UPC_DESC", "WM UPC Desc"}}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Renamed Columns2",{{"UPC_TXT", Int64.Type}, {"CA_TOTAL_OZ", Int64.Type}, {"CA_CAFFEINE_MG_PER_CAN", Int64.Type}})
 				in
-				    #"Renamed Columns2"
+				    #"Changed Type2"
 
 	changedProperty = IsHidden
 
