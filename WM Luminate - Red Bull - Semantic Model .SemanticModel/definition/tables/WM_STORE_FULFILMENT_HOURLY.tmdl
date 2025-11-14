@@ -259,10 +259,11 @@ table WM_STORE_FULFILMENT_HOURLY
 		annotation SummarizationSetBy = Automatic
 
 	column HOUR
-		dataType: string
+		dataType: int64
 		isHidden
+		formatString: 0
 		lineageTag: 784f1c77-87c5-43fa-9e9a-1a73db19bbfe
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: HOUR
 
 		changedProperty = IsHidden
@@ -283,10 +284,11 @@ table WM_STORE_FULFILMENT_HOURLY
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column GTIN
-		dataType: string
+		dataType: int64
 		isHidden
+		formatString: 0
 		lineageTag: fd2032d3-c6ae-4f8b-a864-8ae39f558dc1
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: GTIN
 
 		changedProperty = IsHidden
@@ -364,8 +366,9 @@ table WM_STORE_FULFILMENT_HOURLY
 		annotation SummarizationSetBy = Automatic
 
 	column UPC_NBR
-		dataType: string
+		dataType: int64
 		isHidden
+		formatString: 0
 		lineageTag: 1d608257-4db2-4796-99bd-be5014040095
 		summarizeBy: none
 		sourceColumn: UPC_NBR
@@ -397,6 +400,26 @@ table WM_STORE_FULFILMENT_HOURLY
 
 		annotation SummarizationSetBy = Automatic
 
+	column ORDER_AMT
+		dataType: double
+		lineageTag: 6ed725b4-075c-4db3-be8a-b10365e5a023
+		summarizeBy: sum
+		sourceColumn: ORDER_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DLVR_AMT
+		dataType: double
+		lineageTag: 479c8f4e-3474-4416-afef-6a91181feabc
+		summarizeBy: sum
+		sourceColumn: DLVR_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition WM_STORE_FULFILMENT_HOURLY = m
 		mode: import
 		source =
@@ -405,7 +428,7 @@ table WM_STORE_FULFILMENT_HOURLY
 				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
 				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
 				    WM_STORE_FULFILMENT_HOURLY = GOLD_Schema{[Name="WM_STORE_FULFILMENT_HOURLY_VIEW",Kind="View"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(WM_STORE_FULFILMENT_HOURLY,{{"WM_YR_WK_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}, {"WM_ITEM_NBR", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(WM_STORE_FULFILMENT_HOURLY,{{"WM_YR_WK_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}, {"WM_ITEM_NBR", Int64.Type}, {"GTIN", Int64.Type}, {"HOUR", Int64.Type}, {"UPC_NBR", Int64.Type}})
 				in
 				    #"Changed Type"
 

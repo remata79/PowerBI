@@ -175,9 +175,10 @@ table 'WM Master - Store'
 
 	/// Open Status Code
 	column OPEN_STATUS_CD
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 4db6f8b9-5e90-4849-91cc-a9f03d3b2946
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: OPEN_STATUS_CD
 
 		changedProperty = IsHidden
@@ -362,9 +363,10 @@ table 'WM Master - Store'
 
 	/// Store Number - Text Format
 	column STORE_NBR_TXT
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 23936142-bb55-4edf-9db4-0065609ac1a1
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: STORE_NBR_TXT
 
 		changedProperty = IsHidden
@@ -373,9 +375,10 @@ table 'WM Master - Store'
 
 	/// Store Region Number - Text Format
 	column STORE_REGION_NBR_TXT
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 2c4beb33-beb6-4ffc-8cc1-1c2a7a0d2c94
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: STORE_REGION_NBR_TXT
 
 		changedProperty = IsHidden
@@ -384,9 +387,10 @@ table 'WM Master - Store'
 
 	/// Walmart Market Number - Text Format
 	column MARKET_NBR_TXT
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 1289ea94-3d4a-4033-9684-765262ae8c7f
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: MARKET_NBR_TXT
 
 		changedProperty = IsHidden
@@ -505,17 +509,19 @@ table 'WM Master - Store'
 		annotation SummarizationSetBy = Automatic
 
 	column DSM
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: a46fb4b1-6d1a-4f67-85b3-b80e74facea0
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: DSM
 
 		annotation SummarizationSetBy = Automatic
 
 	column RAM
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 6ad28150-f8a9-4880-9595-0439aaabb950
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: RAM
 
 		annotation SummarizationSetBy = Automatic
@@ -569,9 +575,10 @@ table 'WM Master - Store'
 		annotation SummarizationSetBy = Automatic
 
 	column LS_POSTAL_CODE
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 679e220f-c364-4b46-935b-72388a78daef
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: LS_POSTAL_CODE
 
 		annotation SummarizationSetBy = Automatic
@@ -698,9 +705,10 @@ table 'WM Master - Store'
 				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type1",{{"STORE_NBR - Copy", "STORE_NBR_TXT"}, {"REGION_NBR - Copy", "STORE_REGION_NBR_TXT"}, {"MARKET_NBR - Copy", "MARKET_NBR_TXT"}}),
 				    #"Appended Query" = Table.Combine({#"Renamed Columns", WM_STORES_S2H}),
 				    #"Inserted Merged Column" = Table.AddColumn(#"Appended Query", "STORE_NBR_NAME", each Text.Combine({Text.From([STORE_NBR], "en-US"), [STORE_NM]}, " "), type text),
-				    #"Inserted Merged Column 2" = Table.AddColumn(#"Inserted Merged Column", "RB BU", each Text.Combine({Text.From([RB_BU], "en-US"), [RB_BU_DESC]}, " "), type text)
+				    #"Inserted Merged Column 2" = Table.AddColumn(#"Inserted Merged Column", "RB BU", each Text.Combine({Text.From([RB_BU], "en-US"), [RB_BU_DESC]}, " "), type text),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Inserted Merged Column 2",{{"STORE_NBR_TXT", Int64.Type}, {"MARKET_NBR_TXT", Int64.Type}, {"LS_POSTAL_CODE", Int64.Type}, {"STORE_REGION_NBR_TXT", Int64.Type}, {"OPEN_STATUS_CD", Int64.Type}, {"DSM", Int64.Type}, {"RAM", Int64.Type}})
 				in
-				    #"Inserted Merged Column 2"
+				    #"Changed Type2"
 
 	annotation PBI_ResultType = Table
 
