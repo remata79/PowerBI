@@ -273,7 +273,7 @@ table WM_STORE_MODULAR_UPC_WEEK
 				    Source = Snowflake.Databases("fe65796.west-europe.azure.snowflakecomputing.com","RBNA_IT_BI_ANALYTICS_WH"),
 				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
 				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
-				    WM_STORE_MODULAR_UPC_WEEK_VIEW = GOLD_Schema{[Name="WM_STORE_MODULAR_UPC_WEEK_VIEW",Kind="View"]}[Data],
+				    WM_STORE_MODULAR_UPC_WEEK_VIEW = GOLD_Schema{[Name="WM_STORE_MODULAR_UPC_WEEK_104W_VIEW",Kind="View"]}[Data],
 				    #"Changed Type" = Table.TransformColumnTypes(WM_STORE_MODULAR_UPC_WEEK_VIEW,{{"STORE_NBR", Int64.Type}, {"MODLR_PLAN_ID", Int64.Type}, {"SM_STATUS", Int64.Type}, {"MT_STATUS", Int64.Type}, {"TRAIT_NBR", Int64.Type}, {"UPC_NBR", Int64.Type}, {"WM_YR_WK_NBR", Int64.Type}})
 				in
 				    #"Changed Type"

@@ -4,7 +4,21 @@
 table '06. Metrics - Store Pre Post Comparison'
 	lineageTag: 15d44524-aef2-4a43-bff1-871f924e4f08
 
-	measure 'TY $ Sales - Weekly Pre Relay' = CALCULATE(SUM(WM_STORE_SALES_WEEKLY[TY_SALES_AMT]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+	measure 'TY $ Sales - Weekly Pre Relay' = ```
+			
+			/*Old Code
+			CALCULATE(SUM(WM_STORE_SALES_WEEKLY[TY_SALES_AMT]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))*/
+			//------New Code------
+			CALCULATE (
+			    [TY $ Sales - Weekly],
+			    USERELATIONSHIP (
+			        WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR],
+			        'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			    ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week' )
+			)
+			
+			```
 		isHidden
 		displayFolder: RB Pre Relay
 		lineageTag: 59076839-73e3-469c-a421-82d698826c95
@@ -284,7 +298,9 @@ table '06. Metrics - Store Pre Post Comparison'
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure '$ Share - Weekly Pre Relay' =
+	measure '$ Share - Weekly Pre Relay' = ```
+			
+			/* Old code
 			DIVIDE(
 			    [TY $ Sales - Weekly Pre Relay],
 			    CALCULATE(
@@ -299,6 +315,38 @@ table '06. Metrics - Store Pre Post Comparison'
 			        USERELATIONSHIP(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR])
 			    )
 			) * 100
+			*/
+			//----New Optimized DAX Code----
+			VAR CurrentSales = [TY $ Sales - Weekly Pre Relay]
+			VAR TotalSales =
+			    CALCULATE(
+			        [TY $ Sales - Weekly Pre Relay],
+			        // Keep only the current week, but clear all other context
+			        ALL(WM_STORE_SALES_WEEKLY),
+			        VALUES(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR]),
+			        ALL('WM Master - Calendar Week'),
+			        // Activate the Pre-Relay relationship
+			        USERELATIONSHIP(
+			            WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR],
+			            'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			        ),
+			        // Apply valid trait filter
+			        FILTER(
+			            ALL('WM Master - Mod Trait'),
+			            NOT ISBLANK('WM Master - Mod Trait'[TRAIT_NBR]) &&
+			            'WM Master - Mod Trait'[TRAIT_NBR] <> 0
+			        ),
+			        // Apply valid pack type filter
+			        FILTER(
+			            ALL('WM Master - UPC'),
+			            NOT ISBLANK('WM Master - UPC'[CA_PACK_TYPE]) &&
+			            'WM Master - UPC'[CA_PACK_TYPE] <> "Not Applicable"
+			        )
+			    )
+			RETURN
+			DIVIDE(CurrentSales, TotalSales, 0) * 100
+			
+			```
 		isHidden
 		displayFolder: RB Pre Relay
 		lineageTag: 84823eed-5684-476e-8b68-a62949185bfa
@@ -748,14 +796,30 @@ table '06. Metrics - Store Pre Post Comparison'
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure '$ Share - RB Pre Post Comparison' =
+	measure '$ Share - RB Pre Post Comparison' = ```
+			
+			/* Old Code
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [$ Share - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [$ Share - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [$ Share - Weekly] - [$ Share - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([$ Share - Weekly]-[$ Share - Weekly Pre Relay], [$ Share - Weekly Pre Relay], 0)
+			)*/
+			//---New Code------
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [$ Share - Weekly]
+			VAR WeeklyPreRelay = [$ Share - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: b8a3082e-d3eb-487b-8685-f623f8323c59
 

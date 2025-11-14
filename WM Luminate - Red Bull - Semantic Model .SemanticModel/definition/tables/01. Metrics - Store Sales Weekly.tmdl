@@ -273,7 +273,9 @@ table '01. Metrics - Store Sales Weekly'
 		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// Dollar Share
-	measure '$ Share - Weekly' =
+	measure '$ Share - Weekly' = ```
+			
+			/*Old Code
 			DIVIDE(
 			    [TY $ Sales - Weekly],
 			    CALCULATE(
@@ -286,7 +288,18 @@ table '01. Metrics - Store Sales Weekly'
 			        'WM Master - UPC'[CA_PACK_TYPE] <> "Not Applicable",
 			        VALUES(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR])
 			    )
-			) * 100
+			) * 100*/
+			VAR TotalSalesWeekly =
+			    CALCULATE (
+			        [TY $ Sales - Weekly],
+			        ALLEXCEPT ( WM_STORE_SALES_WEEKLY, WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR] ),
+			        KEEPFILTERS ( 'WM Master - Mod Trait'[TRAIT_NBR] <> BLANK() && 'WM Master - Mod Trait'[TRAIT_NBR] <> 0 ),
+			        KEEPFILTERS ( 'WM Master - UPC'[CA_PACK_TYPE] <> BLANK() && 'WM Master - UPC'[CA_PACK_TYPE] <> "Not Applicable" )
+			    )
+			RETURN
+			DIVIDE ( [TY $ Sales - Weekly], TotalSalesWeekly ) * 100
+			
+			```
 		formatString: 0.0
 		displayFolder: This Year Metrics
 		lineageTag: 286e3825-81fc-44ea-ac49-b5a8740f6c3c
