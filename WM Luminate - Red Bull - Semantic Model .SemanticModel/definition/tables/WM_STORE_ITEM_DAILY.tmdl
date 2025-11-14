@@ -118,10 +118,11 @@ table WM_STORE_ITEM_DAILY
 		annotation SummarizationSetBy = Automatic
 
 	column OUT_OF_STOCK_FLAG
-		dataType: string
+		dataType: int64
 		isHidden
+		formatString: 0
 		lineageTag: 2debeac7-66a7-4d51-967f-4953aa146df8
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: OUT_OF_STOCK_FLAG
 
 		changedProperty = IsHidden
@@ -617,7 +618,7 @@ table WM_STORE_ITEM_DAILY
 				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
 				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
 				    WM_STORE_ITEM_DAILY = GOLD_Schema{[Name="WM_STORE_ITEM_DAILY_VIEW",Kind="View"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(WM_STORE_ITEM_DAILY,{{"WM_YR_WK_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(WM_STORE_ITEM_DAILY,{{"WM_YR_WK_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}, {"OUT_OF_STOCK_FLAG", Int64.Type}})
 				in
 				    #"Changed Type"
 
