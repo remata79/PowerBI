@@ -73,10 +73,11 @@ table WM_STORE_SALES_DAILY
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column RPT_CD
-		dataType: string
+		dataType: int64
 		isHidden
+		formatString: 0
 		lineageTag: 63712007-4f57-4bd1-9278-b1ec5f4d4cdb
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: RPT_CD
 
 		changedProperty = IsHidden
@@ -239,8 +240,9 @@ table WM_STORE_SALES_DAILY
 		annotation SummarizationSetBy = Automatic
 
 	column UPC_NBR
-		dataType: string
+		dataType: int64
 		isHidden
+		formatString: 0
 		lineageTag: 30ecd5ea-30ba-4f4d-bc31-89247bbf7311
 		summarizeBy: none
 		sourceColumn: UPC_NBR
@@ -268,11 +270,9 @@ table WM_STORE_SALES_DAILY
 				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
 				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
 				    WM_STORE_SALES_DAILY = GOLD_Schema{[Name="WM_STORE_SALES_DAILY_VIEW",Kind="View"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(WM_STORE_SALES_DAILY,{{"WM_YR_WK_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(WM_STORE_SALES_DAILY,{{"WM_YR_WK_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}, {"UPC_NBR", Int64.Type}, {"RPT_CD", Int64.Type}})
 				in
 				    #"Changed Type"
-
-	changedProperty = Name
 
 	changedProperty = IsHidden
 

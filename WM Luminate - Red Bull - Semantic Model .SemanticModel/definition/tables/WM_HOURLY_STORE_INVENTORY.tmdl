@@ -98,8 +98,9 @@ table WM_HOURLY_STORE_INVENTORY
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column UPC_NBR
-		dataType: string
+		dataType: int64
 		isHidden
+		formatString: 0
 		lineageTag: ca46b4ca-ac4e-4395-a5af-b789e0898384
 		summarizeBy: none
 		sourceColumn: UPC_NBR
@@ -128,7 +129,7 @@ table WM_HOURLY_STORE_INVENTORY
 				    WMCA_Database = Source{[Name="RBNA_IT_BI_ANALYTICS_DB",Kind="Database"]}[Data],
 				    GOLD_Schema = WMCA_Database{[Name="LUMINATE_GOLD",Kind="Schema"]}[Data],
 				    WM_HOURLY_STORE_INVENTORY = GOLD_Schema{[Name="WM_HOURLY_STORE_INVENTORY_VIEW",Kind="View"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(WM_HOURLY_STORE_INVENTORY,{{"WM_YR_WK_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(WM_HOURLY_STORE_INVENTORY,{{"WM_YR_WK_NBR", Int64.Type}, {"STORE_NBR", Int64.Type}, {"UPC_NBR", Int64.Type}})
 				in
 				    #"Changed Type"
 
