@@ -21,7 +21,18 @@ table '02. Metrics - Store Fulfillment Weekly'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	/// This Year First Time Pick Rate Numerator
-	measure 'TY FTPR Numerator - Weekly' = CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_NMRTR]), ALL('WM Master - Calendar Week Pre Relay'))
+	measure 'TY FTPR Numerator - Weekly' = ```
+			
+			/* Old Code
+			CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_NMRTR]), ALL('WM Master - Calendar Week Pre Relay'))
+			*/
+			//---New DAX Code---
+			CALCULATE (
+			    SUM ( WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_NMRTR] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week Pre Relay' )
+			)
+			
+			```
 		formatString: #,##0;(#,##0)
 		displayFolder: This Year Metrics
 		lineageTag: 37a11989-dafe-496f-88e8-cefb200d1bee
@@ -31,7 +42,18 @@ table '02. Metrics - Store Fulfillment Weekly'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	/// This Year First Time Pick Rate Denominator
-	measure 'TY FTPR Denominator - Weekly' = CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_DNMNTR]), ALL('WM Master - Calendar Week Pre Relay'))
+	measure 'TY FTPR Denominator - Weekly' = ```
+			
+			 /* Old Code
+			 CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_DNMNTR]), ALL('WM Master - Calendar Week Pre Relay'))
+			 */
+			 //-----New DAX Code---
+			CALCULATE (
+			    SUM ( WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_DNMNTR] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week Pre Relay' )
+			)
+			
+			```
 		formatString: #,##0;(#,##0)
 		displayFolder: This Year Metrics
 		lineageTag: 64b93aff-55b3-4cce-a7d1-3b6f26533614
@@ -106,7 +128,18 @@ table '02. Metrics - Store Fulfillment Weekly'
 
 	/// This Year First Time Pick Rate:
 	/// The percentage of items that were picked in the first pick-walk for store fulfilled orders.
-	measure 'TY FTPR - Weekly' = DIVIDE([TY FTPR Numerator - Weekly], [TY FTPR Denominator - Weekly], BLANK())
+	measure 'TY FTPR - Weekly' = ```
+			
+			/* Old DAX COde
+			DIVIDE([TY FTPR Numerator - Weekly], [TY FTPR Denominator - Weekly], BLANK())
+			*/
+			//-------New DAX COde------
+			VAR Numerator = [TY FTPR Numerator - Weekly]
+			VAR Denominator = [TY FTPR Denominator - Weekly]
+			RETURN
+			DIVIDE ( Numerator, Denominator )
+			
+			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: This Year Metrics
 		lineageTag: 6550791f-229e-4e8c-817f-7e1c51ff6593
@@ -232,8 +265,9 @@ table '02. Metrics - Store Fulfillment Weekly'
 	/// This Year In Stock Rate: 
 	/// Average weekly percentage of UPCs with stock on a store. 
 	/// This metric considers only In Modular (Store Planogram) UPCs. 
-	measure 'TY In Stock Rate - Weekly' =
+	measure 'TY In Stock Rate - Weekly' = ```
 			
+			/* Old Code
 			VAR TotalOutOfStock =
 			    CALCULATE(
 			        SUM(WM_STORE_ITEM_UPC_WEEKLY[OUT_OF_STOCK]),
@@ -250,6 +284,25 @@ table '02. Metrics - Store Fulfillment Weekly'
 			    RowCount * 7
 			RETURN
 			DIVIDE( TotalDays - TotalOutOfStock, TotalDays, BLANK() )
+			*/
+			//------New Dax Code---------
+			VAR TotalOutOfStock =
+			    CALCULATE (
+			        SUM ( WM_STORE_ITEM_UPC_WEEKLY[OUT_OF_STOCK] ),
+			        KEEPFILTERS ( WM_STORE_ITEM_UPC_WEEKLY[IN_MODULAR] = "Yes" ),
+			        REMOVEFILTERS ( 'WM Master - Calendar Week Pre Relay' )
+			    )
+			VAR RowCount =
+			    CALCULATE (
+			        COUNTROWS ( WM_STORE_ITEM_UPC_WEEKLY ),
+			        KEEPFILTERS ( WM_STORE_ITEM_UPC_WEEKLY[IN_MODULAR] = "Yes" ),
+			        REMOVEFILTERS ( 'WM Master - Calendar Week Pre Relay' )
+			    )
+			VAR TotalDays = RowCount * 7
+			RETURN
+			DIVIDE ( TotalDays - TotalOutOfStock, TotalDays )
+			
+			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: This Year Metrics
 		lineageTag: 6ac57b9d-671d-4041-a9f5-54fe1bf680c7

@@ -107,7 +107,17 @@ table '01. Metrics - Store Sales Weekly'
 		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// Count of Weeks.
-	measure 'Week Count - Weekly' = CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR]), ALL('WM Master - Calendar Week Pre Relay') )
+	measure 'Week Count - Weekly' = ```
+			
+			/* Old Code
+			CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR]), ALL('WM Master - Calendar Week Pre Relay') ) */
+			//-----New OPtimized DAX Code--------
+			CALCULATE (
+			    DISTINCTCOUNT ( WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week Pre Relay' )
+			)
+			
+			```
 		formatString: #,0
 		displayFolder: Weekend Metrics
 		lineageTag: 5f2915b4-d35f-4e5a-ac34-b1df0f9fee97
@@ -121,7 +131,18 @@ table '01. Metrics - Store Sales Weekly'
 
 		changedProperty = IsHidden
 
-	measure 'Total Stores-Week - Weekly' = CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[STORE_WEEK_ID]), ALL('WM Master - Calendar Week Pre Relay') )
+	measure 'Total Stores-Week - Weekly' = ```
+			
+			/* Old Code
+			CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[STORE_WEEK_ID]), ALL('WM Master - Calendar Week Pre Relay') )
+			*/
+			//-----New Dax Code------
+			CALCULATE (
+			    DISTINCTCOUNT ( WM_STORE_SALES_WEEKLY[STORE_WEEK_ID] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week Pre Relay' )
+			)
+			
+			```
 		formatString: #,0
 		displayFolder: This Year Metrics
 		lineageTag: 901a4310-e076-49e0-ba44-e2f6d06250ed
@@ -129,7 +150,17 @@ table '01. Metrics - Store Sales Weekly'
 		changedProperty = IsHidden
 
 	/// This Year Average Weekly Sales Amount.
-	measure 'TY Avg Wkly $ Sales - Weekly' = DIVIDE([TY $ Sales - Weekly], [Week Count - Weekly], 0)
+	measure 'TY Avg Wkly $ Sales - Weekly' = ```
+			
+			/* Old Code 
+			DIVIDE([TY $ Sales - Weekly], [Week Count - Weekly], 0)
+			*/
+			//-----Optimized DAX Code------
+			VAR Sales = [TY $ Sales - Weekly] 
+			VAR Weeks = [Week Count - Weekly] 
+			RETURN 
+			DIVIDE(Sales, Weeks, 0) 
+			```
 		formatString: $#,##0;$(#,##0)
 		displayFolder: This Year Metrics
 		lineageTag: 024e50e5-f12a-4a8d-bcae-111b02ec57c1
@@ -327,7 +358,18 @@ table '01. Metrics - Store Sales Weekly'
 
 		changedProperty = IsHidden
 
-	measure 'TY C/S/W - Weekly' = DIVIDE([TY $/S/W - Weekly]+[TY U/S/W - Weekly], 2, 0)
+	measure 'TY C/S/W - Weekly' = ```
+			
+			/* Old Code
+			DIVIDE([TY $/S/W - Weekly]+[TY U/S/W - Weekly], 2, 0)
+			*/
+			//---New DAX Code---
+			VAR DollarShare = [TY $/S/W - Weekly]
+			VAR UnitShare   = [TY U/S/W - Weekly]
+			RETURN
+			DIVIDE ( DollarShare + UnitShare, 2 )
+			
+			```
 		formatString: #,##0.0;(#,##0.0)
 		displayFolder: This Year Metrics
 		lineageTag: 2703b0bd-d37d-4951-9863-ccbd6356123b
