@@ -4,7 +4,10 @@
   "artifacts": [
     {
       "report": {
-        "path": "WM Luminate - Red Bull - Semantic Model .Report"
+        "path": "WM Luminate - Red Bull - Semantic Model Version1 .Report"
+      },
+      "semanticModel": {
+        "path": "WM Luminate - Red Bull - Semantic Model Version1 .SemanticModel"
       }
     }
   ],
