@@ -51,7 +51,22 @@ table '06. Metrics - Store Pre Post Comparison'
 		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// This Year Sales Units.
-	measure 'TY Unit Sales - Weekly Pre Relay' = CALCULATE(SUM(WM_STORE_SALES_WEEKLY[TY_QTY]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+	measure 'TY Unit Sales - Weekly Pre Relay' = ```
+			
+			/* Old Code
+			CALCULATE(SUM(WM_STORE_SALES_WEEKLY[TY_QTY]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+			*/
+			//----New Optimized DAX Code----
+			CALCULATE (
+			    [TY Unit Sales - Weekly],
+			    REMOVEFILTERS ( 'WM Master - Calendar Week' ),
+			    USERELATIONSHIP (
+			        WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR],
+			        'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			    )
+			)
+			
+			```
 		formatString: #,0
 		isHidden
 		displayFolder: RB Pre Relay
@@ -115,7 +130,22 @@ table '06. Metrics - Store Pre Post Comparison'
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure 'Week Count - Weekly Pre Relay' = CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+	measure 'Week Count - Weekly Pre Relay' = ```
+			
+			/* Old Code
+			CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+			*/
+			//------New DAX Code---------
+			CALCULATE (
+			    DISTINCTCOUNT ( WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week' ),
+			    USERELATIONSHIP (
+			        WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR],
+			        'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			    )
+			)
+			
+			```
 		formatString: #,0
 		isHidden
 		displayFolder: RB Pre Relay
@@ -131,7 +161,22 @@ table '06. Metrics - Store Pre Post Comparison'
 
 		changedProperty = IsHidden
 
-	measure 'Stores/Week - Weekly Pre Relay' = CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[STORE_WEEK_ID]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+	measure 'Stores/Week - Weekly Pre Relay' = ```
+			
+			/* Old Code
+			 CALCULATE(DISTINCTCOUNT(WM_STORE_SALES_WEEKLY[STORE_WEEK_ID]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+			 */
+			 //---New DAX Code----
+			CALCULATE (
+			    DISTINCTCOUNT ( WM_STORE_SALES_WEEKLY[STORE_WEEK_ID] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week' ),
+			    USERELATIONSHIP (
+			        WM_STORE_SALES_WEEKLY[WM_YR_WK_NBR],
+			        'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			    )
+			)
+			
+			```
 		formatString: #,0
 		isHidden
 		displayFolder: RB Pre Relay
@@ -462,7 +507,22 @@ table '06. Metrics - Store Pre Post Comparison'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	/// This Year First Time Pick Rate Numerator
-	measure 'TY FTPR Numerator - Weekly Pre Relay' = CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_NMRTR]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+	measure 'TY FTPR Numerator - Weekly Pre Relay' = ```
+			
+			/* Old Code
+			CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_NMRTR]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+			*/
+			//----New DAX COde---
+			CALCULATE (
+			    SUM ( WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_NMRTR] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week' ),
+			    USERELATIONSHIP (
+			        WM_STORE_FULFILLMENT_WEEKLY[WM_YR_WK_NBR],
+			        'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			    )
+			)
+			
+			```
 		formatString: #,##0;(#,##0)
 		isHidden
 		displayFolder: RB Pre Relay
@@ -494,7 +554,21 @@ table '06. Metrics - Store Pre Post Comparison'
 
 	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
 	measure 'TY Nil Pick Qty - Weekly Pre Relay' = ```
+			
+			/* Old COde
 			CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_QTY]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+			*/
+			//-----New DAX Code----
+			CALCULATE (
+			    SUM ( WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_QTY] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week' ),
+			    USERELATIONSHIP (
+			        WM_STORE_FULFILLMENT_WEEKLY[WM_YR_WK_NBR],
+			        'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			    )
+			)
+			
+			
 			
 			```
 		formatString: #,0
@@ -534,7 +608,9 @@ table '06. Metrics - Store Pre Post Comparison'
 
 	/// This Year First Time Pick Rate:
 	/// The percentage of items that were picked in the first pick-walk for store fulfilled orders.
-	measure 'TY FTPR - RB Pre Post Comparison' =
+	measure 'TY FTPR - RB Pre Post Comparison' = ```
+			
+			/* Old Dax Code
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY FTPR - Weekly],
@@ -542,6 +618,21 @@ table '06. Metrics - Store Pre Post Comparison'
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY FTPR - Weekly] - [TY FTPR - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY FTPR - Weekly]-[TY FTPR - Weekly Pre Relay], [TY FTPR - Weekly Pre Relay], 0)
 			)
+			*/
+			//----New Optimized DAX COde------
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY FTPR - Weekly]
+			VAR WeeklyPreRelay = [TY FTPR - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
+			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 652cc607-bdee-4ddd-8f12-09c287484ab7
 
@@ -560,14 +651,30 @@ table '06. Metrics - Store Pre Post Comparison'
 		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
-	measure 'TY Nil Pick Qty - RB Pre Post Comparison' =
+	measure 'TY Nil Pick Qty - RB Pre Post Comparison' = ```
+			
+			/* Old COde
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Nil Pick Qty - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Nil Pick Qty - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Nil Pick Qty - Weekly] - [TY Nil Pick Qty - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Nil Pick Qty - Weekly]-[TY Nil Pick Qty - Weekly Pre Relay], [TY Nil Pick Qty - Weekly Pre Relay], 0)
+			)*/
+			//----New Optimzed DAX Code---
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY Nil Pick Qty - Weekly]
+			VAR WeeklyPreRelay = [TY Nil Pick Qty - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 4c064852-dfbe-4eb2-b71e-539aa96c8f92
 
@@ -586,14 +693,30 @@ table '06. Metrics - Store Pre Post Comparison'
 		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
-	measure 'TY Nil Pick Rate - RB Pre Post Comparison' =
-			SWITCH(
+	measure 'TY Nil Pick Rate - RB Pre Post Comparison' = ```
+			
+			/* Old COde
+			 SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Nil Pick Rate - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Nil Pick Rate - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Nil Pick Rate - Weekly] - [TY Nil Pick Rate - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Nil Pick Rate - Weekly]-[TY Nil Pick Rate - Weekly Pre Relay], [TY Nil Pick Rate - Weekly Pre Relay], 0)
+			)*/
+			//---New Optimized COde---
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY Nil Pick Rate - Weekly]
+			VAR WeeklyPreRelay = [TY Nil Pick Rate - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 982d4f3c-d23f-4612-9be2-baca474be47f
 
@@ -611,14 +734,30 @@ table '06. Metrics - Store Pre Post Comparison'
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure 'DOS - RB Pre Post Comparison' =
+	measure 'DOS - RB Pre Post Comparison' = ```
+			
+			/* Old Code
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [DOS - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [DOS - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [DOS - Weekly] - [DOS - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([DOS - Weekly]-[DOS - Weekly Pre Relay], [DOS - Weekly Pre Relay], 0)
+			)*/
+			//-----New Code-----
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [DOS - Weekly]
+			VAR WeeklyPreRelay = [DOS - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 55610397-9b04-4693-b9f7-813219dda713
 
@@ -634,14 +773,30 @@ table '06. Metrics - Store Pre Post Comparison'
 
 		changedProperty = IsHidden
 
-	measure 'In Stock Rate - RB Pre Post Comparison' =
+	measure 'In Stock Rate - RB Pre Post Comparison' = ```
+			
+			/* Old code
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY In Stock Rate - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY In Stock Rate - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY In Stock Rate - Weekly] - [TY In Stock Rate - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY In Stock Rate - Weekly]-[TY In Stock Rate - Weekly Pre Relay], [TY In Stock Rate - Weekly Pre Relay], 0)
+			)*/
+			//---New Code-----
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY In Stock Rate - Weekly]
+			VAR WeeklyPreRelay = [TY In Stock Rate - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 4d2e33b0-5732-4645-9b66-03035d5317f3
 
@@ -1063,14 +1218,30 @@ table '06. Metrics - Store Pre Post Comparison'
 		changedProperty = IsHidden
 
 	/// This Year $ Sales Velocity: $ per Store per Week.
-	measure 'TY $/S/W - RB Pre Post Comparison' =
-			SWITCH(
+	measure 'TY $/S/W - RB Pre Post Comparison' = ```
+			
+			/*Old Code
+			 SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY $/S/W - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY $/S/W - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY $/S/W - Weekly] - [TY $/S/W - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY $/S/W - Weekly]-[TY $/S/W - Weekly Pre Relay], [TY $/S/W - Weekly Pre Relay], 0)
+			)*/
+			//---New Code----
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY $/S/W - Weekly]
+			VAR WeeklyPreRelay = [TY $/S/W - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 825e800e-e9a6-4f11-8ed7-1b25157f4ce8
 
@@ -1086,14 +1257,30 @@ table '06. Metrics - Store Pre Post Comparison'
 
 		changedProperty = IsHidden
 
-	measure 'TY AUR - RB Pre Post Comparison' =
+	measure 'TY AUR - RB Pre Post Comparison' = ```
+			
+			/* Old Code
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Price - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Price - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Price - Weekly] - [TY Price - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Price - Weekly]-[TY Price - Weekly Pre Relay], [TY Price - Weekly Pre Relay], 0)
+			)*/
+			//---New Code----
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY Price - Weekly]
+			VAR WeeklyPreRelay = [TY Price - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 06e9a03a-1094-473d-93af-df12b3e7e4b7
 
@@ -1110,14 +1297,30 @@ table '06. Metrics - Store Pre Post Comparison'
 		changedProperty = IsHidden
 
 	/// This Year Average Weekly Sales Amount.
-	measure 'TY Avg Wkly $ Sales - RB Pre Post Comparison' =
+	measure 'TY Avg Wkly $ Sales - RB Pre Post Comparison' = ```
+			
+			/*Old Code
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Avg Wkly $ Sales - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Avg Wkly $ Sales - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Avg Wkly $ Sales - Weekly] - [TY Avg Wkly $ Sales - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Avg Wkly $ Sales - Weekly]-[TY Avg Wkly $ Sales - Weekly Pre Relay], [TY Avg Wkly $ Sales - Weekly Pre Relay], 0)
-			)
+			)*/
+			// ------Optimized DAX code---------
+			VAR TimeFrameID = SELECTEDVALUE('WM Master - Pre Post Time Frame'[Time Frame ID]) 
+			VAR TY_Weekly = [TY Avg Wkly $ Sales - Weekly] 
+			VAR TY_PreRelay = [TY Avg Wkly $ Sales - Weekly Pre Relay] 
+			VAR Diff = TY_Weekly - TY_PreRelay 
+			RETURN 
+			SWITCH( 
+			    TRUE(), 
+			    TimeFrameID = "T1", TY_Weekly, 
+			    TimeFrameID = "T2", TY_PreRelay, 
+			    TimeFrameID = "T3", Diff, 
+			    TimeFrameID = "T4", DIVIDE(Diff, TY_PreRelay, 0) 
+			) 
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 81e19a9b-9760-4f36-9158-5b784d49394a
 
@@ -1136,14 +1339,30 @@ table '06. Metrics - Store Pre Post Comparison'
 		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// This Year Average Weekly Sales Units.
-	measure 'TY Avg Wkly Unit Sales - RB Pre Post Comparison' =
-			SWITCH(
+	measure 'TY Avg Wkly Unit Sales - RB Pre Post Comparison' = ```
+			
+			/* Old Code
+			 SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Avg Wkly Unit Sales - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Avg Wkly Unit Sales - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Avg Wkly Unit Sales - Weekly] - [TY Avg Wkly Unit Sales - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Avg Wkly Unit Sales - Weekly]-[TY Avg Wkly Unit Sales - Weekly Pre Relay], [TY Avg Wkly Unit Sales - Weekly Pre Relay], 0)
+			)*/
+			//----New Optimizes DAX Code----
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY Avg Wkly Unit Sales - Weekly]
+			VAR WeeklyPreRelay = [TY Avg Wkly Unit Sales - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 9edc0d7d-772a-4532-b9e9-4dbdda6cf5ab
 
@@ -1161,7 +1380,9 @@ table '06. Metrics - Store Pre Post Comparison'
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure 'TY C/S/W - RB Pre Post Comparison' =
+	measure 'TY C/S/W - RB Pre Post Comparison' = ```
+			
+			/* Old Code
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY C/S/W - Weekly],
@@ -1169,6 +1390,21 @@ table '06. Metrics - Store Pre Post Comparison'
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY C/S/W - Weekly] - [TY C/S/W - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY C/S/W - Weekly]-[TY C/S/W - Weekly Pre Relay], [TY C/S/W - Weekly Pre Relay], 0)
 			)
+			*/
+			//---New Optimized DAX COde----
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY C/S/W - Weekly]
+			VAR WeeklyPreRelay = [TY C/S/W - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
+			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 00af8d12-9bd1-45d5-9095-73c33cdc152d
 
@@ -1185,14 +1421,30 @@ table '06. Metrics - Store Pre Post Comparison'
 		changedProperty = IsHidden
 
 	/// This Year Unit Sales Velocity: Units per Store per Week.
-	measure 'TY U/S/W - RB Pre Post Comparison' =
+	measure 'TY U/S/W - RB Pre Post Comparison' = ```
+			
+			/* Old COde
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY U/S/W - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY U/S/W - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY U/S/W - Weekly] - [TY U/S/W - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY U/S/W - Weekly]-[TY U/S/W - Weekly Pre Relay], [TY U/S/W - Weekly Pre Relay], 0)
+			)*/
+			//-----New Optimized DAX Code-----
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY U/S/W - Weekly]
+			VAR WeeklyPreRelay = [TY U/S/W - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: c3b07096-2284-4629-9890-70b62524fe23
 
@@ -1232,14 +1484,30 @@ table '06. Metrics - Store Pre Post Comparison'
 
 		changedProperty = IsHidden
 
-	measure 'Unit Share - RB Pre Post Comparison' =
+	measure 'Unit Share - RB Pre Post Comparison' = ```
+			
+			/* Old COde
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [Unit Share - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [Unit Share - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [Unit Share - Weekly] - [Unit Share - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([Unit Share - Weekly]-[Unit Share - Weekly Pre Relay], [Unit Share - Weekly Pre Relay], 0)
+			)*/
+			//----New Optimized DAX Code----
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [Unit Share - Weekly]
+			VAR WeeklyPreRelay = [Unit Share - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 44b2482e-8b52-4df1-b8c8-0fd6de83dbe6
 
@@ -1380,6 +1648,7 @@ table '06. Metrics - Store Pre Post Comparison'
 
 	measure 'Main Placement Capacity - Weekly Pre Relay' = ```
 			//SUM(WM_STORE_MODULAR_UPC_WEEK[TOT_CPCTY_QTY])
+			/*Old code
 			VAR MAX_WEEK = CALCULATE(
 			        MAX(WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR]), 
 			        All('WM Master - Calendar Week'),
@@ -1403,7 +1672,39 @@ table '06. Metrics - Store Pre Post Comparison'
 			        All('WM Master - Calendar Week'),
 			         USERELATIONSHIP(WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]),
 			         TREATAS(VALUES('WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]), WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR])
+			    )*/
+			//--New Code--------
+			VAR TargetWeek =
+			    CALCULATE(
+			        MAX(WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR]),
+			        REMOVEFILTERS('WM Master - Calendar Week'),
+			        USERELATIONSHIP(
+			            WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR],
+			            'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			        )
 			    )
+			RETURN
+			CALCULATE(
+			    SUMX(
+			        SUMMARIZE(
+			            FILTER(
+			                ALL(WM_STORE_MODULAR_UPC_WEEK),
+			                WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR] = TargetWeek
+			                    && WM_STORE_MODULAR_UPC_WEEK[MOD_REF_CATEGORY] = "Main Placement"
+			            ),
+			            WM_STORE_MODULAR_UPC_WEEK[TRAIT_NBR],
+			            WM_STORE_MODULAR_UPC_WEEK[STORE_NBR],
+			            WM_STORE_MODULAR_UPC_WEEK[UPC_NBR],
+			            "UPCCapacity", MAX(WM_STORE_MODULAR_UPC_WEEK[TOT_CPCTY_QTY])
+			        ),
+			        [UPCCapacity]
+			    ),
+			    USERELATIONSHIP(
+			        WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR],
+			        'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			    )
+			)
+			
 			```
 		isHidden
 		displayFolder: RB Pre Relay
@@ -1451,10 +1752,22 @@ table '06. Metrics - Store Pre Post Comparison'
 
 	measure 'DOS - Weekly Pre Relay' = ```
 			
+			/* Old Code
 			    CALCULATE(
 			        DIVIDE([Total Capacity - Weekly Pre Relay], DIVIDE([TY Avg Wkly Unit Sales - Weekly Pre Relay], 7, 0), 0),
 			        WM_STORE_SALES_WEEKLY[IN_MODULAR] = "Yes"
 			    )
+			*/
+			//---New Code----
+			CALCULATE(
+			    DIVIDE(
+			        [Total Capacity - Weekly Pre Relay] * 7,
+			        [TY Avg Wkly Unit Sales - Weekly Pre Relay],
+			        0
+			    ),
+			    WM_STORE_SALES_WEEKLY[IN_MODULAR] = "Yes"
+			)
+			
 			```
 		formatString: #,0.0
 		isHidden

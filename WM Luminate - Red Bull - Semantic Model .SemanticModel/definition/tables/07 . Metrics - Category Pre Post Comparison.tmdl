@@ -975,8 +975,9 @@ table '07 . Metrics - Category Pre Post Comparison'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'TY In Stock Rate - Weekly Pre Relay' =
+	measure 'TY In Stock Rate - Weekly Pre Relay' = ```
 			
+			/* Old Code
 			VAR TotalOutOfStock =
 			    CALCULATE(
 			        SUM(WM_STORE_ITEM_UPC_WEEKLY[OUT_OF_STOCK]),
@@ -993,6 +994,33 @@ table '07 . Metrics - Category Pre Post Comparison'
 			    RowCount * 7
 			RETURN
 			DIVIDE( TotalDays - TotalOutOfStock, TotalDays, BLANK() )
+			*/
+			//-------New DAX Code------------
+			VAR TotalOutOfStock =
+			    CALCULATE (
+			        SUM ( WM_STORE_ITEM_UPC_WEEKLY[OUT_OF_STOCK] ),
+			        KEEPFILTERS ( WM_STORE_ITEM_UPC_WEEKLY[IN_MODULAR] = "Yes" ),
+			        REMOVEFILTERS ( 'WM Master - Calendar Week' ),
+			        USERELATIONSHIP (
+			            WM_STORE_ITEM_UPC_WEEKLY[WM_YR_WK_NBR],
+			            'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			        )
+			    )
+			VAR RowCount =
+			    CALCULATE (
+			        COUNTROWS ( WM_STORE_ITEM_UPC_WEEKLY ),
+			        KEEPFILTERS ( WM_STORE_ITEM_UPC_WEEKLY[IN_MODULAR] = "Yes" ),
+			        REMOVEFILTERS ( 'WM Master - Calendar Week' ),
+			        USERELATIONSHIP (
+			            WM_STORE_ITEM_UPC_WEEKLY[WM_YR_WK_NBR],
+			            'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			        )
+			    )
+			VAR TotalDays = RowCount * 7
+			RETURN
+			DIVIDE ( TotalDays - TotalOutOfStock, TotalDays )
+			
+			```
 		formatString: 0.0%;-0.0%;0.0%
 		isHidden
 		displayFolder: WMCA Pre Relay
