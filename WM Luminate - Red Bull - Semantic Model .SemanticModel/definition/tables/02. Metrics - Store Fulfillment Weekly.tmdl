@@ -11,7 +11,18 @@
 table '02. Metrics - Store Fulfillment Weekly'
 	lineageTag: ea04111c-aacf-469a-9cb9-effc275f241f
 
-	measure 'TY Nil Pick Denominator - Weekly' = CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_RATE_DNMNTR]), ALL('WM Master - Calendar Week Pre Relay'))
+	measure 'TY Nil Pick Denominator - Weekly' = ```
+			
+			 /* Old Code
+			 CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_RATE_DNMNTR]), ALL('WM Master - Calendar Week Pre Relay'))
+			 */
+			 //---New DAX Code-----
+			CALCULATE (
+			    SUM ( WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_RATE_DNMNTR] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week Pre Relay' )
+			)
+			
+			```
 		formatString: #,##0;(#,##0)
 		displayFolder: This Year Metrics
 		lineageTag: ee3e496d-ca2f-4965-812f-0c05af245ae5
@@ -119,7 +130,18 @@ table '02. Metrics - Store Fulfillment Weekly'
 		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
-	measure 'TY Nil Pick Rate - Weekly' = DIVIDE([TY Nil Pick Numerator - Weekly], [TY Nil Pick Denominator - Weekly], BLANK())
+	measure 'TY Nil Pick Rate - Weekly' = ```
+			
+			/* Old COde
+			DIVIDE([TY Nil Pick Numerator - Weekly], [TY Nil Pick Denominator - Weekly], BLANK())
+			*/
+			//----New DAX Code-----
+			VAR Numerator   = [TY Nil Pick Numerator - Weekly]
+			VAR Denominator = [TY Nil Pick Denominator - Weekly]
+			RETURN
+			DIVIDE ( Numerator, Denominator )
+			
+			```
 		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: This Year Metrics
 		lineageTag: fc3f9ede-10f1-4d37-adc5-a7cfcfa872ed
@@ -148,7 +170,16 @@ table '02. Metrics - Store Fulfillment Weekly'
 
 	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
 	measure 'TY Nil Pick Qty - Weekly' = ```
+			
+			/* Old COde
 			CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_QTY]), ALL('WM Master - Calendar Week Pre Relay'))
+			*/
+			//---New DAX Code-----
+			CALCULATE (
+			    SUM ( WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_QTY] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week Pre Relay' )
+			)
+			
 			
 			```
 		formatString: #,0
@@ -157,7 +188,18 @@ table '02. Metrics - Store Fulfillment Weekly'
 
 		changedProperty = IsHidden
 
-	measure 'TY Nil Pick Numerator - Weekly' = CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_RATE_NMRTR]), ALL('WM Master - Calendar Week Pre Relay'))
+	measure 'TY Nil Pick Numerator - Weekly' = ```
+			
+			/* Old COde
+			CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_RATE_NMRTR]), ALL('WM Master - Calendar Week Pre Relay'))
+			*/
+			//------New DAX COde
+			CALCULATE (
+			    SUM ( WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_RATE_NMRTR] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week Pre Relay' )
+			)
+			
+			```
 		formatString: #,##0;(#,##0)
 		displayFolder: This Year Metrics
 		lineageTag: 990331a6-80aa-4ab7-a2c4-046e5c60c862
@@ -219,6 +261,7 @@ table '02. Metrics - Store Fulfillment Weekly'
 	/// Total UPC Capacity considering all Main Placements and Mod Racks assigned to the Store.
 	measure 'Total Capacity - Weekly' = ```
 			
+			/* Old Code
 			VAR MAX_WEEK = MAX(WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR])
 			
 			RETURN CALCULATE(
@@ -236,7 +279,34 @@ table '02. Metrics - Store Fulfillment Weekly'
 			            ), [UPCCapacity]
 			        ),
 			        ALL('WM Master - Calendar Week Pre Relay')
+			    )*/
+			    //
+			  //--New Code---
+			VAR WeekInContext =
+			    SELECTEDVALUE( WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR] )
+			VAR TargetWeek =
+			    COALESCE(
+			        WeekInContext,
+			        MAXX( ALL( WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR] ), WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR] )
 			    )
+			RETURN
+			CALCULATE(
+			    SUMX(
+			        SUMMARIZE(
+			            FILTER(
+			                ALL( WM_STORE_MODULAR_UPC_WEEK ),
+			                WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR] = TargetWeek
+			            ),
+			            WM_STORE_MODULAR_UPC_WEEK[TRAIT_NBR],
+			            WM_STORE_MODULAR_UPC_WEEK[STORE_NBR],
+			            WM_STORE_MODULAR_UPC_WEEK[UPC_NBR],
+			            "UPCCapacity", MAX( WM_STORE_MODULAR_UPC_WEEK[TOT_CPCTY_QTY] )
+			        ),
+			        [UPCCapacity]
+			    ),
+			    REMOVEFILTERS( 'WM Master - Calendar Week Pre Relay' )
+			)
+			
 			
 			
 			```
@@ -250,10 +320,25 @@ table '02. Metrics - Store Fulfillment Weekly'
 	/// Store UPC Capacity / (Avg Weekly Units / 7)
 	measure 'DOS - Weekly' = ```
 			
+			/*Old Code
 			    CALCULATE(
 			        DIVIDE([Total Capacity - Weekly], DIVIDE([TY Avg Wkly Unit Sales - Weekly], 7, 0), 0),
 			        WM_STORE_SALES_WEEKLY[IN_MODULAR] = "Yes"
 			        )
+			*/
+			 //----New Optimized Dax Code-----    
+			VAR TotalCapacity = [Total Capacity - Weekly]
+			VAR AvgWeeklySales = [TY Avg Wkly Unit Sales - Weekly]
+			RETURN
+			CALCULATE(
+			    DIVIDE(
+			        TotalCapacity,
+			        DIVIDE(AvgWeeklySales, 7, 0),
+			        0
+			    ),
+			    WM_STORE_SALES_WEEKLY[IN_MODULAR] = "Yes"
+			)
+			
 			```
 		displayFolder: This Year Metrics
 		lineageTag: 7d763953-2e1a-4c5b-b27d-f0d2008d66ac

@@ -507,7 +507,22 @@ table '06. Metrics - Store Pre Post Comparison'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	/// This Year First Time Pick Rate Numerator
-	measure 'TY FTPR Numerator - Weekly Pre Relay' = CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_NMRTR]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+	measure 'TY FTPR Numerator - Weekly Pre Relay' = ```
+			
+			/* Old Code
+			CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_NMRTR]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+			*/
+			//----New DAX COde---
+			CALCULATE (
+			    SUM ( WM_STORE_FULFILLMENT_WEEKLY[TY_FTPR_NMRTR] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week' ),
+			    USERELATIONSHIP (
+			        WM_STORE_FULFILLMENT_WEEKLY[WM_YR_WK_NBR],
+			        'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			    )
+			)
+			
+			```
 		formatString: #,##0;(#,##0)
 		isHidden
 		displayFolder: RB Pre Relay
@@ -539,7 +554,21 @@ table '06. Metrics - Store Pre Post Comparison'
 
 	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
 	measure 'TY Nil Pick Qty - Weekly Pre Relay' = ```
+			
+			/* Old COde
 			CALCULATE(SUM(WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_QTY]), ALL('WM Master - Calendar Week'), USERELATIONSHIP(WM_UPC_SALES[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]))
+			*/
+			//-----New DAX Code----
+			CALCULATE (
+			    SUM ( WM_STORE_FULFILLMENT_WEEKLY[TY_NIL_PICK_QTY] ),
+			    REMOVEFILTERS ( 'WM Master - Calendar Week' ),
+			    USERELATIONSHIP (
+			        WM_STORE_FULFILLMENT_WEEKLY[WM_YR_WK_NBR],
+			        'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			    )
+			)
+			
+			
 			
 			```
 		formatString: #,0
@@ -622,14 +651,30 @@ table '06. Metrics - Store Pre Post Comparison'
 		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// This Year Nil Pick Quantity: The number of units not picked or substituted by a store for  store fulfilled orders.
-	measure 'TY Nil Pick Qty - RB Pre Post Comparison' =
+	measure 'TY Nil Pick Qty - RB Pre Post Comparison' = ```
+			
+			/* Old COde
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Nil Pick Qty - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Nil Pick Qty - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Nil Pick Qty - Weekly] - [TY Nil Pick Qty - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Nil Pick Qty - Weekly]-[TY Nil Pick Qty - Weekly Pre Relay], [TY Nil Pick Qty - Weekly Pre Relay], 0)
+			)*/
+			//----New Optimzed DAX Code---
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY Nil Pick Qty - Weekly]
+			VAR WeeklyPreRelay = [TY Nil Pick Qty - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 4c064852-dfbe-4eb2-b71e-539aa96c8f92
 
@@ -648,14 +693,30 @@ table '06. Metrics - Store Pre Post Comparison'
 		annotation PBI_FormatHint = {"isCustom":true}
 
 	/// This Year Nil Pick Rate: The percentage of items that were not fulfilled for fulfilled orders.
-	measure 'TY Nil Pick Rate - RB Pre Post Comparison' =
-			SWITCH(
+	measure 'TY Nil Pick Rate - RB Pre Post Comparison' = ```
+			
+			/* Old COde
+			 SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [TY Nil Pick Rate - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [TY Nil Pick Rate - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [TY Nil Pick Rate - Weekly] - [TY Nil Pick Rate - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([TY Nil Pick Rate - Weekly]-[TY Nil Pick Rate - Weekly Pre Relay], [TY Nil Pick Rate - Weekly Pre Relay], 0)
+			)*/
+			//---New Optimized COde---
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [TY Nil Pick Rate - Weekly]
+			VAR WeeklyPreRelay = [TY Nil Pick Rate - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 982d4f3c-d23f-4612-9be2-baca474be47f
 
@@ -673,14 +734,30 @@ table '06. Metrics - Store Pre Post Comparison'
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure 'DOS - RB Pre Post Comparison' =
+	measure 'DOS - RB Pre Post Comparison' = ```
+			
+			/* Old Code
 			SWITCH(
 			    TRUE(),
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T1", [DOS - Weekly],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T2", [DOS - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T3", [DOS - Weekly] - [DOS - Weekly Pre Relay],
 			    MAX('WM Master - Pre Post Time Frame'[Time Frame ID])="T4", DIVIDE([DOS - Weekly]-[DOS - Weekly Pre Relay], [DOS - Weekly Pre Relay], 0)
+			)*/
+			//-----New Code-----
+			VAR TimeFrameID = MAX('WM Master - Pre Post Time Frame'[Time Frame ID])
+			VAR Weekly = [DOS - Weekly]
+			VAR WeeklyPreRelay = [DOS - Weekly Pre Relay]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    TimeFrameID = "T1", Weekly,
+			    TimeFrameID = "T2", WeeklyPreRelay,
+			    TimeFrameID = "T3", Weekly - WeeklyPreRelay,
+			    TimeFrameID = "T4", DIVIDE(Weekly - WeeklyPreRelay, WeeklyPreRelay, 0)
 			)
+			
+			```
 		displayFolder: RB Pre Post Comparison
 		lineageTag: 55610397-9b04-4693-b9f7-813219dda713
 
@@ -1571,6 +1648,7 @@ table '06. Metrics - Store Pre Post Comparison'
 
 	measure 'Main Placement Capacity - Weekly Pre Relay' = ```
 			//SUM(WM_STORE_MODULAR_UPC_WEEK[TOT_CPCTY_QTY])
+			/*Old code
 			VAR MAX_WEEK = CALCULATE(
 			        MAX(WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR]), 
 			        All('WM Master - Calendar Week'),
@@ -1594,7 +1672,39 @@ table '06. Metrics - Store Pre Post Comparison'
 			        All('WM Master - Calendar Week'),
 			         USERELATIONSHIP(WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR], 'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]),
 			         TREATAS(VALUES('WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]), WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR])
+			    )*/
+			//--New Code--------
+			VAR TargetWeek =
+			    CALCULATE(
+			        MAX(WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR]),
+			        REMOVEFILTERS('WM Master - Calendar Week'),
+			        USERELATIONSHIP(
+			            WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR],
+			            'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			        )
 			    )
+			RETURN
+			CALCULATE(
+			    SUMX(
+			        SUMMARIZE(
+			            FILTER(
+			                ALL(WM_STORE_MODULAR_UPC_WEEK),
+			                WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR] = TargetWeek
+			                    && WM_STORE_MODULAR_UPC_WEEK[MOD_REF_CATEGORY] = "Main Placement"
+			            ),
+			            WM_STORE_MODULAR_UPC_WEEK[TRAIT_NBR],
+			            WM_STORE_MODULAR_UPC_WEEK[STORE_NBR],
+			            WM_STORE_MODULAR_UPC_WEEK[UPC_NBR],
+			            "UPCCapacity", MAX(WM_STORE_MODULAR_UPC_WEEK[TOT_CPCTY_QTY])
+			        ),
+			        [UPCCapacity]
+			    ),
+			    USERELATIONSHIP(
+			        WM_STORE_MODULAR_UPC_WEEK[WM_YR_WK_NBR],
+			        'WM Master - Calendar Week Pre Relay'[WM_YR_WK_NBR]
+			    )
+			)
+			
 			```
 		isHidden
 		displayFolder: RB Pre Relay
@@ -1642,10 +1752,22 @@ table '06. Metrics - Store Pre Post Comparison'
 
 	measure 'DOS - Weekly Pre Relay' = ```
 			
+			/* Old Code
 			    CALCULATE(
 			        DIVIDE([Total Capacity - Weekly Pre Relay], DIVIDE([TY Avg Wkly Unit Sales - Weekly Pre Relay], 7, 0), 0),
 			        WM_STORE_SALES_WEEKLY[IN_MODULAR] = "Yes"
 			    )
+			*/
+			//---New Code----
+			CALCULATE(
+			    DIVIDE(
+			        [Total Capacity - Weekly Pre Relay] * 7,
+			        [TY Avg Wkly Unit Sales - Weekly Pre Relay],
+			        0
+			    ),
+			    WM_STORE_SALES_WEEKLY[IN_MODULAR] = "Yes"
+			)
+			
 			```
 		formatString: #,0.0
 		isHidden
